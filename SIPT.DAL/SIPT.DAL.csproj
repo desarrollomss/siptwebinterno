@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0CA8084-82DD-401A-BD99-5DE749FF03C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIPT.DAL</RootNamespace>
+    <AssemblyName>SIPT.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceSicu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Dao\Base\AutLicencia_dao.cs" />
+    <Compile Include="Dao\Base\AutSolicitud_dao.cs" />
+    <Compile Include="Dao\Base\ConAdministrado_dao.cs" />
+    <Compile Include="Dao\Base\ConContacto_dao.cs" />
+    <Compile Include="Dao\Base\DjuPredio_dao.cs" />
+    <Compile Include="Dao\Base\PtuCertificado_dao.cs" />
+    <Compile Include="Dao\Base\PtuConsultas_dao.cs" />
+    <Compile Include="Dao\Base\PtuIndicadores_dao.cs" />
+    <Compile Include="Dao\Base\PtuLicencia_dao.cs" />
+    <Compile Include="Dao\Base\PtuPlantillareq_dao.cs" />
+    <Compile Include="Dao\Base\PtuProcedimientostupa_dao.cs" />
+    <Compile Include="Dao\Base\PtuRequerimientostupa_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolCertificado_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolicitud_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolLicenciaAnalista_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolLicenciaUso_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolLicencia_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolreqdetalle_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolreqgrupo_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolrequerimiento_dao.cs" />
+    <Compile Include="Dao\Base\PtuTabla_dao.cs" />
+    <Compile Include="Dao\Base\PtuUso_dao.cs" />
+    <Compile Include="Dao\Base\SicUsuario_dao.cs" />
+    <Compile Include="Dao\Base\StdDocumento_dao.cs" />
+    <Compile Include="Dao\Base\TestOrdenAtencion_dao.cs" />
+    <Compile Include="Dao\Factory\ObjectFactory.cs" />
+    <Compile Include="Dao\Implementacion\Db2\AutLicencia_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\AutSolicitud_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\ConAdministrado_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\ConContacto_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\DjuPredio_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuConsultas_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuLicencia_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuPlantillareq_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuProcedimientostupa_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuRequerimientostupa_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolicitud_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolLicenciaAnalista_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolLicenciaUso_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolLicencia_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolreqdetalle_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolreqgrupo_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolrequerimiento_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuTabla_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuUso_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\SicUsuario_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\StdDocumento_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\TestOrdenAtencion_db2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBAccess\DBAccess.csproj">
+      <Project>{6f33fc77-6351-4df7-9f00-4f5595cbc59c}</Project>
+      <Name>DBAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIPT.APPL\SIPT.APPL.csproj">
+      <Project>{d1d9515e-92cf-4f91-81a1-e076efb67ff7}</Project>
+      <Name>SIPT.APPL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIPT.BL.DTO\SIPT.BL.DTO.csproj">
+      <Project>{E610F2B0-115A-499A-B7EE-0C067A6A9A0A}</Project>
+      <Name>SIPT.BL.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIPT.BL.Models\SIPT.BL.Models.csproj">
+      <Project>{f49129ca-3022-4f93-95be-86e24d4609f1}</Project>
+      <Name>SIPT.BL.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ServiceSicu\GandalfsoftSecurityServiceImplementService.wsdl" />
+    <None Include="Connected Services\ServiceSicu\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.buscarCorreosUsuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.listarAreasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.listarUsuariosPorAplicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.loginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.loginTestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.logoutResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.obtenercontrolesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.obtenerDatosAreasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.registraractividadResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.scuorganigrama.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.securityOption.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.securityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.securityUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.usuariobajaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.DAL.ServiceSicu.validarControlResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceSicu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dao\Implementacion\Rds\" />
+    <Folder Include="Dao\Implementacion\Sic\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

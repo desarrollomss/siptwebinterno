@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F49129CA-3022-4F93-95BE-86E24D4609F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIPT.BL.Models</RootNamespace>
+    <AssemblyName>SIPT.BL.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceSicu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\AutLicencia_Inserta.cs" />
+    <Compile Include="Consultas\AutSolicitud_Inserta.cs" />
+    <Compile Include="Consultas\AutSolicitud_Resultado.cs" />
+    <Compile Include="Consultas\AutLicencia_Resultado.cs" />
+    <Compile Include="Consultas\PtuPlantillareqvalores.cs" />
+    <Compile Include="Consultas\PtuRequerimiento_Editables.cs" />
+    <Compile Include="Consultas\PtuSolicitud_PorAnalistaPorSolicitante.cs" />
+    <Compile Include="Consultas\StdDocumento_InsertaDocWebSipt.cs" />
+    <Compile Include="Consultas\StdDocumento_InsertaResultado.cs" />
+    <Compile Include="Entity\AutLicencia.cs" />
+    <Compile Include="Entity\AutSolicitud.cs" />
+    <Compile Include="Entity\PtuPlantillareq.cs" />
+    <Compile Include="Entity\PtuProcedimientostupa.cs" />
+    <Compile Include="Entity\PtuRequerimientostupa.cs" />
+    <Compile Include="Entity\PtuSolreqdetalle.cs" />
+    <Compile Include="Entity\PtuSolreqgrupo.cs" />
+    <Compile Include="Entity\PtuSolrequerimiento.cs" />
+    <Compile Include="Entity\PtuTabla.cs" />
+    <Compile Include="Entity\SicOpcion.cs" />
+    <Compile Include="Entity\SicUsuario.cs" />
+    <Compile Include="Entity\ConAdministrado.cs" />
+    <Compile Include="Entity\ConContacto.cs" />
+    <Compile Include="Entity\DjuPredio.cs" />
+    <Compile Include="Entity\PtuCertificado.cs" />
+    <Compile Include="Entity\PtuConsultas.cs" />
+    <Compile Include="Entity\PtuIndicadores.cs" />
+    <Compile Include="Entity\PtuLicencia.cs" />
+    <Compile Include="Entity\PtuSolCertificado.cs" />
+    <Compile Include="Entity\PtuSolicitud.cs" />
+    <Compile Include="Entity\PtuSolLicencia.cs" />
+    <Compile Include="Entity\PtuSolLicenciaAnalista.cs" />
+    <Compile Include="Entity\PtuSolLicenciaUso.cs" />
+    <Compile Include="Entity\PtuUso.cs" />
+    <Compile Include="Entity\StdDocumento.cs" />
+    <Compile Include="Entity\TestOrdenAtencion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ServiceSicu\GandalfsoftSecurityServiceImplementService.wsdl" />
+    <None Include="Connected Services\ServiceSicu\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.actualizarfecaccesoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.buscarCorreosUsuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.loginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.loginTestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.logoutResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.obtenercontrolesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.obtenerDatosAreasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.obtenerIdOpcionJsonResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.obtenerIdOpcionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.realizarCambioDeClaveAppResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.realizarCambioDeClaveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.registraractividadResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.scuorganigrama.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.securityOption.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.securityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.securityUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.solicitarCambioDeClaveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.usuariobajaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSicu\SIPT.BL.Models.ServiceSicu.validarControlResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceSicu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSicu\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

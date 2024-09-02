@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.security.gandalfsoft.com.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="GandalfsoftSecurityServiceImplementService" targetNamespace="http://ws.security.gandalfsoft.com.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://192.0.0.154:8888/services/?xsd=1" namespace="http://ws.security.gandalfsoft.com.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="validarControl">
+    <part name="parameters" element="tns:validarControl" />
+  </message>
+  <message name="validarControlResponse">
+    <part name="parameters" element="tns:validarControlResponse" />
+  </message>
+  <message name="obtenerIdOpcion">
+    <part name="parameters" element="tns:obtenerIdOpcion" />
+  </message>
+  <message name="obtenerIdOpcionResponse">
+    <part name="parameters" element="tns:obtenerIdOpcionResponse" />
+  </message>
+  <message name="obtenercontroles">
+    <part name="parameters" element="tns:obtenercontroles" />
+  </message>
+  <message name="obtenercontrolesResponse">
+    <part name="parameters" element="tns:obtenercontrolesResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="logout">
+    <part name="parameters" element="tns:logout" />
+  </message>
+  <message name="logoutResponse">
+    <part name="parameters" element="tns:logoutResponse" />
+  </message>
+  <message name="usuariobaja">
+    <part name="parameters" element="tns:usuariobaja" />
+  </message>
+  <message name="usuariobajaResponse">
+    <part name="parameters" element="tns:usuariobajaResponse" />
+  </message>
+  <message name="loginTest">
+    <part name="parameters" element="tns:loginTest" />
+  </message>
+  <message name="loginTestResponse">
+    <part name="parameters" element="tns:loginTestResponse" />
+  </message>
+  <message name="obtenerIdOpcionJson">
+    <part name="parameters" element="tns:obtenerIdOpcionJson" />
+  </message>
+  <message name="obtenerIdOpcionJsonResponse">
+    <part name="parameters" element="tns:obtenerIdOpcionJsonResponse" />
+  </message>
+  <message name="registraractividad">
+    <part name="parameters" element="tns:registraractividad" />
+  </message>
+  <message name="registraractividadResponse">
+    <part name="parameters" element="tns:registraractividadResponse" />
+  </message>
+  <message name="obtenerDatosAreas">
+    <part name="parameters" element="tns:obtenerDatosAreas" />
+  </message>
+  <message name="obtenerDatosAreasResponse">
+    <part name="parameters" element="tns:obtenerDatosAreasResponse" />
+  </message>
+  <message name="buscarCorreosUsuarios">
+    <part name="parameters" element="tns:buscarCorreosUsuarios" />
+  </message>
+  <message name="buscarCorreosUsuariosResponse">
+    <part name="parameters" element="tns:buscarCorreosUsuariosResponse" />
+  </message>
+  <message name="actualizarfecacceso">
+    <part name="parameters" element="tns:actualizarfecacceso" />
+  </message>
+  <message name="actualizarfecaccesoResponse">
+    <part name="parameters" element="tns:actualizarfecaccesoResponse" />
+  </message>
+  <message name="realizarCambioDeClave">
+    <part name="parameters" element="tns:realizarCambioDeClave" />
+  </message>
+  <message name="realizarCambioDeClaveResponse">
+    <part name="parameters" element="tns:realizarCambioDeClaveResponse" />
+  </message>
+  <message name="realizarCambioDeClaveApp">
+    <part name="parameters" element="tns:realizarCambioDeClaveApp" />
+  </message>
+  <message name="realizarCambioDeClaveAppResponse">
+    <part name="parameters" element="tns:realizarCambioDeClaveAppResponse" />
+  </message>
+  <message name="solicitarCambioDeClave">
+    <part name="parameters" element="tns:solicitarCambioDeClave" />
+  </message>
+  <message name="solicitarCambioDeClaveResponse">
+    <part name="parameters" element="tns:solicitarCambioDeClaveResponse" />
+  </message>
+  <portType name="GandalfsoftSecurityService">
+    <operation name="validarControl">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRequest" message="tns:validarControl" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlResponse" message="tns:validarControlResponse" />
+    </operation>
+    <operation name="obtenerIdOpcion">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionRequest" message="tns:obtenerIdOpcion" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionResponse" message="tns:obtenerIdOpcionResponse" />
+    </operation>
+    <operation name="obtenercontroles">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontrolesRequest" message="tns:obtenercontroles" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontrolesResponse" message="tns:obtenercontrolesResponse" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginRequest" message="tns:login" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginResponse" message="tns:loginResponse" />
+    </operation>
+    <operation name="logout">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutRequest" message="tns:logout" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutResponse" message="tns:logoutResponse" />
+    </operation>
+    <operation name="usuariobaja">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaRequest" message="tns:usuariobaja" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaResponse" message="tns:usuariobajaResponse" />
+    </operation>
+    <operation name="loginTest">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRequest" message="tns:loginTest" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestResponse" message="tns:loginTestResponse" />
+    </operation>
+    <operation name="obtenerIdOpcionJson">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJsonRequest" message="tns:obtenerIdOpcionJson" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJsonResponse" message="tns:obtenerIdOpcionJsonResponse" />
+    </operation>
+    <operation name="registraractividad">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractividadRequest" message="tns:registraractividad" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractividadResponse" message="tns:registraractividadResponse" />
+    </operation>
+    <operation name="obtenerDatosAreas">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerDatosAreasRequest" message="tns:obtenerDatosAreas" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerDatosAreasResponse" message="tns:obtenerDatosAreasResponse" />
+    </operation>
+    <operation name="buscarCorreosUsuarios">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/buscarCorreosUsuariosRequest" message="tns:buscarCorreosUsuarios" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/buscarCorreosUsuariosResponse" message="tns:buscarCorreosUsuariosResponse" />
+    </operation>
+    <operation name="actualizarfecacceso">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecaccesoRequest" message="tns:actualizarfecacceso" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecaccesoResponse" message="tns:actualizarfecaccesoResponse" />
+    </operation>
+    <operation name="realizarCambioDeClave">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDeClaveRequest" message="tns:realizarCambioDeClave" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDeClaveResponse" message="tns:realizarCambioDeClaveResponse" />
+    </operation>
+    <operation name="realizarCambioDeClaveApp">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDeClaveAppRequest" message="tns:realizarCambioDeClaveApp" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDeClaveAppResponse" message="tns:realizarCambioDeClaveAppResponse" />
+    </operation>
+    <operation name="solicitarCambioDeClave">
+      <input wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioDeClaveRequest" message="tns:solicitarCambioDeClave" />
+      <output wsam:Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioDeClaveResponse" message="tns:solicitarCambioDeClaveResponse" />
+    </operation>
+  </portType>
+  <binding name="GandalfsoftSecurityServiceImplementPortBinding" type="tns:GandalfsoftSecurityService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="validarControl">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIdOpcion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenercontroles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="logout">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="usuariobaja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="loginTest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerIdOpcionJson">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registraractividad">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerDatosAreas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarCorreosUsuarios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarfecacceso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="realizarCambioDeClave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="realizarCambioDeClaveApp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="solicitarCambioDeClave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GandalfsoftSecurityServiceImplementService">
+    <port name="GandalfsoftSecurityServiceImplementPort" binding="tns:GandalfsoftSecurityServiceImplementPortBinding">
+      <soap:address location="http://192.0.0.154:8888/services/" />
+    </port>
+  </service>
+</definitions>

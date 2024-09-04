@@ -26,7 +26,8 @@
     </nav>--%>
     <div class="card">
         <div class="card-header">
-            <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label></div>
+            <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
+        </div>
 
         <asp:MultiView ID="MultiView1" runat="server">
             <asp:View ID="View1" runat="server">
@@ -145,10 +146,15 @@
                                 <label for="txtAreaOcupa" class="form-label-sm">Area</label>
                                 <asp:TextBox ID="txtAreaOcupa" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <label for="txtDireccion" class="form-label-sm">Direccion</label>
                                 <asp:TextBox ID="txtDireccion" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
+                            <div class="col-md-2">
+                                <label for="txtAreaEst" class="form-label-sm">Area Estructuracion</label>
+                                <asp:TextBox ID="txtAreaEst" Text="" runat="server" class="form-control"></asp:TextBox>
+                            </div>
+
                             <div class="col-md-2">
                                 <label for="txtZonifica" class="form-label-sm">Zonificacion</label>
                                 <asp:TextBox ID="txtZonifica" Text="" runat="server" class="form-control"></asp:TextBox>
@@ -174,40 +180,51 @@
                                 <HeaderTemplate>
 
                                     <div class="row">
+                                        <div class="col-md-1">
+                                            <span class="badge badge-secondary">Item</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="badge badge-secondary">Documento</span>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <span class="badge badge-secondary">Ver</span>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <span class="badge badge-secondary">Vo.Bo.</span>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <span class="badge badge-secondary">Observaciones</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                 </HeaderTemplate>
                                 <ItemTemplate>
-                                    <div class="col-md-1">
-                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("SMLEVALUACION") %>' Visible="false" />
-                                        <asp:Label ID="lblSOLPLA" runat="server" Text='<%# Eval("INTSOLICITUDPLANTILLA") %>' Visible="false" />
-                                        <asp:Label ID="lblCODPLA" runat="server" Text='<%# Eval("INTCODPLANTILLA") %>' Visible="false" />
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <asp:Label ID="lblEstado" runat="server" Text='<%# Eval("SMLEVALUACION") %>' Visible="false" />
+                                            <asp:Label ID="lblSOLPLA" runat="server" Text='<%# Eval("INTSOLICITUDPLANTILLA") %>' Visible="false" />
+                                            <asp:Label ID="lblCODPLA" runat="server" Text='<%# Eval("INTCODPLANTILLA") %>' Visible="false" />
 
-                                        <%#Eval("INTCODPLANTILLA") %>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <%#Eval("VCHNOMBREPLANTILLA") %>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <asp:Label ID="lblNomArchivo" runat="server" Text='<%# Eval("VCHDOCREQUERIMIENTO") %>' Visible="false" />
-                                        <!-- Button IMAGE -->
-                                        <asp:ImageButton ID="bimgVisualiza" runat="server" OnClick="bimgVisualiza_Click" ImageUrl="~/assets/images/pdf.png" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="fscAcredita" runat="server" />
+                                            <%#Eval("INTCODPLANTILLA") %>
                                         </div>
+                                        <div class="col-md-4">
+                                            <%#Eval("VCHNOMBREPLANTILLA") %>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <asp:Label ID="lblNomArchivo" runat="server" Text='<%# Eval("VCHDOCREQUERIMIENTO") %>' Visible="false" />
+                                            <!-- Button IMAGE -->
+                                            <asp:ImageButton ID="bimgVisualiza" runat="server" OnClick="bimgVisualiza_Click" ImageUrl="~/assets/images/pdf.png" Width="24px" Height="24px" />
 
-                                    </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="fscAcredita" runat="server" />
+                                            </div>
 
-                                    <div class="col-md-1">
-                                        <label for="txtObserva" class="form-label-sm">Observaciones</label>
-                                    </div>
-                                    <div class="col-md-10">
-
-                                        <asp:TextBox ID="txtObserva" runat="server" Text='<%# Eval("VCHOBSEVALUACION") %>' TextMode="MultiLine" Width="90%" />
-
-                                    </div>
-                                    <div class="col-md-1">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <asp:TextBox ID="txtObserva" runat="server" Text='<%# Eval("VCHOBSEVALUACION") %>' TextMode="MultiLine" Width="90%" />
+                                        </div>
                                     </div>
                                 </ItemTemplate>
                                 <FooterTemplate>
@@ -215,8 +232,6 @@
                                 </FooterTemplate>
                             </asp:Repeater>
                         </div>
-
-
 
                         <div class="col-12">
                             <asp:Button ID="btnRegresar" runat="server" Text=" Regresar " CssClass="btn btn-primary" OnClick="btnRegresar_Click" />

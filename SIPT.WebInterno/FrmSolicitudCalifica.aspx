@@ -138,53 +138,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-10">
-                            <label for="ddlProcedimiento" class="form-label-sm">Procedimientos TUPA</label>
-                            <asp:DropDownList ID="ddlProcedimiento" runat="server" CssClass="form-select" AutoPostBack="True" OnSelectedIndexChanged="ddlProcedimiento_SelectedIndexChanged"></asp:DropDownList>
-                        </div>
-
-                        <div class="col-md-2">
-                            <label for="txtZonifica" class="form-label-sm">Zonificacion</label>
-                            <asp:TextBox ID="txtZonifica" Text="" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-
-                    </div>
-                    <div class="row">
-
                         <div class="col-md-8">
-
-                            <label for="gvPlantilla" class="form-label-sm">Anexo Requisitos</label>
-                            <asp:GridView runat="server" ID="gvPlantilla" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" Width="100%">
-                                <HeaderStyle CssClass="table-primary" />
-                                <Columns>
-                                    <asp:BoundField DataField="INTCODPLANTILLA" HeaderText="Código"></asp:BoundField>
-                                    <asp:BoundField DataField="VCHNOMBREPLANTILLA" HeaderText="Plantilla"></asp:BoundField>
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Button ID="btnDepurar" runat="server" OnClick="btnDepurar_Click" Text=" - " CssClass="btn btn-danger btn-sm" />
-                                            <%--<i class="bi bi-info-circle"></i>--%>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                                <PagerStyle HorizontalAlign="Center" />
-                            </asp:GridView>
-                            <div class="row">
-                                <div class="col-11">
-                                    <label for="ddlPlantilla" class="form-label-sm">Plantillas</label>
-                                    <asp:DropDownList ID="ddlPlantilla" runat="server" CssClass="form-select"></asp:DropDownList>
-                                 </div>
-                                    <div class="col-1">
-                                        <label for="btnAgregar" class="form-label-sm">Agregar</label>
-                                        <asp:Button ID="btnAgregar" runat="server" Text=" + " CssClass="btn btn-primary btn-sm" OnClick="btnAgregar_Click"/>
-                                    </div>
-
-                            </div>
-
-
-
-                        </div>
-
-                        <div class="col-md-4">
                                 <label for="gvUsos" class="form-label-sm">Usos</label>
                                 <asp:GridView runat="server" ID="gvUsos" class="table table-bordered table-condensed table-hover table-responsive" PageSize="5" AutoGenerateColumns="False" Width="100%">
                                     <HeaderStyle CssClass="table-primary" />
@@ -196,13 +150,23 @@
                                     <PagerStyle HorizontalAlign="Center" />
                                 </asp:GridView>
                         </div>
+                                                
+                        <div class="col-md-2">
+                            <label for="txtAreaEst" class="form-label-sm">Area Estructuracion</label>
+                            <asp:TextBox ID="txtAreaEst" Text="" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="txtZonifica" class="form-label-sm">Zonificacion</label>
+                            <asp:TextBox ID="txtZonifica" Text="" runat="server" class="form-control"></asp:TextBox>
+                        </div>
 
                     </div>
                     <div class="row">
                         <div class="col-8">
                             <label for="txtObservacion" class="form-label-sm">Observaciones</label>
                             <asp:TextBox ID="txtObservacion" Text="" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
-                            <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtObservacion" errormessage="*" />
+                           
                         </div>
                         <div class="col-md-4">
                         </div>

@@ -467,8 +467,9 @@ namespace SIPT.WebInterno
             {
                 int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
                 Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
- 
-                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, oPtuSolrequerimientoList);
+                int lintCodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+
+                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, lintCodProcedimiento, oPtuSolrequerimientoList);
 
                 MultiView1.ActiveViewIndex = 0;
                 pbd_CargarGrillaSolicitud("Page_Load");
@@ -516,7 +517,7 @@ namespace SIPT.WebInterno
 
         }
 
-        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
+        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia,int pintcodprocedimiento, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
         {
             oPtuSolrequerimiento = new PtuSolrequerimiento();
             oPtuSolrequerimientoList = new List<PtuSolrequerimiento>();
@@ -531,6 +532,7 @@ namespace SIPT.WebInterno
             oPtuSolLicencia = new PtuSolLicencia();
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
+
             oPtuSolLicencia.vchaudusumodif = lstUsuario;
             oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
 
@@ -577,7 +579,7 @@ namespace SIPT.WebInterno
             try
             {
                 PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-                oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, oPtuSolrequerimientoList);
+                oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, pintcodprocedimiento, oPtuSolrequerimientoList);
 
             }
             catch (System.Exception ex)

@@ -293,11 +293,7 @@ namespace SIPT.WebInterno
             List<PtuUsoDTO> oPtuUsoDTOList = new List<PtuUsoDTO>();
             try
             {
-                ddlProcedimiento.DataSource = pbd_CargarComboProcTupa(control);
-                ddlProcedimiento.DataTextField = "VCHCONCEPTO";
-                ddlProcedimiento.DataValueField = "INTCODIGOPROCEDIMIENTO";
-                ddlProcedimiento.DataBind();
-                ddlProcedimiento.Items.Insert(0, new ListItem("(Ninguno)", "0"));
+
 
                 PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
                 oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
@@ -313,7 +309,7 @@ namespace SIPT.WebInterno
                 txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
                 txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
                 txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
-                ddlProcedimiento.SelectedValue = oPtuSolicitudDTO.intcodigoprocedimiento.ToString();
+
                 txtObservacion.Text = oPtuSolicitudDTO.vchobservacion; 
 
                 if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
@@ -376,11 +372,7 @@ namespace SIPT.WebInterno
             pbd_CargarGrillaUsos("btnCalifica", lintCodSolicitud, lintEstSolLicencia);
 
 
-            ddlPlantilla.DataSource = pbd_CargarComboPlantillas("btnCalifica_Click");
-            ddlPlantilla.DataTextField = "VCHNOMBREPLANTILLA";
-            ddlPlantilla.DataValueField = "INTCODPLANTILLA";
-            ddlPlantilla.DataBind();
-            ddlPlantilla.Items.Insert(0, new ListItem("(Seleccione Plantilla)", "0"));
+
 
         }
 
@@ -491,15 +483,7 @@ namespace SIPT.WebInterno
             StringBuilder sbMensaje = new StringBuilder();
             
 
-            if (ddlProcedimiento.SelectedValue.Equals("0"))
-            {
-                sbMensaje.AppendLine("* Seleccione el procedimiento");
-            }
 
-            if (gvPlantilla.Rows.Count <= 0)
-            {
-                sbMensaje.AppendLine("* No incluyo Requisitos para Solicitudto TUPA");
-            }
 
             if ( txtObservacion.Text.Length.Equals(0))
             {
@@ -541,13 +525,12 @@ namespace SIPT.WebInterno
         private void pbd_CargarGrillaPlantillas()
         {
             int intcodPlantilla = -1;
-            int intcodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+            //int intcodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+            int intcodProcedimiento;
             int intcodSolicitud = Convert.ToInt32(txtCodSolicitud.Text);
                         
             //oPtuPlantillareqDTOList = pbd_CargarGrillaPlantillaProcTupa(intcodPlantilla, intcodProcedimiento, intcodSolicitud);
 
-            gvPlantilla.DataSource = pbd_CargarGrillaPlantillaProcTupa(intcodPlantilla, intcodProcedimiento, intcodSolicitud);
-            gvPlantilla.DataBind();
         }
 
         private void pbd_GuardarCalificacion(string control, int? pintcodsolicitud, Int16? pintEstSolLicencia)
@@ -570,8 +553,8 @@ namespace SIPT.WebInterno
 
 
 
-            int lintcodigoprocedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
-
+            //int lintcodigoprocedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+            int lintcodigoprocedimiento = 0;
             if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
                 if (fscAnalista.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
@@ -583,32 +566,13 @@ namespace SIPT.WebInterno
             }
             
 
-            oPtuSolrequerimiento = new PtuSolrequerimiento();
-            oPtuSolrequerimientoList = new List<PtuSolrequerimiento>();
-
-            foreach (GridViewRow fila in gvPlantilla.Rows)
-            //foreach ( PtuPlantillareqDTO obj in vPtuPlantillareqDTOList)
-            {
-                oPtuSolrequerimiento = new PtuSolrequerimiento();
-
-                oPtuSolrequerimiento.intsolicitudplantilla = 0;
-                oPtuSolrequerimiento.intcodplantilla =  Convert.ToInt32(fila.Cells[0].Text);  //INTCODPLANTILLA
-                oPtuSolrequerimiento.intcodsolicitud = pintcodsolicitud;
-                oPtuSolrequerimiento.vchaudequipo = lstEquipo;
-                oPtuSolrequerimiento.vchaudprograma = lstSistema;
-                oPtuSolrequerimiento.vchaudusumodif = lstUsuario;
-                oPtuSolrequerimiento.vchaudusucreacion = lstUsuario; 
-                oPtuSolrequerimiento.tmsaudfeccreacion = DateTime.Now;
-                oPtuSolrequerimiento.tmsaudfecmodif = DateTime.Now;
-                oPtuSolrequerimientoList.Add(oPtuSolrequerimiento);
-            }
-
+ 
             logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
             
             try
             {
                 PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-                oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, oPtuSolrequerimientoList, ltxtUsuarioRol.ToUpper());
+                oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
                 
                 if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
                 {
@@ -789,45 +753,9 @@ namespace SIPT.WebInterno
             return oPtuPlantillareqDTOList;
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-            DataTable oDT;
-            DataRow row;
 
-            oDT = (DataTable)ViewState["PLANTILLA"];
 
-            
-            row = oDT.NewRow();
 
-            row["INTCODPLANTILLA"] = ddlPlantilla.SelectedValue.ToString();
-            row["VCHNOMBREPLANTILLA"] = ddlPlantilla.SelectedItem;
-            oDT.Rows.Add(row);
-
-            ViewState["PLANTILLA"] = oDT;
-
-            gvPlantilla.DataSource = oDT;
-            gvPlantilla.DataBind();
-
-        }
-
-        protected void btnDepurar_Click(object sender, EventArgs e)
-        {
-
-            Button btn = sender as Button;
-            GridViewRow row = btn.NamingContainer as GridViewRow;
-
-            DataTable oDT;
-
-            oDT = (DataTable)ViewState["PLANTILLA"];
-
-            oDT.Rows[row.RowIndex].Delete();
-            
-            ViewState["PLANTILLA"] = oDT;
-
-            gvPlantilla.DataSource = oDT;
-            gvPlantilla.DataBind();
-
-        }
 
         public void EnviarCorreo(string pPara, string pAsunto, string pContenido)
         {

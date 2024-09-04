@@ -370,28 +370,31 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             }
         }
 
-        public override void Acreditar(PtuSolLicencia pPtuSolLicencia)
+        public override void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento)
         {
-            DB2Parameter[] arrParam = new DB2Parameter[4];
+            DB2Parameter[] arrParam = new DB2Parameter[5];
             try
             {
                 arrParam[0] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
                 arrParam[0].Value = pPtuSolLicencia.intcodsolicitud;
                 arrParam[1] = new DB2Parameter("@SMLESTSOLLICENCIA", DB2Type.Integer);
                 arrParam[1].Value = pPtuSolLicencia.smlestsollicencia;
-                arrParam[2] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-                arrParam[2].Value = pPtuSolLicencia.vchaudusumodif;
-                arrParam[3] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-                arrParam[3].Value = pPtuSolLicencia.tmsaudfecmodif;
+                arrParam[2] = new DB2Parameter("@INTCODIGOPROCEDIMIENTO", DB2Type.Integer);
+                arrParam[2].Value = pintcodigoprocedimiento;
 
-                DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_ACREDITAR", arrParam);
+                arrParam[3] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
+                arrParam[3].Value = pPtuSolLicencia.vchaudusumodif;
+                arrParam[4] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
+                arrParam[4].Value = pPtuSolLicencia.tmsaudfecmodif;
 
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLLICENCIA_ACREDITAR");
+                DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_ACREDITAR2", arrParam);
+
+                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLLICENCIA_ACREDITAR2");
                 Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
             }
             catch (Exception ex)
             {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLLICENCIA_ACREDITAR : " + ex.Message);
+                Log.Error(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLLICENCIA_ACREDITAR2 : " + ex.Message);
                 Log.Error(this.logMensajes.codigoMensaje.ToString(), arrParam);
                 throw ex;
             }

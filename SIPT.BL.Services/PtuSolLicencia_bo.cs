@@ -166,7 +166,7 @@ namespace SIPT.BL.Services
             }
         }
 
-        public void Calificar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento, List<PtuSolrequerimiento> pPtuSolrequerimientoList, string usuarioRol)
+        public void Calificar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento, string usuarioRol)
         {
             PtuSolicitud ptuSolicitud = null;
             PtuSolLicencia ptuSolLicencia = null;
@@ -191,11 +191,6 @@ namespace SIPT.BL.Services
                 oPtuSolrequerimiento_dao = ObjectFactory.Instanciar<PtuSolrequerimiento_dao>(new PtuSolrequerimiento(), this.logMensajes, dbconex);
 
                 oPtuSolLicencia_dao.Calificar(pPtuSolLicencia, pintcodigoprocedimiento);
-
-                foreach (PtuSolrequerimiento oPtuSolrequerimiento in pPtuSolrequerimientoList)
-                {
-                    oPtuSolrequerimiento_dao.Insertar(oPtuSolrequerimiento);
-                }
 
                 dbconex.RegistrarTransaccion();
             }
@@ -345,7 +340,7 @@ namespace SIPT.BL.Services
         }
 
 
-        public void Acreditar(PtuSolLicencia pPtuSolLicencia, List<PtuSolrequerimiento> pPtuSolrequerimientoList)
+        public void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodprocedimiento, List<PtuSolrequerimiento> pPtuSolrequerimientoList)
         {
             dbconex = new Db();
 
@@ -355,7 +350,7 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia_dao = ObjectFactory.Instanciar<PtuSolLicencia_dao>(new PtuSolLicencia(), this.logMensajes, dbconex);
                 oPtuSolrequerimiento_dao = ObjectFactory.Instanciar<PtuSolrequerimiento_dao>(new PtuSolrequerimiento(), this.logMensajes, dbconex);
 
-                oPtuSolLicencia_dao.Acreditar(pPtuSolLicencia);
+                oPtuSolLicencia_dao.Acreditar(pPtuSolLicencia, pintcodprocedimiento);
 
                 foreach (PtuSolrequerimiento oPtuSolrequerimiento in pPtuSolrequerimientoList)
                 {

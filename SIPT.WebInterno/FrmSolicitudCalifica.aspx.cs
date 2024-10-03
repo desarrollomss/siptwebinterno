@@ -70,7 +70,7 @@ namespace SIPT.WebInterno
             lstOpcion = (string)(Request.Cookies["Security"]["Opcion"]);
             lstNombre = (string)(Request.Cookies["Security"]["Nombres"]);
 
-            this.lblTitulo.Text = ".: Calificar Consultas de Zonificación :.";
+            //this.lblTitulo.Text = ".: Calificar Consultas de Zonificación :.";
             if (!Page.IsPostBack)
             {
                 btnGuardar.Attributes.Add("onclick", "return confirm('¿Está seguro de Guardar el Calificación?')");
@@ -224,8 +224,8 @@ namespace SIPT.WebInterno
             if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
                 lintUsuAnalista = Convert.ToInt32(ltxtUsuarioId);
-                fscAnalista.Visible = true;
-                lblForAnalista.Visible = true;
+                /*fscAnalista.Visible = true;
+                lblForAnalista.Visible = true;*/
                 lblTitAnalista.Visible = true;
 
                 fscCordinador.Visible = false;
@@ -238,11 +238,11 @@ namespace SIPT.WebInterno
             {
                 lintUsuAnalista = 0;
 
-                fscAnalista.Visible = true;
+                /*fscAnalista.Visible = true;
                 lblForAnalista.Visible = true;
                 lblTitAnalista.Visible = true;
 
-                fscAnalista.Disabled = true;
+                fscAnalista.Disabled = true;*/
 
 
                 fscCordinador.Visible = true;
@@ -314,13 +314,13 @@ namespace SIPT.WebInterno
 
                 if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
                 {
-                    fscAnalista.Checked = false;
+                    /*fscAnalista.Checked = false;
                     fscCordinador.Checked = false;
                     lblForAnalista.InnerText = "No Procede";
-                    lblForCoordinador.InnerText = "No Procede";
+                    lblForCoordinador.InnerText = "No Procede";*/
                 }
 
-                if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
+                /*if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
                 {
                     fscAnalista.Checked = false;
                     lblForAnalista.InnerText = "No Procede";
@@ -337,7 +337,7 @@ namespace SIPT.WebInterno
                         fscAnalista.Checked = false;  // No Procede
                         lblForAnalista.InnerText = "No Procede";
                     }
-                }
+                }*/
 
                 gvUsos.DataSource = oPtuUsoDTOList;
                 gvUsos.DataBind();
@@ -533,8 +533,10 @@ namespace SIPT.WebInterno
 
         }
 
-        private void pbd_GuardarCalificacion(string control, int? pintcodsolicitud, Int16? pintEstSolLicencia)
+        private string pbd_GuardarCalificacion(string control, int? pintcodsolicitud, Int16? pintEstSolLicencia)
         {
+            string msg = "";
+
             request = new Request();
             request.vchaudprograma = lstSistema;
             request.vchopcion = lstOpcion;
@@ -557,7 +559,7 @@ namespace SIPT.WebInterno
             int lintcodigoprocedimiento = 0;
             if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
-                if (fscAnalista.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
+                //if (fscAnalista.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
             }
 
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
@@ -578,39 +580,6 @@ namespace SIPT.WebInterno
                 {
                     CorreoCalificacion();
 
-                    /*PtuSolicitudDTO optuSolicitudDTO = new PtuSolicitudDTO();
-                    optuSolicitudDTO.intcodsolicitud = pintcodsolicitud;
-                    optuSolicitudDTO.vchaudusucreacion = lstUsuario;
-                    optuSolicitudDTO.vchaudequipo = lstEquipo;
-                    optuSolicitudDTO.vchaudprograma = lstSistema;
-
-                    StdDocumento_bo StdDocumento_bo = new StdDocumento_bo(ref logMensajes);
-                    StdDocumento_InsertaResultado stdDocumento_InsertaResultado = StdDocumento_bo.Insertar(optuSolicitudDTO);
-
-                    optuSolicitudDTO.vchnumexpediente = stdDocumento_InsertaResultado.vchdocnumcompleto;
-                    optuSolicitudDTO.intdoccodigoexpediente = stdDocumento_InsertaResultado.intdoccodigo;
-                    optuSolicitudDTO.datregexpediente = DateTime.Now;
-
-                    //oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-                    //oPtuSolicitud_bo.Actualizar(optuSolicitudDTO);
-
-                    AutSolicitud_bo oAutSolicitud_bo = new AutSolicitud_bo(ref logMensajes);
-                    AutSolicitud_Resultado autSolicitud_Resultado = oAutSolicitud_bo.Insertar(optuSolicitudDTO);
-                    if (autSolicitud_Resultado.sql_codigo == 0)
-                    {
-                        PtuSolicitudDTO optuSolicitudDTO2 = new PtuSolicitudDTO();
-                        optuSolicitudDTO2.intcodsolicitud = pintcodsolicitud;
-                        optuSolicitudDTO2.vchaudusumodif = lstUsuario;
-                        optuSolicitudDTO2.vchaudequipo = lstEquipo;
-                        optuSolicitudDTO2.vchaudprograma = lstSistema;
-                        optuSolicitudDTO2.chranio = autSolicitud_Resultado.p_chrsolanio;
-                        optuSolicitudDTO2.vchnumero = autSolicitud_Resultado.p_vchsolnumero;
-                        optuSolicitudDTO2.vchnumexpediente = stdDocumento_InsertaResultado.vchdocnumcompleto;
-                        optuSolicitudDTO2.intdoccodigoexpediente = stdDocumento_InsertaResultado.intdoccodigo;
-                        optuSolicitudDTO2.datregexpediente = DateTime.Now;
-                        oPtuSolicitud_bo.Actualizar(optuSolicitudDTO2);
-                    }*/
-
                 }
 
             }
@@ -618,12 +587,13 @@ namespace SIPT.WebInterno
             {
                 logMensajes.error = ex;
                 Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
+                msg = ex.Message;
             }
             finally
             {
                 logMensajes.FinSolicitud();
             }
- 
+            return msg;
         }
 
         private DataTable ListarUsuariosRolAnalista(string control)

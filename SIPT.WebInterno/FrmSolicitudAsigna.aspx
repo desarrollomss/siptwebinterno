@@ -22,15 +22,30 @@
 
 </script>
     <link href="assets/css/gridview.css" rel="stylesheet" />
-    <nav class="navbar navbar-light bg-black">
+    <div class="row page-titles w-100">
+        <div class="col-md-5 align-self-center" style="padding-left:40px">
+            <h3 class="text-themecolor">Asignar Solicitud a Analista</h3>
+        </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Licencias</a></li>
+                <li class="breadcrumb-item active">Asignar Solicitud a Analista</li>
+            </ol>
+        </div>
+    </div>
+    <!--<nav class="navbar navbar-light bg-black">
         <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="text-white small" ></asp:Label>
-    </nav>
+    </nav>-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="table-responsive"> 
+                
+                    <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Lista de Solicitudes a Asignar</h4>                                
+                                <div class="table-responsive">
                     
-                    <asp:GridView runat="server" ID="gvSolicitud" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
+                    <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
                     <HeaderStyle CssClass="" />
                         <Columns>
                             <asp:BoundField DataField="INTCODSOLICITUD" HeaderText="Id"></asp:BoundField>
@@ -53,7 +68,7 @@
 
                             <asp:TemplateField HeaderText="Analista">
                                 <ItemTemplate>
-                                    <asp:DropDownList ID="ddlAnalista" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
+                                    <asp:DropDownList ID="ddlAnalista" class="select2 form-control custom-select" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
                                     </asp:DropDownList>
                                 </ItemTemplate>
                             </asp:TemplateField>
@@ -97,6 +112,8 @@
                     </asp:GridView>
 
                 </div>
+                            </div>
+                        </div>
             </div>
         </div>
     </div>

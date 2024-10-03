@@ -40,7 +40,7 @@ namespace SIPT.WebInterno
         PtuSolicitud_bo oPtuSolicitud_bo;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.lblTitulo.Text = ".: Asignar Solicitud a Analista :.";
+            //this.lblTitulo.Text = ".: Asignar Solicitud a Analista :.";
             ltxtUsuarioId = (string)(Request.Cookies["Security"]["UsuarioId"]);
             ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
 

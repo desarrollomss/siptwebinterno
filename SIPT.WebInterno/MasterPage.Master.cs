@@ -26,32 +26,46 @@ namespace SIPT.WebInterno
 
             if (ltxtUsuarioRol.ToUpper().Equals("ADMINISTRADOR SIPT"))
             {
-                sb.AppendLine("   <nav class='nav d-flex justify-content-between'>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudAsigna.aspx'>Asignar Solicitud a Analista</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudCalifica.aspx'>Calificar Consultas de Zonificación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudAcredita.aspx'>Acreditar Documentación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='#'>|</a>");
-                sb.AppendLine("   </nav>");
+                sb.AppendLine("<li class='nav-small-cap'>LICENCIAS</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAsigna.aspx' aria-expanded='false'><i class='mdi mdi-bullseye'></i><span class='hide-menu'>Asignar Solicitud</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudCalifica.aspx' aria-expanded='false'><i class='mdi mdi-arrange-send-backward'></i><span class='hide-menu'>Calificar Consultas</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAcredita.aspx' aria-expanded='false'><i class='mdi mdi-table'></i><span class='hide-menu'>Acreditar Docs.</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
+                sb.AppendLine("</li>");
             }
 
             if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
-                sb.AppendLine("   <nav class='nav d-flex justify-content-between'>");
-                sb.AppendLine("        <a class='p-2 text-muted disabled' href='#'>Asignar Solicitud a Analista</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudCalifica.aspx'>Calificar Consultas de Zonificación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudAcredita.aspx'>Acreditar Documentación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='#'>|</a>");
-                sb.AppendLine("   </nav>");
+                sb.AppendLine("<li class='nav-small-cap'>LICENCIAS</li>");                
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudCalifica.aspx' aria-expanded='false'><i class='mdi mdi-arrange-send-backward'></i><span class='hide-menu'>Calificar Consultas</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAcredita.aspx' aria-expanded='false'><i class='mdi mdi-table'></i><span class='hide-menu'>Acreditar Docs.</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
+                sb.AppendLine("</li>");
             }
 
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
             {
-                sb.AppendLine("   <nav class='nav d-flex justify-content-between'>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudAsigna.aspx'>Asignar Solicitud a Analista</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='FrmSolicitudCalifica.aspx'>Calificar Consultas de Zonificación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='#'>Acreditar Documentación</a>");
-                sb.AppendLine("        <a class='p-2 text-muted' href='#'>|</a>");
-                sb.AppendLine("   </nav>");
+                sb.AppendLine("<li class='nav-small-cap'>LICENCIAS</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAsigna.aspx' aria-expanded='false'><i class='mdi mdi-bullseye'></i><span class='hide-menu'>Asignar Solicitud</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudCalifica.aspx' aria-expanded='false'><i class='mdi mdi-arrange-send-backward'></i><span class='hide-menu'>Calificar Consultas</span></a>");
+                sb.AppendLine("</li>");                
+                sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("</li>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
+                sb.AppendLine("</li>");
             }
 
 
@@ -81,6 +95,7 @@ namespace SIPT.WebInterno
         {
             //lblFecha.Text = "Santiago de Surco - " + DateTime.Now.ToLongDateString().ToUpper();
             //string lstCodUsuario = (string)(Request.Cookies["Security"]["Usuario"]);
+            
             lblUsuario.Text = (string)(Request.Cookies["Security"]["Usuario"]);
             lblNombre.Text = (string)(Request.Cookies["Security"]["Nombres"]);
             lblUsuarioId.Text = (string)(Request.Cookies["Security"]["UsuarioId"]);

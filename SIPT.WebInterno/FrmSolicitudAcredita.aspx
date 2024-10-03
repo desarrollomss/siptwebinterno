@@ -10,7 +10,7 @@
 
     <script type="text/javascript" language="javascript">
 
-        function expandcollapse(obj, row) {
+        /*function expandcollapse(obj, row) {
             var div = document.getElementById(obj);
             if (div.style.display == "none") {
                 div.style.display = "block";
@@ -18,10 +18,10 @@
             else {
                 div.style.display = "none";
             }
-        }
+        }*/
 
     </script>
-    <link href="assets/css/gridview.css" rel="stylesheet" />
+    <!--<link href="assets/css/gridview.css" rel="stylesheet" />-->
     <%--    <nav class="navbar navbar-light bg-black">
     </nav>--%>
     <div class="card">
@@ -32,48 +32,14 @@
         <asp:MultiView ID="MultiView1" runat="server">
             <asp:View ID="View1" runat="server">
 
-                <%--<div class="card-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label for="txtCodSolBus" class="form-label-sm">Id.Solicitud</label>
-                            <asp:TextBox ID="txtCodSolBus" Text="" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <div class="col-md-2">
-                            <label for="txtNumSolBus" class="form-label-sm">Nro.Solicitud</label>
-                            <asp:TextBox ID="txtNumSolBus" Text="" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="txtNomAdmBus" class="form-label-sm">Administrado</label>
-                            <asp:TextBox ID="txtNomAdmBus" Text="" runat="server" class="form-control"></asp:TextBox>
 
-                        </div>
-                        <div class="col-md-2">
-                            <label for="txtFecSolBus" class="form-label-sm">Fec.Solicitud</label>
-                            <asp:TextBox ID="txtFecSolBus" Text="" runat="server" class="form-control"></asp:TextBox>
-                        </div>
-                        <div class="col-md-2">
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <label for="ddlProcedimientoBus" class="form-label-sm">Procedimientos TUPA</label>
-                            <asp:DropDownList ID="ddlProcedimientoBus" runat="server" CssClass="form-select"></asp:DropDownList>
-                        </div>
-
-                        <div class="col-md-2 align-items-sm-center">
-                            <asp:Button ID="btnBuscar" runat="server" Text=" Buscar " CssClass="btn btn-success" OnClick="btnBuscar_Click" />
-                        </div>
-
-                    </div>
-                </div>--%>
                 <div class="card-header">_</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="table-responsive">
 
-                                <asp:GridView runat="server" ID="gvSolicitud" class="table table-bordered table-condensed table-responsive table-hover font-weight-light" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD, SMLESTSOLLICENCIA" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
+                                <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD, SMLESTSOLLICENCIA" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
                                     <HeaderStyle CssClass="" />
                                     <Columns>
                                         <asp:BoundField DataField="INTCODSOLICITUD" HeaderText="Id"></asp:BoundField>

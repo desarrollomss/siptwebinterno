@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using SIPT.APPL;
+﻿using RestSharp;
 using SIPT.APPL.FrondEnd;
 using SIPT.APPL.Logs;
+using SIPT.BL.DTO.DTO;
 using SIPT.BL.Models.Consultas;
 using SIPT.BL.Models.Entity;
 using SIPT.BL.Services;
-using SIPT.BL.DTO.DTO;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
-using System.Text.Json;
-using System.Text.Json.Nodes;
-using RestSharp;
+using System.Data;
 using System.Text;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 
 namespace SIPT.WebInterno
@@ -57,18 +51,14 @@ namespace SIPT.WebInterno
         PtuSolicitud_bo oPtuSolicitud_bo;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //MasterPage mp = this.MasterPageFile() ;
-            //Label tit = (Label)mp.FindControl("lblTitulo");
-            //tit.Text = "";
             ltxtUsuarioId = (string)(Request.Cookies["Security"]["UsuarioId"]);
             ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
 
-            lstUsuario = (string)(Request.Cookies["Security"]["UsuarioId"]);
-            lstSistema = (string)(Request.Cookies["Security"]["Sistema"]);
-            lstEquipo = (string)(Request.Cookies["Security"]["DireccionIP"]);
-            lstOpcion = (string)(Request.Cookies["Security"]["Opcion"]);
-            lstNombre = (string)(Request.Cookies["Security"]["Nombres"]);
+            request = new Request();
+            request.vchaudprograma = (string)(Request.Cookies["Security"]["Sistema"]); 
+            request.vchopcion = this.GetType().ToString(); 
+            request.vchaudcodusuario = (string)(Request.Cookies["Security"]["UsuarioId"]);
+            request.vchaudequipo = (string)(Request.Cookies["Security"]["DireccionIP"]); 
 
             //this.lblTitulo.Text = ".: Calificar Consultas de Zonificación :.";
             if (!Page.IsPostBack)
@@ -215,7 +205,7 @@ namespace SIPT.WebInterno
             pbd_CargarGrillaSolicitud();
         }
 
-        private void pbd_CargarGrillaSolicitud()
+        private Response pbd_CargarGrillaSolicitud()
         {
             string ltxtUsuarioId = (string)(Request.Cookies["Security"]["UsuarioId"]);
             string ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
@@ -251,26 +241,29 @@ namespace SIPT.WebInterno
 
             }
 
-            request = new Request();
+            /*request = new Request();
             request.vchaudprograma = lstSistema;
             request.vchopcion = lstOpcion;
-            request.vchconnombre = lstNombre;
+            request.vchconnombre = System.Reflection.MethodBase.GetCurrentMethod().Name;
             request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
+            request.vchaudequipo = lstEquipo;*/
 
             oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
+            logMensajes = new LogMensajes(request);
             try
             {
                 PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
                 List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
                 gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
                 gvSolicitud.DataBind();
+                //return APPL.FrondEnd.Response.Ok();
+                return null;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
+                Log.Error(logMensajes.codigoMensaje.ToString(), ex);
+                return APPL.FrondEnd.Response.Error(ex);
             }
             finally
             {

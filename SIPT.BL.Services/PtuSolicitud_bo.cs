@@ -271,13 +271,7 @@ namespace SIPT.BL.Services
                 oPtuSolicitud_dao = ObjectFactory.Instanciar<PtuSolicitud_dao>(new PtuSolicitud(), this.logMensajes, dbconex);
 
                 oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_dao.ListarCalificar(pPtuSolicitud, intusuanalista);
-
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

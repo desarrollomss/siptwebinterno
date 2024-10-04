@@ -114,6 +114,7 @@
     <Compile Include="Dao\Base\SicUsuario_dao.cs" />
     <Compile Include="Dao\Base\StdDocumento_dao.cs" />
     <Compile Include="Dao\Base\TestOrdenAtencion_dao.cs" />
+    <Compile Include="Dao\Factory\DB2Comando.cs" />
     <Compile Include="Dao\Factory\ObjectFactory.cs" />
     <Compile Include="Dao\Implementacion\Db2\AutLicencia_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\AutSolicitud_db2.cs" />

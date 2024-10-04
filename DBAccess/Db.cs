@@ -94,12 +94,17 @@ namespace DBAccess
                 this.trans = null;
             }
         }
+
         public void CerrarConexion()
         {
             if (this.trans is null)
             { }
             else
             {
+                if(this.trans.IsolationLevel == System.Data.IsolationLevel.ReadCommitted)
+                {
+                    this.trans.Rollback();
+                }
                 this.trans.Dispose();
                 this.trans = null;
             }

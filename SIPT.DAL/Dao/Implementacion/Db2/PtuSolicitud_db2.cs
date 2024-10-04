@@ -8,6 +8,7 @@ using SIPT.APPL.Logs;
 using DBAccess.Util;
 using System.Collections.Generic;
 using SIPT.BL.Models.Consultas;
+using SIPT.DAL.Dao.Factory;
 
 namespace SIPT.DAL.Dao.Implementacion.Db2
 {
@@ -346,30 +347,13 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
         public override List<PtuSolicitud_PorAnalistaPorSolicitante> ListarCalificar(PtuSolicitud pPtuSolicitud, int? intusuanalista)
         {
-            try
-            {
-                DB2DataReader dataReader;
-                oPtuSolicitudList = new List<PtuSolicitud>();
+            
+            DB2Parameter[] arrParam = new DB2Parameter[2];
 
-                DB2Parameter[] arrParam = new DB2Parameter[2];
+            arrParam[1] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
+            arrParam[1].Value = intusuanalista;
 
-                arrParam[1] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
-                arrParam[1].Value = intusuanalista;
-
-                dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLICITUD_LISTAR_CALIFICA", arrParam);
-                oPtuSolicitud_PorAnalistaPorSolicitante = ConvertidorUtil.DeReaderAColeccion<PtuSolicitud_PorAnalistaPorSolicitante, List<PtuSolicitud_PorAnalistaPorSolicitante>>(dataReader);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
-                throw ex;
-            }
-            finally
-            {
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLICITUD_LISTAR_CALIFICA");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), oPtuSolicitudList);
-            }
-            return oPtuSolicitud_PorAnalistaPorSolicitante;
+            return DB2Comando.Listar<PtuSolicitud_PorAnalistaPorSolicitante>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLICITUD_LISTAR_CALIFICA", this.logMensajes, arrParam);
         }
 
         public override List<PtuSolicitud_PorAnalistaPorSolicitante> ListarAcreditar(PtuSolicitud pPtuSolicitud, int? intusuanalista)

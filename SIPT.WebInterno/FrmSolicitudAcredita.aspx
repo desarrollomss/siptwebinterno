@@ -162,7 +162,7 @@
                                             <span class="badge badge-secondary">Observaciones</span>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <%--<div class="row">--%>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <div class="row">
@@ -194,7 +194,7 @@
                                     </div>
                                 </ItemTemplate>
                                 <FooterTemplate>
-                                    </div>
+                                    <%--</div>--%>
                                 </FooterTemplate>
                             </asp:Repeater>
                         </div>

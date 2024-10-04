@@ -34,7 +34,7 @@ namespace SIPT.WebInterno
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAcredita.aspx' aria-expanded='false'><i class='mdi mdi-table'></i><span class='hide-menu'>Acreditar Docs.</span></a>");
                 sb.AppendLine("</li>");
                 sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
-                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudITSE.aspx' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
                 sb.AppendLine("</li>");
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
                 sb.AppendLine("</li>");
@@ -48,7 +48,7 @@ namespace SIPT.WebInterno
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudAcredita.aspx' aria-expanded='false'><i class='mdi mdi-table'></i><span class='hide-menu'>Acreditar Docs.</span></a>");
                 sb.AppendLine("</li>");
                 sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
-                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudITSE.aspx' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
                 sb.AppendLine("</li>");
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
                 sb.AppendLine("</li>");
@@ -62,7 +62,7 @@ namespace SIPT.WebInterno
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudCalifica.aspx' aria-expanded='false'><i class='mdi mdi-arrange-send-backward'></i><span class='hide-menu'>Calificar Consultas</span></a>");
                 sb.AppendLine("</li>");                
                 sb.AppendLine("<li class='nav-small-cap'>ITSE</li>");
-                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
+                sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='FrmSolicitudITSE.aspx' aria-expanded='false'><i class='mdi mdi-file'></i><span class='hide-menu'>Solicitudes</span></a>");
                 sb.AppendLine("</li>");
                 sb.AppendLine("<li> <a class='has-arrow waves-effect waves-dark' href='#' aria-expanded='false'><i class='mdi mdi-widgets'></i><span class='hide-menu'>Inspectores</span></a>");
                 sb.AppendLine("</li>");

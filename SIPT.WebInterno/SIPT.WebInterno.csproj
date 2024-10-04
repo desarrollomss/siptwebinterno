@@ -827,6 +827,7 @@
     <Content Include="assets\plugins\typeahead.js-master\typeahead.js.jquery.json" />
     <Content Include="assets\images\background\Thumbs.db" />
     <Content Include="assets\images\big\Thumbs.db" />
+    <Content Include="FrmSolicitudITSE.aspx" />
     <Content Include="WebFormDemo.aspx" />
     <Content Include="WebFormDemo2.aspx" />
     <None Include="Connected Services\ServiceSicu\configuration91.svcinfo" />
@@ -3979,6 +3980,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmSolicitudITSE.aspx.cs">
+      <DependentUpon>FrmSolicitudITSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmSolicitudITSE.aspx.designer.cs">
+      <DependentUpon>FrmSolicitudITSE.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormDemo.aspx.cs">
       <DependentUpon>WebFormDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

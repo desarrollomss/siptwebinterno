@@ -837,6 +837,7 @@
     <Content Include="assets\login\util.css" />
     <Content Include="assets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="assets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="FrmSolicitudITSE.aspx" />
     <Content Include="WebFormDemo.aspx" />
     <Content Include="WebFormDemo2.aspx" />
     <None Include="Connected Services\ServiceSicu\configuration91.svcinfo" />

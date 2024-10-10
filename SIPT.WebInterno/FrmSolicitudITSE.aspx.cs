@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using SIPT.APPL;
+﻿using RestSharp;
 using SIPT.APPL.FrondEnd;
 using SIPT.APPL.Logs;
+using SIPT.BL.DTO.DTO;
 using SIPT.BL.Models.Consultas;
 using SIPT.BL.Models.Entity;
 using SIPT.BL.Services;
-using SIPT.BL.DTO.DTO;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
-using System.Text.Json;
-using System.Text.Json.Nodes;
-using RestSharp;
+using System.Data;
 using System.Text;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 
 namespace SIPT.WebInterno
@@ -55,12 +49,12 @@ namespace SIPT.WebInterno
 
         PtuSolicitud oPtuSolicitud;
         PtuSolicitud_bo oPtuSolicitud_bo;
+
+        #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //MasterPage mp = this.MasterPageFile() ;
-            //Label tit = (Label)mp.FindControl("lblTitulo");
-            //tit.Text = "";
+            /*
             ltxtUsuarioId = (string)(Request.Cookies["Security"]["UsuarioId"]);
             ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
 
@@ -69,90 +63,110 @@ namespace SIPT.WebInterno
             lstEquipo = (string)(Request.Cookies["Security"]["DireccionIP"]);
             lstOpcion = (string)(Request.Cookies["Security"]["Opcion"]);
             lstNombre = (string)(Request.Cookies["Security"]["Nombres"]);
+            */
+            #region Auditoria
+            ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
 
-            //this.lblTitulo.Text = "";
+            request = new Request();
+            request.vchaudprograma = (string)(Request.Cookies["Security"]["Sistema"]);
+            request.vchopcion = this.GetType().ToString();
+            request.vchaudcodusuario = (string)(Request.Cookies["Security"]["UsuarioId"]);
+            request.vchaudequipo = (string)(Request.Cookies["Security"]["DireccionIP"]);
+            #endregion
+
             if (!Page.IsPostBack)
             {
-                btnGuardar.Attributes.Add("onclick", "return confirm('¿Está seguro de Guardar el Calificación?')");
-            
-                ViewState["ANALISTA"] = ListarUsuariosRolAnalista("Page_Load");
+                //btnGuardar.Attributes.Add("onclick", "return confirm('¿Está seguro de Guardar el Calificación?')");
+                logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                try
+                {
+                    ViewState["ANALISTA"] = ListarUsuariosRolAnalista();
 
 
+                    ddlInspectorBus.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlInspectorBus.DataTextField = "VCHUSUANALISTA";
+                    ddlInspectorBus.DataValueField = "INTUSUANALISTA";
+                    ddlInspectorBus.DataBind();
+                    ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                ddlInspectorBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                ddlInspectorBus.DataTextField = "VCHUSUANALISTA";
-                ddlInspectorBus.DataValueField = "INTUSUANALISTA";
-                ddlInspectorBus.DataBind();
-                ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
+                    ddlAnioBus.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlAnioBus.DataTextField = "VCHUSUANALISTA";
+                    ddlAnioBus.DataValueField = "INTUSUANALISTA";
+                    ddlAnioBus.DataBind();
+                    ddlAnioBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                ddlAnioBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                ddlAnioBus.DataTextField = "VCHUSUANALISTA";
-                ddlAnioBus.DataValueField = "INTUSUANALISTA";
-                ddlAnioBus.DataBind();
-                ddlAnioBus.Items.Insert(0, new ListItem("(Todos)", "0"));
+                    ddlEstadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlEstadoBus.DataTextField = "VCHUSUANALISTA";
+                    ddlEstadoBus.DataValueField = "INTUSUANALISTA";
+                    ddlEstadoBus.DataBind();
+                    ddlEstadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                ddlEstadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                ddlEstadoBus.DataTextField = "VCHUSUANALISTA";
-                ddlEstadoBus.DataValueField = "INTUSUANALISTA";
-                ddlEstadoBus.DataBind();
-                ddlEstadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
-
-                ddlResultadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                ddlResultadoBus.DataTextField = "VCHUSUANALISTA";
-                ddlResultadoBus.DataValueField = "INTUSUANALISTA";
-                ddlResultadoBus.DataBind();
-                ddlResultadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
+                    ddlResultadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlResultadoBus.DataTextField = "VCHUSUANALISTA";
+                    ddlResultadoBus.DataValueField = "INTUSUANALISTA";
+                    ddlResultadoBus.DataBind();
+                    ddlResultadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
 
-                pbd_CargarGrillaSolicitud();
-                MultiView1.ActiveViewIndex = 0;
+                    pbd_CargarGrillaSolicitud();
+                    MultiView1.ActiveViewIndex = 0;
 
+                    APPL.FrondEnd.Response.Ok(logMensajes);
+                }
+                catch (Exception ex)
+                {
+                    Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                    response.MensajeSwal(ClientScript);
+                }
             }
             //flexSwitchCheckChecked.Checked = true;
         }
 
         protected void gvSolicitud_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
-
-            if (e.Row.RowType == DataControlRowType.DataRow)
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
             {
-                DropDownList ddlSCUAnalista = (DropDownList)e.Row.FindControl("ddlAnalista");
-
-                Label lblSCUCodAnalista = (Label)e.Row.FindControl("lblCodAnalista");
-
-                Label lblCodSolicitud = (Label)e.Row.FindControl("lblCodSolicitud");
-
-                Label lblEstSolLicTxt = (Label)e.Row.FindControl("lblEstSolLicTxt");
-                Label lblEstSolLic= (Label)e.Row.FindControl("lblEstSolLic");
-                
-                Button btnCalifica = (Button)e.Row.FindControl("btnCalifica");  
-
-                ddlSCUAnalista.DataSource = (DataTable)ViewState["ANALISTA"];
-                ddlSCUAnalista.DataTextField = "VCHUSUANALISTA";
-                ddlSCUAnalista.DataValueField = "INTUSUANALISTA";
-                ddlSCUAnalista.DataBind();
-                ddlSCUAnalista.Items.Insert(0, new ListItem("(Ninguno)", "0"));
-
-                if (lblSCUCodAnalista.Text != "0")
+                if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    ddlSCUAnalista.SelectedValue = lblSCUCodAnalista.Text;
+                    DropDownList ddlSCUAnalista = (DropDownList)e.Row.FindControl("ddlAnalista");
+
+                    Label lblSCUCodAnalista = (Label)e.Row.FindControl("lblCodAnalista");
+
+                    Label lblCodSolicitud = (Label)e.Row.FindControl("lblCodSolicitud");
+
+                    Label lblEstSolLicTxt = (Label)e.Row.FindControl("lblEstSolLicTxt");
+                    Label lblEstSolLic = (Label)e.Row.FindControl("lblEstSolLic");
+
+                    Button btnCalifica = (Button)e.Row.FindControl("btnCalifica");
+
+                    ddlSCUAnalista.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlSCUAnalista.DataTextField = "VCHUSUANALISTA";
+                    ddlSCUAnalista.DataValueField = "INTUSUANALISTA";
+                    ddlSCUAnalista.DataBind();
+                    ddlSCUAnalista.Items.Insert(0, new ListItem("(Ninguno)", "0"));
+
+                    if (lblSCUCodAnalista.Text != "0")
+                    {
+                        ddlSCUAnalista.SelectedValue = lblSCUCodAnalista.Text;
+                    }
+
+                    GridView gvSCU = (GridView)e.Row.FindControl("gvUsos");
+
+                    gvSCU.DataSource = pbd_CargarGrillaUsos(Convert.ToInt32(lblCodSolicitud.Text));
+                    gvSCU.DataBind();
+
                 }
-
-
-
-                GridView gvSCU = (GridView)e.Row.FindControl("gvUsos");
-
-                gvSCU.DataSource = pbd_CargarGrillaUsos("gvSolicitud", Convert.ToInt32(lblCodSolicitud.Text));
-                gvSCU.DataBind();
-
-
-
+                APPL.FrondEnd.Response.Ok(logMensajes);
             }
-
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
         }
 
-         protected void ddlAnalista_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlAnalista_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             GridViewRow gwrow = (GridViewRow)((DropDownList)sender).NamingContainer;
@@ -167,10 +181,10 @@ namespace SIPT.WebInterno
             request.vchaudequipo = lstEquipo;
 
             oPtuSolLicenciaAnalista = new PtuSolLicenciaAnalista();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                
+
                 oPtuSolLicenciaAnalista.intcodsolicitudanalista = 0;
                 oPtuSolLicenciaAnalista.intusuanalista = Convert.ToInt32(ddlSCUAnalista.SelectedValue);
                 oPtuSolLicenciaAnalista.intcodsolicitud = Convert.ToInt32(lstcodSolicitud);
@@ -184,24 +198,116 @@ namespace SIPT.WebInterno
                 oPtuSolLicenciaAnalista_bo.Insertar(oPtuSolLicenciaAnalista);
 
                 pbd_CargarGrillaSolicitud();
+
+                APPL.FrondEnd.Response.Ok(logMensajes);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
             }
 
         }
 
         protected void gvSolicitud_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvSolicitud.PageIndex = e.NewPageIndex;
-            pbd_CargarGrillaSolicitud();
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                gvSolicitud.PageIndex = e.NewPageIndex;
+                pbd_CargarGrillaSolicitud();
+
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch(Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
         }
+
+        protected void btnCalifica_Click(object sender, EventArgs e)
+        {
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                Button btn = sender as Button;
+                GridViewRow row = btn.NamingContainer as GridViewRow;
+                int lintCodSolicitud = Convert.ToInt32(gvSolicitud.DataKeys[row.RowIndex].Values["INTCODSOLICITUD"]);
+                int lintEstSolLicencia = Convert.ToInt16(gvSolicitud.DataKeys[row.RowIndex].Values["SMLESTSOLLICENCIA"]);
+                hdfCodSolicitud.Value = lintCodSolicitud.ToString();
+                hdfSolLicEstado.Value = lintEstSolLicencia.ToString();
+
+                MultiView1.ActiveViewIndex = 1;
+
+                pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
+
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
+        }
+        
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Calificación", "btnGuardar");
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
+            Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_GuardarCalificacion(lintCodSolicitud, lintEstSolLicencia);
+
+                // Procesa Plantillas
+                if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
+                {
+                    pbd_ProcesarPlantillas(lintCodSolicitud);
+                }
+
+                MultiView1.ActiveViewIndex = 0;
+                pbd_CargarGrillaSolicitud();
+
+                Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Calificación");
+                response.MensajeSwal(ClientScript);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
+
+        protected void ddlProcedimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_CargarGrillaPlantillas();
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
+
+        #endregion
+
+        #region Métodos
 
         private void pbd_CargarGrillaSolicitud()
         {
@@ -239,158 +345,82 @@ namespace SIPT.WebInterno
 
             }
 
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = lstNombre;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
             oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
-            {
-                PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-                List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
-                gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
-                gvSolicitud.DataBind();
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
+            
+            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
+            List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
+            gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
+            gvSolicitud.DataBind();
+           
         }
 
-        private List<PtuUsoDTO> pbd_CargarGrillaUsos(string control, int? pintcodsolicitud, int? pintEstSolLicencia)
+        private List<PtuUsoDTO> pbd_CargarGrillaUsos(int? pintcodsolicitud, int? pintEstSolLicencia)
         {
 
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
             oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
+            
             List<PtuUsoDTO> oPtuUsoDTOList = new List<PtuUsoDTO>();
-            try
+           
+            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
+            oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
+            oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
+            hdfCodSolicitud.Value = pintcodsolicitud.ToString();
+            hdfSolLicEstado.Value = pintEstSolLicencia.ToString();
+
+            txtCodSolicitud.Text = oPtuSolicitudDTO.intcodsolicitud.ToString();
+            txtNumSolicitud.Text = oPtuSolicitudDTO.chranio + " " + oPtuSolicitudDTO.vchnumero;
+            txtAdministrado.Text = oPtuSolicitudDTO.vchadmcompleto;
+            txtAreaOcupa.Text = oPtuSolicitudDTO.decareaocupar.ToString();
+            txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
+            txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
+            txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
+            txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
+
+            txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;
+
+            if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
+                /*fscAnalista.Checked = false;
+                fscCordinador.Checked = false;
+                lblForAnalista.InnerText = "No Procede";
+                lblForCoordinador.InnerText = "No Procede";*/
+            }
 
+            /*if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
+            {
+                fscAnalista.Checked = false;
+                lblForAnalista.InnerText = "No Procede";
+                fscCordinador.Checked = false;
+                lblForCoordinador.InnerText = "No Procede";
 
-                PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-                oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
-                oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
-                hdfCodSolicitud.Value = pintcodsolicitud.ToString();
-                hdfSolLicEstado.Value = pintEstSolLicencia.ToString();
-
-                txtCodSolicitud.Text = oPtuSolicitudDTO.intcodsolicitud.ToString();
-                txtNumSolicitud.Text = oPtuSolicitudDTO.chranio + " " + oPtuSolicitudDTO.vchnumero;
-                txtAdministrado.Text = oPtuSolicitudDTO.vchadmcompleto;
-                txtAreaOcupa.Text = oPtuSolicitudDTO.decareaocupar.ToString();
-                txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
-                txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
-                txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
-                txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
-
-                txtObservacion.Text = oPtuSolicitudDTO.vchobservacion; 
-
-                if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
-                {
-                    /*fscAnalista.Checked = false;
-                    fscCordinador.Checked = false;
-                    lblForAnalista.InnerText = "No Procede";
-                    lblForCoordinador.InnerText = "No Procede";*/
+                if (oPtuSolicitudDTO.smlresultado == 22)
+                {  fscAnalista.Checked = true;   // Procede
+                    lblForAnalista.InnerText = "Procede";
                 }
 
-                /*if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
+                if (oPtuSolicitudDTO.smlresultado == 23)
                 {
-                    fscAnalista.Checked = false;
+                    fscAnalista.Checked = false;  // No Procede
                     lblForAnalista.InnerText = "No Procede";
-                    fscCordinador.Checked = false;
-                    lblForCoordinador.InnerText = "No Procede";
+                }
+            }*/
 
-                    if (oPtuSolicitudDTO.smlresultado == 22)
-                    {  fscAnalista.Checked = true;   // Procede
-                        lblForAnalista.InnerText = "Procede";
-                    }
+            gvUsos.DataSource = oPtuUsoDTOList;
+            gvUsos.DataBind();
 
-                    if (oPtuSolicitudDTO.smlresultado == 23)
-                    {
-                        fscAnalista.Checked = false;  // No Procede
-                        lblForAnalista.InnerText = "No Procede";
-                    }
-                }*/
+            pbd_CargarGrillaPlantillas();
 
-                gvUsos.DataSource = oPtuUsoDTOList;
-                gvUsos.DataBind();
-
-                pbd_CargarGrillaPlantillas();
-
-
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
             return oPtuUsoDTOList;
         }
 
-        protected void btnCalifica_Click(object sender, EventArgs e)
+        private List<PtuProcedimientostupaDTO> pbd_CargarComboProcTupa()
         {
-
-            Button btn = sender as Button;
-            GridViewRow row = btn.NamingContainer as GridViewRow;
-            int lintCodSolicitud = Convert.ToInt32(gvSolicitud.DataKeys[row.RowIndex].Values["INTCODSOLICITUD"]);
-            int lintEstSolLicencia = Convert.ToInt16(gvSolicitud.DataKeys[row.RowIndex].Values["SMLESTSOLLICENCIA"]);
-            hdfCodSolicitud.Value = lintCodSolicitud.ToString();
-            hdfSolLicEstado.Value = lintEstSolLicencia.ToString();
-
-            MultiView1.ActiveViewIndex = 1;
-            pbd_CargarGrillaUsos("btnCalifica", lintCodSolicitud, lintEstSolLicencia);
-
-
-
-
-        }
-
-        private List<PtuProcedimientostupaDTO> pbd_CargarComboProcTupa(string control) 
-        {
-
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
-            oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
+            oPtuSolicitud = new PtuSolicitud();            
             List<PtuProcedimientostupaDTO> oPtuProcedimientostupaDTOList = new List<PtuProcedimientostupaDTO>();
-            try
-            {
-                PtuProcedimientostupa_bo oPtuProcedimientostupa_bo = new PtuProcedimientostupa_bo(ref logMensajes);
-                oPtuProcedimientostupaDTOList = oPtuProcedimientostupa_bo.Listar();
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
+            
+            PtuProcedimientostupa_bo oPtuProcedimientostupa_bo = new PtuProcedimientostupa_bo(ref logMensajes);
+            oPtuProcedimientostupaDTOList = oPtuProcedimientostupa_bo.Listar();
+            
             return oPtuProcedimientostupaDTOList;
         }
 
@@ -404,7 +434,7 @@ namespace SIPT.WebInterno
             dtTabla = new DataTable("PLANTILLA");
 
             dcColumna = new DataColumn();
-            
+
             dcColumna.DataType = System.Type.GetType("System.String");
             dcColumna.ColumnName = "INTCODPLANTILLA";
             dcColumna.DefaultValue = "";
@@ -419,95 +449,28 @@ namespace SIPT.WebInterno
 
             row = dtTabla.NewRow();
 
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = lstNombre;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
             oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
-            List<PtuPlantillareqDTO> oPtuPlantillareqDTOList = new List<PtuPlantillareqDTO>();
-            try
-            {
-                PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
-
-                oPtuPlantillareqDTOList = oPtuPlantillareq_bo.ListarPlantillas(intcodplantilla, intcodigoprocedimiento, intcodsolicitud);
-
-
-                foreach (PtuPlantillareqDTO objeto in oPtuPlantillareqDTOList)
-                {
-                    row = dtTabla.NewRow();
-
-                    row["INTCODPLANTILLA"] = objeto.intcodplantilla.ToString();
-                    row["VCHNOMBREPLANTILLA"] = objeto.vchnombreplantilla;
-                    dtTabla.Rows.Add(row);
-
-                }
-
-                ViewState["PLANTILLA"] = dtTabla;
-
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
-            return dtTabla;
-        }
-
-        protected void btnRegresar_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 0;
-        }
-
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            StringBuilder sbMensaje = new StringBuilder();
             
+            List<PtuPlantillareqDTO> oPtuPlantillareqDTOList = new List<PtuPlantillareqDTO>();
+            
+            PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
+
+            oPtuPlantillareqDTOList = oPtuPlantillareq_bo.ListarPlantillas(intcodplantilla, intcodigoprocedimiento, intcodsolicitud);
 
 
-
-            if ( txtObservacion.Text.Length.Equals(0))
+            foreach (PtuPlantillareqDTO objeto in oPtuPlantillareqDTOList)
             {
-                sbMensaje.AppendLine("* No incluyo Observaciones para Solicitud" );
-            }
+                row = dtTabla.NewRow();
 
-            if (!sbMensaje.Length.Equals(0))   /* Si no esta vacio */
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
-                "swal('Error!', '" + sbMensaje.ToString() + "', 'error')", true);
-            }
-            else
-            { 
-
-                int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
-                Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
-                pbd_GuardarCalificacion("btnGuardar_Click", lintCodSolicitud, lintEstSolLicencia);
-                  
-                // Procesa Plantillas
-                if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
-                {
-                    pbd_ProcesarPlantillas("btnGuardar_Click", lintCodSolicitud);
-                }
-
-                MultiView1.ActiveViewIndex = 0;
-                pbd_CargarGrillaSolicitud();
-
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
-                "swal('Notificación', 'Informacion y Calificación Registrada.', 'success')", true);
+                row["INTCODPLANTILLA"] = objeto.intcodplantilla.ToString();
+                row["VCHNOMBREPLANTILLA"] = objeto.vchnombreplantilla;
+                dtTabla.Rows.Add(row);
 
             }
-        }
 
-        protected void ddlProcedimiento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pbd_CargarGrillaPlantillas();
+            ViewState["PLANTILLA"] = dtTabla;
+
+            return dtTabla;
         }
 
         private void pbd_CargarGrillaPlantillas()
@@ -516,22 +479,15 @@ namespace SIPT.WebInterno
             //int intcodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
             int intcodProcedimiento;
             int intcodSolicitud = Convert.ToInt32(txtCodSolicitud.Text);
-                        
+
             //oPtuPlantillareqDTOList = pbd_CargarGrillaPlantillaProcTupa(intcodPlantilla, intcodProcedimiento, intcodSolicitud);
 
         }
 
-        private string pbd_GuardarCalificacion(string control, int? pintcodsolicitud, Int16? pintEstSolLicencia)
+        private string pbd_GuardarCalificacion(int? pintcodsolicitud, Int16? pintEstSolLicencia)
         {
             string msg = "";
 
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-            
             oPtuSolLicencia = new PtuSolLicencia();
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
@@ -540,7 +496,6 @@ namespace SIPT.WebInterno
             oPtuSolLicencia.vchaudequipo = lstEquipo;
             oPtuSolLicencia.vchaudprograma = lstSistema;
             oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
-
 
 
             //int lintcodigoprocedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
@@ -554,37 +509,18 @@ namespace SIPT.WebInterno
             {
                 if (fscCordinador.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
             }
-            
 
- 
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
-            
-            try
-            {
-                PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-                oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
-                
-                if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
-                {
-                    CorreoCalificacion();
+            PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
+            oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
 
-                }
-
-            }
-            catch (System.Exception ex)
+            if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
             {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-                msg = ex.Message;
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
+                CorreoCalificacion();
             }
             return msg;
         }
 
-        private DataTable ListarUsuariosRolAnalista(string control)
+        private DataTable ListarUsuariosRolAnalista()
         {
             DataTable dtTabla = null;
             DataColumn dcColumna;
@@ -606,170 +542,73 @@ namespace SIPT.WebInterno
             dtTabla.Columns.Add(dcColumna);
 
             row = dtTabla.NewRow();
+                        
+            oUsuario_bo = new Usuario_bo(ref logMensajes);
+            List<SicUsuario> oSicUsuarioList = oUsuario_bo.ListarUsuariosAppRol("SIPT", "ANALISTA SIPT");
 
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
-            oSicUsuarioList = new List<SicUsuario>();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
+            foreach (SicUsuario Analista in oSicUsuarioList)
             {
+                row = dtTabla.NewRow();
 
-                oUsuario_bo = new Usuario_bo(ref logMensajes);
-                List<SicUsuario> oSicUsuarioList = oUsuario_bo.ListarUsuariosAppRol("SIPT", "ANALISTA SIPT");
-
-                foreach (SicUsuario Analista in oSicUsuarioList)
-                {
-
-                    row = dtTabla.NewRow();
-
-                    row["INTUSUANALISTA"] = Analista.intusuariocodigo;
-                    row["VCHUSUANALISTA"] = Analista.vchusuarionombres;
-                    dtTabla.Rows.Add(row);
-
-                }
-
+                row["INTUSUANALISTA"] = Analista.intusuariocodigo;
+                row["VCHUSUANALISTA"] = Analista.vchusuarionombres;
+                dtTabla.Rows.Add(row);
             }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
+
             return dtTabla;
         }
 
-        private void pbd_ProcesarPlantillas(string control, int? pintcodsolicitud)
+        private void pbd_ProcesarPlantillas(int? pintcodsolicitud)
         {
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
             oPtuSolLicencia = new PtuSolLicencia();
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
             oPtuSolLicencia.vchaudusumodif = lstUsuario;
             oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
 
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-            try
-            {
-                PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-                oPtuSolLicencia_bo.ProcesarPlantillas(oPtuSolLicencia);
-
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
-
+            PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
+            oPtuSolLicencia_bo.ProcesarPlantillas(oPtuSolLicencia);
         }
 
-        private List<PtuPlantillareqDTO> pbd_CargarComboPlantillas(string control)
+        private List<PtuPlantillareqDTO> pbd_CargarComboPlantillas()
         {
-
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<PtuPlantillareqDTO> oPtuPlantillareqList = new List<PtuPlantillareqDTO>();
-            try
-            {
-                PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
-                oPtuPlantillareqDTOList = oPtuPlantillareq_bo.Listar();
+          
+            PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
+            oPtuPlantillareqDTOList = oPtuPlantillareq_bo.Listar();
 
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
             return oPtuPlantillareqDTOList;
         }
-
-
-
-
 
         public void EnviarCorreo(string pPara, string pAsunto, string pContenido)
         {
             string urlApiMail = ConfigurationManager.AppSettings["UrlApiMail"];
-            try
-            {
-                var client = new RestClient(urlApiMail);
-                var request = new RestRequest("EnviarEmail");
-                request.AddBody(
-                    new
-                    {
-                        para = pPara,
-                        asunto = pAsunto,
-                        contenido = pContenido
-                    });
+           
+            var client = new RestClient(urlApiMail);
+            var request = new RestRequest("EnviarEmail");
+            request.AddBody(
+                new
+                {
+                    para = pPara,
+                    asunto = pAsunto,
+                    contenido = pContenido
+                });
 
-                var response = client.ExecutePost(request);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            var response = client.ExecutePost(request);
+           
         }
 
-
-        private List<PtuUsoDTO> pbd_CargarGrillaUsos(string control, int pintcodsolicitud)
+        private List<PtuUsoDTO> pbd_CargarGrillaUsos(int pintcodsolicitud)
         {
-            request = new Request();
-            request.vchaudprograma = lstSistema;
-            request.vchopcion = lstOpcion;
-            request.vchconnombre = control;
-            request.vchaudcodusuario = lstUsuario;
-            request.vchaudequipo = lstEquipo;
-
-            oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name);
+            oPtuSolicitud = new PtuSolicitud();            
             List<PtuUsoDTO> oPtuUsoDTOList = new List<PtuUsoDTO>();
-            try
-            {
-                PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-                oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
-                oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
-            }
-            catch (System.Exception ex)
-            {
-                logMensajes.error = ex;
-                Log.Error(logMensajes.codigoMensaje.ToString(), this.GetType().ToString(), System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
-            }
-            finally
-            {
-                logMensajes.FinSolicitud();
-            }
+            
+            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
+            oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
+            oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
+           
             return oPtuUsoDTOList;
         }
-
 
         public void CorreoCalificacion()
         {
@@ -796,8 +635,9 @@ namespace SIPT.WebInterno
 
             EnviarCorreo(oPara, oAsunto, oContenido.ToString());
 
-
         }
+
+        #endregion
 
     }
 }

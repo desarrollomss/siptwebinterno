@@ -7,6 +7,7 @@ using DBAccess;
 using SIPT.APPL.Logs;
 using DBAccess.Util;
 using System.Collections.Generic;
+using SIPT.DAL.Dao.Factory;
 
 namespace SIPT.DAL.Dao.Implementacion.Db2
 {
@@ -26,55 +27,21 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
         public override List<ConAdministrado> ListarPorFiltro(ConAdministrado pConAdministrado)
         {
-            try
-            {
-                DB2DataReader dataReader;
+            DB2Parameter[] arrParam = new DB2Parameter[1];
+            arrParam[0] = new DB2Parameter("@VCHADMCOMPLETO", DB2Type.VarChar);
+            arrParam[0].Value = pConAdministrado.vchadmcompleto;
 
-                DB2Parameter[] arrParam = new DB2Parameter[1];
-                arrParam[0] = new DB2Parameter("@VCHADMCOMPLETO", DB2Type.VarChar);
-                arrParam[0].Value = pConAdministrado.vchadmcompleto;
-
-                oConAdministradoList = new List<ConAdministrado>();
-                dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONADMINISTRADO_LISTARPORFILTRO", arrParam);
-
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.CONADMINISTRADO_LISTARPORFILTRO");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-
-                oConAdministradoList = ConvertidorUtil.DeReaderAColeccion<ConAdministrado, List<ConAdministrado>>(dataReader);
-
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), oConAdministradoList);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return oConAdministradoList;
+            oConAdministradoList = new List<ConAdministrado>();
+            return DB2Comando.Listar<ConAdministrado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONADMINISTRADO_LISTARPORFILTRO", this.logMensajes, arrParam);
         }
 
         public override ConAdministrado ListarplataformaPorId(int? intadmcodigo)
         {
-            try
-            {
-                DB2DataReader dataReader;
+            DB2Parameter[] arrParam = new DB2Parameter[1];
+            arrParam[0] = new DB2Parameter("@INTADMCODIGO", DB2Type.Integer);
+            arrParam[0].Value = intadmcodigo;
 
-                DB2Parameter[] arrParam = new DB2Parameter[1];
-                arrParam[0] = new DB2Parameter("@INTADMCODIGO", DB2Type.Integer);
-                arrParam[0].Value = intadmcodigo;
-
-                dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONADMINISTRADO_LISTARPLATAFORMAPORID", arrParam);
-
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.CONADMINISTRADO_LISTARPLATAFORMAPORID");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-
-                oConAdministrado = ConvertidorUtil.DeReaderAEntidad<ConAdministrado>(dataReader);                
-
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), oConAdministrado);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return oConAdministrado;
+            return DB2Comando.Obtener<ConAdministrado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONADMINISTRADO_LISTARPLATAFORMAPORID", this.logMensajes, arrParam);
         }
 
     }

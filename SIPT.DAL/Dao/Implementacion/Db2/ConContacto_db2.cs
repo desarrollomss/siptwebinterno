@@ -4,6 +4,7 @@ using IBM.Data.DB2;
 using SIPT.APPL.Logs;
 using SIPT.BL.Models.Entity;
 using SIPT.DAL.Dao.Base;
+using SIPT.DAL.Dao.Factory;
 using System;
 using System.Data;
 
@@ -24,30 +25,13 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
         public override ConContacto ListarPlataformaPorId(int intadmcodigo, string vchtipodato)
         {
             DB2Parameter[] arrParam = new DB2Parameter[2];
-            try
-            {
-                DB2DataReader dataReader;
 
-                arrParam[0] = new DB2Parameter("@INTADMCODIGO", DB2Type.Integer);
-                arrParam[0].Value = intadmcodigo;
-                arrParam[1] = new DB2Parameter("@VCHTICCODIGO", DB2Type.VarChar);
-                arrParam[1].Value = vchtipodato;
+            arrParam[0] = new DB2Parameter("@INTADMCODIGO", DB2Type.Integer);
+            arrParam[0].Value = intadmcodigo;
+            arrParam[1] = new DB2Parameter("@VCHTICCODIGO", DB2Type.VarChar);
+            arrParam[1].Value = vchtipodato;
 
-                dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONCONTACTO_LISTARPLATAFORMAPORID", arrParam);
-                oConContacto = ConvertidorUtil.DeReaderAEntidad<ConContacto>(dataReader);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
-                throw ex;
-            }
-            finally
-            {
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.CONCONTACTO_LISTARPLATAFORMAPORID");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), oConContacto);
-            }
-            return oConContacto;
+            return DB2Comando.Obtener<ConContacto>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.CONCONTACTO_LISTARPLATAFORMAPORID", this.logMensajes, arrParam);            
         }
     }
 }

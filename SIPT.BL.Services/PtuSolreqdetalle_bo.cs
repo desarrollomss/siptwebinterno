@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
 				return pPtuSolreqdetalleDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -61,11 +56,6 @@ namespace SIPT.BL.Services
 				oPtuSolreqdetalle_dao.Actualizar(oPtuSolreqdetalle);
 				dbconex.RegistrarTransaccion();
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -82,11 +72,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuSolreqdetalle_dao.Eliminar(intcodsolreqdetalle);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -114,11 +99,6 @@ namespace SIPT.BL.Services
 					oPtuSolreqdetalleDTOList.Add(oPtuSolreqdetalleDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -140,11 +120,6 @@ namespace SIPT.BL.Services
 
 				Mapeos mapeo = new Mapeos();
 				oPtuSolreqdetalleDTO = mapeo.Map<PtuSolreqdetalle, PtuSolreqdetalleDTO>(oPtuSolreqdetalle);
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -176,11 +151,6 @@ namespace SIPT.BL.Services
 					var oPtuSolreqdetalleDTO = mapeo.Map<PtuSolreqdetalle, PtuSolreqdetalleDTO>(oPtuSolreqdetalle);
 					oPtuSolreqdetalleDTOList.Add(oPtuSolreqdetalleDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

@@ -73,11 +73,6 @@ namespace SIPT.BL.Services
                 dbconex.RegistrarTransaccion();
                 return valor;
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -120,11 +115,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -143,11 +133,6 @@ namespace SIPT.BL.Services
                 
                 oPtuSolicitud_dao.Eliminar(pPtuSolicitud);
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -199,11 +184,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -224,11 +204,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -248,11 +223,6 @@ namespace SIPT.BL.Services
                 oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_dao.ListarPendientes(pPtuSolicitud, intusuanalista);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -293,11 +263,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -328,11 +293,6 @@ namespace SIPT.BL.Services
                     var oPtuLicenciaDTO = mapeo.Map<PtuLicencia, PtuLicenciaDTO>(oPtuLicencia);
                     oPtuLicenciaDTOList.Add(oPtuLicenciaDTO);
                 }
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

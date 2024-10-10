@@ -166,6 +166,7 @@
     <Content Include="assets\images\background\user-bg.jpg" />
     <Content Include="assets\images\background\user-info.jpg" />
     <Content Include="assets\images\background\weatherbg.jpg" />
+    <Content Include="assets\images\bg-01.jpg" />
     <Content Include="assets\images\big\img1.jpg" />
     <Content Include="assets\images\big\img2.jpg" />
     <Content Include="assets\images\big\img3.jpg" />
@@ -229,6 +230,8 @@
     <Content Include="assets\images\users\d5.jpg" />
     <Content Include="assets\images\users\profile.png" />
     <Content Include="assets\images\usuario_avatar.png" />
+    <Content Include="assets\login\jquery-3.2.1.min.js" />
+    <Content Include="assets\login\main.js" />
     <Content Include="assets\plugins\bootstrap-material-datetimepicker\bower.json" />
     <Content Include="assets\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.eot" />
     <Content Include="assets\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.ttf" />
@@ -830,6 +833,10 @@
     <Content Include="assets\plugins\typeahead.js-master\typeahead.js.jquery.json" />
     <Content Include="assets\images\background\Thumbs.db" />
     <Content Include="assets\images\big\Thumbs.db" />
+    <Content Include="assets\login\main.css" />
+    <Content Include="assets\login\util.css" />
+    <Content Include="assets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="assets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
     <Content Include="WebFormDemo.aspx" />
     <Content Include="WebFormDemo2.aspx" />
     <None Include="Connected Services\ServiceSicu\configuration91.svcinfo" />
@@ -3653,6 +3660,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="js\prepros-6.config" />
+    <Content Include="assets\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="assets\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="assets\fonts\poppins\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\poppins\Poppins-Regular.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

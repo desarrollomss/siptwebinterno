@@ -81,11 +81,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -95,33 +90,22 @@ namespace SIPT.BL.Services
 
         public TestOrdenAtencionDTO ConsultarOrdenPorApi(int intoranumero)
         {
-            try
-            {
-                testOrdenAtencion_dao = ObjectFactory.Instanciar<TestOrdenAtencion_dao>(new TestOrdenAtencion(), this.logMensajes);
-                testOrdenAtencion = testOrdenAtencion_dao.ConsultarOrden(intoranumero);
-                Mapeos mapeo = new Mapeos();
-                oTestOrdenAtencionDTO = mapeo.Map<TestOrdenAtencion, TestOrdenAtencionDTO>(testOrdenAtencion);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            testOrdenAtencion_dao = ObjectFactory.Instanciar<TestOrdenAtencion_dao>(new TestOrdenAtencion(), this.logMensajes);
+            testOrdenAtencion = testOrdenAtencion_dao.ConsultarOrden(intoranumero);
+            Mapeos mapeo = new Mapeos();
+            oTestOrdenAtencionDTO = mapeo.Map<TestOrdenAtencion, TestOrdenAtencionDTO>(testOrdenAtencion);
+           
             return oTestOrdenAtencionDTO;
         }
 
         public int ObtenerIdReporteLicencia(int? intintcodlicencia)
         {
             int codigoReporte = 0;            
-            try
-            {
-                testOrdenAtencion_dao = ObjectFactory.Instanciar<TestOrdenAtencion_dao>(new TestOrdenAtencion(), this.logMensajes);
+            
+            testOrdenAtencion_dao = ObjectFactory.Instanciar<TestOrdenAtencion_dao>(new TestOrdenAtencion(), this.logMensajes);
 
-                codigoReporte = testOrdenAtencion_dao.ObtenerIdReporteLicencia(intintcodlicencia);
-            }
-            catch (Exception ex)
-            {            
-                throw ex;
-            }
+            codigoReporte = testOrdenAtencion_dao.ObtenerIdReporteLicencia(intintcodlicencia);
+           
             return codigoReporte;
         }
 
@@ -155,11 +139,6 @@ namespace SIPT.BL.Services
                 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -183,11 +162,6 @@ namespace SIPT.BL.Services
                     autLicencia_Resultado = autLicencia_dao.Insertar(autLicencia_Inserta)[0];
 
                     dbconex.RegistrarTransaccion();
-                }
-                catch (Exception ex)
-                {
-                    dbconex.AnularTransaccion();
-                    throw ex;
                 }
                 finally
                 {
@@ -239,11 +213,6 @@ namespace SIPT.BL.Services
                     ptuLicencia_dao.Insertar(ptuLicencia);
 
                     dbconex.RegistrarTransaccion();
-                }
-                catch (Exception ex)
-                {
-                    dbconex.AnularTransaccion();
-                    throw ex;
                 }
                 finally
                 {

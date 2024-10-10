@@ -43,11 +43,6 @@ namespace SIPT.BL.Services
                 oConContacto = oConContacto_dao.ListarPlataformaPorId(intadmcodigo, "0"+ ((int)TipoContacto.Email).ToString());
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();

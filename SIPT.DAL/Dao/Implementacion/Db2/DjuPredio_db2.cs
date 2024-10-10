@@ -4,6 +4,7 @@ using IBM.Data.DB2;
 using SIPT.APPL.Logs;
 using SIPT.BL.Models.Entity;
 using SIPT.DAL.Dao.Base;
+using SIPT.DAL.Dao.Factory;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,31 +29,11 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
         public override DjuPredio ListarPorId(int? intprecodigo)
         {
             DB2Parameter[] arrParam = new DB2Parameter[1];
-            try
-            {
-                DB2DataReader dataReader;
-                
-                arrParam[0] = new DB2Parameter("@INTPRECODIGO", DB2Type.Integer);
-                arrParam[0].Value = intprecodigo;
+          
+            arrParam[0] = new DB2Parameter("@INTPRECODIGO", DB2Type.Integer);
+            arrParam[0].Value = intprecodigo;
 
-                dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.DJUPREDIO_LISTARKEY", arrParam);
-
-                Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.DJUPREDIO_LISTARKEY");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-
-                oDjuPredio = ConvertidorUtil.DeReaderAEntidad<DjuPredio>(dataReader);
-
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), oDjuPredio);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), "SIPT.DJUPREDIO_LISTARKEY");
-                Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-
-                throw ex;
-            }
-            return oDjuPredio;
+            return DB2Comando.Obtener<DjuPredio>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.DJUPREDIO_LISTARKEY", this.logMensajes, arrParam);
         }
     }
 }

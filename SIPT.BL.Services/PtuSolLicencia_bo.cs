@@ -40,11 +40,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -62,11 +57,6 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia_dao.Actualizar(pPtuSolLicencia);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -86,11 +76,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -108,11 +93,6 @@ namespace SIPT.BL.Services
                 oPtuSolLicenciaList = oPtuSolLicencia_dao.Listar();
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -132,11 +112,6 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia = oPtuSolLicencia_dao.ListarPorId(intcodsolicitud);
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -154,11 +129,6 @@ namespace SIPT.BL.Services
                 
                 oPtuSolLicencia_dao.Desistir(pPtuSolLicencia);
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -193,11 +163,6 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia_dao.Calificar(pPtuSolLicencia, pintcodigoprocedimiento);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -234,11 +199,6 @@ namespace SIPT.BL.Services
                     stdDocumento_InsertaResultado = stdDocumento_dao.Insertar(stdDocumento_InsertaDocWebSipt);
                     dbconex.RegistrarTransaccion();
                 }
-                catch (Exception ex)
-                {
-                    dbconex.AnularTransaccion();
-                    throw ex;
-                }
                 finally
                 {
                     dbconex.CerrarConexion();
@@ -266,11 +226,6 @@ namespace SIPT.BL.Services
                     autSolicitud_Resultado = autSolicitud_dao.Insertar(autSolicitud_Inserta)[0];
 
                     dbconex.RegistrarTransaccion();
-                }
-                catch (Exception ex)
-                {
-                    dbconex.AnularTransaccion();
-                    throw ex;
                 }
                 finally
                 {
@@ -303,11 +258,6 @@ namespace SIPT.BL.Services
 
                     dbconex.RegistrarTransaccion();
                 }
-                catch (Exception ex)
-                {
-                    dbconex.AnularTransaccion();
-                    throw ex;
-                }
                 finally
                 {
                     dbconex.CerrarConexion();
@@ -327,11 +277,6 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia_dao.ProcesarPlantillas(pPtuSolLicencia);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -357,11 +302,6 @@ namespace SIPT.BL.Services
                     oPtuSolrequerimiento_dao.Actualizar(oPtuSolrequerimiento);
                 }
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

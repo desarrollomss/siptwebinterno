@@ -13,5 +13,11 @@ namespace SIPT.WebInterno
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
+                "swal('" + "XXX" + "', '" + "ZZZZ" + "', 'error')", true);
+        }
     }
 }

@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
 				return pPtuLicenciaDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -71,11 +66,6 @@ namespace SIPT.BL.Services
 					var oPtuLicenciaDTO = mapeo.Map<PtuLicencia, PtuLicenciaDTO>(oPtuLicencia);
 					oPtuLicenciaDTOList.Add(oPtuLicenciaDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

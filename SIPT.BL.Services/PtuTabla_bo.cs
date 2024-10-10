@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
 				return pPtuTablaDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -61,11 +56,6 @@ namespace SIPT.BL.Services
 				oPtuTabla_dao.Actualizar(oPtuTabla);
 				dbconex.RegistrarTransaccion();
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -82,11 +72,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuTabla_dao.Eliminar(smlcodtabla);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -114,11 +99,6 @@ namespace SIPT.BL.Services
 					oPtuTablaDTOList.Add(oPtuTablaDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -140,11 +120,6 @@ namespace SIPT.BL.Services
 
 				Mapeos mapeo = new Mapeos();
 				oPtuTablaDTO = mapeo.Map<PtuTabla, PtuTablaDTO>(oPtuTabla);
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -176,11 +151,6 @@ namespace SIPT.BL.Services
 					var oPtuTablaDTO = mapeo.Map<PtuTabla, PtuTablaDTO>(oPtuTabla);
 					oPtuTablaDTOList.Add(oPtuTablaDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -214,11 +184,6 @@ namespace SIPT.BL.Services
 					var oPtuTablaDTO = mapeo.Map<PtuTabla, PtuTablaDTO>(oPtuTabla);
 					oPtuTablaDTOList.Add(oPtuTablaDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

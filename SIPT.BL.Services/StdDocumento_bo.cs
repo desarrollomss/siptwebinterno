@@ -49,11 +49,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -102,11 +97,6 @@ namespace SIPT.BL.Services
                 //ptuSolLicencia_dao.Actualizar(ptuSolLicencia);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

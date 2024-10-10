@@ -59,7 +59,7 @@ namespace SIPT.DAL.Dao.Factory
             return entidad;
         }
 
-        public static void Ejecutar<T>(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes, params DB2Parameter[] commandParameters)
+        public static void Ejecutar(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes, params DB2Parameter[] commandParameters)
         {
             Log.Info(logMensajes.codigoMensaje.ToString(), commandText);
             Log.Debug(logMensajes.codigoMensaje.ToString(), commandParameters);
@@ -67,11 +67,32 @@ namespace SIPT.DAL.Dao.Factory
             DB2helper.ExecuteNonQuery(transaction, commandType, commandText, commandParameters);            
         }
 
-        public static void Ejecutar<T>(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes)
+        public static void Ejecutar(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes)
         {
             Log.Info(logMensajes.codigoMensaje.ToString(), commandText);
 
             DB2helper.ExecuteNonQuery(transaction, commandType, commandText);
+        }
+
+        public static DB2DataReader Reader(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes, params DB2Parameter[] commandParameters)
+        {
+            Log.Info(logMensajes.codigoMensaje.ToString(), commandText);
+            Log.Debug(logMensajes.codigoMensaje.ToString(), commandParameters);
+
+            DB2DataReader dataReader = DB2helper.ExecuteReader(transaction, commandType, commandText, commandParameters);
+            
+            Log.Debug(logMensajes.codigoMensaje.ToString(), dataReader);
+            return dataReader;
+        }
+
+        public static DB2DataReader Reader(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes)
+        {
+            Log.Info(logMensajes.codigoMensaje.ToString(), commandText);
+
+            DB2DataReader dataReader = DB2helper.ExecuteReader(transaction, commandType, commandText);
+
+            Log.Debug(logMensajes.codigoMensaje.ToString(), dataReader);
+            return dataReader;
         }
 
     }

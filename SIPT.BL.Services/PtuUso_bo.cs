@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -59,11 +54,6 @@ namespace SIPT.BL.Services
                 
                 oPtuUso_dao.Actualizar(pPtuUso);
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -83,11 +73,6 @@ namespace SIPT.BL.Services
 
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -105,11 +90,6 @@ namespace SIPT.BL.Services
                 oPtuUsoList = oPtuUso_dao.Listar();
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -129,11 +109,6 @@ namespace SIPT.BL.Services
                 pPtuUso = oPtuUso_dao.ListarPorId(intcoduso);
 
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {
@@ -164,11 +139,6 @@ namespace SIPT.BL.Services
                     oPtuUsoDTOList.Add(ptuUsoDTO);
                 }
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

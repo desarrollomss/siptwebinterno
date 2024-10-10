@@ -179,6 +179,7 @@
     <Compile Include="Constantes.cs" />
     <Compile Include="FrondEnd\Response.cs" />
     <Compile Include="FrondEnd\Request.cs" />
+    <Compile Include="Funciones.cs" />
     <Compile Include="Logs\Log.cs" />
     <Compile Include="Logs\LogMensajes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -32,46 +32,40 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             string urlApi = ConfigurationManager.AppSettings["ORDATEapi"];// "http://172.16.2.28:8081/pidemss/servicios/";
             string endpoint = "ordate/reg?entidad=" + vchCodEntidad + "&sistema=" + vchCodSistema + "&key=" + vchKey;
             int numOrdAtencion = 0;
-            try
-            {
-                var ordenAtendion = new {
-                    pvchoficodigo = vchOfiCodigo,
-                    pvchtidcodigo = vchtidcodigo,
-                    pvchoradocumento = vchoradocumento,
-                    pvchoranombre = vchoranombre,
-                    pvchoradireccion = "",
-                    pintadmcodigo = intadmcodigo,
-                    pdecoratotpagar = decoratotpagar.ToString(),
-                    listaItems = new[] { new {
-                            porden = 0,
-                            psmltricodigo = smltricodigo.ToString(),
-                            pdecorapreunitario = decoratotpagar.ToString(),
-                            pintoracantidad = 1,
-                            pdecoratotpagar = decoratotpagar.ToString()
-                        } },
-                    pvchaudequipo = vchaudequipo,
-                    pvchaudprograma = vchaudprograma,
-                    pvchusuario = "8680"
-                };
+           
+            var ordenAtendion = new {
+                pvchoficodigo = vchOfiCodigo,
+                pvchtidcodigo = vchtidcodigo,
+                pvchoradocumento = vchoradocumento,
+                pvchoranombre = vchoranombre,
+                pvchoradireccion = "",
+                pintadmcodigo = intadmcodigo,
+                pdecoratotpagar = decoratotpagar.ToString(),
+                listaItems = new[] { new {
+                        porden = 0,
+                        psmltricodigo = smltricodigo.ToString(),
+                        pdecorapreunitario = decoratotpagar.ToString(),
+                        pintoracantidad = 1,
+                        pdecoratotpagar = decoratotpagar.ToString()
+                    } },
+                pvchaudequipo = vchaudequipo,
+                pvchaudprograma = vchaudprograma,
+                pvchusuario = "8680"
+            };
 
-                JavaScriptSerializer jss = new JavaScriptSerializer();
-                string data = jss.Serialize(ordenAtendion);
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            string data = jss.Serialize(ordenAtendion);
 
-                var contenido = EjecutarPost(urlApi + endpoint, data);
+            var contenido = EjecutarPost(urlApi + endpoint, data);
                 
-                Response oResponse = JsonConvert.DeserializeObject<Response>(contenido);
-                if (oResponse.codigo != "0")
-                {
-                    Log.Error(this.logMensajes.codigoMensaje.ToString(), oResponse.mensaje);
-                }
-                else
-                {
-                    numOrdAtencion = oResponse.contenido[0].intoranumero;
-                }
-            }
-            catch (Exception ex)
+            Response oResponse = JsonConvert.DeserializeObject<Response>(contenido);
+            if (oResponse.codigo != "0")
             {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
+                Log.Error(this.logMensajes.codigoMensaje.ToString(), oResponse.mensaje);
+            }
+            else
+            {
+                numOrdAtencion = oResponse.contenido[0].intoranumero;
             }
 
             return numOrdAtencion;
@@ -86,27 +80,21 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
             string urlApi = ConfigurationManager.AppSettings["ORDATEapi"];
             string endpoint = "ordate/con?PINTORANUMERO="+ intoranumero + "&entidad=" + vchCodEntidad + "&sistema=" + vchCodSistema + "&key=" + vchKey;                                    
-            try
+            
+            var contenido = EjecutarGet(urlApi, endpoint);
+            Response oResponse = JsonConvert.DeserializeObject<Response>(contenido);
+            if (oResponse.codigo != "0")
             {
-                var contenido = EjecutarGet(urlApi, endpoint);
-                Response oResponse = JsonConvert.DeserializeObject<Response>(contenido);
-                if (oResponse.codigo != "0")
-                {
-                    Log.Error(this.logMensajes.codigoMensaje.ToString(), oResponse.mensaje);
-                }
-                else
-                {
-                    oTestOrdenAtencion.intordennumero = oResponse.contenido[0].intoranumero;
-                    oTestOrdenAtencion.vchestadodescripcion = oResponse.contenido[0].vcheoadescri;
-                    oTestOrdenAtencion.datfechacreacion = oResponse.contenido[0].tmsaudfeccreacion;
-                    oTestOrdenAtencion.decordentotalpagar = oResponse.contenido[0].decoratotpagar;
-                }
+                Log.Error(this.logMensajes.codigoMensaje.ToString(), oResponse.mensaje);
             }
-            catch (Exception ex)
+            else
             {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
+                oTestOrdenAtencion.intordennumero = oResponse.contenido[0].intoranumero;
+                oTestOrdenAtencion.vchestadodescripcion = oResponse.contenido[0].vcheoadescri;
+                oTestOrdenAtencion.datfechacreacion = oResponse.contenido[0].tmsaudfeccreacion;
+                oTestOrdenAtencion.decordentotalpagar = oResponse.contenido[0].decoratotpagar;
             }
-
+           
             return oTestOrdenAtencion;
         }
 
@@ -119,16 +107,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             string urlApi = ConfigurationManager.AppSettings["GENREPapi"];
             string endpoint = ConfigurationManager.AppSettings["GENREPenpoint"]; ;
             endpoint = endpoint + "?" + nombreId + "=" + intintcodlicencia.ToString() + "&opc=" + nombrerpt;
-            try
-            {
-                var contenido = EjecutarGet(urlApi, endpoint);
-                codigoReporte = Convert.ToInt32(contenido);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
-            }
-
+            
+            var contenido = EjecutarGet(urlApi, endpoint);
+            codigoReporte = Convert.ToInt32(contenido);
+           
             return codigoReporte;
         }
 
@@ -149,24 +131,18 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
                 streamWriter.Close();
             }
 
-            try
+            using (WebResponse response = request.GetResponse())
             {
-                using (WebResponse response = request.GetResponse())
+                using (Stream strReader = response.GetResponseStream())
                 {
-                    using (Stream strReader = response.GetResponseStream())
+                    if (strReader == null) return "";
+                    using (StreamReader objReader = new StreamReader(strReader))
                     {
-                        if (strReader == null) return "";
-                        using (StreamReader objReader = new StreamReader(strReader))
-                        {
-                            responseBody = objReader.ReadToEnd();
-                        }
+                        responseBody = objReader.ReadToEnd();
                     }
                 }
             }
-            catch (WebException ex)
-            {
-                throw new Exception(ex.Message);
-            }
+           
             return responseBody;
         }
 
@@ -178,24 +154,19 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             request.ContentType = "application/json";
             //request.Accept = "application/json"; 
             string responseBody = "";
-            try
+            
+            using (WebResponse response = request.GetResponse())
             {
-                using (WebResponse response = request.GetResponse())
+                using (Stream strReader = response.GetResponseStream())
                 {
-                    using (Stream strReader = response.GetResponseStream())
+                    if (strReader == null) return "";
+                    using (StreamReader objReader = new StreamReader(strReader))
                     {
-                        if (strReader == null) return "";
-                        using (StreamReader objReader = new StreamReader(strReader))
-                        {
-                            responseBody = objReader.ReadToEnd();
-                        }
+                        responseBody = objReader.ReadToEnd();
                     }
                 }
             }
-            catch (WebException ex)
-            {
-                throw new Exception(ex.Message);
-            }
+           
             return responseBody;
         }
 

@@ -62,12 +62,13 @@ Global Styles
   outline: none; }
 
 body {
-  background: #fff;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-  color: #67757c;
-  font-weight: 300; }
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    color: #005C8A;
+    font-weight: 300;
+}
 
 html {
   position: relative;

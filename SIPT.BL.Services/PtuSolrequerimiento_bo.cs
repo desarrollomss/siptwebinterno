@@ -41,11 +41,6 @@ namespace SIPT.BL.Services
 
 				return pPtuSolrequerimientoDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -65,11 +60,6 @@ namespace SIPT.BL.Services
 				oPtuSolrequerimiento_dao.Actualizar(oPtuSolrequerimiento);
 				dbconex.RegistrarTransaccion();
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -86,11 +76,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuSolrequerimiento_dao.Eliminar(intsolicitudplantilla);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -118,11 +103,6 @@ namespace SIPT.BL.Services
 					oPtuSolrequerimientoDTOList.Add(oPtuSolrequerimientoDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -144,11 +124,6 @@ namespace SIPT.BL.Services
 
 				Mapeos mapeo = new Mapeos();
 				oPtuSolrequerimientoDTO = mapeo.Map<PtuSolrequerimiento, PtuSolrequerimientoDTO>(oPtuSolrequerimiento);
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -187,11 +162,6 @@ namespace SIPT.BL.Services
 					oPtuSolrequerimientoDTOList.Add(oPtuSolrequerimientoDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -218,11 +188,6 @@ namespace SIPT.BL.Services
 					var oPtuSolrequerimientoDTO = mapeo.Map<PtuSolrequerimiento, PtuSolrequerimientoDTO>(oPtuSolrequerimiento);
 					oPtuSolrequerimientoDTOList.Add(oPtuSolrequerimientoDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -260,11 +225,6 @@ namespace SIPT.BL.Services
 					oPtuSolrequerimientoDTOList.Add(oPtuSolrequerimientoDTO);
 				}
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -396,11 +356,6 @@ namespace SIPT.BL.Services
 				dbconex.RegistrarTransaccion();
 
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -509,11 +464,6 @@ namespace SIPT.BL.Services
 
 				return oPtuSolrequerimientoDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -532,11 +482,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuPlantillareqvaloresList = oPtuUbicaciones_dao.ListarValores(intsolicitudplantilla);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

@@ -37,9 +37,7 @@
         }
 
     }
-
     
-
 
 </script>
     <div class="row page-titles w-100">
@@ -53,61 +51,57 @@
             </ol>
         </div>
     </div>
-    <!--<nav class="navbar navbar-light bg-black">
-        <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="text-white small" ></asp:Label>
-    </nav>-->
-
+    
     <asp:MultiView ID="MultiView1" runat="server">
 
         <asp:View ID="View1" runat="server">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Lista de Solicitudes a Calificar</h4>                                
-                                <div class="table-responsive">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Lista de Solicitudes a Calificar</span>
+                    </div>
+                    <div class="card-body">                                
+                        <div class="table-responsive">
 
-                            <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD, SMLESTSOLLICENCIA" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
-                                <HeaderStyle CssClass="" />
-                                <Columns>
-                                    <asp:BoundField DataField="INTCODSOLICITUD" HeaderText="Id"></asp:BoundField>
-                                    <asp:BoundField DataField="VCHANIONUMERO" HeaderText="Solicitud"></asp:BoundField>
-                                    <asp:BoundField DataField="VCHADMCOMPLETO" HeaderText="Administrado"></asp:BoundField>
-                                    <asp:BoundField DataField="VCHPREDIRECCION" HeaderText="Ubicación"></asp:BoundField>
-                                    <asp:BoundField DataField="DECAREAOCUPAR" HeaderText="Area Ocupar"></asp:BoundField>
-                                    <asp:TemplateField HeaderText="Id.Analista">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblCodAnalista" runat="server" Text='<%# Eval("INTUSUANALISTA") %>' />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Analista">
-                                        <ItemTemplate>
-                                            <asp:DropDownList ID="ddlAnalista" runat="server" AutoPostBack="True" Enabled="false" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
-                                            </asp:DropDownList>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblEstSolLic" runat="server" Text='<%# Eval("SMLESTSOLLICENCIA") %>' Visible="false" />
-                                            <asp:Label ID="lblEstSolLicTxt" runat="server" Text='<%# Eval("VCHESTSOLLICENCIA") %>' Visible="false" />
-                                            <asp:Button ID="btnCalifica" runat="server" Text="" OnClick="btnCalifica_Click" CssClass="btn btn-outline-success btn-sm" Visible="false"/>
-                                            <%--<asp:Button ID="btnCalifica2" runat="server" Text=" 2da. Calificación " OnClick="btnCalifica_Click" CssClass="btn btn-outline-success btn-sm" Visible="false"/>--%>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="VCHRESULTADO" HeaderText="Resultado"></asp:BoundField>
+                    <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD, SMLESTSOLLICENCIA" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
+                        <HeaderStyle CssClass="" />
+                        <Columns>
+                            <asp:BoundField DataField="INTCODSOLICITUD" HeaderText="Id"></asp:BoundField>
+                            <asp:BoundField DataField="VCHANIONUMERO" HeaderText="Solicitud"></asp:BoundField>
+                            <asp:BoundField DataField="VCHADMCOMPLETO" HeaderText="Administrado"></asp:BoundField>
+                            <asp:BoundField DataField="VCHPREDIRECCION" HeaderText="Ubicación"></asp:BoundField>
+                            <asp:BoundField DataField="DECAREAOCUPAR" HeaderText="Area Ocupar"></asp:BoundField>
+                            <asp:TemplateField HeaderText="Id.Analista">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblCodAnalista" runat="server" Text='<%# Eval("INTUSUANALISTA") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Analista">
+                                <ItemTemplate>
+                                    <asp:DropDownList ID="ddlAnalista" runat="server" AutoPostBack="True" Enabled="false" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Label ID="lblEstSolLic" runat="server" Text='<%# Eval("SMLESTSOLLICENCIA") %>' Visible="false" />
+                                    <asp:Label ID="lblEstSolLicTxt" runat="server" Text='<%# Eval("VCHESTSOLLICENCIA") %>' Visible="false" />
+                                    <asp:Button ID="btnCalifica" runat="server" Text="" OnClick="btnCalifica_Click" CssClass="btn waves-effect waves-light btn-warning" Visible="false"/>
+                                    <%--<asp:Button ID="btnCalifica2" runat="server" Text=" 2da. Calificación " OnClick="btnCalifica_Click" CssClass="btn btn-outline-success btn-sm" Visible="false"/>--%>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="VCHRESULTADO" HeaderText="Resultado"></asp:BoundField>
 
-                                </Columns>
-                                <PagerStyle HorizontalAlign="Center" />
-                                <EmptyDataTemplate>
-                                    <div align="center">No hay registros para mostrar.</div>
-                                </EmptyDataTemplate>
+                        </Columns>
+                        <PagerStyle HorizontalAlign="Center" />
+                        <EmptyDataTemplate>
+                            <div align="center">No hay registros para mostrar.</div>
+                        </EmptyDataTemplate>
 
-                            </asp:GridView>
+                    </asp:GridView>
 
-                        </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,14 +109,13 @@
         </asp:View>
         <asp:View ID="View2" runat="server">
 
-            <div class="container-fluid">
-
-            <form class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="card">
-                            <div class="card-body">
-
+                    <div class="card-header">
+                        <span>Solicitud</span>
+                    </div>
+                    <div class="card-body">
                 
                     <div class="row">
                         <div class="col-md-1">
@@ -190,18 +183,24 @@
                         </div>
 
                     </div>
+                    
                     <div class="row">
                         <div class="col-8">
-                            <label for="txtObservacion" class="form-label-sm">Observaciones</label>
-                            <asp:TextBox ID="txtObservacion" Text="" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
-                           
+
+                            <div class="form-group">
+                                <h5>Observaciones <span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <asp:TextBox ID="txtObservacion" Text="" runat="server" class="form-control" TextMode="MultiLine"
+                                    required data-validation-required-message="El campo es obligatorio"></asp:TextBox>
+                                </div>                                
+                            </div>
                         </div>
                         <div class="col-md-4">
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col">
-                            <br />
                             <asp:Label ID="lblTitAnalista" runat="server" Text="Calificación Analista"></asp:Label>
                             <br />
                             <div class="form-check form-switch">                              
@@ -211,7 +210,6 @@
                             <br />
                         </div>
                         <div class="col">
-                            <br />
                             <asp:Label ID="lblTitCordinador" runat="server" Text="Calificación Coordinador"></asp:Label>
                             <br />
                             <div class="form-check form-switch">
@@ -223,27 +221,28 @@
                         <div class="col">
                         </div>
                     </div>
-
-                        <div class="col-12">
-                            <asp:Button ID="btnRegresar" runat="server" Text=" Regresar " CssClass="btn btn-primary" OnClick="btnRegresar_Click" />
-                            <asp:Button ID="btnGuardar" runat="server" Text=" Guardar " CssClass="btn btn-success" OnClick="btnGuardar_Click" />
+                        
+                    <div class="card-footer" style="background-color:white">
+                        <asp:LinkButton ID="btnRegresar" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Regresar</asp:LinkButton>
+                        <div class="btn btn-info btn-rounded" style="cursor:pointer" onclick="<%=btnConfirmar.ClientID %>.click()">
+                            <i class="fa fa-check"></i>                                
+                            <asp:Button type="submit" ID="btnConfirmar" runat="server" Text=" Guardar " ClientIDMode="Static" CssClass="btnHidden" OnClick="btnConfirmar_Click" />           
                         </div>
+                        <asp:Button ID="btnGuardar" runat="server" Text="" CssClass="btnHidden" OnClick="btnGuardar_Click"/>
+                        <asp:HiddenField ID="hdfCodSolicitud" runat="server" />
+                        <asp:HiddenField ID="hdfSolLicEstado" runat="server" />
+                        <asp:HiddenField ID="hdfSolEmail" runat="server" />
+                        <asp:ValidationSummary ID="vsError" runat="server" 
+                            HeaderText="No se puede realizar esta Operación:" 
+                            ShowMessageBox="True" ShowSummary="False" ForeColor="#FF3300" />       
+                    </div>
                 
-                <asp:HiddenField ID="hdfCodSolicitud" runat="server" />
-                <asp:HiddenField ID="hdfSolLicEstado" runat="server" />
-                <asp:HiddenField ID="hdfSolEmail" runat="server" />
-                <asp:ValidationSummary ID="vsError" runat="server" 
-                    HeaderText="No se puede realizar esta Operación:" 
-                    ShowMessageBox="True" ShowSummary="False" ForeColor="#FF3300" />       
-
                                 </div>
                         </div>
                     </div>
-            </form>
-                </div>
+           
 
         </asp:View>
     </asp:MultiView>
-
 
 </asp:Content>

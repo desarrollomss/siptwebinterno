@@ -26,36 +26,29 @@ namespace SIPT.BL.Services
 
         public UsuarioDTO Logear(UsuarioDTO pUsuarioDTO, string vchaplicacion, string vchequipo)
         {
-            try
-            {
-                sicUsuario_dao = ObjectFactory.Instanciar<SicUsuario_dao>(new SicUsuario(), this.logMensajes);
-                sicUsuario = sicUsuario_dao.Login(pUsuarioDTO.vchusuariologin, pUsuarioDTO.vchusuariopassword, vchaplicacion, vchequipo);
+            sicUsuario_dao = ObjectFactory.Instanciar<SicUsuario_dao>(new SicUsuario(), this.logMensajes);
+            sicUsuario = sicUsuario_dao.Login(pUsuarioDTO.vchusuariologin, pUsuarioDTO.vchusuariopassword, vchaplicacion, vchequipo);
                 
-                Mapeos mapeo = new Mapeos();
-                usuarioDTO = mapeo.Map<SicUsuario, UsuarioDTO>(sicUsuario);
-                usuarioDTO.vchusuariopassword = pUsuarioDTO.vchusuariopassword;
+            Mapeos mapeo = new Mapeos();
+            usuarioDTO = mapeo.Map<SicUsuario, UsuarioDTO>(sicUsuario);
+            usuarioDTO.vchusuariopassword = pUsuarioDTO.vchusuariopassword;
 
-                List<MenuFuse> menu = CargaOpciones(sicUsuario, 0);
-                string jsonMenu = JsonConvert.SerializeObject(menu, Formatting.Indented);
-                usuarioDTO.vchmenu = jsonMenu;
+            List<MenuFuse> menu = CargaOpciones(sicUsuario, 0);
+            string jsonMenu = JsonConvert.SerializeObject(menu, Formatting.Indented);
+            usuarioDTO.vchmenu = jsonMenu;
 
-                if (usuarioDTO.vchusuariologin == "ADMINISTRADO")
-                {
-                    conAdministrado_bo = new ConAdministrado_bo(ref logMensajes);
-                    ConAdministrado oConAdministrado = conAdministrado_bo.ListarplataformaPorId(Convert.ToInt32(usuarioDTO.vchusuariopassword));
-
-                    conContacto_bo = new ConContacto_bo(ref logMensajes);
-                    ConContacto oConContacto = conContacto_bo.ListarPlataformaPorId(Convert.ToInt32(usuarioDTO.vchusuariopassword), TipoContacto.Email);
-
-                    usuarioDTO.vchusuarionombres = oConAdministrado.vchadmcompleto;
-                    usuarioDTO.vchcorreo = oConContacto.vchcondescri;
-                }
-
-            }
-            catch (Exception ex)
+            if (usuarioDTO.vchusuariologin == "ADMINISTRADO")
             {
-                throw ex;
+                conAdministrado_bo = new ConAdministrado_bo(ref logMensajes);
+                ConAdministrado oConAdministrado = conAdministrado_bo.ListarplataformaPorId(Convert.ToInt32(usuarioDTO.vchusuariopassword));
+
+                conContacto_bo = new ConContacto_bo(ref logMensajes);
+                ConContacto oConContacto = conContacto_bo.ListarPlataformaPorId(Convert.ToInt32(usuarioDTO.vchusuariopassword), TipoContacto.Email);
+
+                usuarioDTO.vchusuarionombres = oConAdministrado.vchadmcompleto;
+                usuarioDTO.vchcorreo = oConContacto.vchcondescri;
             }
+
             return usuarioDTO;
         }
 
@@ -118,17 +111,9 @@ namespace SIPT.BL.Services
 
         public List<SicUsuario> ListarUsuariosAppRol(string aplicacion, string usuariorol)
         {
+            sicUsuario_dao = ObjectFactory.Instanciar<SicUsuario_dao>(new SicUsuario(), this.logMensajes);
+            sicUsuarioList = sicUsuario_dao.ListarUsuariosAppRol(aplicacion, usuariorol);
 
-            try
-            {
-                sicUsuario_dao = ObjectFactory.Instanciar<SicUsuario_dao>(new SicUsuario(), this.logMensajes);
-                sicUsuarioList = sicUsuario_dao.ListarUsuariosAppRol(aplicacion, usuariorol);
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
             return sicUsuarioList;
 
         }

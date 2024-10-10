@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
 				return pPtuPlantillareqDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -61,11 +56,6 @@ namespace SIPT.BL.Services
 				oPtuPlantillareq_dao.Actualizar(oPtuPlantillareq);
 				dbconex.RegistrarTransaccion();
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -82,11 +72,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuPlantillareq_dao.Eliminar(intcodplantilla);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -114,11 +99,6 @@ namespace SIPT.BL.Services
 					oPtuPlantillareqDTOList.Add(oPtuPlantillareqDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -140,11 +120,6 @@ namespace SIPT.BL.Services
 
 				Mapeos mapeo = new Mapeos();
 				oPtuPlantillareqDTO = mapeo.Map<PtuPlantillareq, PtuPlantillareqDTO>(oPtuPlantillareq);
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -175,11 +150,6 @@ namespace SIPT.BL.Services
 					oPtuPlantillareqDTOList.Add(oPtuPlantillareqDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -206,11 +176,6 @@ namespace SIPT.BL.Services
 					var oPtuPlantillareqDTO = mapeo.Map<PtuPlantillareq, PtuPlantillareqDTO>(oPtuPlantillareq);
 					oPtuPlantillareqDTOList.Add(oPtuPlantillareqDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

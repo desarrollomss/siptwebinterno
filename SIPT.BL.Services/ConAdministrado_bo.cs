@@ -39,11 +39,6 @@ namespace SIPT.BL.Services
                 oConAdministradoList = oConAdministrado_dao.ListarPorFiltro(pConAdministrado);
                 dbconex.RegistrarTransaccion();
             }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
-            }
             finally
             {
                 dbconex.CerrarConexion();
@@ -62,11 +57,6 @@ namespace SIPT.BL.Services
                 
                 oConAdministrado = oConAdministrado_dao.ListarplataformaPorId(intadmcodigo);
                 dbconex.RegistrarTransaccion();
-            }
-            catch (Exception ex)
-            {
-                dbconex.AnularTransaccion();
-                throw ex;
             }
             finally
             {

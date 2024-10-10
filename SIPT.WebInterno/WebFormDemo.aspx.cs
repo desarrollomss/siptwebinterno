@@ -11,7 +11,20 @@ namespace SIPT.WebInterno
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void UpdateTime(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("hh:mm:ss tt");
+            string script = "window.onload = function() { UpdateTime('" + time + "'); };";
+            ClientScript.RegisterStartupScript(this.GetType(), "UpdateTime", script, true);
+        }
+
+        protected void btn_descargar_archivo_Click(object sender, EventArgs e)
+        {
+            string script = "window.onload = function() { swal('Good job!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed lorem erat eleifend ex semper, lobortis purus sed.', 'success'); };";
+            ClientScript.RegisterStartupScript(this.GetType(), "swal", script, true);
         }
     }
 }

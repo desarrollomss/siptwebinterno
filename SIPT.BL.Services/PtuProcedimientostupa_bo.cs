@@ -37,11 +37,6 @@ namespace SIPT.BL.Services
 
 				return pPtuProcedimientostupaDTO;
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -61,11 +56,6 @@ namespace SIPT.BL.Services
 				oPtuProcedimientostupa_dao.Actualizar(oPtuProcedimientostupa);
 				dbconex.RegistrarTransaccion();
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -82,11 +72,6 @@ namespace SIPT.BL.Services
 				dbconex.IniciarTransaccion();
 				oPtuProcedimientostupa_dao.Eliminar(intcodigoprocedimiento);
 				dbconex.RegistrarTransaccion();
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -114,11 +99,6 @@ namespace SIPT.BL.Services
 					oPtuProcedimientostupaDTOList.Add(oPtuProcedimientostupaDTO);
 				}
 			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
-			}
 			finally
 			{
 				dbconex.CerrarConexion();
@@ -140,11 +120,6 @@ namespace SIPT.BL.Services
 
 				Mapeos mapeo = new Mapeos();
 				oPtuProcedimientostupaDTO = mapeo.Map<PtuProcedimientostupa, PtuProcedimientostupaDTO>(oPtuProcedimientostupa);
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{
@@ -174,11 +149,6 @@ namespace SIPT.BL.Services
 					var oPtuProcedimientostupaDTO = mapeo.Map<PtuProcedimientostupa, PtuProcedimientostupaDTO>(oPtuProcedimientostupa);
 					oPtuProcedimientostupaDTOList.Add(oPtuProcedimientostupaDTO);
 				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
 			}
 			finally
 			{

@@ -21,10 +21,10 @@
     }
 
 </script>
-    <link href="assets/css/gridview.css" rel="stylesheet" />
+    
     <div class="row page-titles w-100">
         <div class="col-md-5 align-self-center" style="padding-left:40px">
-            <h3 class="text-themecolor">Asignar Solicitud a Analista</h3>
+            <h3 class="text-themecolor">Asignar de solicitudes</h3>
         </div>
         <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
@@ -33,17 +33,14 @@
             </ol>
         </div>
     </div>
-    <!--<nav class="navbar navbar-light bg-black">
-        <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="text-white small" ></asp:Label>
-    </nav>-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                
-                    <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Lista de Solicitudes a Asignar</h4>                                
-                                <div class="table-responsive">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Lista de Solicitudes a acreditar</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
                     
                     <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
                     <HeaderStyle CssClass="" />
@@ -112,13 +109,9 @@
                     </asp:GridView>
 
                 </div>
-                            </div>
-                        </div>
             </div>
         </div>
     </div>
 
-<%--<asp:DropDownList ID="ddlPrueba" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPrueba_SelectedIndexChanged">
-    </asp:DropDownList>--%>
 
 </asp:Content>

@@ -65,7 +65,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <span>Solicitud</span>
+                        <span>Filtros de Búsqueda</span>
                     </div>
                     <div class="card-body">
                                 
@@ -130,7 +130,7 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <span>Anexos a acreditar</span>
+                        <span>Lista de Solicitudes ITSE</span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

@@ -182,8 +182,8 @@
     <Compile Include="Funciones.cs" />
     <Compile Include="Logs\Log.cs" />
     <Compile Include="Logs\LogMensajes.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logs\SisLogmensajes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

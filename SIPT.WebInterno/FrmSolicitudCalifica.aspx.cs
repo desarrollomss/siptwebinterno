@@ -60,7 +60,7 @@ namespace SIPT.WebInterno
                 logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 try
                 {
-                    ViewState["ANALISTA"] = ListarUsuariosRolAnalista("Page_Load");
+                    ViewState["ANALISTA"] = ListarUsuariosRolAnalista();
                     pbd_CargarGrillaSolicitud();                
                     MultiView1.ActiveViewIndex = 0;
 
@@ -192,7 +192,17 @@ namespace SIPT.WebInterno
         protected void gvSolicitud_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvSolicitud.PageIndex = e.NewPageIndex;
-            pbd_CargarGrillaSolicitud();
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_CargarGrillaSolicitud();
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -288,21 +298,12 @@ namespace SIPT.WebInterno
             }
 
             oPtuSolicitud = new PtuSolicitud();
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
-            {
-                PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-                List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
-                gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
-                gvSolicitud.DataBind();
+           
+            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
+            List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
+            gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
+            gvSolicitud.DataBind();
 
-                APPL.FrondEnd.Response.Ok(logMensajes);
-            }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
         }
 
         private void pbd_CargarGrillaUsos(int? pintcodsolicitud, int? pintEstSolLicencia)
@@ -368,7 +369,7 @@ namespace SIPT.WebInterno
               
         }
 
-        private DataTable ListarUsuariosRolAnalista(string control)
+        private DataTable ListarUsuariosRolAnalista()
         {
             DataTable dtTabla = null;
             DataColumn dcColumna;
@@ -391,34 +392,21 @@ namespace SIPT.WebInterno
 
             row = dtTabla.NewRow();
 
-            request.vchconnombre = control;
 
-            oSicUsuarioList = new List<SicUsuario>();
+            oUsuario_bo = new Usuario_bo(ref logMensajes);
+            List<SicUsuario> oSicUsuarioList = oUsuario_bo.ListarUsuariosAppRol("SIPT", "ANALISTA SIPT");
 
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
+            foreach (SicUsuario Analista in oSicUsuarioList)
             {
 
-                oUsuario_bo = new Usuario_bo(ref logMensajes);
-                List<SicUsuario> oSicUsuarioList = oUsuario_bo.ListarUsuariosAppRol("SIPT", "ANALISTA SIPT");
+                row = dtTabla.NewRow();
 
-                foreach (SicUsuario Analista in oSicUsuarioList)
-                {
+                row["INTUSUANALISTA"] = Analista.intusuariocodigo;
+                row["VCHUSUANALISTA"] = Analista.vchusuarionombres;
+                dtTabla.Rows.Add(row);
 
-                    row = dtTabla.NewRow();
-
-                    row["INTUSUANALISTA"] = Analista.intusuariocodigo;
-                    row["VCHUSUANALISTA"] = Analista.vchusuarionombres;
-                    dtTabla.Rows.Add(row);
-
-                }
-                APPL.FrondEnd.Response.Ok(logMensajes);
             }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
+               
             return dtTabla;
         }
 

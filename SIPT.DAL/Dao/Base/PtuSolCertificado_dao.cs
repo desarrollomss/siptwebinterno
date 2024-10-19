@@ -1,19 +1,20 @@
-﻿using SIPT.BL.Models.Entity;
+using System;
+using SIPT.BL.Models.Entity;
+using SIPT.BL.Models.Consultas;
 using System.Collections.Generic;
 
 namespace SIPT.DAL.Dao.Base
 {
-    public abstract class PtuSolCertificado_dao
-    {
-        public abstract void Insertar(PtuSolCertificado pPtuSolCertidicado);
+	public abstract class PtuSolcertificado_dao
+	{
+		public abstract Int32 Insertar(PtuSolcertificado pPtuSolcertificado);
+		public abstract void Actualizar(PtuSolcertificado pPtuSolcertificado);
+		public abstract void Eliminar(int? intcodsolicitud);
+		public abstract List<PtuSolcertificado> Listar();
+		public abstract PtuSolcertificado ListarKey(int? intcodsolicitud);
+		public abstract List<PtuSolcertificado> ListarKeys(
+								int? intcodsolicitud,
+								int? intcodlicencia);
 
-        public abstract void Actualizar(PtuSolCertificado pPtuSolCertidicado);
-
-        public abstract void Eliminar(PtuSolCertificado pPtuSolCertidicado);
-
-        public abstract List<PtuSolCertificado> Listar();
-
-        public abstract PtuSolCertificado ListarPorId(PtuSolCertificado pPtuSolCertidicado);
-
-    }
+	}
 }

@@ -15,6 +15,6 @@ namespace SIPT.DAL.Dao.Base
 		public abstract List<PtuTabla> ListarKeys(
 								Int16? smlcodtabla,
 								Int16? smlestado);
-
+		public abstract List<PtuTabla> ListarGrupo(PtuTabla pPtuTabla);
 	}
 }

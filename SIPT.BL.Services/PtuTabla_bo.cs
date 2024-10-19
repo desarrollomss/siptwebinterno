@@ -193,6 +193,26 @@ namespace SIPT.BL.Services
 
 		}
 
+		public List<PtuTabla> ListarGrupo(PtuTabla pPtuTabla)
+		{
+			List<PtuTabla> oPtuTablaList;
+			dbconex = new Db();
+			try
+			{
+				oPtuTabla_dao = ObjectFactory.Instanciar<PtuTabla_dao>(new PtuTabla(), this.logMensajes, dbconex);
+
+				dbconex.IniciarTransaccion();
+				oPtuTablaList = oPtuTabla_dao.ListarGrupo(pPtuTabla);
+				dbconex.RegistrarTransaccion();
+				Mapeos mapeo = new Mapeos();
+
+			}
+			finally
+			{
+				dbconex.CerrarConexion();
+			}
+			return oPtuTablaList;
+		}
 
 	}
 }

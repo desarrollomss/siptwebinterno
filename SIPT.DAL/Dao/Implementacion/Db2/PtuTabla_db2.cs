@@ -135,6 +135,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 			return DB2Comando.Listar<PtuTabla>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUTABLA_LISTARKEYS", this.logMensajes, arrParam);				
 		}
 
+		public override List<PtuTabla> ListarGrupo(PtuTabla pPtuTabla)
+		{
+			DB2Parameter[] arrParam = new DB2Parameter[2];
+
+			arrParam[0] = new DB2Parameter("@VCHTABLA", DB2Type.VarChar);
+			arrParam[0].Value = pPtuTabla.vchtabla;
+			arrParam[1] = new DB2Parameter("@VCHCAMPO", DB2Type.VarChar);
+			arrParam[1].Value = pPtuTabla.vchcampo;
+
+			return DB2Comando.Listar<PtuTabla>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUTABLA_LISTARGRUPO", this.logMensajes, arrParam);
+		}
 
 	}
 }

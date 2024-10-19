@@ -3994,6 +3994,9 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Funciones.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="FrmSolicitudITSE.aspx.cs">
       <DependentUpon>FrmSolicitudITSE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

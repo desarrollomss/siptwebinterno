@@ -96,6 +96,7 @@
     <Compile Include="Dao\Base\DjuPredio_dao.cs" />
     <Compile Include="Dao\Base\PtuCertificado_dao.cs" />
     <Compile Include="Dao\Base\PtuConsultas_dao.cs" />
+    <Compile Include="Dao\Base\PtuDiligencia_dao.cs" />
     <Compile Include="Dao\Base\PtuIndicadores_dao.cs" />
     <Compile Include="Dao\Base\PtuLicencia_dao.cs" />
     <Compile Include="Dao\Base\PtuPlantillareq_dao.cs" />

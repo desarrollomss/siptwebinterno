@@ -21,6 +21,11 @@ namespace SIPT.WebInterno
         //private SIPT.WebInterno
         private LogMensajes logMensajes;
         private Request request;
+        private PtuTabla oPtuTabla;
+        private List<PtuTabla> oPtuTablaList = new List<PtuTabla>();
+        private PtuTabla_bo oPtuTabla_bo;
+
+        // depurar
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
         private PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo;
         private PtuProcedimientostupa_bo oPtuProcedimientostupa_bo;
@@ -76,12 +81,11 @@ namespace SIPT.WebInterno
 
             if (!Page.IsPostBack)
             {
-                //btnGuardar.Attributes.Add("onclick", "return confirm('¿Está seguro de Guardar el Calificación?')");
+          
                 logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 try
                 {
                     ViewState["ANALISTA"] = ListarUsuariosRolAnalista();
-
 
                     ddlInspectorBus.DataSource = (DataTable)ViewState["ANALISTA"];
                     ddlInspectorBus.DataTextField = "VCHUSUANALISTA";
@@ -89,21 +93,33 @@ namespace SIPT.WebInterno
                     ddlInspectorBus.DataBind();
                     ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
+
                     ddlAnioBus.DataSource = (DataTable)ViewState["ANALISTA"];
                     ddlAnioBus.DataTextField = "VCHUSUANALISTA";
                     ddlAnioBus.DataValueField = "INTUSUANALISTA";
                     ddlAnioBus.DataBind();
                     ddlAnioBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                    ddlEstadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                    ddlEstadoBus.DataTextField = "VCHUSUANALISTA";
-                    ddlEstadoBus.DataValueField = "INTUSUANALISTA";
+                    oPtuTabla = new PtuTabla();
+                    oPtuTabla_bo = new PtuTabla_bo(ref logMensajes);
+
+                    oPtuTabla.vchtabla = "PTUSOLCERTIFICADO";
+                    oPtuTabla.vchcampo = "SMLESTSOLCERTIFICADO";
+                    oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
+
+                    ddlEstadoBus.DataSource = oPtuTablaList;
+                    ddlEstadoBus.DataTextField = "VCHDESCRIPCION";
+                    ddlEstadoBus.DataValueField = "SMLCODTABLA";
                     ddlEstadoBus.DataBind();
                     ddlEstadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                    ddlResultadoBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                    ddlResultadoBus.DataTextField = "VCHUSUANALISTA";
-                    ddlResultadoBus.DataValueField = "INTUSUANALISTA";
+                    oPtuTabla.vchtabla = "PTUSOLCERTIFICADO";
+                    oPtuTabla.vchcampo = "SMLRESULTADOCERTIFICACION";
+                    oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
+
+                    ddlResultadoBus.DataSource = oPtuTablaList;
+                    ddlResultadoBus.DataTextField = "VCHDESCRIPCION";
+                    ddlResultadoBus.DataValueField = "SMLCODTABLA";
                     ddlResultadoBus.DataBind();
                     ddlResultadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace SIPT.BL.Models.Entity
+namespace SIPT.BL.DTO.DTO
 {
-	public class PtuCertificado
+	public class PtuCertificadoDTO
 	{
 		public int? intcodcertificado { get; set; }
 		public string chrceranio { get; set; }

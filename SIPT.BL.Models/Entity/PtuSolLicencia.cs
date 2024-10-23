@@ -25,6 +25,7 @@ namespace SIPT.BL.Models.Entity
 		public int? intnumestacionamientos { get; set; }
 		public string vchtipoempresa { get; set; }
 		public string vchzonificacion { get; set; }
+		public string vchestructuracion { get; set; }
 		public string vchconclusion { get; set; }
 		public string vchnumlicenciaconstr { get; set; }
 		public string vchnumdeclfabrica { get; set; }

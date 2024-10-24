@@ -123,15 +123,6 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.DropDownList ddlInspectorBus;
 
         /// <summary>
-        /// Control btnBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
         /// Control gvSolicitud.
         /// </summary>
         /// <remarks>
@@ -321,13 +312,13 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.Button btnConfirmar;
 
         /// <summary>
-        /// Control btnGuardar.
+        /// Control btnBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
         /// Control hdfCodSolicitud.

@@ -16,5 +16,9 @@ namespace SIPT.DAL.Dao.Base
 								int? intcodsolicitud,
 								int? intcodlicencia);
 
+		public abstract List<PtuSolcertificado> Buscar(
+										PtuSolcertificado pPtuSolcertificado,
+										PtuSolicitud pPtuSolicitud);
+
 	}
 }

@@ -121,7 +121,6 @@
 
                             <div class="col-md-2">
 
-                                <asp:Button ID="btnBuscar" runat="server" Text=" Buscar " CssClass="btn btn-success" OnClick="btnGuardar_Click" />
 
                             </div>
                         </div>
@@ -316,7 +315,7 @@
                                 <i class="fa fa-check"></i>                                
                                 <asp:Button type="submit" ID="btnConfirmar" runat="server" Text=" Guardar " ClientIDMode="Static" CssClass="btnHidden" style="cursor:pointer" OnClick="btnConfirmar_Click" />           
                             </div>
-                            <asp:Button ID="btnGuardar" runat="server" Text="" CssClass="btnHidden" OnClick="btnGuardar_Click"/>
+                            <asp:Button ID="btnBuscar" runat="server" Text="" CssClass="btnHidden" OnClick="btnBuscar_Click"/>
 
                             <asp:HiddenField ID="hdfCodSolicitud" runat="server" />
                             <asp:HiddenField ID="hdfSolLicEstado" runat="server" />

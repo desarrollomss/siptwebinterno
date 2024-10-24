@@ -13,6 +13,7 @@ using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using SIPT.WebInterno.App_Code;
 
 namespace SIPT.WebInterno
 {
@@ -24,6 +25,10 @@ namespace SIPT.WebInterno
         private PtuTabla oPtuTabla;
         private List<PtuTabla> oPtuTablaList = new List<PtuTabla>();
         private PtuTabla_bo oPtuTabla_bo;
+
+        private PtuSolcertificado oPtuSolcertificado;
+        private PtuSolicitud oPtuSolicitud;
+        private PtuSolcertificado_bo oPtuSolcertificado_bo;
 
         // depurar
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
@@ -52,7 +57,7 @@ namespace SIPT.WebInterno
         private string ltxtUsuarioRol;
 
 
-        PtuSolicitud oPtuSolicitud;
+
         PtuSolicitud_bo oPtuSolicitud_bo;
 
         #region Eventos
@@ -81,22 +86,22 @@ namespace SIPT.WebInterno
 
             if (!Page.IsPostBack)
             {
-          
+                ViewState["ANALISTA"] = Funciones.ListarUsuariosRol(request, "ANALISTA SIPT");
+
                 logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 try
                 {
-                    ViewState["ANALISTA"] = ListarUsuariosRolAnalista();
-
+                    
                     ddlInspectorBus.DataSource = (DataTable)ViewState["ANALISTA"];
                     ddlInspectorBus.DataTextField = "VCHUSUANALISTA";
                     ddlInspectorBus.DataValueField = "INTUSUANALISTA";
                     ddlInspectorBus.DataBind();
                     ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-
-                    ddlAnioBus.DataSource = (DataTable)ViewState["ANALISTA"];
-                    ddlAnioBus.DataTextField = "VCHUSUANALISTA";
-                    ddlAnioBus.DataValueField = "INTUSUANALISTA";
+                    
+                    ddlAnioBus.DataSource = Funciones.ListarAnio();
+                    ddlAnioBus.DataTextField = "TXTANIO";
+                    ddlAnioBus.DataValueField = "INTANIO";
                     ddlAnioBus.DataBind();
                     ddlAnioBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
@@ -122,7 +127,7 @@ namespace SIPT.WebInterno
                     ddlResultadoBus.DataValueField = "SMLCODTABLA";
                     ddlResultadoBus.DataBind();
                     ddlResultadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
-
+                    
 
                     pbd_CargarGrillaSolicitud();
                     MultiView1.ActiveViewIndex = 0;
@@ -277,34 +282,7 @@ namespace SIPT.WebInterno
             new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Calificación", "btnGuardar");
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
-            Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
 
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
-            {
-                pbd_GuardarCalificacion(lintCodSolicitud, lintEstSolLicencia);
-
-                // Procesa Plantillas
-                if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
-                {
-                    pbd_ProcesarPlantillas(lintCodSolicitud);
-                }
-
-                MultiView1.ActiveViewIndex = 0;
-                pbd_CargarGrillaSolicitud();
-
-                Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Calificación");
-                response.MensajeSwal(ClientScript);
-            }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
-        }
 
         protected void ddlProcedimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -331,41 +309,23 @@ namespace SIPT.WebInterno
             string ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
             int lintUsuAnalista = 0;
             /* Lista pendientes por Rol o Analista*/
-            if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
-            {
-                lintUsuAnalista = Convert.ToInt32(ltxtUsuarioId);
-                /*fscAnalista.Visible = true;
-                lblForAnalista.Visible = true;*/
-                lblTitAnalista.Visible = true;
-
-                fscCordinador.Visible = false;
-                lblForCoordinador.Visible = false;
-                lblTitCordinador.Visible = false;
-
-            }
-
-            if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
-            {
-                lintUsuAnalista = 0;
-
-                /*fscAnalista.Visible = true;
-                lblForAnalista.Visible = true;
-                lblTitAnalista.Visible = true;
-
-                fscAnalista.Disabled = true;*/
-
-
-                fscCordinador.Visible = true;
-                lblForCoordinador.Visible = true;
-                lblTitCordinador.Visible = true;
-
-            }
 
             oPtuSolicitud = new PtuSolicitud();
-            
-            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-            List<PtuSolicitud_PorAnalistaPorSolicitante> oPtuSolicitud_PorAnalistaPorSolicitanteList = oPtuSolicitud_bo.ListarCalificar(oPtuSolicitud, lintUsuAnalista);
-            gvSolicitud.DataSource = oPtuSolicitud_PorAnalistaPorSolicitanteList;
+            oPtuSolcertificado = new PtuSolcertificado();
+
+
+            oPtuSolicitud.chranio = ddlAnioBus.SelectedValue;
+            oPtuSolicitud.vchnumero = txtNumSolBus.Text;
+            oPtuSolicitud.vchnumexpediente = txtNumExpBus.Text;
+            oPtuSolicitud.intcodigosolicitante = Convert.ToInt32(txtCodAdmBus.Text);
+            oPtuSolicitud.vchnombresolicitante = txtNomSolBus.Text;
+
+            oPtuSolcertificado.smlestsolcertificado = Convert.ToInt16(ddlEstadoBus.SelectedValue);
+            oPtuSolcertificado.smlresultadocertificacion = Convert.ToInt16(ddlResultadoBus.SelectedValue);
+
+            PtuSolcertificado_bo oPtuSolcertificado_bo = new PtuSolcertificado_bo(ref logMensajes);
+            List<PtuSolcertificadoDTO> oPtuSolcertificadoDTOList = oPtuSolcertificado_bo.Buscar(oPtuSolcertificado,oPtuSolicitud);
+            gvSolicitud.DataSource = oPtuSolcertificadoDTOList;
             gvSolicitud.DataBind();
            
         }
@@ -504,7 +464,8 @@ namespace SIPT.WebInterno
         {
             string msg = "";
 
-            oPtuSolLicencia = new PtuSolLicencia();
+            oPtuSolcertificado = new PtuSolcertificado();
+            
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
             oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
@@ -654,6 +615,27 @@ namespace SIPT.WebInterno
         }
 
         #endregion
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
+            Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_CargarGrillaSolicitud();
+
+                Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Calificación");
+                response.MensajeSwal(ClientScript);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
+
 
     }
 }

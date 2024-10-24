@@ -189,6 +189,41 @@ namespace SIPT.BL.Services
 			return oPtuSolcertificadoDTOList;
 		}
 
+		public List<PtuSolcertificadoDTO> Buscar(
+										PtuSolcertificado pPtuSolcertificado,
+										PtuSolicitud pPtuSolicitud)
+		{
+			List<PtuSolcertificado> oPtuSolcertificadoList;
+			List<PtuSolcertificadoDTO> oPtuSolcertificadoDTOList = new List<PtuSolcertificadoDTO>();
+			dbconex = new Db();
+			try
+			{
+				oPtuSolcertificado_dao = ObjectFactory.Instanciar<PtuSolcertificado_dao>(new PtuSolcertificado(), this.logMensajes, dbconex);
+
+				dbconex.IniciarTransaccion();
+				oPtuSolcertificadoList = oPtuSolcertificado_dao.Buscar (pPtuSolcertificado,pPtuSolicitud);
+
+				dbconex.RegistrarTransaccion();
+				Mapeos mapeo = new Mapeos();
+
+				foreach (PtuSolcertificado oPtuSolcertificado in oPtuSolcertificadoList)
+				{
+					var oPtuSolcertificadoDTO = mapeo.Map<PtuSolcertificado, PtuSolcertificadoDTO>(oPtuSolcertificado);
+					oPtuSolcertificadoDTOList.Add(oPtuSolcertificadoDTO);
+				}
+			}
+			catch (Exception ex)
+			{
+				dbconex.AnularTransaccion();
+				throw ex;
+			}
+			finally
+			{
+				dbconex.CerrarConexion();
+			}
+			return oPtuSolcertificadoDTOList;
+		}
+
 
 	}
 }

@@ -8,12 +8,14 @@ using SIPT.APPL.Logs;
 using SIPT.DAL.Dao.Base;
 using SIPT.BL.Models.Entity;
 using SIPT.BL.Models.Consultas;
+using SIPT.DAL.Dao.Factory;
 
 namespace SIPT.DAL.Dao.Implementacion.Db2
 {
 	public class PtuSolcertificado_db2: PtuSolcertificado_dao
 	{
 		private List<PtuSolcertificado> oPtuSolcertificadoList;
+		private List<PtuSolcertificado_PorInspector> oPtuSolcertificado_PorInspectorList;
 		private PtuSolcertificado oPtuSolcertificado;
 		private LogMensajes logMensajes;
 		private Db dbconex;
@@ -235,46 +237,32 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 		}
 
 
-		public override List<PtuSolcertificado> Buscar(
+		public override List<PtuSolcertificado_PorInspector> Buscar(
 						PtuSolcertificado pPtuSolcertificado,
 						PtuSolicitud pPtuSolicitud)
 		{
-			DB2Parameter[] arrParam = new DB2Parameter[7];
-			try
-			{
-				arrParam[0] = new DB2Parameter("@CHRANIO", DB2Type.Char );
-				arrParam[0].Value = pPtuSolicitud.chranio;
-				arrParam[1] = new DB2Parameter("@VCHNUMERO", DB2Type.VarChar );
-				arrParam[1].Value = pPtuSolicitud.vchnumero;
-				arrParam[2] = new DB2Parameter("@SMLESTSOLCERTIFICADO", DB2Type.SmallInt );
-				arrParam[2].Value = pPtuSolcertificado.smlestsolcertificado;
-				arrParam[3] = new DB2Parameter("@SMLRESULTADOCERTIFICACION", DB2Type.SmallInt);
-				arrParam[3].Value = pPtuSolcertificado.smlresultadocertificacion;
-				arrParam[4] = new DB2Parameter("@VCHNUMEXPEDIENTE", DB2Type.VarChar);
-				arrParam[4].Value = pPtuSolicitud.vchnumexpediente;
-				arrParam[5] = new DB2Parameter("@INTCODIGOSOLICITANTE", DB2Type.Integer);
-				arrParam[5].Value = pPtuSolicitud.intcodigosolicitante;
-				arrParam[6] = new DB2Parameter("@VCHNOMBRESOLICITANTE", DB2Type.VarChar);
-				arrParam[6].Value = pPtuSolicitud.vchnombresolicitante;
-				arrParam[7] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
-				arrParam[7].Value = pPtuSolicitud.intcodigosolicitante;
+			DB2Parameter[] arrParam = new DB2Parameter[8];
+			
+			arrParam[0] = new DB2Parameter("@CHRANIO", DB2Type.Char );
+			arrParam[0].Value = pPtuSolicitud.chranio;
+			arrParam[1] = new DB2Parameter("@VCHNUMERO", DB2Type.VarChar );
+			arrParam[1].Value = pPtuSolicitud.vchnumero;
+			arrParam[2] = new DB2Parameter("@SMLESTSOLCERTIFICADO", DB2Type.SmallInt );
+			arrParam[2].Value = pPtuSolcertificado.smlestsolcertificado;
+			arrParam[3] = new DB2Parameter("@SMLRESULTADOCERTIFICACION", DB2Type.SmallInt);
+			arrParam[3].Value = pPtuSolcertificado.smlresultadocertificacion;
+			arrParam[4] = new DB2Parameter("@VCHNUMEXPEDIENTE", DB2Type.VarChar);
+			arrParam[4].Value = pPtuSolicitud.vchnumexpediente;
+			arrParam[5] = new DB2Parameter("@INTCODIGOSOLICITANTE", DB2Type.Integer);
+			arrParam[5].Value = pPtuSolicitud.intcodigosolicitante;
+			arrParam[6] = new DB2Parameter("@VCHNOMBRESOLICITANTE", DB2Type.VarChar);
+			arrParam[6].Value = pPtuSolicitud.vchnombresolicitante;
+			arrParam[7] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
+			arrParam[7].Value = pPtuSolicitud.intcodigosolicitante;
 
-				oPtuSolcertificadoList = new List<PtuSolcertificado>();
-				DB2DataReader dataReader = DB2helper.ExecuteReader((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADO_BUSCAR", arrParam);
-				oPtuSolcertificadoList = ConvertidorUtil.DeReaderAColeccion<PtuSolcertificado, List<PtuSolcertificado>>(dataReader);
-			}
-			catch (Exception ex)
-			{
-				Log.Error(this.logMensajes.codigoMensaje.ToString(), ex.Message);
-				throw ex;
-			}
-			finally
-			{
-				Log.Info(this.logMensajes.codigoMensaje.ToString(), "SIPT.PTUSOLCERTIFICADO_BUSCAR");
-				Log.Debug(this.logMensajes.codigoMensaje.ToString(), arrParam);
-				Log.Debug(this.logMensajes.codigoMensaje.ToString(), oPtuSolcertificadoList);
-			}
-			return oPtuSolcertificadoList;
+
+			return DB2Comando.Listar<PtuSolcertificado_PorInspector>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADO_BUSCAR", this.logMensajes, arrParam);
+				
 		}
 
 

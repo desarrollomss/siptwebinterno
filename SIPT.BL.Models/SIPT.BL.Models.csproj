@@ -54,6 +54,7 @@
     <Compile Include="Consultas\AutLicencia_Resultado.cs" />
     <Compile Include="Consultas\PtuPlantillareqvalores.cs" />
     <Compile Include="Consultas\PtuRequerimiento_Editables.cs" />
+    <Compile Include="Consultas\PtuSolcertificado_PorInspector.cs" />
     <Compile Include="Consultas\PtuSolicitud_PorAnalistaPorSolicitante.cs" />
     <Compile Include="Consultas\StdDocumento_InsertaDocWebSipt.cs" />
     <Compile Include="Consultas\StdDocumento_InsertaResultado.cs" />

@@ -11,8 +11,8 @@ namespace SIPT.BL.DTO.DTO
 		public DateTime? datfechaprogramacion { get; set; }
 		public DateTime? datfechavencimiento { get; set; }
 		public Int16? smlestsolcertificado { get; set; }
-		public Int16? smlresultadocertificacion { get; set; }
-		public string vchzonificacion { get; set; }
+        public Int16? smlresultadocertificacion { get; set; }
+        public string vchzonificacion { get; set; }
 		public string vchestructuracion { get; set; }
 		public string vchobservacion { get; set; }
 		public int? intcodsolicitudlicencia { get; set; }
@@ -24,5 +24,6 @@ namespace SIPT.BL.DTO.DTO
 		public DateTime? tmsaudfecmodif { get; set; }
 		public string vchaudequipo { get; set; }
 		public string vchaudprograma { get; set; }
-	}
+		
+    }
 }

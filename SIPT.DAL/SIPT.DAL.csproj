@@ -123,6 +123,7 @@
     <Compile Include="Dao\Implementacion\Db2\ConContacto_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\DjuPredio_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuConsultas_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuDiligencia_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuLicencia_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuPlantillareq_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuProcedimientostupa_db2.cs" />

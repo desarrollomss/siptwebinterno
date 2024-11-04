@@ -153,40 +153,28 @@ namespace SIPT.BL.Services
 			return oPtuDiligenciaDTO;
 		}
 
-		public List<PtuDiligenciaDTO> ListarKeys(
+		public List<PtuDiligencia> ListarKeys(
 								int? intcoddiligencia,
 								int? intcodsolicitud)
 		{
 			List<PtuDiligencia> oPtuDiligenciaList;
-			List<PtuDiligenciaDTO> oPtuDiligenciaDTOList = new List<PtuDiligenciaDTO>();
 			dbconex = new Db();
 			try
 			{
-				oPtuDiligencia_dao = ObjectFactory.Instanciar<PtuDiligencia_dao>(new PtuDiligencia(), this.logMensajes, dbconex);
-
 				dbconex.IniciarTransaccion();
+
+				oPtuDiligencia_dao = ObjectFactory.Instanciar<PtuDiligencia_dao>(new PtuDiligencia(), this.logMensajes, dbconex);
 				oPtuDiligenciaList = oPtuDiligencia_dao.ListarKeys(
 								intcoddiligencia,
 								intcodsolicitud);
-				dbconex.RegistrarTransaccion();
-				Mapeos mapeo = new Mapeos();
 
-				foreach (PtuDiligencia oPtuDiligencia in oPtuDiligenciaList)
-				{
-					var oPtuDiligenciaDTO = mapeo.Map<PtuDiligencia, PtuDiligenciaDTO>(oPtuDiligencia);
-					oPtuDiligenciaDTOList.Add(oPtuDiligenciaDTO);
-				}
-			}
-			catch (Exception ex)
-			{
-				dbconex.AnularTransaccion();
-				throw ex;
+				dbconex.RegistrarTransaccion();
 			}
 			finally
 			{
 				dbconex.CerrarConexion();
 			}
-			return oPtuDiligenciaDTOList;
+			return oPtuDiligenciaList;
 		}
 
 

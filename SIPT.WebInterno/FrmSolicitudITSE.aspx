@@ -171,12 +171,12 @@
                                                                 <asp:TemplateField>
                                                                     <ItemTemplate>
                                                                         <asp:Label ID="lblCodDiligencia" runat="server" Text='<%# Eval("INTCODDILIGENCIA") %>' Visible="false" />
-                                                                        <asp:Button ID="btnVer" runat="server" Text=" Ver " CssClass="btn waves-effect waves-light btn-warning" />
+                                                                        <asp:Button ID="btnVer" runat="server" Text=" Ver " OnClick="btnVer_Click" CssClass="btn waves-effect waves-light btn-warning" />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateField>
                                                                 <asp:TemplateField>
                                                                     <ItemTemplate>
-                                                                        <asp:Button ID="btnEditar" runat="server" Text=" Editar " CssClass="btn waves-effect waves-light btn-warning" />
+                                                                        <asp:Button ID="btnEditar" runat="server" Text=" Editar "  OnClick="btnEditar_Click" CssClass="btn waves-effect waves-light btn-warning" />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateField>
                                                             </Columns>
@@ -213,12 +213,12 @@
 
                             <div class="col-md-2">
                                 <label for="txtFecprog" class="form-label-sm">Fecha de Prog.</label>
-                                <asp:TextBox ID="txtFecprog" Text="" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtFecprog" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
                             <div class="col-md-2">
                                 <label for="txtHorprog" class="form-label-sm">Hora de Prog.</label>
-                                <asp:TextBox ID="txtHorprog" Text="" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtHorprog" Text="" TextMode="Time" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
                             <div class="col-md-2">
@@ -254,7 +254,7 @@
 
                             <div class="col-md-3">
                                 <label for="txtFecSubsana" class="form-label-sm">Fecha de Sunsanacion</label>
-                                <asp:TextBox ID="txtFecSubsana" Text="" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtFecSubsana" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
                         </div>
@@ -298,7 +298,7 @@
 
                             <div class="col-md-3">
                                 <label for="txtFecRepro" class="form-label-sm">Fecha de Reprogramacion</label>
-                                <asp:TextBox ID="txtFecRepro" Text="" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtFecRepro" TextMode="Date" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
                         </div>
 

@@ -101,7 +101,15 @@ namespace SIPT.WebInterno
                     ddlInspectorBus.DataBind();
                     ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
-                    
+
+                    ddlInspector.DataSource = (DataTable)ViewState["ANALISTA"];
+                    ddlInspector.DataTextField = "VCHUSUANALISTA";
+                    ddlInspector.DataValueField = "INTUSUANALISTA";
+                    ddlInspector.DataBind();
+                    ddlInspector.Items.Insert(0, new ListItem("(Todos)", "0"));
+
+
+
                     ddlAnioBus.DataSource = Funciones.ListarAnio();
                     ddlAnioBus.DataTextField = "TXTANIO";
                     ddlAnioBus.DataValueField = "INTANIO";
@@ -120,6 +128,15 @@ namespace SIPT.WebInterno
                     ddlEstadoBus.DataValueField = "SMLCODTABLA";
                     ddlEstadoBus.DataBind();
                     ddlEstadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
+
+
+                    ddlEstadoInsp.DataSource = oPtuTablaList;
+                    ddlEstadoInsp.DataTextField = "VCHDESCRIPCION";
+                    ddlEstadoInsp.DataValueField = "SMLCODTABLA";
+                    ddlEstadoInsp.DataBind();
+                    ddlEstadoInsp.Items.Insert(0, new ListItem("(Todos)", "0"));
+                    
+
 
                     oPtuTabla.vchtabla = "PTUSOLCERTIFICADO";
                     oPtuTabla.vchcampo = "SMLRESULTADOCERTIFICACION";
@@ -346,14 +363,6 @@ namespace SIPT.WebInterno
             hdfCodSolicitud.Value = pintcodsolicitud.ToString();
             hdfSolLicEstado.Value = pintEstSolLicencia.ToString();
 
-            txtCodSolicitud.Text = oPtuSolicitudDTO.intcodsolicitud.ToString();
-            txtNumSolicitud.Text = oPtuSolicitudDTO.chranio + " " + oPtuSolicitudDTO.vchnumero;
-            txtAdministrado.Text = oPtuSolicitudDTO.vchadmcompleto;
-            //txtAreaOcupa.Text = oPtuSolicitudDTO.decareaocupar.ToString();
-            txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
-            txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
-            txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
-            txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
 
             //txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;
 
@@ -384,8 +393,8 @@ namespace SIPT.WebInterno
                 }
             }*/
 
-            gvUsos.DataSource = oPtuUsoDTOList;
-            gvUsos.DataBind();
+            //gvUsos.DataSource = oPtuUsoDTOList;
+            //gvUsos.DataBind();
 
             pbd_CargarGrillaPlantillas();
 
@@ -457,7 +466,7 @@ namespace SIPT.WebInterno
             int intcodPlantilla = -1;
             //int intcodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
             int intcodProcedimiento;
-            int intcodSolicitud = Convert.ToInt32(txtCodSolicitud.Text);
+            //int intcodSolicitud = Convert.ToInt32(txtCodSolicitud.Text);
 
             //oPtuPlantillareqDTOList = pbd_CargarGrillaPlantillaProcTupa(intcodPlantilla, intcodProcedimiento, intcodSolicitud);
 
@@ -595,6 +604,16 @@ namespace SIPT.WebInterno
 
             MultiView1.ActiveViewIndex = 1;
 
+        }
+
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
         }
     }
 }

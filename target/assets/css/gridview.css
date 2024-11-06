@@ -1,0 +1,80 @@
+﻿
+.table table tbody tr td a,
+.table table tbody tr td span {
+ position: relative;
+ float: left;
+ padding: 6px 10px;
+ margin-left: -1px;
+ line-height: 1.42857143;
+ color: #337ab7;
+ text-decoration: none;
+ background-color: #fff;
+ border: 1px solid #ddd;
+}
+
+.table th {
+    /*padding: 4px 2px;
+    color: #525252;
+    background: #fff;
+    */
+    /*border-top: solid 1px #c1c1c1;*/
+    border-block: solid 1px #cccccc;
+    font-size: 0.9em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.table td {
+    padding: 8px 2px;
+    border: solid 1px #cccccc;
+    color: #222222;
+}
+
+.table table td {
+    padding: 1px;
+    border: solid 0px #fff;
+    color: #717171;
+}
+
+ .table table > tbody > tr > td > span {
+ z-index: 3;
+ color: #fff;
+ cursor: default;
+ background-color: #337ab7;
+ border-color: #fff;
+}
+ 
+ 
+ .table table > tbody > tr > td:first-child > a,
+ .table table > tbody > tr > td:first-child > span {
+ margin-left: 0;
+ border-top-left-radius: 8px;
+ border-bottom-left-radius: 8px;
+}
+
+
+ .table table > tbody > tr > td:last-child > a,
+ .table table > tbody > tr > td:last-child > span {
+ border-top-right-radius: 8px;
+ border-bottom-right-radius: 8px;
+}
+ /*
+ .table  > tbody > tr > td > a:hover,
+ .table  > tbody > tr > td > span:hover,
+ .table  > tbody > tr > td > a:focus,
+ .table  > tbody > tr > td > span:focus {
+ z-index: 2;
+ color: #23527c;
+ background-color: #eee;
+ border-color: #ddd;
+}*/
+
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+

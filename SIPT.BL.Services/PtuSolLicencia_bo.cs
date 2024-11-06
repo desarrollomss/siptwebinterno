@@ -155,7 +155,7 @@ namespace SIPT.BL.Services
 
                 ptuSolicitud = ptuSolicitud_dao.ListarPorId(pPtuSolLicencia.intcodsolicitud);
                 ptuSolLicencia = ptuSolLicencia_dao.ListarPorId(pPtuSolLicencia.intcodsolicitud);
-                ptuProcedimientostupa = ptuProcedimientostupa_dao.ListarKey(ptuSolicitud.intcodigoprocedimiento);
+                ptuProcedimientostupa = ptuProcedimientostupa_dao.ListarKey(1);
 
                 oPtuSolLicencia_dao = ObjectFactory.Instanciar<PtuSolLicencia_dao>(new PtuSolLicencia(), this.logMensajes, dbconex);
                 oPtuSolrequerimiento_dao = ObjectFactory.Instanciar<PtuSolrequerimiento_dao>(new PtuSolrequerimiento(), this.logMensajes, dbconex);

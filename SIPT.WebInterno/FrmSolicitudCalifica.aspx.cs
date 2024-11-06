@@ -327,6 +327,10 @@ namespace SIPT.WebInterno
             txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
 
             txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;
+            if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
+            {
+                fscAnalista.Checked = true;
+            }           
 
             gvUsos.DataSource = oPtuUsoDTOList;
             gvUsos.DataBind();

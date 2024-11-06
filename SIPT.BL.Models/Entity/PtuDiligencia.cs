@@ -10,6 +10,8 @@ namespace SIPT.BL.Models.Entity
 		public Int16? smlhoradiligencia { get; set; }
 		public string vchfileactadiligencia { get; set; }
 		public string vchfileinformecumplimiento { get; set; }
+		public string vchfilepanelfotografico { get; set; }
+
 		public string vchobsinspector { get; set; }
 		public string vchobssolicitante { get; set; }
 		public Int16? smlestdiligencia { get; set; }

@@ -28,7 +28,6 @@ namespace SIPT.WebInterno
             #endregion
             if (!Page.IsPostBack)
             {
-                pfm_ConfiguracionInicial();
                 txtUsuario.Text = "";
                 txtPassword.Text = "";                
             }
@@ -38,17 +37,6 @@ namespace SIPT.WebInterno
         protected void btnLogear_Click(object sender, EventArgs e)
         {
             pbd_Ingresar();
-        }
-
-        private void pfm_ConfiguracionInicial()
-        {
-            //lblDerechos.Text = "SIPT ©Copyright 2024.";
-            //lblCompany.Text = "Municipalidad de Santiago de Surco.";
-
-            /*if (Request.Cookies["Security"] != null)
-            {
-                FormsAuthentication.RedirectFromLoginPage((string)(Request.Cookies["Security"]["Usuario"]), false);
-            }*/
         }
 
         private void pbd_Ingresar()
@@ -101,7 +89,7 @@ namespace SIPT.WebInterno
                 Response.Cookies["Security"].Values.Add("Usuario", oUsuarioDTO.vchusuariologin);
                 Response.Cookies["Security"].Values.Add("Email", oUsuarioDTO.vchcorreo.ToLower());
                 Response.Cookies["Security"].Values.Add("Nombres", oUsuarioDTO.vchusuarionombres);
-                Response.Cookies["Security"].Values.Add("CodArea", oUsuarioDTO.intareacodigo.ToString().Trim());
+                Response.Cookies["Security"].Values.Add("CodArea", oUsuarioDTO.intareacodigo.ToString().Trim());                
                 Response.Cookies["Security"].Values.Add("Area", oUsuarioDTO.vchareasigla);
                 Response.Cookies["Security"].Values.Add("DireccionIP", lstDireccionIP);
                 Response.Cookies["Security"].Values.Add("NumSesion", oUsuarioDTO.vchsessionid.ToString().Trim());
@@ -110,6 +98,9 @@ namespace SIPT.WebInterno
                 Response.Cookies["Security"].Values.Add("Sistema", lstCodSistema);
                 Response.Cookies["Security"].Values.Add("Modulo", ConfigurationManager.AppSettings["Modulo"]);
                 Response.Cookies["Security"].Values.Add("Opcion", ConfigurationManager.AppSettings["Opcion"]);
+
+                Response.Cookies.Add(new HttpCookie("Menu"));
+                Session["Menu"] = "<![CDATA[" + oUsuarioDTO.vchmenu + "]]>";
 
                 APPL.FrondEnd.Response.Ok(logMensajes);
                 

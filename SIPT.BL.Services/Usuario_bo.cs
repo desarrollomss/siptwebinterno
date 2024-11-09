@@ -33,9 +33,10 @@ namespace SIPT.BL.Services
             usuarioDTO = mapeo.Map<SicUsuario, UsuarioDTO>(sicUsuario);
             usuarioDTO.vchusuariopassword = pUsuarioDTO.vchusuariopassword;
 
-            List<MenuFuse> menu = CargaOpciones(sicUsuario, 0);
+            string menu = CargaOpciones(sicUsuario, 0);
+            //List<MenuFuse> menu = CargaOpciones(sicUsuario, 0);
             string jsonMenu = JsonConvert.SerializeObject(menu, Formatting.Indented);
-            usuarioDTO.vchmenu = jsonMenu;
+            usuarioDTO.vchmenu = menu;
 
             if (usuarioDTO.vchusuariologin == "ADMINISTRADO")
             {
@@ -52,48 +53,61 @@ namespace SIPT.BL.Services
             return usuarioDTO;
         }
 
-        private List<MenuFuse> CargaOpciones(SicUsuario sicUsuario, int? intopccodigopadre)
+        private string CargaOpciones(SicUsuario sicUsuario, int? intopccodigopadre)
         {
-            List<MenuFuse> mimenu = new List<MenuFuse>();
+            System.Text.StringBuilder mimenu = new System.Text.StringBuilder();
             List<SicOpcion> sicOpciones = sicUsuario.sicOpciones;
-            MenuFuse nodo = null;
+            //MenuFuse nodo = null;
 
-            if (intopccodigopadre == 0)
-            {
-                nodo = new MenuFuse();
-                nodo.id = "0";
-                nodo.title = "Inicio";
-                nodo.link = "inicio";
-                nodo.type = "basic";
-                nodo.icon = "heroicons_outline:home";
-                mimenu.Add(nodo);
-            }
+            //if (intopccodigopadre == 0)
+            //{
+            //    nodo = new MenuFuse();
+            //    nodo.id = "0";
+            //    nodo.title = "Inicio";
+            //    nodo.link = "inicio";
+            //    nodo.type = "basic";
+            //    nodo.icon = "heroicons_outline:home";
+            //    mimenu.Add(nodo);
+            //}
 
             foreach (SicOpcion opcion in sicOpciones)
             {
                 if (opcion.intopccodigopadre == intopccodigopadre)
                 {
-                    nodo = new MenuFuse();
-                    nodo.id = opcion.intopccodigo.ToString();
-                    nodo.title = opcion.vchopcnombre;
-                    nodo.icon = "heroicons_outline:" + opcion.vchopcdescrip.ToLower();                   
+                    //mimenu.Append("<li class='nav-small-cap'>"+ opcion.vchopcnombre + "</li>");
 
-                    if (opcion.vchopcaccion is null || opcion.vchopcaccion == "-")
-                    {
-                        if (opcion.intopcnivel == 1) nodo.type = "collapsable";
-                        else nodo.type = "aside";
-                    }
-                    else
-                    {
-                        nodo.link = opcion.vchopcaccion;
-                        nodo.type = "basic";
-                    }
-                    nodo.children = CargaOpciones(sicUsuario, opcion.intopccodigo);
+                    //nodo = new MenuFuse();
+                    //nodo.id = opcion.intopccodigo.ToString();
+                    //nodo.title = opcion.vchopcnombre;
+                    //nodo.icon = "heroicons_outline:" + opcion.vchopcdescrip.ToLower();                   
 
-                    mimenu.Add(nodo);
+                    if (opcion.vchopcaccion is null || opcion.vchopcaccion == "-") // padre
+                    {
+                        mimenu.Append("<li class='nav-small-cap'>" + opcion.vchopcnombre + "</li>");
+                        mimenu.AppendLine();
+                        //if (opcion.intopcnivel == 1) nodo.type = "collapsable";
+                        //else nodo.type = "aside";
+                    }
+                    else // hijo
+                    {
+                        mimenu.Append("<li>");
+                        mimenu.AppendLine();
+                        mimenu.Append("  <a class='has-arrow waves-effect waves-dark' href='"+ opcion.vchopcaccion + "' aria-expanded='false'>");
+                        mimenu.AppendLine();
+                        mimenu.Append("    <i class='"+ opcion.vchopcdescrip.ToLower() + "'></i><span class='hide-menu'>" + opcion.vchopcnombre + "</span>");
+                        mimenu.AppendLine();
+                        mimenu.Append("  </a>");
+                        mimenu.AppendLine();
+                        mimenu.Append("</li>");
+                        mimenu.AppendLine();
+                        //nodo.link = opcion.vchopcaccion;
+                        //nodo.type = "basic";
+                    }
+                    mimenu.Append(CargaOpciones(sicUsuario, opcion.intopccodigo));
+
                 }
             }
-            return mimenu;
+            return mimenu.ToString();
         }
 
         private class MenuFuse

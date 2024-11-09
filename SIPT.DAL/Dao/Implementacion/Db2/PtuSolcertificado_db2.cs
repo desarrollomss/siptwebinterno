@@ -58,17 +58,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 				arrParam[12] = new DB2Parameter("@INTCODLICENCIA", DB2Type.Integer);
 				arrParam[12].Value = pPtuSolcertificado.intcodlicencia;
 				arrParam[13] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[13].Value = pPtuSolcertificado.vchaudusucreacion;
+				arrParam[13].Value = this.logMensajes.Usuario;
 				arrParam[14] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[14].Value = pPtuSolcertificado.tmsaudfeccreacion;
+				arrParam[14].Value = DateTime.Now;
 				arrParam[15] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[15].Value = pPtuSolcertificado.vchaudusumodif;
+				arrParam[15].Value = DBNull.Value;
 				arrParam[16] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[16].Value = pPtuSolcertificado.tmsaudfecmodif;
+				arrParam[16].Value = DBNull.Value;
 				arrParam[17] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[17].Value = pPtuSolcertificado.vchaudequipo;
+				arrParam[17].Value = this.logMensajes.Equipo;
 				arrParam[18] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[18].Value = pPtuSolcertificado.vchaudprograma;
+				arrParam[18].Value = this.logMensajes.Programa;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADO_INSERTAR", arrParam);
 			}
 			catch (Exception ex)
@@ -116,17 +116,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 				arrParam[12] = new DB2Parameter("@INTCODLICENCIA", DB2Type.Integer);
 				arrParam[12].Value = pPtuSolcertificado.intcodlicencia;
 				arrParam[13] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[13].Value = pPtuSolcertificado.vchaudusucreacion;
+				arrParam[13].Value = DBNull.Value;
 				arrParam[14] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[14].Value = pPtuSolcertificado.tmsaudfeccreacion;
+				arrParam[14].Value = DBNull.Value;
 				arrParam[15] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[15].Value = pPtuSolcertificado.vchaudusumodif;
+				arrParam[15].Value = this.logMensajes.Usuario;
 				arrParam[16] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[16].Value = pPtuSolcertificado.tmsaudfecmodif;
+				arrParam[16].Value = DateTime.Now;
 				arrParam[17] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[17].Value = pPtuSolcertificado.vchaudequipo;
+				arrParam[17].Value = this.logMensajes.Equipo;
 				arrParam[18] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[18].Value = pPtuSolcertificado.vchaudprograma;
+				arrParam[18].Value = this.logMensajes.Programa;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADO_ACTUALIZAR", arrParam);
 			}
 			catch (Exception ex)

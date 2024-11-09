@@ -53,17 +53,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 				arrParam[10] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
 				arrParam[10].Value = pPtuDiligencia.intcodsolicitud;
 				arrParam[11] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[11].Value = pPtuDiligencia.vchaudusucreacion;
+				arrParam[11].Value = this.logMensajes.Usuario;
 				arrParam[12] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[12].Value = pPtuDiligencia.tmsaudfeccreacion;
+				arrParam[12].Value = DateTime.Now;
 				arrParam[13] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[13].Value = pPtuDiligencia.vchaudusumodif;
+				arrParam[13].Value = DBNull.Value;
 				arrParam[14] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[14].Value = pPtuDiligencia.tmsaudfecmodif;
+				arrParam[14].Value = DBNull.Value;
 				arrParam[15] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[15].Value = pPtuDiligencia.vchaudequipo;
+				arrParam[15].Value = this.logMensajes.Equipo;
 				arrParam[16] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[16].Value = pPtuDiligencia.vchaudprograma;
+				arrParam[16].Value = this.logMensajes.Programa;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUDILIGENCIA_INSERTAR", arrParam);
 			}
 			catch (Exception ex)
@@ -107,17 +107,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 				arrParam[10] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
 				arrParam[10].Value = pPtuDiligencia.intcodsolicitud;
 				arrParam[11] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[11].Value = pPtuDiligencia.vchaudusucreacion;
+				arrParam[11].Value = DBNull.Value;
 				arrParam[12] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[12].Value = pPtuDiligencia.tmsaudfeccreacion;
+				arrParam[12].Value = DBNull.Value;
 				arrParam[13] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[13].Value = pPtuDiligencia.vchaudusumodif;
+				arrParam[13].Value = this.logMensajes.Usuario;
 				arrParam[14] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[14].Value = pPtuDiligencia.tmsaudfecmodif;
+				arrParam[14].Value = DateTime.Now;
 				arrParam[15] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[15].Value = pPtuDiligencia.vchaudequipo;
+				arrParam[15].Value = this.logMensajes.Equipo;
 				arrParam[16] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[16].Value = pPtuDiligencia.vchaudprograma;
+				arrParam[16].Value = this.logMensajes.Programa;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUDILIGENCIA_ACTUALIZAR", arrParam);
 			}
 			catch (Exception ex)

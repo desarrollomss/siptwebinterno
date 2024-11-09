@@ -204,6 +204,7 @@
     <Content Include="assets\images\icon\warning.svg" />
     <Content Include="assets\images\icon\zip.png" />
     <Content Include="assets\images\logo-icon.png" />
+    <Content Include="assets\images\logo-icon2.png" />
     <Content Include="assets\images\logo-light-icon.png" />
     <Content Include="assets\images\logo-light-text.png" />
     <Content Include="assets\images\logo-text.png" />

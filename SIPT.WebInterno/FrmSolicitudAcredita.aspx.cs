@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.Security;
-using SIPT.APPL;
-using SIPT.APPL.FrondEnd;
+﻿using SIPT.APPL.FrondEnd;
 using SIPT.APPL.Logs;
+using SIPT.BL.DTO.DTO;
 using SIPT.BL.Models.Consultas;
 using SIPT.BL.Models.Entity;
 using SIPT.BL.Services;
-using SIPT.BL.DTO.DTO;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SIPT.WebInterno
 {
@@ -24,25 +19,19 @@ namespace SIPT.WebInterno
         private LogMensajes logMensajes;
         private Request request;
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
-        private PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo;
-        private PtuProcedimientostupa_bo oPtuProcedimientostupa_bo;
         private PtuSolicitudDTO oPtuSolicitudDTO;
         private PtuSolLicencia oPtuSolLicencia;
-        private PtuPlantillareq_bo oPtuPlantillareq_bo;
 
         private List<PtuSolrequerimiento> oPtuSolrequerimientoList;
         private PtuSolrequerimiento oPtuSolrequerimiento;
-        private PtuSolrequerimiento_bo oPtuSolrequerimiento_bo;
 
         public List<PtuPlantillareqDTO> oPtuPlantillareqDTOList = new List<PtuPlantillareqDTO>();
 
         private Usuario_bo oUsuario_bo;
-        private SicUsuario oSicUsuario;
               
         private string ltxtUsuarioRol;
 
         PtuSolicitud oPtuSolicitud;
-        PtuSolicitud_bo oPtuSolicitud_bo;
 
         #region eventos
 
@@ -180,10 +169,6 @@ namespace SIPT.WebInterno
                 oPtuSolLicenciaAnalista.intusuanalista = Convert.ToInt32(ddlSCUAnalista.SelectedValue);
                 oPtuSolLicenciaAnalista.intcodsolicitud = Convert.ToInt32(lstcodSolicitud);
                 oPtuSolLicenciaAnalista.smlestado = 1;
-                oPtuSolLicenciaAnalista.tmsaudfeccreacion = DateTime.Now;
-                oPtuSolLicenciaAnalista.vchaudusucreacion = request.vchaudcodusuario;
-                oPtuSolLicenciaAnalista.vchaudequipo = request.vchaudequipo;
-                oPtuSolLicenciaAnalista.vchaudprograma = request.vchaudprograma;
 
                 PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo = new PtuSolLicenciaAnalista_bo(ref logMensajes);
                 oPtuSolLicenciaAnalista_bo.Insertar(oPtuSolLicenciaAnalista);
@@ -414,50 +399,7 @@ namespace SIPT.WebInterno
             return oPtuProcedimientostupaDTOList;
         }
 
-        private DataTable pbd_CargarGrillaPlantillaProcTupa(int? intcodplantilla, int? intcodigoprocedimiento, int? intcodsolicitud)
-        {
-
-            DataTable dtTabla = null;
-            DataColumn dcColumna;
-            DataRow row;
-
-            dtTabla = new DataTable("PLANTILLA");
-
-            dcColumna = new DataColumn();
-
-            dcColumna.DataType = System.Type.GetType("System.String");
-            dcColumna.ColumnName = "INTCODPLANTILLA";
-            dcColumna.DefaultValue = "";
-            dtTabla.Columns.Add(dcColumna);
-
-
-            dcColumna = new DataColumn();
-            dcColumna.DataType = System.Type.GetType("System.String");
-            dcColumna.ColumnName = "VCHNOMBREPLANTILLA";
-            dcColumna.DefaultValue = "";
-            dtTabla.Columns.Add(dcColumna);
-
-            row = dtTabla.NewRow();
-
-            oPtuSolicitud = new PtuSolicitud();
-            List<PtuPlantillareqDTO> oPtuPlantillareqDTOList = new List<PtuPlantillareqDTO>();
-
-            PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
-
-            oPtuPlantillareqDTOList = oPtuPlantillareq_bo.ListarPlantillas(intcodplantilla, intcodigoprocedimiento, intcodsolicitud);
-
-            foreach (PtuPlantillareqDTO objeto in oPtuPlantillareqDTOList)
-            {
-                row = dtTabla.NewRow();
-
-                row["INTCODPLANTILLA"] = objeto.intcodplantilla.ToString();
-                row["VCHNOMBREPLANTILLA"] = objeto.vchnombreplantilla;
-                dtTabla.Rows.Add(row);
-            }
-            ViewState["PLANTILLA"] = dtTabla;
-
-            return dtTabla;
-        }
+     
 
         private void pbd_CargarGrillaPlantillas()
         {
@@ -495,9 +437,6 @@ namespace SIPT.WebInterno
             oPtuSolLicencia = new PtuSolLicencia();
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
-
-            oPtuSolLicencia.vchaudusumodif = request.vchaudcodusuario;
-            oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
             
             for (int i = 0; i < rptResult.Items.Count; i++)
             {
@@ -521,8 +460,6 @@ namespace SIPT.WebInterno
                     oPtuSolrequerimiento.smlevaluacion = 29;   // Observado
                     flgCompleto = false;
                 }
-                oPtuSolrequerimiento.vchaudusumodif = request.vchaudcodusuario;
-                oPtuSolrequerimiento.tmsaudfecmodif = DateTime.Now;
 
                 oPtuSolrequerimientoList.Add(oPtuSolrequerimiento);
             }
@@ -580,31 +517,7 @@ namespace SIPT.WebInterno
             }           
             return dtTabla;
         }
-
-        private void pbd_ProcesarPlantillas(int? pintcodsolicitud)
-        {
-            oPtuSolLicencia = new PtuSolLicencia();
-            oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
-            //oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
-            oPtuSolLicencia.vchaudusumodif = request.vchaudcodusuario;
-            oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
-            oPtuSolLicencia.vchaudequipo = request.vchaudequipo;
-            oPtuSolLicencia.vchaudprograma = request.vchaudprograma;
-
-            PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-            oPtuSolLicencia_bo.ProcesarPlantillas(oPtuSolLicencia);
-        }
-
-        private List<PtuPlantillareqDTO> pbd_CargarComboPlantillas()
-        {
-            List<PtuPlantillareqDTO> oPtuPlantillareqList = new List<PtuPlantillareqDTO>();
-            
-            PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
-            oPtuPlantillareqDTOList = oPtuPlantillareq_bo.Listar();
-             
-            return oPtuPlantillareqDTOList;
-        }
-
+    
         private List<PtuSolrequerimientoDTO> pbd_CargarPlantillaSolLicencia(int? intcodsolicitud)
         {
             List<PtuSolrequerimientoDTO> oPtuSolrequerimientoDTOList = new List<PtuSolrequerimientoDTO>();

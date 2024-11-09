@@ -26,7 +26,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						
-						<asp:TextBox ID="txtUsuario" runat="server" class="input100" required="" autocomplete="off"></asp:TextBox>
+						<asp:TextBox ID="txtUsuario" runat="server" class="input100" required="" autocomplete="off" MaxLength="20"></asp:TextBox>
 						<span class="focus-input100"></span>
 						<span class="label-input100">Usuario</span>
 					</div>

@@ -34,17 +34,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[2] = new DB2Parameter("@SMLUSOPRINCIPAL", DB2Type.SmallInt);
             arrParam[2].Value = pPtuSolLicenciaUso.smlusoprincipal; // ? 1 : 0;
             arrParam[3] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-            arrParam[3].Value = pPtuSolLicenciaUso.vchaudusucreacion;
+            arrParam[3].Value = this.logMensajes.Usuario;
             arrParam[4] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-            arrParam[4].Value = pPtuSolLicenciaUso.tmsaudfeccreacion;
+            arrParam[4].Value = DateTime.Now;
             arrParam[5] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[5].Value = pPtuSolLicenciaUso.vchaudusumodif;
+            arrParam[5].Value = DBNull.Value;
             arrParam[6] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[6].Value = pPtuSolLicenciaUso.tmsaudfecmodif;
+            arrParam[6].Value = DBNull.Value;
             arrParam[7] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-            arrParam[7].Value = pPtuSolLicenciaUso.vchaudequipo;
+            arrParam[7].Value = this.logMensajes.Equipo;
             arrParam[8] = new DB2Parameter("@VACHAUDPROGRAMA", DB2Type.VarChar);
-            arrParam[8].Value = pPtuSolLicenciaUso.vchaudprograma;
+            arrParam[8].Value = this.logMensajes.Programa;
             arrParam[9] = new DB2Parameter("@VCHCODUSO", DB2Type.VarChar);
             arrParam[9].Value = pPtuSolLicenciaUso.vchcoduso;
 
@@ -62,17 +62,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[2] = new DB2Parameter("@SMLUSOPRINCIPAL", DB2Type.SmallInt);
             arrParam[2].Value = pPtuSolLicenciaUso.smlusoprincipal;
             arrParam[3] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-            arrParam[3].Value = pPtuSolLicenciaUso.vchaudusucreacion;
+            arrParam[3].Value = DBNull.Value;
             arrParam[4] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-            arrParam[4].Value = pPtuSolLicenciaUso.tmsaudfeccreacion;
+            arrParam[4].Value = DBNull.Value;
             arrParam[5] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[5].Value = pPtuSolLicenciaUso.vchaudusumodif;
+            arrParam[5].Value = this.logMensajes.Usuario;
             arrParam[6] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[6].Value = pPtuSolLicenciaUso.tmsaudfecmodif;
+            arrParam[6].Value = DateTime.Now;
             arrParam[7] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-            arrParam[7].Value = pPtuSolLicenciaUso.vchaudequipo;
+            arrParam[7].Value = this.logMensajes.Equipo;
             arrParam[8] = new DB2Parameter("@VACHAUDPROGRAMA", DB2Type.VarChar);
-            arrParam[8].Value = pPtuSolLicenciaUso.vchaudprograma;
+            arrParam[8].Value = this.logMensajes.Programa;
             arrParam[9] = new DB2Parameter("@VCHCODUSO", DB2Type.VarChar);
             arrParam[9].Value = pPtuSolLicenciaUso.vchcoduso;
 

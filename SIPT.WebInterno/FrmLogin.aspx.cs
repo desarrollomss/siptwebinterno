@@ -99,7 +99,7 @@ namespace SIPT.WebInterno
                 Response.Cookies.Add(new HttpCookie("Security"));
 
                 Response.Cookies["Security"].Values.Add("Usuario", oUsuarioDTO.vchusuariologin);
-                Response.Cookies["Security"].Values.Add("Email", oUsuarioDTO.vchcorreo);
+                Response.Cookies["Security"].Values.Add("Email", oUsuarioDTO.vchcorreo.ToLower());
                 Response.Cookies["Security"].Values.Add("Nombres", oUsuarioDTO.vchusuarionombres);
                 Response.Cookies["Security"].Values.Add("CodArea", oUsuarioDTO.intareacodigo.ToString().Trim());
                 Response.Cookies["Security"].Values.Add("Area", oUsuarioDTO.vchareasigla);

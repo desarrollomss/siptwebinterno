@@ -1,19 +1,14 @@
-﻿using System;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using SIPT.APPL;
-using SIPT.APPL.FrondEnd;
+﻿using SIPT.APPL.FrondEnd;
 using SIPT.APPL.Logs;
+using SIPT.BL.DTO.DTO;
 using SIPT.BL.Models.Consultas;
 using SIPT.BL.Models.Entity;
 using SIPT.BL.Services;
-using SIPT.BL.DTO.DTO;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SIPT.WebInterno
 {
@@ -22,22 +17,12 @@ namespace SIPT.WebInterno
         private LogMensajes logMensajes;
         private Request request;
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
-        private PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo;
         private PtuSolicitudDTO oPtuSolicitudDTO;
         private Usuario_bo oUsuario_bo;
-        private SicUsuario oSicUsuario;
-        private List<SicUsuario> oSicUsuarioList;
-        private string lstUsuario;
-        private string lstSistema;
-        private string lstEquipo;
-        private string lstOpcion;
-        private string lstNombre;
 
-        private string ltxtUsuarioId;
         private string ltxtUsuarioRol;
  
         PtuSolicitud oPtuSolicitud;
-        PtuSolicitud_bo oPtuSolicitud_bo;
 
         #region Eventos
 
@@ -144,10 +129,6 @@ namespace SIPT.WebInterno
                 oPtuSolLicenciaAnalista.intusuanalista = Convert.ToInt32(ddlSCUAnalista.SelectedValue);
                 oPtuSolLicenciaAnalista.intcodsolicitud = Convert.ToInt32(lstcodSolicitud);
                 oPtuSolLicenciaAnalista.smlestado = 1;
-                oPtuSolLicenciaAnalista.tmsaudfeccreacion = DateTime.Now;
-                oPtuSolLicenciaAnalista.vchaudusucreacion = lstUsuario;
-                oPtuSolLicenciaAnalista.vchaudequipo = lstEquipo;
-                oPtuSolLicenciaAnalista.vchaudprograma = lstSistema;
 
                 PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo = new PtuSolLicenciaAnalista_bo(ref logMensajes);
                 oPtuSolLicenciaAnalista_bo.Insertar(oPtuSolLicenciaAnalista);

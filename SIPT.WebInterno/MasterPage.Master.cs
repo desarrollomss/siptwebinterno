@@ -97,6 +97,7 @@ namespace SIPT.WebInterno
             //string lstCodUsuario = (string)(Request.Cookies["Security"]["Usuario"]);
             
             lblUsuario.Text = (string)(Request.Cookies["Security"]["Usuario"]);
+            lblCorreo.Text = (string)(Request.Cookies["Security"]["Email"]);
             lblNombre.Text = (string)(Request.Cookies["Security"]["Nombres"]);
             lblUsuarioId.Text = (string)(Request.Cookies["Security"]["UsuarioId"]);
             lblUsuarioRol.Text = (string)(Request.Cookies["Security"]["UsuarioRol"]);

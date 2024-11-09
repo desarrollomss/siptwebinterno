@@ -71,17 +71,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 			arrParam[20] = new DB2Parameter("@SMLPROCTUPAACTIVO", DB2Type.SmallInt);
 			arrParam[20].Value = pPtuProcedimientostupa.smlproctupaactivo;
 			arrParam[21] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-			arrParam[21].Value = pPtuProcedimientostupa.vchaudusucreacion;
+			arrParam[21].Value = this.logMensajes.Usuario;
 			arrParam[22] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-			arrParam[22].Value = pPtuProcedimientostupa.tmsaudfeccreacion;
+			arrParam[22].Value = DateTime.Now;
 			arrParam[23] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-			arrParam[23].Value = pPtuProcedimientostupa.vchaudusumodif;
+			arrParam[23].Value = DBNull.Value;
 			arrParam[24] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-			arrParam[24].Value = pPtuProcedimientostupa.tmsaudfecmodif;
+			arrParam[24].Value = DBNull.Value;
 			arrParam[25] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-			arrParam[25].Value = pPtuProcedimientostupa.vchaudequipo;
+			arrParam[25].Value = this.logMensajes.Equipo;
 			arrParam[26] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-			arrParam[26].Value = pPtuProcedimientostupa.vchaudprograma;
+			arrParam[26].Value = this.logMensajes.Programa;
 
 			DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUPROCEDIMIENTOSTUPA_INSERTAR", this.logMensajes, arrParam);
 			
@@ -135,17 +135,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 			arrParam[20] = new DB2Parameter("@SMLPROCTUPAACTIVO", DB2Type.SmallInt);
 			arrParam[20].Value = pPtuProcedimientostupa.smlproctupaactivo;
 			arrParam[21] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-			arrParam[21].Value = pPtuProcedimientostupa.vchaudusucreacion;
+			arrParam[21].Value = DBNull.Value;
 			arrParam[22] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-			arrParam[22].Value = pPtuProcedimientostupa.tmsaudfeccreacion;
+			arrParam[22].Value = DBNull.Value;
 			arrParam[23] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-			arrParam[23].Value = pPtuProcedimientostupa.vchaudusumodif;
+			arrParam[23].Value = this.logMensajes.Usuario;
 			arrParam[24] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-			arrParam[24].Value = pPtuProcedimientostupa.tmsaudfecmodif;
+			arrParam[24].Value = DateTime.Now;
 			arrParam[25] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-			arrParam[25].Value = pPtuProcedimientostupa.vchaudequipo;
+			arrParam[25].Value = this.logMensajes.Equipo;
 			arrParam[26] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-			arrParam[26].Value = pPtuProcedimientostupa.vchaudprograma;
+			arrParam[26].Value = this.logMensajes.Programa;
 
 			DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUPROCEDIMIENTOSTUPA_ACTUALIZAR", this.logMensajes, arrParam);			
 		}

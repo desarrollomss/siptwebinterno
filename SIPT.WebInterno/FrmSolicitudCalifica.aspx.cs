@@ -21,25 +21,12 @@ namespace SIPT.WebInterno
         private LogMensajes logMensajes;
         private Request request;
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
-        private PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo;
-        private PtuProcedimientostupa_bo oPtuProcedimientostupa_bo;
         private PtuSolicitudDTO oPtuSolicitudDTO;
         private PtuSolLicencia oPtuSolLicencia;
-        private PtuPlantillareq_bo oPtuPlantillareq_bo;
-
-        private List<PtuSolrequerimiento> oPtuSolrequerimientoList;
-        private PtuSolrequerimiento oPtuSolrequerimiento;
-
         public List<PtuPlantillareqDTO> oPtuPlantillareqDTOList = new List<PtuPlantillareqDTO>();
-
-        private Usuario_bo oUsuario_bo;
-        private SicUsuario oSicUsuario;
-        private List<SicUsuario> oSicUsuarioList;
-                
+        private Usuario_bo oUsuario_bo;                
         private string ltxtUsuarioRol;
-
         PtuSolicitud oPtuSolicitud;
-        PtuSolicitud_bo oPtuSolicitud_bo;
 
         #region Eventos
 
@@ -170,10 +157,6 @@ namespace SIPT.WebInterno
                 oPtuSolLicenciaAnalista.intusuanalista = Convert.ToInt32(ddlSCUAnalista.SelectedValue);
                 oPtuSolLicenciaAnalista.intcodsolicitud = Convert.ToInt32(lstcodSolicitud);
                 oPtuSolLicenciaAnalista.smlestado = 1;
-                oPtuSolLicenciaAnalista.tmsaudfeccreacion = DateTime.Now;
-                oPtuSolLicenciaAnalista.vchaudusucreacion = request.vchaudcodusuario;
-                oPtuSolLicenciaAnalista.vchaudequipo = request.vchaudequipo;
-                oPtuSolLicenciaAnalista.vchaudprograma = request.vchaudprograma;
 
                 PtuSolLicenciaAnalista_bo oPtuSolLicenciaAnalista_bo = new PtuSolLicenciaAnalista_bo(ref logMensajes);
                 oPtuSolLicenciaAnalista_bo.Insertar(oPtuSolLicenciaAnalista);
@@ -346,10 +329,6 @@ namespace SIPT.WebInterno
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
             oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
-            oPtuSolLicencia.vchaudusumodif = request.vchaudcodusuario;
-            oPtuSolLicencia.vchaudequipo = request.vchaudequipo;
-            oPtuSolLicencia.vchaudprograma = request.vchaudprograma;
-            oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
 
             //int lintcodigoprocedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
             int lintcodigoprocedimiento = 0;
@@ -414,50 +393,6 @@ namespace SIPT.WebInterno
             return dtTabla;
         }
 
-        /*private void pbd_ProcesarPlantillas(string control, int? pintcodsolicitud)
-        {
-            request.vchconnombre = System.Reflection.MethodBase.GetCurrentMethod().Name;
-
-            oPtuSolLicencia = new PtuSolLicencia();
-            oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
-            oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
-            oPtuSolLicencia.vchaudusumodif = request.vchaudcodusuario;
-            oPtuSolLicencia.tmsaudfecmodif = DateTime.Now;
-
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-            try
-            {
-                PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-                oPtuSolLicencia_bo.ProcesarPlantillas(oPtuSolLicencia);
-                APPL.FrondEnd.Response.Ok(logMensajes);
-            }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
-        }*/
-
-        /*private List<PtuPlantillareqDTO> pbd_CargarComboPlantillas(string control)
-        {
-            request.vchconnombre = System.Reflection.MethodBase.GetCurrentMethod().Name;
-
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            List<PtuPlantillareqDTO> oPtuPlantillareqList = new List<PtuPlantillareqDTO>();
-            try
-            {
-                PtuPlantillareq_bo oPtuPlantillareq_bo = new PtuPlantillareq_bo(ref logMensajes);
-                oPtuPlantillareqDTOList = oPtuPlantillareq_bo.Listar();
-                APPL.FrondEnd.Response.Ok(logMensajes);
-            }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
-            return oPtuPlantillareqDTOList;
-        }*/
 
         public void EnviarCorreo(string pPara, string pAsunto, string pContenido)
         {

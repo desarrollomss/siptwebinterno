@@ -36,13 +36,13 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[3] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
             arrParam[3].Value = pPtuSolLicenciaAnalista.smlestado; // ? 1 : 0;
             arrParam[4] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-            arrParam[4].Value = pPtuSolLicenciaAnalista.vchaudusucreacion;
+            arrParam[4].Value = this.logMensajes.Usuario;
             arrParam[5] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-            arrParam[5].Value = pPtuSolLicenciaAnalista.tmsaudfeccreacion;
+            arrParam[5].Value = DateTime.Now;
             arrParam[6] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-            arrParam[6].Value = pPtuSolLicenciaAnalista.vchaudequipo;
+            arrParam[6].Value = this.logMensajes.Equipo;
             arrParam[7] = new DB2Parameter("@VACHAUDPROGRAMA", DB2Type.VarChar);
-            arrParam[7].Value = pPtuSolLicenciaAnalista.vchaudprograma;
+            arrParam[7].Value = this.logMensajes.Programa;
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIAANALISTA_INSERTAR", this.logMensajes, arrParam);
            
             return Convert.ToInt32(arrParam[0].Value);
@@ -61,9 +61,9 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[3] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
             arrParam[3].Value = pPtuSolLicenciaAnalista.smlestado; // ? 1 : 0;
             arrParam[4] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[4].Value = pPtuSolLicenciaAnalista.vchaudusumodif;
+            arrParam[4].Value = this.logMensajes.Usuario;
             arrParam[5] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[5].Value = pPtuSolLicenciaAnalista.tmsaudfecmodif;
+            arrParam[5].Value = DateTime.Now;
 
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIAANALISTA_ACTUALIZAR", this.logMensajes, arrParam);
         }

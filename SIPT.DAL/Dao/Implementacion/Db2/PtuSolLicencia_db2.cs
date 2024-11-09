@@ -93,17 +93,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[31] = new DB2Parameter("@SMLESTLICENCIA", DB2Type.SmallInt);
             arrParam[31].Value = pPtuSollicencia.smlestlicencia;                
             arrParam[32] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-            arrParam[32].Value = pPtuSollicencia.vchaudusucreacion;
+            arrParam[32].Value = this.logMensajes.Usuario;
             arrParam[33] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-            arrParam[33].Value = pPtuSollicencia.tmsaudfeccreacion;
+            arrParam[33].Value = DateTime.Now;
             arrParam[34] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[34].Value = pPtuSollicencia.vchaudusumodif;
+            arrParam[34].Value = DBNull.Value;
             arrParam[35] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[35].Value = pPtuSollicencia.tmsaudfecmodif;
+            arrParam[35].Value = DBNull.Value;
             arrParam[36] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-            arrParam[36].Value = pPtuSollicencia.vchaudequipo;
+            arrParam[36].Value = this.logMensajes.Equipo;
             arrParam[37] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-            arrParam[37].Value = pPtuSollicencia.vchaudprograma;
+            arrParam[37].Value = this.logMensajes.Programa;
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_INSERTAR", this.logMensajes, arrParam);
         }
 
@@ -176,17 +176,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[31] = new DB2Parameter("@SMLESTLICENCIA", DB2Type.SmallInt);
             arrParam[31].Value = pPtuSollicencia.smlestlicencia;
             arrParam[32] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-            arrParam[32].Value = pPtuSollicencia.vchaudusucreacion;
+            arrParam[32].Value = DBNull.Value;
             arrParam[33] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-            arrParam[33].Value = pPtuSollicencia.tmsaudfeccreacion;
+            arrParam[33].Value = DBNull.Value;
             arrParam[34] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[34].Value = pPtuSollicencia.vchaudusumodif;
+            arrParam[34].Value = this.logMensajes.Usuario;
             arrParam[35] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[35].Value = pPtuSollicencia.tmsaudfecmodif;
+            arrParam[35].Value = DateTime.Now;
             arrParam[36] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-            arrParam[36].Value = pPtuSollicencia.vchaudequipo;
+            arrParam[36].Value = this.logMensajes.Equipo;
             arrParam[37] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-            arrParam[37].Value = pPtuSollicencia.vchaudprograma;
+            arrParam[37].Value = this.logMensajes.Programa;
 
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_ACTUALIZAR", this.logMensajes, arrParam);
 
@@ -224,9 +224,9 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[0] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
             arrParam[0].Value = pPtuSolLicencia.intcodsolicitud;
             arrParam[1] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[1].Value = pPtuSolLicencia.vchaudusumodif;
+            arrParam[1].Value = this.logMensajes.Usuario;
             arrParam[2] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[2].Value = pPtuSolLicencia.tmsaudfecmodif;
+            arrParam[2].Value = DateTime.Now;
             arrParam[3] = new DB2Parameter("@VCHOBSERVACION", DB2Type.VarChar);
             arrParam[3].Value = pPtuSolLicencia.vchobservacion;
 
@@ -253,10 +253,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[4].Value = pPtuSolLicencia.vchobservacion;
 
             arrParam[5] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[5].Value = pPtuSolLicencia.vchaudusumodif;
+            arrParam[5].Value = this.logMensajes.Usuario;
 
             arrParam[6] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[6].Value = pPtuSolLicencia.tmsaudfecmodif;
+            arrParam[6].Value = DateTime.Now;
 
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_CALIFICAR", this.logMensajes, arrParam);
         }
@@ -283,9 +283,9 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[2].Value = pintcodigoprocedimiento;
 
             arrParam[3] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[3].Value = pPtuSolLicencia.vchaudusumodif;
+            arrParam[3].Value = this.logMensajes.Usuario;
             arrParam[4] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[4].Value = pPtuSolLicencia.tmsaudfecmodif;
+            arrParam[4].Value = DateTime.Now;
 
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_ACREDITAR2", this.logMensajes, arrParam);
         }

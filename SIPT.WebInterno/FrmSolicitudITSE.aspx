@@ -225,12 +225,13 @@
                                 <label for="ddlInspector" class="form-label-sm">Inspector</label>
                                 <asp:DropDownList ID="ddlInspector" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
                             </div>
-                            <div class="col-6">
+                            <div class="col-2"></div>
+                            <div class="col-4">
                                 <label for="txtObsInspector" class="form-label-sm">Inspectores</label>
                                 <asp:TextBox ID="TextBox1" Text="" runat="server" class="form-control" TextMode="MultiLine" required data-validation-required-message="El campo es obligatorio"></asp:TextBox>
 
                             </div>
-
+                            
                         </div>
 
 
@@ -241,10 +242,10 @@
                             </div>
 
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton1" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton1" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
                             </div>
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton2" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton2" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
                             </div>
 
                             <div class="col-md-2">
@@ -267,11 +268,11 @@
                             </div>
 
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton3" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
                             </div>
 
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton4" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton4" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
                             </div>
 
                             <div class="col-md-6">
@@ -286,11 +287,11 @@
                             </div>
 
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton5" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton5" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
                             </div>
 
                             <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton6" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fa fa-chevron-left"></i></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton6" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
                             </div>
 
                             <div class="col-md-2">

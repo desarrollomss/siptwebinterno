@@ -67,17 +67,17 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 			arrParam[18] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
 			arrParam[18].Value = pPtuLicencia.intcodsolicitud;
 			arrParam[19] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-			arrParam[19].Value = pPtuLicencia.vchaudusucreacion;
+			arrParam[19].Value = this.logMensajes.Usuario;
 			arrParam[20] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-			arrParam[20].Value = pPtuLicencia.tmsaudfeccreacion;
+			arrParam[20].Value = DateTime.Now;
 			arrParam[21] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-			arrParam[21].Value = pPtuLicencia.vchaudusumodif;
+			arrParam[21].Value = DBNull.Value;
 			arrParam[22] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-			arrParam[22].Value = pPtuLicencia.tmsaudfecmodif;
+			arrParam[22].Value = DBNull.Value;
 			arrParam[23] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-			arrParam[23].Value = pPtuLicencia.vchaudequipo;
+			arrParam[23].Value = this.logMensajes.Equipo;
 			arrParam[24] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-			arrParam[24].Value = pPtuLicencia.vchaudprograma;
+			arrParam[24].Value = this.logMensajes.Programa;
 
 			DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTULICENCIA_INSERTAR", this.logMensajes, arrParam);
 			

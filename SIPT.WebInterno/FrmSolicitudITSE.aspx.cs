@@ -7,7 +7,9 @@ using SIPT.BL.Services;
 using SIPT.WebInterno.App_Code;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -24,6 +26,10 @@ namespace SIPT.WebInterno
 
         private PtuSolcertificado oPtuSolcertificado;
         private PtuSolicitud oPtuSolicitud;
+        
+        private PtuDiligencia oPtuDiligencia;
+        private PtuDiligenciaDTO oPtuDiligenciaDTO;
+        private PtuDiligencia_bo oPtuDiligencia_bo;
 
         // depurar
         private PtuSolLicenciaAnalista oPtuSolLicenciaAnalista;
@@ -68,14 +74,6 @@ namespace SIPT.WebInterno
                     ddlInspectorBus.Items.Insert(0, new ListItem("(Todos)", "0"));
 
 
-                    ddlInspector.DataSource = (DataTable)ViewState["ANALISTA"];
-                    ddlInspector.DataTextField = "VCHUSUANALISTA";
-                    ddlInspector.DataValueField = "INTUSUANALISTA";
-                    ddlInspector.DataBind();
-                    ddlInspector.Items.Insert(0, new ListItem("(Todos)", "0"));
-
-
-
                     ddlAnioBus.DataSource = Funciones.ListarAnio();
                     ddlAnioBus.DataTextField = "TXTANIO";
                     ddlAnioBus.DataValueField = "INTANIO";
@@ -85,6 +83,7 @@ namespace SIPT.WebInterno
                     oPtuTabla = new PtuTabla();
                     oPtuTabla_bo = new PtuTabla_bo(ref logMensajes);
 
+                    // ESTADO SOLICITUD
                     oPtuTabla.vchtabla = "PTUSOLCERTIFICADO";
                     oPtuTabla.vchcampo = "SMLESTSOLCERTIFICADO";
                     oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
@@ -94,6 +93,12 @@ namespace SIPT.WebInterno
                     ddlEstadoBus.DataValueField = "SMLCODTABLA";
                     ddlEstadoBus.DataBind();
                     ddlEstadoBus.Items.Insert(0, new ListItem("(Todos)", "0"));
+
+                     
+                    // ESTADO DILIGENCIA
+                    oPtuTabla.vchtabla = "PTUDILIGENCIA";
+                    oPtuTabla.vchcampo = "SMLESTDILIGENCIA";
+                    oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
 
 
                     ddlEstadoInsp.DataSource = oPtuTablaList;
@@ -251,9 +256,39 @@ namespace SIPT.WebInterno
         
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Calificación", "btnGuardar");
+            
+            ViewState["FILE1"] = txtNumInfFile.FileName;
+            ViewState["FILE2"] = txtNumInfFile.FileName;
+            ViewState["FILE3"] = txtNumInfFile.FileName;
+
+
+            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Diligencia", "btnGuardar");
+
         }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int lintCodDiligencia = Convert.ToInt32(hdfCodDiligencia.Value);
+            int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
+
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_GuardarDiligencia(lintCodSolicitud,lintCodDiligencia);
+
+                MultiView1.ActiveViewIndex = 0;
+
+
+                Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Calificación");
+                response.MensajeSwal(ClientScript);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
 
 
         protected void ddlProcedimiento_SelectedIndexChanged(object sender, EventArgs e)
@@ -314,27 +349,61 @@ namespace SIPT.WebInterno
             hdfCodSolicitud.Value = pintcodsolicitud.ToString();
             hdfSolLicEstado.Value = pintEstSolLicencia.ToString();
 
+        
+
 
             return oPtuUsoDTOList;
         }
 
 
-        private string pbd_GuardarCalificacion(int? pintcodsolicitud, Int16? pintEstSolLicencia)
+        private string pbd_GuardarDiligencia(int? pintcodsolicitud, int? pintcoddiligencia)
         {
-            string msg = "";
+            string msg = ""; 
 
-            oPtuSolcertificado = new PtuSolcertificado();
-            
-            oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
-            //oPtuSolLicencia.vchobservacion = txtObservacion.Text.ToUpper();
-            oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
-           
-            //int lintcodigoprocedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
-            int lintcodigoprocedimiento = 0;
+            oPtuDiligenciaDTO = new PtuDiligenciaDTO();
 
-            PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-            oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
+            //folder path to save uploaded file
+            //string folderPath = Server.MapPath("~/Upload/");
 
+            string folderPath = ConfigurationManager.AppSettings["IPServidorUPLOAD"];
+
+            //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
+            if (!Directory.Exists(folderPath))
+            {
+                //If folder does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            string file1 = (string)ViewState["FILE1"];
+            string file2 = (string)ViewState["FILE2"];
+            string file3 = (string)ViewState["FILE3"];
+
+
+
+            //save file in the specified folder and path
+            txtNumInfFile.SaveAs(folderPath + file1);
+            txtNumActaFile.SaveAs(folderPath + file2);
+            txtNumPanFotFile.SaveAs(folderPath + file3);
+
+
+            oPtuDiligenciaDTO.intcoddiligencia = pintcoddiligencia;
+            oPtuDiligenciaDTO.datfechadiligencia = Convert.ToDateTime(txtFecprog.Text);
+            oPtuDiligenciaDTO.smlhoradiligencia = Convert.ToInt16(txtHorprog.Text);
+            oPtuDiligenciaDTO.vchfileactadiligencia = Path.GetFileName(txtNumActaFile.FileName);
+            oPtuDiligenciaDTO.vchfileinformecumplimiento = Path.GetFileName(txtNumInfFile.FileName);
+            oPtuDiligenciaDTO.vchfilepanelfotografico = Path.GetFileName(txtNumPanFotFile.FileName);
+            oPtuDiligenciaDTO.intcoddocactadiligencia = 0;
+            oPtuDiligenciaDTO.intcoddocinfcumplimiento = 0;
+            oPtuDiligenciaDTO.intcoddocpanelfotografico = 0;
+            oPtuDiligenciaDTO.vchobsinspector = txtObsInspector.Text;
+            oPtuDiligenciaDTO.vchobssolicitante = txtObsSolicitante.Text;
+            oPtuDiligenciaDTO.smlestdiligencia = Convert.ToInt16(ddlEstadoInsp.SelectedValue);
+            oPtuDiligenciaDTO.datfechamaxsubsanacion = Convert.ToDateTime(txtFecSubsana.Text);
+            oPtuDiligenciaDTO.datfechareprogramacion = Convert.ToDateTime(txtFecRepro.Text);
+            oPtuDiligenciaDTO.intcodsolicitud = pintcodsolicitud;
+
+            PtuDiligencia_bo oPtuDiligencia_bo = new PtuDiligencia_bo(ref logMensajes);
+            oPtuDiligencia_bo.Actualizar(oPtuDiligenciaDTO);
 
             return msg;
         }
@@ -448,7 +517,47 @@ namespace SIPT.WebInterno
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 1;
+            PtuDiligenciaDTO oPtuDiligenciaDTO = new PtuDiligenciaDTO();
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+
+                GridViewRow gwrow = (GridViewRow)((Button)sender).NamingContainer;
+                int lintCodDiligencia = Convert.ToInt32(gwrow.Cells[0].Text);
+                hdfCodDiligencia.Value = lintCodDiligencia.ToString();
+
+                PtuDiligencia_bo oPtuDiligencia_bo = new PtuDiligencia_bo(ref logMensajes);
+
+                oPtuDiligenciaDTO = oPtuDiligencia_bo.ListarKey(lintCodDiligencia);
+
+                DateTime tmp = (DateTime)oPtuDiligenciaDTO.datfechadiligencia;
+
+                txtFecprog.Text = tmp.ToString("dd/MM/yyyy");
+                txtHorprog.Text = oPtuDiligenciaDTO.smlhoradiligencia.ToString();
+                ddlEstadoInsp.SelectedValue = oPtuDiligenciaDTO.smlestdiligencia.ToString();
+
+                txtFecRepro.Text = oPtuDiligenciaDTO.datfechareprogramacion.ToString();
+                txtFecSubsana.Text = oPtuDiligenciaDTO.datfechamaxsubsanacion.ToString();
+
+                txtObsInspector.Text = oPtuDiligenciaDTO.vchobsinspector;
+                txtObsSolicitante.Text = oPtuDiligenciaDTO.vchobssolicitante;
+                hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
+
+                MultiView1.ActiveViewIndex = 1;
+
+                //pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
+
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+
+
+
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)

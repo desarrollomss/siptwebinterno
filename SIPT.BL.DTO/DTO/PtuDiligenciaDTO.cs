@@ -10,6 +10,10 @@ namespace SIPT.BL.DTO.DTO
 		public Int16? smlhoradiligencia { get; set; }
 		public string vchfileactadiligencia { get; set; }
 		public string vchfileinformecumplimiento { get; set; }
+		public string vchfilepanelfotografico { get; set; }
+		public Int16? intcoddocactadiligencia { get; set; }
+		public Int16? intcoddocinfcumplimiento { get; set; }
+		public Int16? intcoddocpanelfotografico { get; set; }
 		public string vchobsinspector { get; set; }
 		public string vchobssolicitante { get; set; }
 		public Int16? smlestdiligencia { get; set; }
@@ -22,5 +26,7 @@ namespace SIPT.BL.DTO.DTO
 		public DateTime? tmsaudfecmodif { get; set; }
 		public string vchaudequipo { get; set; }
 		public string vchaudprograma { get; set; }
+
+
 	}
 }

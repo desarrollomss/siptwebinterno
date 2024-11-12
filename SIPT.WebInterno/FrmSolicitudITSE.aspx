@@ -161,7 +161,7 @@
                                             <tr>
                                                 <td colspan="100%">
                                                     <div id="div<%# Eval("INTCODSOLICITUD") %>" style="display: none; position: relative; left: 15px; overflow: auto; width: 95%">
-                                                        <asp:GridView runat="server" ID="gvInspecciones" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" Width="100%">
+                                                        <asp:GridView runat="server" ID="gvInspecciones" DataKeyNames="INTCODDILIGENCIA" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" Width="100%">
                                                             <HeaderStyle CssClass="" />
                                                             <Columns>
                                                                 <asp:BoundField DataField="INTCODDILIGENCIA" HeaderText="Nro.Inspecc."></asp:BoundField>
@@ -176,7 +176,7 @@
                                                                 </asp:TemplateField>
                                                                 <asp:TemplateField>
                                                                     <ItemTemplate>
-                                                                        <asp:Button ID="btnEditar" runat="server" Text=" Editar "  OnClick="btnEditar_Click" CssClass="btn waves-effect waves-light btn-warning" />
+                                                                        <asp:Button ID="btnEditar" runat="server" Text=" Editar " OnClick="btnEditar_Click" CssClass="btn waves-effect waves-light btn-warning" />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateField>
                                                             </Columns>
@@ -211,96 +211,78 @@
 
                         <div class="row">
 
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <label for="txtFecprog" class="form-label-sm">Fecha de Prog.</label>
                                 <asp:TextBox ID="txtFecprog" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
                             <div class="col-md-2">
                                 <label for="txtHorprog" class="form-label-sm">Hora de Prog.</label>
-                                <asp:TextBox ID="txtHorprog" Text="" TextMode="Time" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtHorprog" Text="" TextMode="Number" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
-                            <div class="col-md-2">
-                                <label for="ddlInspector" class="form-label-sm">Inspector</label>
-                                <asp:DropDownList ID="ddlInspector" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
-                            </div>
-                            <div class="col-2"></div>
-                            <div class="col-4">
-                                <label for="txtObsInspector" class="form-label-sm">Inspectores</label>
-                                <asp:TextBox ID="TextBox1" Text="" runat="server" class="form-control" TextMode="MultiLine" required data-validation-required-message="El campo es obligatorio"></asp:TextBox>
-
-                            </div>
-                            
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label for="txtNumInf" class="form-label-sm">Informe de Verificacion de cumplimiento</label>
-                                <asp:TextBox ID="txtNumInf" Text="" runat="server" class="form-control"></asp:TextBox>
-                            </div>
-
-                            <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton1" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
-                            </div>
-                            <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton2" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
-                            </div>
-
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <label for="ddlEstadoInsp" class="form-label-sm">Estado</label>
                                 <asp:DropDownList ID="ddlEstadoInsp" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
                             </div>
 
-                            <div class="col-md-3">
-                                <label for="txtFecSubsana" class="form-label-sm">Fecha de Sunsanacion</label>
-                                <asp:TextBox ID="txtFecSubsana" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
-                            </div>
+                            <div class="col-4">
+                                <label for="gvInspectores" class="form-label-sm">Inspectores</label>
 
+                                <asp:GridView runat="server" ID="gvInspectores" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="true" Width="100%">
+                                </asp:GridView>
+
+
+                            </div>
                         </div>
 
-                        <div class="row">
 
-                            <div class="col-md-5">
-                                <label for="txtNumActa" class="form-label-sm">Acta de Diligencia</label>
-                                <asp:TextBox ID="txtNumActa" Text="" runat="server" class="form-control"></asp:TextBox>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label for="txtNumInfFile" class="form-label-sm">Inf.Verif. de cumplimiento</label>
+                                <asp:FileUpload runat="server" ID="txtNumInfFile" class="form-control" />
+                            </div>
+                            <div class="col-md-1">
+                                <span>&nbsp;</span><br />
+                                <asp:LinkButton ID="LinkButton1" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label for="txtNumActaFile" class="form-label-sm">Acta de Diligencia</label>
+                                <asp:FileUpload runat="server" ID="txtNumActaFile" class="form-control" />
                             </div>
 
                             <div class="col-md-1">
+                                <span>&nbsp;</span><br />
                                 <asp:LinkButton ID="LinkButton3" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
                             </div>
 
-                            <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton4" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
+                            <div class="col-md-4">
+                                <label for="txtFecSubsana" class="form-label-sm">Fecha de Subsanacion</label>
+                                <asp:TextBox ID="txtFecSubsana" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
-                            <div class="col-md-6">
-                            </div>
+
                         </div>
-
                         <div class="row">
-
-                            <div class="col-md-5">
-                                <label for="txtNumPanFot" class="form-label-sm">Panel Fotografico</label>
-                                <asp:TextBox ID="txtNumPanFot" Text="" runat="server" class="form-control"></asp:TextBox>
+                            <div class="col-md-7">
+                                <label for="txtNumPanFotFile" class="form-label-sm">Panel Fotografico</label>
+                                <asp:FileUpload runat="server" ID="txtNumPanFotFile" class="form-control" />
                             </div>
 
                             <div class="col-md-1">
+                                <span>&nbsp;</span><br />
                                 <asp:LinkButton ID="LinkButton5" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
                             </div>
-
-                            <div class="col-md-1">
-                                <asp:LinkButton ID="LinkButton6" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-folder-open"></i></asp:LinkButton>
-                            </div>
-
-                            <div class="col-md-2">
-                            </div>
-
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label for="txtFecRepro" class="form-label-sm">Fecha de Reprogramacion</label>
                                 <asp:TextBox ID="txtFecRepro" TextMode="Date" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
+
+
                         </div>
 
                         <div class="row">
@@ -322,7 +304,8 @@
                                 <i class="fa fa-check"></i>
                                 <asp:Button type="submit" ID="btnConfirmar" runat="server" Text=" Guardar " ClientIDMode="Static" CssClass="btnHidden" Style="cursor: pointer" OnClick="btnConfirmar_Click" />
                             </div>
-
+                            <asp:Button ID="btnGuardar" runat="server" Text="" CssClass="btnHidden" OnClick="btnGuardar_Click"/>
+                            <asp:HiddenField ID="hdfCodDiligencia" runat="server" />
                             <asp:HiddenField ID="hdfCodSolicitud" runat="server" />
                             <asp:HiddenField ID="hdfSolLicEstado" runat="server" />
                             <asp:HiddenField ID="hdfSolEmail" runat="server" />

@@ -51,6 +51,7 @@
     <Compile Include="PtuCertificado_bo.cs" />
     <Compile Include="PtuConsultas_bo.cs" />
     <Compile Include="PtuDiligencia_bo.cs" />
+    <Compile Include="PtuEstructuracionuso_bo.cs" />
     <Compile Include="PtuLicencia_bo.cs" />
     <Compile Include="PtuPlantillareq_bo.cs" />
     <Compile Include="PtuProcedimientostupa_bo.cs" />

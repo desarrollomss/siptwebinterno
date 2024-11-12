@@ -95,5 +95,15 @@ namespace SIPT.DAL.Dao.Factory
             return dataReader;
         }
 
+        public static DataSet DataSet(DB2Transaction transaction, CommandType commandType, string commandText, LogMensajes logMensajes)
+        {
+            Log.Info(logMensajes.codigoMensaje.ToString(), commandText);
+
+            DataSet oDataSet = DB2helper.ExecuteDataset(transaction, commandType, commandText);
+
+            //Log.Debug(logMensajes.codigoMensaje.ToString(), oDataSet);
+            return oDataSet;
+        }
+
     }
 }

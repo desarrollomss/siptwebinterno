@@ -97,6 +97,8 @@
     <Compile Include="Dao\Base\PtuCertificado_dao.cs" />
     <Compile Include="Dao\Base\PtuConsultas_dao.cs" />
     <Compile Include="Dao\Base\PtuDiligencia_dao.cs" />
+    <Compile Include="Dao\Base\PtuEstructuracioncolumna_dao.cs" />
+    <Compile Include="Dao\Base\PtuEstructuracion_dao.cs" />
     <Compile Include="Dao\Base\PtuIndicadores_dao.cs" />
     <Compile Include="Dao\Base\PtuLicencia_dao.cs" />
     <Compile Include="Dao\Base\PtuPlantillareq_dao.cs" />
@@ -124,6 +126,8 @@
     <Compile Include="Dao\Implementacion\Db2\DjuPredio_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuConsultas_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuDiligencia_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuEstructuracioncolumna_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuEstructuracion_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuLicencia_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuPlantillareq_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuProcedimientostupa_db2.cs" />

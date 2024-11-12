@@ -25,6 +25,28 @@ namespace SIPT.BL.DTO.Mapper
             return objetoDestino;
         }
 
+        public List<TDestino> MapList<TOrigen, TDestino>(List<TOrigen> objetoOrigenList)
+        {
+            List<TDestino> objetoDestinoList = new List<TDestino>();
+            foreach (TOrigen objetoOrigen in objetoOrigenList)
+            {
+                var objetoDestino = Activator.CreateInstance<TDestino>();
+                if (objetoOrigen != null)
+                {
+                    foreach (var objetoOrigenPropiedad in typeof(TOrigen).GetProperties())
+                    {
+                        var objetoDestinoPropiedad = typeof(TDestino).GetProperty(objetoOrigenPropiedad.Name);
+                        if (objetoDestinoPropiedad != null)
+                        {
+                            objetoDestinoPropiedad.SetValue(objetoDestino, objetoOrigenPropiedad.GetValue(objetoOrigen));
+                        }
+                    }
+                    objetoDestinoList.Add(objetoDestino);
+                }
+            }
+            return objetoDestinoList;
+        }
+
         public TDestino Map<TOrigen1, TOrigen2, TDestino>(TOrigen1 objetoOrigen1, TOrigen2 objetoOrigen2)
         {
             var objetoDestino = Activator.CreateInstance<TDestino>();

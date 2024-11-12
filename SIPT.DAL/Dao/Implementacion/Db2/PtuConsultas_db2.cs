@@ -9,6 +9,7 @@ using DBAccess.Util;
 using System.Collections.Generic;
 using SIPT.BL.Models.Consultas;
 using SIPT.DAL.Dao.Factory;
+using System.Data.Common;
 
 namespace SIPT.DAL.Dao.Implementacion.Db2
 {
@@ -54,6 +55,15 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
         {
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.Text, query, this.logMensajes);
                
+        }
+                
+        public override DataTable EjecutarScriptDataTable(string query)
+        {
+            DataSet oDS = DB2Comando.DataSet((DB2Transaction)this.dbconex.Transaccion(), CommandType.Text, query, this.logMensajes);
+            
+            return oDS.Tables[0];
+            //return DB2Comando.Reader((DB2Transaction)this.dbconex.Transaccion(), CommandType.Text, query, this.logMensajes);
+
         }
 
     }

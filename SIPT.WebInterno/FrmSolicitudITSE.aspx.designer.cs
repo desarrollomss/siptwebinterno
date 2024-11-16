@@ -195,13 +195,22 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.FileUpload txtNumInfFile;
 
         /// <summary>
-        /// Control LinkButton1.
+        /// Control txtNumInf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.TextBox txtNumInf;
+
+        /// <summary>
+        /// Control btnUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload1;
 
         /// <summary>
         /// Control txtNumActaFile.
@@ -213,13 +222,22 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.FileUpload txtNumActaFile;
 
         /// <summary>
-        /// Control LinkButton3.
+        /// Control txtNumActa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        protected global::System.Web.UI.WebControls.TextBox txtNumActa;
+
+        /// <summary>
+        /// Control btnUpload2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload2;
 
         /// <summary>
         /// Control txtFecSubsana.
@@ -240,13 +258,22 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.FileUpload txtNumPanFotFile;
 
         /// <summary>
-        /// Control LinkButton5.
+        /// Control txtNumPanFot.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+        protected global::System.Web.UI.WebControls.TextBox txtNumPanFot;
+
+        /// <summary>
+        /// Control btnUpload3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpload3;
 
         /// <summary>
         /// Control txtFecRepro.

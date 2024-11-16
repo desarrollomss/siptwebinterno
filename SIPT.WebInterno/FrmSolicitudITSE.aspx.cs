@@ -256,13 +256,13 @@ namespace SIPT.WebInterno
         
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            
-            ViewState["FILE1"] = txtNumInfFile.FileName;
-            ViewState["FILE2"] = txtNumInfFile.FileName;
-            ViewState["FILE3"] = txtNumInfFile.FileName;
-
-
-            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Diligencia", "btnGuardar");
+            // if (txtNumInf.Text.Equals(string.Empty) || txtNumActa.Text.Equals(string.Empty) || txtNumPanFot.Text.Equals(string.Empty))
+            // {
+            //    return;
+            // }
+            string script = "alert(document.getElementById('ContentPlaceHolder1_btnConfirmar'))";
+            ClientScript.RegisterStartupScript(this.GetType(), "xxx", script, true);
+            //new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Diligencia", "btnGuardar");
 
         }
 
@@ -358,40 +358,24 @@ namespace SIPT.WebInterno
 
         private string pbd_GuardarDiligencia(int? pintcodsolicitud, int? pintcoddiligencia)
         {
-            string msg = ""; 
+            string msg = "";
+
+            string tmpPath = ConfigurationManager.AppSettings["UPLOAD_TMP"];
+            string proPath = ConfigurationManager.AppSettings["IPServidorUPLOAD"];
+            
+
+            File.Move(tmpPath + txtNumInf.Text , proPath + txtNumInf.Text);
+            File.Move(tmpPath + txtNumActa.Text, proPath + txtNumActa.Text);
+            File.Move(tmpPath + txtNumPanFot.Text, proPath + txtNumPanFot.Text);
 
             oPtuDiligenciaDTO = new PtuDiligenciaDTO();
-
-            //folder path to save uploaded file
-            //string folderPath = Server.MapPath("~/Upload/");
-
-            string folderPath = ConfigurationManager.AppSettings["IPServidorUPLOAD"];
-
-            //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
-            if (!Directory.Exists(folderPath))
-            {
-                //If folder does not exists. Create it.
-                Directory.CreateDirectory(folderPath);
-            }
-
-            string file1 = (string)ViewState["FILE1"];
-            string file2 = (string)ViewState["FILE2"];
-            string file3 = (string)ViewState["FILE3"];
-
-
-
-            //save file in the specified folder and path
-            txtNumInfFile.SaveAs(folderPath + file1);
-            txtNumActaFile.SaveAs(folderPath + file2);
-            txtNumPanFotFile.SaveAs(folderPath + file3);
-
-
+              
             oPtuDiligenciaDTO.intcoddiligencia = pintcoddiligencia;
             oPtuDiligenciaDTO.datfechadiligencia = Convert.ToDateTime(txtFecprog.Text);
             oPtuDiligenciaDTO.smlhoradiligencia = Convert.ToInt16(txtHorprog.Text);
-            oPtuDiligenciaDTO.vchfileactadiligencia = Path.GetFileName(txtNumActaFile.FileName);
-            oPtuDiligenciaDTO.vchfileinformecumplimiento = Path.GetFileName(txtNumInfFile.FileName);
-            oPtuDiligenciaDTO.vchfilepanelfotografico = Path.GetFileName(txtNumPanFotFile.FileName);
+            oPtuDiligenciaDTO.vchfileactadiligencia = txtNumActa.Text;  // Path.GetFileName(txtNumActaFile.FileName);
+            oPtuDiligenciaDTO.vchfileinformecumplimiento = txtNumInf.Text;  // Path.GetFileName(txtNumInfFile.FileName);
+            oPtuDiligenciaDTO.vchfilepanelfotografico = txtNumPanFot.Text;  // Path.GetFileName(txtNumPanFotFile.FileName);
             oPtuDiligenciaDTO.intcoddocactadiligencia = 0;
             oPtuDiligenciaDTO.intcoddocinfcumplimiento = 0;
             oPtuDiligenciaDTO.intcoddocpanelfotografico = 0;
@@ -514,6 +498,7 @@ namespace SIPT.WebInterno
             MultiView1.ActiveViewIndex = 1;
 
         }
+       
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
@@ -522,7 +507,7 @@ namespace SIPT.WebInterno
             logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-
+   
                 GridViewRow gwrow = (GridViewRow)((Button)sender).NamingContainer;
                 int lintCodDiligencia = Convert.ToInt32(gwrow.Cells[0].Text);
                 hdfCodDiligencia.Value = lintCodDiligencia.ToString();
@@ -531,21 +516,24 @@ namespace SIPT.WebInterno
 
                 oPtuDiligenciaDTO = oPtuDiligencia_bo.ListarKey(lintCodDiligencia);
 
-                DateTime tmp = (DateTime)oPtuDiligenciaDTO.datfechadiligencia;
+                DateTime dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechadiligencia.ToString());
+                txtFecprog.Text = String.Format("{0:yyyy-MM-dd}", dt);
 
-                txtFecprog.Text = tmp.ToString("dd/MM/yyyy");
                 txtHorprog.Text = oPtuDiligenciaDTO.smlhoradiligencia.ToString();
                 ddlEstadoInsp.SelectedValue = oPtuDiligenciaDTO.smlestdiligencia.ToString();
 
-                txtFecRepro.Text = oPtuDiligenciaDTO.datfechareprogramacion.ToString();
-                txtFecSubsana.Text = oPtuDiligenciaDTO.datfechamaxsubsanacion.ToString();
+                dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechareprogramacion.ToString());
+                txtFecRepro.Text = String.Format("{0:yyyy-MM-dd}", dt); 
+
+                dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechamaxsubsanacion.ToString());
+                txtFecSubsana.Text = String.Format("{0:yyyy-MM-dd}", dt);
 
                 txtObsInspector.Text = oPtuDiligenciaDTO.vchobsinspector;
                 txtObsSolicitante.Text = oPtuDiligenciaDTO.vchobssolicitante;
                 hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
 
                 MultiView1.ActiveViewIndex = 1;
-
+                btnGuardar.Visible = false;
                 //pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
 
                 APPL.FrondEnd.Response.Ok(logMensajes);
@@ -563,6 +551,66 @@ namespace SIPT.WebInterno
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void btnUpload1_Click(object sender, EventArgs e)
+        {
+            string folderPath = ConfigurationManager.AppSettings["UPLOAD_TMP"];
+
+            //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
+            if (!Directory.Exists(folderPath))
+            {
+                //If folder does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            txtNumInfFile.SaveAs(folderPath + txtNumInfFile.FileName);
+
+            txtNumInf.Text = txtNumInfFile.PostedFile.FileName;
+            txtNumInfFile.Visible = false;
+            txtNumInf.Visible = true;
+            btnUpload1.Visible = false;
+
+
+
+        }
+
+        protected void btnUpload2_Click(object sender, EventArgs e)
+        {
+            string folderPath = ConfigurationManager.AppSettings["UPLOAD_TMP"];
+
+            //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
+            if (!Directory.Exists(folderPath))
+            {
+                //If folder does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            txtNumActaFile.SaveAs(folderPath + txtNumActaFile.FileName);
+            txtNumActa.Text = txtNumActaFile.PostedFile.FileName;
+            txtNumActaFile.Visible = false;
+            txtNumActa.Visible = true;
+            btnUpload2.Visible = false;
+
+        }
+
+        protected void btnUpload3_Click(object sender, EventArgs e)
+        {
+            string folderPath = ConfigurationManager.AppSettings["UPLOAD_TMP"];
+
+            //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
+            if (!Directory.Exists(folderPath))
+            {
+                //If folder does not exists. Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            txtNumPanFotFile.SaveAs(folderPath + txtNumPanFotFile.FileName);
+            txtNumPanFot.Text = txtNumPanFotFile.PostedFile.FileName;
+            txtNumPanFotFile.Visible = false;
+            txtNumPanFot.Visible = true;
+            btnUpload3.Visible = false;
+
         }
     }
 }

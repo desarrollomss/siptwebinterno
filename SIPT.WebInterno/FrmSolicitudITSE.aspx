@@ -239,12 +239,13 @@
 
                         <div class="row">
                             <div class="col-md-7">
-                                <label for="txtNumInfFile" class="form-label-sm">Inf.Verif. de cumplimiento</label>
+                                <label for="txtNumInfFile" class="form-label-sm">Informe Verif. de Cumplimiento</label>
                                 <asp:FileUpload runat="server" ID="txtNumInfFile" class="form-control" />
+                                <asp:TextBox runat="server" ID="txtNumInf" class="form-control" Visible="false" />
                             </div>
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:LinkButton ID="LinkButton1" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
+                                <asp:Button ID="btnUpload1" runat="server" Text=" > " onclick="btnUpload1_Click" />
                             </div>
                         </div>
 
@@ -253,11 +254,12 @@
                             <div class="col-md-7">
                                 <label for="txtNumActaFile" class="form-label-sm">Acta de Diligencia</label>
                                 <asp:FileUpload runat="server" ID="txtNumActaFile" class="form-control" />
+                                <asp:TextBox runat="server" ID="txtNumActa" class="form-control" Visible="false" />
                             </div>
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:LinkButton ID="LinkButton3" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
+                                <asp:Button ID="btnUpload2" runat="server" Text=" > " onclick="btnUpload2_Click" />
                             </div>
 
                             <div class="col-md-4">
@@ -271,11 +273,13 @@
                             <div class="col-md-7">
                                 <label for="txtNumPanFotFile" class="form-label-sm">Panel Fotografico</label>
                                 <asp:FileUpload runat="server" ID="txtNumPanFotFile" class="form-control" />
+                                <asp:TextBox runat="server" ID="txtNumPanFot" class="form-control" Visible="false" />
                             </div>
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:LinkButton ID="LinkButton5" runat="server" type="reset" CssClass="btn btn-inverse btn-rounded" OnClick="btnRegresar_Click"><i class="fas fa-file-alt"></i></asp:LinkButton>
+                                <asp:Button ID="btnUpload3" runat="server" Text=" > " onclick="btnUpload3_Click" />
+                                
                             </div>
                             <div class="col-md-4">
                                 <label for="txtFecRepro" class="form-label-sm">Fecha de Reprogramacion</label>

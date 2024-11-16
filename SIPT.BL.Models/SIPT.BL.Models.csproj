@@ -61,6 +61,9 @@
     <Compile Include="Entity\AutLicencia.cs" />
     <Compile Include="Entity\AutSolicitud.cs" />
     <Compile Include="Entity\PtuDiligencia.cs" />
+    <Compile Include="Entity\PtuEstructuracion.cs" />
+    <Compile Include="Entity\PtuEstructuracioncolumna.cs" />
+    <Compile Include="Entity\PtuEstructuracionuso.cs" />
     <Compile Include="Entity\PtuPlantillareq.cs" />
     <Compile Include="Entity\PtuProcedimientostupa.cs" />
     <Compile Include="Entity\PtuRequerimientostupa.cs" />

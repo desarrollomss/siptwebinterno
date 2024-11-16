@@ -838,6 +838,7 @@
     <Content Include="assets\login\util.css" />
     <Content Include="assets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="assets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="FrmMatrizEvaluacion.aspx" />
     <Content Include="FrmSolicitudITSE.aspx" />
     <Content Include="WebFormDemo.aspx" />
     <Content Include="WebFormDemo2.aspx" />
@@ -3997,6 +3998,13 @@
   <ItemGroup>
     <Compile Include="App_Code\Funciones.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FrmMatrizEvaluacion.aspx.cs">
+      <DependentUpon>FrmMatrizEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmMatrizEvaluacion.aspx.designer.cs">
+      <DependentUpon>FrmMatrizEvaluacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="FrmSolicitudITSE.aspx.cs">
       <DependentUpon>FrmSolicitudITSE.aspx</DependentUpon>

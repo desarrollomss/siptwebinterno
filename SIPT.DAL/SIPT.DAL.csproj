@@ -104,6 +104,7 @@
     <Compile Include="Dao\Base\PtuPlantillareq_dao.cs" />
     <Compile Include="Dao\Base\PtuProcedimientostupa_dao.cs" />
     <Compile Include="Dao\Base\PtuRequerimientostupa_dao.cs" />
+    <Compile Include="Dao\Base\PtuSolcertificadoinspector_dao.cs" />
     <Compile Include="Dao\Base\PtuSolCertificado_dao.cs" />
     <Compile Include="Dao\Base\PtuSolicitud_dao.cs" />
     <Compile Include="Dao\Base\PtuSolLicenciaAnalista_dao.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Dao\Implementacion\Db2\PtuPlantillareq_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuProcedimientostupa_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuRequerimientostupa_db2.cs" />
+    <Compile Include="Dao\Implementacion\Db2\PtuSolcertificadoinspector_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuSolcertificado_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuSolicitud_db2.cs" />
     <Compile Include="Dao\Implementacion\Db2\PtuSolLicenciaAnalista_db2.cs" />

@@ -51,6 +51,7 @@
     <Compile Include="DTO\PtuRequerimientoControlesDTO.cs" />
     <Compile Include="DTO\PtuRequerimientostupaDTO.cs" />
     <Compile Include="DTO\PtuSolcertificadoDTO.cs" />
+    <Compile Include="DTO\PtuSolcertificadoinspectorDTO.cs" />
     <Compile Include="DTO\PtuSolicitudDTO.cs" />
     <Compile Include="DTO\PtuSolreqdetalleDTO.cs" />
     <Compile Include="DTO\PtuSolreqgrupoDTO.cs" />

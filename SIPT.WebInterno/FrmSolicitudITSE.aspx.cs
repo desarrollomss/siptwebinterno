@@ -59,6 +59,11 @@ namespace SIPT.WebInterno
             request.vchaudequipo = (string)(Request.Cookies["Security"]["DireccionIP"]);
             #endregion
 
+            fuNumInf.Attributes["onchange"] = "UploadFile1(this)";
+            fuNumActa.Attributes["onchange"] = "UploadFile2(this)";
+            fuNumPanFot.Attributes["onchange"] = "UploadFile3(this)";
+
+
             if (!Page.IsPostBack)
             {
                 ViewState["ANALISTA"] = Funciones.ListarUsuariosRol(request, "ANALISTA SIPT");
@@ -563,14 +568,11 @@ namespace SIPT.WebInterno
                 Directory.CreateDirectory(folderPath);
             }
 
-            txtNumInfFile.SaveAs(folderPath + txtNumInfFile.FileName);
-
-            txtNumInf.Text = txtNumInfFile.PostedFile.FileName;
-            txtNumInfFile.Visible = false;
+            fuNumInf.SaveAs(folderPath + fuNumInf.FileName);
+            txtNumInf.Text = fuNumInf.PostedFile.FileName;
+            fuNumInf.Visible = false;
             txtNumInf.Visible = true;
             btnUpload1.Visible = false;
-
-
 
         }
 
@@ -585,9 +587,9 @@ namespace SIPT.WebInterno
                 Directory.CreateDirectory(folderPath);
             }
 
-            txtNumActaFile.SaveAs(folderPath + txtNumActaFile.FileName);
-            txtNumActa.Text = txtNumActaFile.PostedFile.FileName;
-            txtNumActaFile.Visible = false;
+            fuNumActa.SaveAs(folderPath + fuNumActa.FileName);
+            txtNumActa.Text = fuNumActa.PostedFile.FileName;
+            fuNumActa.Visible = false;
             txtNumActa.Visible = true;
             btnUpload2.Visible = false;
 
@@ -604,12 +606,14 @@ namespace SIPT.WebInterno
                 Directory.CreateDirectory(folderPath);
             }
 
-            txtNumPanFotFile.SaveAs(folderPath + txtNumPanFotFile.FileName);
-            txtNumPanFot.Text = txtNumPanFotFile.PostedFile.FileName;
-            txtNumPanFotFile.Visible = false;
+            fuNumPanFot.SaveAs(folderPath + fuNumPanFot.FileName);
+            txtNumPanFot.Text = fuNumPanFot.PostedFile.FileName;
+            fuNumPanFot.Visible = false;
             txtNumPanFot.Visible = true;
             btnUpload3.Visible = false;
 
         }
+
+
     }
 }

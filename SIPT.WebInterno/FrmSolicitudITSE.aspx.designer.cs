@@ -192,7 +192,7 @@ namespace SIPT.WebInterno
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumInfFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumInf;
 
         /// <summary>
         /// txtNumInf control.
@@ -219,7 +219,7 @@ namespace SIPT.WebInterno
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumActaFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumActa;
 
         /// <summary>
         /// txtNumActa control.
@@ -255,7 +255,7 @@ namespace SIPT.WebInterno
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumPanFotFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumPanFot;
 
         /// <summary>
         /// txtNumPanFot control.

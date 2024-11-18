@@ -56,10 +56,7 @@ namespace SIPT.WebInterno
             logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                oPtuEstructuracionuso_bo = new PtuEstructuracionuso_bo(ref logMensajes);
-                gvBusqueda.DataSource = oPtuEstructuracionuso_bo.ListarEstructuraPorUso(Convert.ToInt32(ddlEstructura.SelectedValue), txtCodUso.Text.Trim().ToUpper(), txtUso.Text.Trim().ToUpper());
-                gvBusqueda.DataBind();
-
+                pbd_CargarGrilla();
                 APPL.FrondEnd.Response.Ok(logMensajes);
             }
             catch (Exception ex)
@@ -67,6 +64,29 @@ namespace SIPT.WebInterno
                 Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
                 response.MensajeSwal(ClientScript);
             }
+        }
+
+        protected void gvBusqueda_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gvBusqueda.PageIndex = e.NewPageIndex;
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                pbd_CargarGrilla();
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+        }
+
+        private void pbd_CargarGrilla()
+        {
+            oPtuEstructuracionuso_bo = new PtuEstructuracionuso_bo(ref logMensajes);
+            gvBusqueda.DataSource = oPtuEstructuracionuso_bo.ListarEstructuraPorUso(Convert.ToInt32(ddlEstructura.SelectedValue), txtCodUso.Text.Trim().ToUpper(), txtUso.Text.Trim().ToUpper());
+            gvBusqueda.DataBind();
         }
     }
 }

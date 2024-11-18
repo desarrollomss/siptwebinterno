@@ -21,8 +21,25 @@
             console.log(div.style.display);
         }
 
+        function UploadFile1(fileUpload)
+        {
+            if (fileUpload.value != '')
+            {
+                document.getElementById("<%=btnUpload1.ClientID %>").click();
+            }
+        }
 
+        function UploadFile2(fileUpload) {
+            if (fileUpload.value != '') {
+                document.getElementById("<%=btnUpload2.ClientID %>").click();
+            }
+        }
 
+        function UploadFile3(fileUpload) {
+            if (fileUpload.value != '') {
+                document.getElementById("<%=btnUpload3.ClientID %>").click();
+            }
+        }
 
     </script>
     <div class="row page-titles w-100">
@@ -239,27 +256,27 @@
 
                         <div class="row">
                             <div class="col-md-7">
-                                <label for="txtNumInfFile" class="form-label-sm">Informe Verif. de Cumplimiento</label>
-                                <asp:FileUpload runat="server" ID="txtNumInfFile" class="form-control" />
+                                <label for="txtNumInf" class="form-label-sm">Informe Verif. de Cumplimiento</label>
+                                <asp:FileUpload runat="server" ID="fuNumInf" class="form-control" />
                                 <asp:TextBox runat="server" ID="txtNumInf" class="form-control" Visible="false" />
                             </div>
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload1" runat="server" Text=" > " onclick="btnUpload1_Click" />
+                                <asp:Button ID="btnUpload1" runat="server" Text=" > " onclick="btnUpload1_Click" Visible="false" />
                             </div>
                         </div>
 
 
                         <div class="row">
                             <div class="col-md-7">
-                                <label for="txtNumActaFile" class="form-label-sm">Acta de Diligencia</label>
-                                <asp:FileUpload runat="server" ID="txtNumActaFile" class="form-control" />
+                                <label for="txtNumActa" class="form-label-sm">Acta de Diligencia</label>
+                                <asp:FileUpload runat="server" ID="fuNumActa" class="form-control" />
                                 <asp:TextBox runat="server" ID="txtNumActa" class="form-control" Visible="false" />
                             </div>
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload2" runat="server" Text=" > " onclick="btnUpload2_Click" />
+                                <asp:Button ID="btnUpload2" runat="server" Text=" > " onclick="btnUpload2_Click" Visible="false" />
                             </div>
 
                             <div class="col-md-4">
@@ -271,14 +288,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-7">
-                                <label for="txtNumPanFotFile" class="form-label-sm">Panel Fotografico</label>
-                                <asp:FileUpload runat="server" ID="txtNumPanFotFile" class="form-control" />
+                                <label for="txtNumPanFot" class="form-label-sm">Panel Fotografico</label>
+                                <asp:FileUpload runat="server" ID="fuNumPanFot" class="form-control" />
                                 <asp:TextBox runat="server" ID="txtNumPanFot" class="form-control" Visible="false" />
                             </div>
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload3" runat="server" Text=" > " onclick="btnUpload3_Click" />
+                                <asp:Button ID="btnUpload3" runat="server" Text=" > " onclick="btnUpload3_Click" Visible="false" />
                                 
                             </div>
                             <div class="col-md-4">

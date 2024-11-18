@@ -186,13 +186,13 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.GridView gvInspectores;
 
         /// <summary>
-        /// Control txtNumInfFile.
+        /// Control fuNumInf.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumInfFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumInf;
 
         /// <summary>
         /// Control txtNumInf.
@@ -213,13 +213,13 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.Button btnUpload1;
 
         /// <summary>
-        /// Control txtNumActaFile.
+        /// Control fuNumActa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumActaFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumActa;
 
         /// <summary>
         /// Control txtNumActa.
@@ -249,13 +249,13 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.TextBox txtFecSubsana;
 
         /// <summary>
-        /// Control txtNumPanFotFile.
+        /// Control fuNumPanFot.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtNumPanFotFile;
+        protected global::System.Web.UI.WebControls.FileUpload fuNumPanFot;
 
         /// <summary>
         /// Control txtNumPanFot.

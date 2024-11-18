@@ -67,6 +67,7 @@
     <Compile Include="Entity\PtuPlantillareq.cs" />
     <Compile Include="Entity\PtuProcedimientostupa.cs" />
     <Compile Include="Entity\PtuRequerimientostupa.cs" />
+    <Compile Include="Entity\PtuSolcertificadoinspector.cs" />
     <Compile Include="Entity\PtuSolreqdetalle.cs" />
     <Compile Include="Entity\PtuSolreqgrupo.cs" />
     <Compile Include="Entity\PtuSolrequerimiento.cs" />

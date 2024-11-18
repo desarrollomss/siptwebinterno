@@ -262,7 +262,7 @@
                             </div>
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload1" runat="server" Text=" > " onclick="btnUpload1_Click" Visible="false" />
+                                <asp:Button ID="btnUpload1" runat="server" Text="" onclick="btnUpload1_Click"  CssClass="btnHidden" />
                             </div>
                         </div>
 
@@ -276,7 +276,7 @@
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload2" runat="server" Text=" > " onclick="btnUpload2_Click" Visible="false" />
+                                <asp:Button ID="btnUpload2" runat="server" Text="" onclick="btnUpload2_Click" CssClass="btnHidden"/>
                             </div>
 
                             <div class="col-md-4">
@@ -295,7 +295,7 @@
 
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
-                                <asp:Button ID="btnUpload3" runat="server" Text=" > " onclick="btnUpload3_Click" Visible="false" />
+                                <asp:Button ID="btnUpload3" runat="server" Text="" onclick="btnUpload3_Click" CssClass="btnHidden" />
                                 
                             </div>
                             <div class="col-md-4">

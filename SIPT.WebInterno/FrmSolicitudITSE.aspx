@@ -56,7 +56,7 @@
 
                             <div class="col-md-2">
                                 <label for="ddlAnioBus" class="orm-label-sm">Año</label>
-                                <asp:DropDownList ID="ddlAnioBus" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlAnioBus" runat="server" CssClass="select2 form-control custom-select" Width="90%"></asp:DropDownList>
                             </div>
 
                             <div class="col-md-2">
@@ -66,12 +66,12 @@
 
                             <div class="col-md-2">
                                 <label for="ddlEstadoBus" class="form-label-sm">Estado</label>
-                                <asp:DropDownList ID="ddlEstadoBus" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlEstadoBus" runat="server" CssClass="select2 form-control custom-select"  Width="90%"></asp:DropDownList>
                             </div>
 
                             <div class="col-md-2">
                                 <label for="ddlResultadoBus" class="form-label-sm">Resultado</label>
-                                <asp:DropDownList ID="ddlResultadoBus" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlResultadoBus" runat="server" CssClass="select2 form-control custom-select"  Width="90%"></asp:DropDownList>
                             </div>
 
                             <div class="col-md-2">
@@ -99,7 +99,7 @@
 
                             <div class="col-md-2">
                                 <label for="ddlInspectorBus" class="form-label-sm">Inspector</label>
-                                <asp:DropDownList ID="ddlInspectorBus" runat="server" CssClass="select2 form-control custom-select"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlInspectorBus" runat="server" CssClass="select2 form-control custom-select"  Width="90%"></asp:DropDownList>
                             </div>
 
                             <div class="col-md-2">
@@ -141,14 +141,8 @@
                                     </asp:TemplateField>
                                     <%--<asp:BoundField DataField="VCHESTSOLCERTIFICADO" HeaderText="Estado"></asp:BoundField>--%>
                                     <asp:BoundField DataField="VCHRESULTADOCERTIFICACION" HeaderText="Resultado"></asp:BoundField>
+                                    <asp:BoundField DataField="VCHDIRECCSOLICITANTECERT" HeaderText="Dirección"></asp:BoundField>
 
-
-                                    <asp:TemplateField HeaderText="Analista">
-                                        <ItemTemplate>
-                                            <asp:DropDownList ID="ddlAnalista" class="select2 form-control custom-select" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
-                                            </asp:DropDownList>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Label ID="lblCodSolicitud" runat="server" Text='<%# Eval("INTCODSOLICITUD") %>' Visible="false" />
@@ -165,9 +159,9 @@
                                                             <HeaderStyle CssClass="" />
                                                             <Columns>
                                                                 <asp:BoundField DataField="INTCODDILIGENCIA" HeaderText="Nro.Inspecc."></asp:BoundField>
-                                                                <asp:BoundField DataField="DATFECHADILIGENCIA" HeaderText="Fec.Program."></asp:BoundField>
+                                                                <asp:BoundField DataField="DATFECHADILIGENCIA" DataFormatString="{0:dd/MM/yyyy}" HeaderText="Fec.Program."></asp:BoundField>
                                                                 <asp:BoundField DataField="SMLHORADILIGENCIA" HeaderText="Hora Program."></asp:BoundField>
-                                                                <asp:BoundField DataField="SMLESTDILIGENCIA" HeaderText="Estado"></asp:BoundField>
+                                                                <asp:BoundField DataField="VCHESTDILIGENCIA" HeaderText="Estado"></asp:BoundField>
                                                                 <asp:TemplateField>
                                                                     <ItemTemplate>
                                                                         <asp:Label ID="lblCodDiligencia" runat="server" Text='<%# Eval("INTCODDILIGENCIA") %>' Visible="false" />

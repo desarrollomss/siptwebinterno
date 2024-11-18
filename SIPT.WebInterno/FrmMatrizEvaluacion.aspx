@@ -87,7 +87,7 @@
                     <div class="card-body">                                
                         <div class="table-responsive">
 
-                    <asp:GridView runat="server" ID="gvBusqueda" class="table" PageSize="15" AllowPaging="True" Width="100%" >                       
+                    <asp:GridView runat="server" ID="gvBusqueda" class="table" PageSize="15" AllowPaging="True" Width="100%" OnPageIndexChanging="gvBusqueda_PageIndexChanging" >
                         <EmptyDataTemplate>
                             <div align="center">No hay registros para mostrar.</div>
                         </EmptyDataTemplate>

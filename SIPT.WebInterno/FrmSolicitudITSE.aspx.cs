@@ -343,24 +343,16 @@ namespace SIPT.WebInterno
            
         }
 
-        private List<PtuUsoDTO> pbd_CargarGrillaUsos(int? pintcodsolicitud, int? pintEstSolLicencia)
+        private List<PtuSolcertificadoinspectorDTO> pbd_CargarGrillaInspectores(int? pintcodsolicitudinspector, int? pintcodsolicitud)
         {
 
-             ob = new PtuSolcertificadoinspector
-            oPtuSolicitud = new PtuSolicitud();
-            
-            List<PtuUsoDTO> oPtuUsoDTOList = new List<PtuUsoDTO>();
-           
-            PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
-            oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
-            oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
-            hdfCodSolicitud.Value = pintcodsolicitud.ToString();
-            hdfSolLicEstado.Value = pintEstSolLicencia.ToString();
+            List<PtuSolcertificadoinspectorDTO> oPtuSolcertificadoinspectorDTOList = new List<PtuSolcertificadoinspectorDTO>();
+            PtuSolcertificadoinspector_bo oPtuSolcertificadoinspector_bo = new PtuSolcertificadoinspector_bo(ref logMensajes);
 
-        
+            oPtuSolcertificadoinspectorDTOList = oPtuSolcertificadoinspector_bo.ListarKeys(pintcodsolicitudinspector, pintcodsolicitud);
 
+            return oPtuSolcertificadoinspectorDTOList;
 
-            return oPtuUsoDTOList;
         }
 
 

@@ -240,7 +240,11 @@
                             <div class="col-4">
                                 <label for="gvInspectores" class="form-label-sm">Inspectores</label>
 
-                                <asp:GridView runat="server" ID="gvInspectores" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="true" Width="100%">
+                                <asp:GridView runat="server" ID="gvInspectores" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="false" ShowHeader="false" Width="100%">
+                                <Columns>
+                                    <asp:BoundField DataField="INTUSUINSPECTOR" HeaderText=""></asp:BoundField>
+                                    <asp:BoundField DataField="VCHNOMBREINSPECTOR" HeaderText=""></asp:BoundField>
+                                </Columns>
                                 </asp:GridView>
 
 

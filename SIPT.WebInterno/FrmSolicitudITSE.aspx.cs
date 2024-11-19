@@ -229,30 +229,7 @@ namespace SIPT.WebInterno
             }
         }
 
-        protected void btnCalifica_Click(object sender, EventArgs e)
-        {
-            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
-            {
-                Button btn = sender as Button;
-                GridViewRow row = btn.NamingContainer as GridViewRow;
-                int lintCodSolicitud = Convert.ToInt32(gvSolicitud.DataKeys[row.RowIndex].Values["INTCODSOLICITUD"]);
-                int lintEstSolLicencia = Convert.ToInt16(gvSolicitud.DataKeys[row.RowIndex].Values["SMLESTSOLLICENCIA"]);
-                hdfCodSolicitud.Value = lintCodSolicitud.ToString();
-                hdfSolLicEstado.Value = lintEstSolLicencia.ToString();
 
-                MultiView1.ActiveViewIndex = 1;
-
-                pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
-
-                APPL.FrondEnd.Response.Ok(logMensajes);
-            }
-            catch (Exception ex)
-            {
-                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
-                response.MensajeSwal(ClientScript);
-            }
-        }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -529,9 +506,10 @@ namespace SIPT.WebInterno
                 txtObsSolicitante.Text = oPtuDiligenciaDTO.vchobssolicitante;
                 hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
 
+                gvInspectores.DataSource = pbd_CargarGrillaInspectores(0, oPtuDiligenciaDTO.intcodsolicitud);
+                gvInspectores.DataBind();
+
                 MultiView1.ActiveViewIndex = 1;
-                //btnGuardar.Visible = false;
-                //pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
 
                 APPL.FrondEnd.Response.Ok(logMensajes);
             }

@@ -346,6 +346,7 @@ namespace SIPT.WebInterno
         private List<PtuUsoDTO> pbd_CargarGrillaUsos(int? pintcodsolicitud, int? pintEstSolLicencia)
         {
 
+             ob = new PtuSolcertificadoinspector
             oPtuSolicitud = new PtuSolicitud();
             
             List<PtuUsoDTO> oPtuUsoDTOList = new List<PtuUsoDTO>();

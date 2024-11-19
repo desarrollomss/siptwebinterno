@@ -17,6 +17,7 @@ namespace SIPT.BL.DTO.DTO
 		public string vchobsinspector { get; set; }
 		public string vchobssolicitante { get; set; }
 		public Int16? smlestdiligencia { get; set; }
+		public string vchestdiligencia { get; set; }
 		public DateTime? datfechamaxsubsanacion { get; set; }
 		public DateTime? datfechareprogramacion { get; set; }
 		public int? intcodsolicitud { get; set; }

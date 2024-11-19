@@ -14,6 +14,7 @@ namespace SIPT.BL.Services
 	public class PtuDiligencia_bo
 	{
 		private PtuDiligencia_dao oPtuDiligencia_dao;
+		private PtuTabla_dao oPtuTabla_dao;
 		private LogMensajes logMensajes;
 		private Db dbconex;
 
@@ -153,28 +154,43 @@ namespace SIPT.BL.Services
 			return oPtuDiligenciaDTO;
 		}
 
-		public List<PtuDiligencia> ListarKeys(
+		public List<PtuDiligenciaDTO> ListarKeys(
 								int? intcoddiligencia,
 								int? intcodsolicitud)
 		{
 			List<PtuDiligencia> oPtuDiligenciaList;
+			List<PtuDiligenciaDTO> oPtuDiligenciaDTOList;
 			dbconex = new Db();
 			try
 			{
 				dbconex.IniciarTransaccion();
 
 				oPtuDiligencia_dao = ObjectFactory.Instanciar<PtuDiligencia_dao>(new PtuDiligencia(), this.logMensajes, dbconex);
+				oPtuTabla_dao = ObjectFactory.Instanciar<PtuTabla_dao>(new PtuTabla(), this.logMensajes, dbconex);
+
+				List<PtuTabla> oPtuTablaList = oPtuTabla_dao.Listar();
+
 				oPtuDiligenciaList = oPtuDiligencia_dao.ListarKeys(
 								intcoddiligencia,
 								intcodsolicitud);
-
+				
 				dbconex.RegistrarTransaccion();
+
+				PtuTabla oPtuTabla;
+				Mapeos mapeo = new Mapeos();
+				oPtuDiligenciaDTOList = mapeo.MapList<PtuDiligencia, PtuDiligenciaDTO>(oPtuDiligenciaList);
+                foreach (PtuDiligenciaDTO oPtuDiligenciaDTO in oPtuDiligenciaDTOList)
+                {
+					oPtuTabla = oPtuTablaList.Find(x => x.smlcodtabla.Equals(oPtuDiligenciaDTO.smlestdiligencia));
+					oPtuDiligenciaDTO.vchestdiligencia = oPtuTabla.vchdescripcion;
+				}
+				
 			}
 			finally
 			{
 				dbconex.CerrarConexion();
 			}
-			return oPtuDiligenciaList;
+			return oPtuDiligenciaDTOList;
 		}
 
 

@@ -155,11 +155,11 @@ namespace SIPT.WebInterno
 
                     Button btnCalifica = (Button)e.Row.FindControl("btnCalifica");
 
-                    ddlSCUAnalista.DataSource = (DataTable)ViewState["ANALISTA"];
-                    ddlSCUAnalista.DataTextField = "VCHUSUANALISTA";
-                    ddlSCUAnalista.DataValueField = "INTUSUANALISTA";
-                    ddlSCUAnalista.DataBind();
-                    ddlSCUAnalista.Items.Insert(0, new ListItem("(Ninguno)", "0"));
+                    //ddlSCUAnalista.DataSource = (DataTable)ViewState["ANALISTA"];
+                    //ddlSCUAnalista.DataTextField = "VCHUSUANALISTA";
+                    //ddlSCUAnalista.DataValueField = "INTUSUANALISTA";
+                    //ddlSCUAnalista.DataBind();
+                    //ddlSCUAnalista.Items.Insert(0, new ListItem("(Ninguno)", "0"));
 
                     //if (lblSCUCodAnalista.Text != "0")
                     //{
@@ -180,7 +180,7 @@ namespace SIPT.WebInterno
             }
         }
 
-        protected void ddlAnalista_SelectedIndexChanged(object sender, EventArgs e)
+        /*protected void ddlAnalista_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             GridViewRow gwrow = (GridViewRow)((DropDownList)sender).NamingContainer;
@@ -210,7 +210,7 @@ namespace SIPT.WebInterno
                 response.MensajeSwal(ClientScript);
             }
 
-        }
+        }*/
 
         protected void gvSolicitud_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -265,12 +265,14 @@ namespace SIPT.WebInterno
             // {
             //    return;
             // }
-            string script = "alert(document.getElementById('ContentPlaceHolder1_btnConfirmar'))";
-            ClientScript.RegisterStartupScript(this.GetType(), "xxx", script, true);
-            //new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Diligencia", "btnGuardar");
+            
+            //string script = "alert(document.getElementById('ContentPlaceHolder1_btnConfirmar'))";
+            //ClientScript.RegisterStartupScript(this.GetType(), "xxx", script, true);
+
+            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Diligencia", "btnGuardar");
 
         }
-
+        
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             int lintCodDiligencia = Convert.ToInt32(hdfCodDiligencia.Value);
@@ -294,7 +296,7 @@ namespace SIPT.WebInterno
                 response.MensajeSwal(ClientScript);
             }
         }
-
+        
 
         protected void ddlProcedimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -456,17 +458,14 @@ namespace SIPT.WebInterno
         }
 
 
-        private List<PtuDiligencia> pbd_CargarGrillaInspecciones(int pintcodsolicitud)
+        private List<PtuDiligenciaDTO> pbd_CargarGrillaInspecciones(int pintcodsolicitud)
         {
 
-            PtuDiligencia oPtuDiligencia = new PtuDiligencia();
-            List<PtuDiligencia> oPtuDiligenciaList = new List<PtuDiligencia>();
+            PtuDiligencia oPtuDiligencia = new PtuDiligencia();            
             
             PtuDiligencia_bo oPtuDiligencia_bo = new PtuDiligencia_bo(ref logMensajes);
 
-            oPtuDiligenciaList = oPtuDiligencia_bo.ListarKeys(0,pintcodsolicitud);
-                       
-            return oPtuDiligenciaList;
+            return oPtuDiligencia_bo.ListarKeys(0,pintcodsolicitud);
         }
 
 
@@ -538,7 +537,7 @@ namespace SIPT.WebInterno
                 hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
 
                 MultiView1.ActiveViewIndex = 1;
-                btnGuardar.Visible = false;
+                //btnGuardar.Visible = false;
                 //pbd_CargarGrillaUsos(lintCodSolicitud, lintEstSolLicencia);
 
                 APPL.FrondEnd.Response.Ok(logMensajes);

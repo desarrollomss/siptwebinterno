@@ -200,7 +200,7 @@ namespace SIPT.BL.Services
 				oPtuSolcertificado_dao = ObjectFactory.Instanciar<PtuSolcertificado_dao>(new PtuSolcertificado(), this.logMensajes, dbconex);
 
 				dbconex.IniciarTransaccion();
-				oPtuSolcertificado_PorInspectorList = oPtuSolcertificado_dao.Buscar (pPtuSolcertificado,pPtuSolicitud);
+				oPtuSolcertificado_PorInspectorList = oPtuSolcertificado_dao.Buscar(pPtuSolcertificado,pPtuSolicitud);
 				dbconex.RegistrarTransaccion();
 
 			}

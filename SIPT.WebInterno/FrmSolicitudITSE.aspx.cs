@@ -607,6 +607,11 @@ namespace SIPT.WebInterno
                 Directory.CreateDirectory(folderPath);
             }
 
+            if (fuNumPanFot.PostedFile.ContentLength > 15360)
+            {
+                return;
+            }
+
             fuNumPanFot.SaveAs(folderPath + fuNumPanFot.FileName);
             txtNumPanFot.Text = fuNumPanFot.PostedFile.FileName;
             fuNumPanFot.Visible = false;

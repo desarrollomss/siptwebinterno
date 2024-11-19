@@ -26,29 +26,31 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
 		public override Int32 Insertar(PtuSolcertificadoinspector pPtuSolcertificadoinspector)
 		{
-			DB2Parameter[] arrParam = new DB2Parameter[10];
+			DB2Parameter[] arrParam = new DB2Parameter[11];
 			try
 			{
 				arrParam[0] = new DB2Parameter("@INTCODSOLICITUDINSPECTOR", DB2Type.Integer);
 				arrParam[0].Direction = ParameterDirection.Output;
 				arrParam[1] = new DB2Parameter("@INTUSUINSPECTOR", DB2Type.Integer);
 				arrParam[1].Value = pPtuSolcertificadoinspector.intusuinspector;
-				arrParam[2] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
-				arrParam[2].Value = pPtuSolcertificadoinspector.intcodsolicitud;
-				arrParam[3] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
-				arrParam[3].Value = pPtuSolcertificadoinspector.smlestado;
-				arrParam[4] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[4].Value = pPtuSolcertificadoinspector.vchaudusucreacion;
-				arrParam[5] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[5].Value = pPtuSolcertificadoinspector.tmsaudfeccreacion;
-				arrParam[6] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[6].Value = pPtuSolcertificadoinspector.vchaudusumodif;
-				arrParam[7] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[7].Value = pPtuSolcertificadoinspector.tmsaudfecmodif;
-				arrParam[8] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[8].Value = pPtuSolcertificadoinspector.vchaudequipo;
-				arrParam[9] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[9].Value = pPtuSolcertificadoinspector.vchaudprograma;
+				arrParam[2] = new DB2Parameter("@VCHNOMBREINSPECTOR", DB2Type.VarChar);
+				arrParam[2].Value = pPtuSolcertificadoinspector.vchnombreinspector;
+				arrParam[3] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
+				arrParam[3].Value = pPtuSolcertificadoinspector.intcodsolicitud;
+				arrParam[4] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
+				arrParam[4].Value = pPtuSolcertificadoinspector.smlestado;
+				arrParam[5] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
+				arrParam[5].Value = pPtuSolcertificadoinspector.vchaudusucreacion;
+				arrParam[6] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
+				arrParam[6].Value = pPtuSolcertificadoinspector.tmsaudfeccreacion;
+				arrParam[7] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
+				arrParam[7].Value = pPtuSolcertificadoinspector.vchaudusumodif;
+				arrParam[8] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
+				arrParam[8].Value = pPtuSolcertificadoinspector.tmsaudfecmodif;
+				arrParam[9] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
+				arrParam[9].Value = pPtuSolcertificadoinspector.vchaudequipo;
+				arrParam[10] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
+				arrParam[10].Value = pPtuSolcertificadoinspector.vchaudprograma;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADOINSPECTOR_INSERTAR", arrParam);
 			}
 			catch (Exception ex)
@@ -66,29 +68,31 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
 		public override void Actualizar(PtuSolcertificadoinspector pPtuSolcertificadoinspector)
 		{
-			DB2Parameter[] arrParam = new DB2Parameter[10];
+			DB2Parameter[] arrParam = new DB2Parameter[11];
 			try
 			{
 				arrParam[0] = new DB2Parameter("@INTCODSOLICITUDINSPECTOR", DB2Type.Integer);
 				arrParam[0].Value = pPtuSolcertificadoinspector.intcodsolicitudinspector;
 				arrParam[1] = new DB2Parameter("@INTUSUINSPECTOR", DB2Type.Integer);
 				arrParam[1].Value = pPtuSolcertificadoinspector.intusuinspector;
-				arrParam[2] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
-				arrParam[2].Value = pPtuSolcertificadoinspector.intcodsolicitud;
-				arrParam[3] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
-				arrParam[3].Value = pPtuSolcertificadoinspector.smlestado;
-				arrParam[4] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
-				arrParam[4].Value = pPtuSolcertificadoinspector.vchaudusucreacion;
-				arrParam[5] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
-				arrParam[5].Value = pPtuSolcertificadoinspector.tmsaudfeccreacion;
-				arrParam[6] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-				arrParam[6].Value = pPtuSolcertificadoinspector.vchaudusumodif;
-				arrParam[7] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-				arrParam[7].Value = pPtuSolcertificadoinspector.tmsaudfecmodif;
-				arrParam[8] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
-				arrParam[8].Value = pPtuSolcertificadoinspector.vchaudequipo;
-				arrParam[9] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
-				arrParam[9].Value = pPtuSolcertificadoinspector.vchaudprograma;
+				arrParam[2] = new DB2Parameter("@VCHNOMBREINSPECTOR", DB2Type.VarChar);
+				arrParam[2].Value = pPtuSolcertificadoinspector.vchnombreinspector;
+				arrParam[3] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
+				arrParam[3].Value = pPtuSolcertificadoinspector.intcodsolicitud;
+				arrParam[4] = new DB2Parameter("@SMLESTADO", DB2Type.SmallInt);
+				arrParam[4].Value = pPtuSolcertificadoinspector.smlestado;
+				arrParam[5] = new DB2Parameter("@VCHAUDUSUCREACION", DB2Type.VarChar);
+				arrParam[5].Value = pPtuSolcertificadoinspector.vchaudusucreacion;
+				arrParam[6] = new DB2Parameter("@TMSAUDFECCREACION", DB2Type.Timestamp);
+				arrParam[6].Value = pPtuSolcertificadoinspector.tmsaudfeccreacion;
+				arrParam[7] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
+				arrParam[7].Value = pPtuSolcertificadoinspector.vchaudusumodif;
+				arrParam[8] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
+				arrParam[8].Value = pPtuSolcertificadoinspector.tmsaudfecmodif;
+				arrParam[9] = new DB2Parameter("@VCHAUDEQUIPO", DB2Type.VarChar);
+				arrParam[9].Value = pPtuSolcertificadoinspector.vchaudequipo;
+				arrParam[10] = new DB2Parameter("@VCHAUDPROGRAMA", DB2Type.VarChar);
+				arrParam[10].Value = pPtuSolcertificadoinspector.vchaudprograma;
 				DB2helper.ExecuteNonQuery((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLCERTIFICADOINSPECTOR_ACTUALIZAR", arrParam);
 			}
 			catch (Exception ex)

@@ -7,6 +7,7 @@ namespace SIPT.BL.DTO.DTO
 	{
 		public int? intcodsolicitudinspector { get; set; }
 		public int? intusuinspector { get; set; }
+		public string vchnombreinspector { get; set; }
 		public int? intcodsolicitud { get; set; }
 		public Int16? smlestado { get; set; }
 		public string vchaudusucreacion { get; set; }

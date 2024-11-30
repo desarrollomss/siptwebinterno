@@ -52,7 +52,7 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[11] = new DB2Parameter("@INTRECNUMBER", DB2Type.Integer);
             arrParam[11].Value = stdDocumento_InsertaDocWebSipt.intrecnumber;
             arrParam[12] = new DB2Parameter("@VCHAUDEQUIPOCREACION", DB2Type.VarChar);
-            arrParam[12].Value = stdDocumento_InsertaDocWebSipt.vchaudequipocreacion;
+            arrParam[12].Value = this.logMensajes.Equipo;
             arrParam[13] = new DB2Parameter("@PVCHUNIORGREMCODIGO", DB2Type.VarChar);
             arrParam[13].Value = stdDocumento_InsertaDocWebSipt.pvchuniorgremcodigo;
             arrParam[14] = new DB2Parameter("@PVCHUNIORGRECCODIGO", DB2Type.VarChar);

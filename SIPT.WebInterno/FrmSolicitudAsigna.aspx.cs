@@ -55,11 +55,13 @@ namespace SIPT.WebInterno
             }
         }
 
+
         protected void gvSolicitud_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                DropDownList ddlSCUAnalista = (DropDownList)e.Row.FindControl("ddlAnalista");
+                //DropDownList ddlSCUAnalista = (DropDownList)e.Row.FindControl("ddlAnalista");
 
                 Label lblSCUCodAnalista = (Label)e.Row.FindControl("lblCodAnalista");
                 Label lblEstSolLic = (Label)e.Row.FindControl("lblEstSolLic");
@@ -70,38 +72,38 @@ namespace SIPT.WebInterno
 
                 //DataTable oDt = (DataTable)ListarUsuariosRolAnalista();
 
-
+                /*
                 ddlSCUAnalista.DataSource = (DataTable)ViewState["ANALISTA"];
                 ddlSCUAnalista.DataTextField = "VCHUSUANALISTA";
                 ddlSCUAnalista.DataValueField = "INTUSUANALISTA";
                 ddlSCUAnalista.DataBind();
                 ddlSCUAnalista.Items.Insert(0, new ListItem("(Ninguno)", "0"));
-
+                
                 if (lblSCUCodAnalista.Text != "0")
                 {
                     ddlSCUAnalista.SelectedValue = lblSCUCodAnalista.Text;
                 }
-
+                */
                 gvSCU.DataSource = pbd_CargarGrillaUsos(Convert.ToInt32(lblCodSolicitud.Text));
                 gvSCU.DataBind();
-
+                /*
                 if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
                 {
                     switch (Convert.ToInt32(lblEstSolLic.Text))
                     {
-                        case 10:    /* 10	1	REGISTRADO              */
+                        case 10:    // 10	1	REGISTRADO              
                             ddlSCUAnalista.Enabled = true;
                             break;
-                        case 11:    /* 11	2	EN 1ERAEVALUACION       */
+                        case 11:    // 11	2	EN 1ERAEVALUACION       
                             ddlSCUAnalista.Enabled = true;
                             break;
-                        case 12:    /* 12	3	TERMINADO               */
+                        case 12:    // 12	3	TERMINADO               
                             ddlSCUAnalista.Enabled = false;
                             break;
-                        case 13:    /* 13	4	DESISTIDO               */
+                        case 13:    // 13	4	DESISTIDO               
                             ddlSCUAnalista.Enabled = false;
                             break;
-                        case 14:    /* 14	5	EN 2DAEVALUACION        */
+                        case 14:    // 14	5	EN 2DAEVALUACION        
                             ddlSCUAnalista.Enabled = false;
                             break;
                     }
@@ -110,12 +112,14 @@ namespace SIPT.WebInterno
                 {
                     ddlSCUAnalista.Enabled = false;
                 }
+                */
             }
+        
         }
 
+        /*
         protected void ddlAnalista_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             GridViewRow gwrow = (GridViewRow)((DropDownList)sender).NamingContainer;
             DropDownList ddlSCUAnalista = (DropDownList)sender;
             String lstcodSolicitud = gwrow.Cells[0].Text;
@@ -144,6 +148,7 @@ namespace SIPT.WebInterno
                 response.MensajeSwal(ClientScript);
             }
         }
+        */
 
         protected void gvSolicitud_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

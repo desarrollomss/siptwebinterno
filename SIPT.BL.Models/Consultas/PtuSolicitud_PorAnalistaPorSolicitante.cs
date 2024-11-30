@@ -49,5 +49,6 @@ namespace SIPT.BL.Models.Consultas
         public string vchestsolrequerimientos { get; set; }
         public string vchemailsol { get; set; }
         public Int16? smlorden { get; set; }
+        public string vchnombreanalista { get; set; }
     }
 }

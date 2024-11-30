@@ -7,6 +7,8 @@ namespace SIPT.BL.Models.Entity
 
         public int? intcodsolicitud { get; set; }
         public int? intcoduso { get; set; }
+        public string vchcoduso { get; set; }
+        public string vchnombreuso { get; set; }
         public Int16? smlusoprincipal { get; set; }
         public string vchaudusucreacion { get; set; }
         public DateTime? tmsaudfeccreacion { get; set; }
@@ -14,7 +16,7 @@ namespace SIPT.BL.Models.Entity
         public DateTime? tmsaudfecmodif { get; set; }
         public string vchaudequipo { get; set; }
         public string vchaudprograma { get; set; }
-        public string vchcoduso { get; set; }
+        
     }
 }
 

@@ -54,7 +54,7 @@
                             </div>
                             
                             <div class="col-md-1">
-                                <label for="txtCodUso" class="form-label-sm">Codigo Uso</label><br />
+                                <label for="txtCodUso" class="form-label-sm">Codigo</label><br />
                                 <asp:TextBox ID="txtCodUso" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
 

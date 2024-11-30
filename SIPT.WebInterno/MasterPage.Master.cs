@@ -14,7 +14,15 @@ namespace SIPT.WebInterno
 
             ltxtUsuarioId = (string)(Request.Cookies["Security"]["UsuarioId"]);
             ltxtUsuarioRol = (string)(Request.Cookies["Security"]["UsuarioRol"]);
-            ltxtMenu = Session["Menu"].ToString();
+
+            if (Session["Menu"] is null)
+            {
+                btnSalir_Click(sender, e);
+            }
+            else
+            {
+                ltxtMenu = Session["Menu"].ToString();
+            }
 
             ltrMenu.Text = ltxtMenu.Replace("<![CDATA[", string.Empty).Replace("]]>", string.Empty);
         }

@@ -172,7 +172,7 @@
                                             <tr>
                                                 <td colspan="100%">
                                                     <div id="div<%# Eval("INTCODSOLICITUD") %>" style="display: none; position: relative; left: 15px; overflow: auto; width: 95%">
-                                                        <asp:GridView runat="server" ID="gvInspecciones" DataKeyNames="INTCODDILIGENCIA" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" Width="100%">
+                                                        <asp:GridView runat="server" ID="gvInspecciones" DataKeyNames="INTCODDILIGENCIA" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="False" Width="100%" OnRowDataBound="gvInspecciones_RowDataBound">
                                                             <HeaderStyle CssClass="" />
                                                             <Columns>
                                                                 <asp:BoundField DataField="INTCODDILIGENCIA" HeaderText="Nro.Inspecc."></asp:BoundField>
@@ -181,7 +181,9 @@
                                                                 <asp:BoundField DataField="VCHESTDILIGENCIA" HeaderText="Estado"></asp:BoundField>
                                                                 <asp:TemplateField>
                                                                     <ItemTemplate>
-                                                                        <asp:Label ID="lblCodDiligencia" runat="server" Text='<%# Eval("INTCODDILIGENCIA") %>' Visible="false" />
+
+                                                                        
+                                                                        <asp:Label ID="lblEstDiligencia" runat="server" Text='<%# Eval("SMLESTDILIGENCIA") %>' Visible="false" />
                                                                         <asp:Button ID="btnVer" runat="server" Text=" Ver " OnClick="btnVer_Click" CssClass="btn waves-effect waves-light btn-warning" />
                                                                     </ItemTemplate>
                                                                 </asp:TemplateField>
@@ -261,6 +263,7 @@
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
                                 <asp:Button ID="btnUpload1" runat="server" Text="" onclick="btnUpload1_Click"  CssClass="btnHidden" />
+                                <asp:Button ID="btnNumInf" runat="server" Text="..." OnClick="btnNumInf_Click" visible="false" />
                             </div>
                         </div>
 
@@ -275,11 +278,12 @@
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
                                 <asp:Button ID="btnUpload2" runat="server" Text="" onclick="btnUpload2_Click" CssClass="btnHidden"/>
+                                <asp:Button ID="btnNumActa" runat="server" Text="..." OnClick="btnNumActa_Click" visible="false" />
                             </div>
 
                             <div class="col-md-4">
                                 <label for="txtFecSubsana" class="form-label-sm">Fecha de Subsanacion</label>
-                                <asp:TextBox ID="txtFecSubsana" Text="" TextMode="Date" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtFecSubsana" Text="" TextMode="Date" runat="server" class="form-control" required data-validation-required-message="El campo es obligatorio"></asp:TextBox>
                             </div>
 
 
@@ -294,11 +298,11 @@
                             <div class="col-md-1">
                                 <span>&nbsp;</span><br />
                                 <asp:Button ID="btnUpload3" runat="server" Text="" onclick="btnUpload3_Click" CssClass="btnHidden" />
-                                
+                                <asp:Button ID="btnNumPanFot" runat="server" Text="..." OnClick="btnNumPanFot_Click" visible="false" />
                             </div>
                             <div class="col-md-4">
                                 <label for="txtFecRepro" class="form-label-sm">Fecha de Reprogramacion</label>
-                                <asp:TextBox ID="txtFecRepro" TextMode="Date" Text="" runat="server" class="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtFecRepro" TextMode="Date" Text="" runat="server" class="form-control" required data-validation-required-message="El campo es obligatorio"></asp:TextBox>
                             </div>
 
 
@@ -335,6 +339,26 @@
             </div>
 
         </asp:View>
+
+            <asp:View ID="View3" runat="server">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <iframe id="reporte" name="reporte" runat="server" width="100%" height="400px"></iframe>
+                                </div>
+                            </div>
+                            <div class="row align-content-center">
+                                <div class="col-md-12">
+                                    <asp:Button ID="btnRegresaVista" runat="server" Text="Cerrar" CssClass="btn btn-success btn-sm" OnClick="btnRegresaVista_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:View>
+
     </asp:MultiView>
 
 

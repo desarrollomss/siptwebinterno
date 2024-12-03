@@ -472,7 +472,88 @@ namespace SIPT.WebInterno
             MultiView1.ActiveViewIndex = 1;
 
         }
-       
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            PtuDiligenciaDTO oPtuDiligenciaDTO = new PtuDiligenciaDTO();
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+
+                GridViewRow gwrow = (GridViewRow)((Button)sender).NamingContainer;
+                int lintCodDiligencia = Convert.ToInt32(gwrow.Cells[0].Text);
+                hdfCodDiligencia.Value = lintCodDiligencia.ToString();
+
+                PtuDiligencia_bo oPtuDiligencia_bo = new PtuDiligencia_bo(ref logMensajes);
+
+                oPtuDiligenciaDTO = oPtuDiligencia_bo.ListarKey(lintCodDiligencia);
+
+                DateTime dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechadiligencia.ToString());
+                txtFecprog.Text = String.Format("{0:yyyy-MM-dd}", dt);
+
+                txtHorprog.Text = oPtuDiligenciaDTO.smlhoradiligencia.ToString();
+                ddlEstadoInsp.SelectedValue = oPtuDiligenciaDTO.smlestdiligencia.ToString();
+
+                dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechareprogramacion.ToString());
+                txtFecRepro.Text = String.Format("{0:yyyy-MM-dd}", dt);
+
+                dt = Convert.ToDateTime(oPtuDiligenciaDTO.datfechamaxsubsanacion.ToString());
+                txtFecSubsana.Text = String.Format("{0:yyyy-MM-dd}", dt);
+
+                txtObsInspector.Text = oPtuDiligenciaDTO.vchobsinspector;
+                txtObsSolicitante.Text = oPtuDiligenciaDTO.vchobssolicitante;
+                hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
+
+                txtNumActa.Text = oPtuDiligenciaDTO.vchfileactadiligencia;
+                txtNumInf.Text = oPtuDiligenciaDTO.vchfileinformecumplimiento;
+                txtNumPanFot.Text = oPtuDiligenciaDTO.vchfilepanelfotografico;
+
+
+                gvInspectores.DataSource = pbd_CargarGrillaInspectores(0, oPtuDiligenciaDTO.intcodsolicitud);
+                gvInspectores.DataBind();
+
+                fuNumActa.Visible = true;
+                fuNumInf.Visible = true;
+                fuNumPanFot.Visible = true;
+
+                txtNumActa.Visible = false;
+                txtNumInf.Visible = false;
+                txtNumPanFot.Visible = false;
+
+                btnNumActa.Visible = false;
+                btnNumInf.Visible = false;
+                btnNumPanFot.Visible = false;
+
+                txtNumActa.ReadOnly = true;
+                txtNumInf.ReadOnly = true;
+                txtNumPanFot.ReadOnly = true;
+
+                txtFecprog.ReadOnly = false;
+                txtHorprog.ReadOnly = false;
+                ddlEstadoInsp.Enabled = false;
+                txtFecRepro.ReadOnly = false;
+                txtFecSubsana.ReadOnly = false;
+                txtObsInspector.ReadOnly = false;
+                txtObsSolicitante.ReadOnly = false;
+
+
+                MultiView1.ActiveViewIndex = 1;
+
+                APPL.FrondEnd.Response.Ok(logMensajes);
+            }
+            catch (Exception ex)
+            {
+                Response response = APPL.FrondEnd.Response.Error(ex, logMensajes);
+                response.MensajeSwal(ClientScript);
+            }
+
+
+
+
+
+        }
+
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
@@ -506,8 +587,38 @@ namespace SIPT.WebInterno
                 txtObsSolicitante.Text = oPtuDiligenciaDTO.vchobssolicitante;
                 hdfCodSolicitud.Value = oPtuDiligenciaDTO.intcodsolicitud.ToString();
 
+                txtNumActa.Text = oPtuDiligenciaDTO.vchfileactadiligencia;
+                txtNumInf.Text = oPtuDiligenciaDTO.vchfileinformecumplimiento;
+                txtNumPanFot.Text = oPtuDiligenciaDTO.vchfilepanelfotografico;
+
+
                 gvInspectores.DataSource = pbd_CargarGrillaInspectores(0, oPtuDiligenciaDTO.intcodsolicitud);
                 gvInspectores.DataBind();
+
+                fuNumActa.Visible = false;
+                fuNumInf.Visible = false;
+                fuNumPanFot.Visible = false;
+
+                txtNumActa.Visible = true;
+                txtNumInf.Visible = true;
+                txtNumPanFot.Visible = true;
+
+                btnNumActa.Visible = true;
+                btnNumInf.Visible = true;
+                btnNumPanFot.Visible = true;
+
+                txtNumActa.ReadOnly = true;
+                txtNumInf.ReadOnly = true;
+                txtNumPanFot.ReadOnly = true;
+
+                txtFecprog.ReadOnly = true;
+                txtHorprog.ReadOnly = true;
+                ddlEstadoInsp.Enabled = false;
+                txtFecRepro.ReadOnly = true;
+                txtFecSubsana.ReadOnly = true;
+                txtObsInspector.ReadOnly = true;
+                txtObsSolicitante.ReadOnly = true;
+
 
                 MultiView1.ActiveViewIndex = 1;
 
@@ -523,10 +634,6 @@ namespace SIPT.WebInterno
 
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 1;
-        }
 
         protected void btnUpload1_Click(object sender, EventArgs e)
         {
@@ -590,6 +697,76 @@ namespace SIPT.WebInterno
 
         }
 
+        protected void btnRegresaVista_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
 
+        protected void btnNumInf_Click(object sender, EventArgs e)
+        {
+            string pdfRuta;
+
+            pdfRuta = ConfigurationManager.AppSettings["IPServidorPDF"] +  txtNumInf.Text; 
+            reporte.Attributes.Add("src", pdfRuta);
+            MultiView1.ActiveViewIndex = 2;
+
+        }
+
+        protected void btnNumActa_Click(object sender, EventArgs e)
+        {
+            string pdfRuta;
+
+            pdfRuta = ConfigurationManager.AppSettings["IPServidorPDF"] + txtNumActa.Text;
+            reporte.Attributes.Add("src", pdfRuta);
+            MultiView1.ActiveViewIndex = 2;
+
+        }
+
+        protected void btnNumPanFot_Click(object sender, EventArgs e)
+        {
+            string pdfRuta;
+
+            pdfRuta = ConfigurationManager.AppSettings["IPServidorPDF"] + txtNumPanFot.Text;
+            reporte.Attributes.Add("src", pdfRuta);
+            MultiView1.ActiveViewIndex = 2;
+
+        }
+
+
+        protected void gvInspecciones_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+
+                Label lblEstado = (Label)e.Row.FindControl("lblEstDiligencia");
+
+                Button btnVer = (Button)e.Row.FindControl("btnVer");
+                Button btnEditar = (Button)e.Row.FindControl("btnEditar");
+
+                //51  PROGRAMADO
+                //52  REPROGRAMADO
+                //53  RIESGO
+                //54  ACTIVIDAD NO CORRESPONDE
+                //55  SUBSANABLE
+                //56  APROBADO
+
+                switch (Convert.ToInt32(lblEstado.Text))
+                {
+                    case 56:
+                        btnVer.Visible = true;
+                        btnEditar.Visible = false;
+                        break;
+                    default:
+                        {
+                            btnVer.Visible = false;
+                            btnEditar.Visible = true;
+                            break;
+                        }
+
+                }
+
+            }
+        }
     }
 }

@@ -152,6 +152,7 @@ namespace SIPT.BL.Services
                 PtuSolicitud_dao ptuSolicitud_dao = ObjectFactory.Instanciar<PtuSolicitud_dao>(new PtuSolicitud(), this.logMensajes, dbconex);
                 PtuSolLicencia_dao ptuSolLicencia_dao = ObjectFactory.Instanciar<PtuSolLicencia_dao>(new PtuSolLicencia(), this.logMensajes, dbconex);
                 PtuProcedimientostupa_dao ptuProcedimientostupa_dao = ObjectFactory.Instanciar<PtuProcedimientostupa_dao>(new PtuProcedimientostupa(), this.logMensajes, dbconex);
+                PtuRequerimientostupa_dao oPtuRequerimientostupa_dao = ObjectFactory.Instanciar<PtuRequerimientostupa_dao>(new PtuRequerimientostupa(), this.logMensajes, dbconex);
 
                 ptuSolicitud = ptuSolicitud_dao.ListarPorId(pPtuSolLicencia.intcodsolicitud);
                 ptuSolLicencia = ptuSolLicencia_dao.ListarPorId(pPtuSolLicencia.intcodsolicitud);
@@ -161,6 +162,23 @@ namespace SIPT.BL.Services
                 oPtuSolrequerimiento_dao = ObjectFactory.Instanciar<PtuSolrequerimiento_dao>(new PtuSolrequerimiento(), this.logMensajes, dbconex);
 
                 oPtuSolLicencia_dao.Calificar(pPtuSolLicencia, pintcodigoprocedimiento);
+
+                if (usuarioRol.Equals("COORDINADOR SIPT"))
+                {
+                    #region Asignacion de Requisitos (los 4 basicos)
+
+                    List<PtuRequerimientostupa> oPtuRequerimientostupalist = oPtuRequerimientostupa_dao.ListarKeys(0, 0, 1);
+                    PtuSolrequerimiento oPtuSolrequerimiento;
+                    foreach (PtuRequerimientostupa item in oPtuRequerimientostupalist)
+                    {
+                        oPtuSolrequerimiento = new PtuSolrequerimiento();
+                        oPtuSolrequerimiento.intcodplantilla = item.intcodplantilla;
+                        oPtuSolrequerimiento.intcodsolicitud = pPtuSolLicencia.intcodsolicitud;
+                        oPtuSolrequerimiento_dao.Insertar(oPtuSolrequerimiento);
+                    }
+                    oPtuSolLicencia_dao.ProcesarPlantillas(pPtuSolLicencia);
+                    #endregion
+                }
 
                 dbconex.RegistrarTransaccion();
             }
@@ -183,18 +201,18 @@ namespace SIPT.BL.Services
                     stdDocumento_InsertaDocWebSipt.intadmcodigo = ptuSolicitud.intcodigosolicitante;
                     stdDocumento_InsertaDocWebSipt.inttipdoccodigo = 1;
                     stdDocumento_InsertaDocWebSipt.inttipprocodigo = 1;
-                    stdDocumento_InsertaDocWebSipt.vchoficodigo = ptuProcedimientostupa.vchoficodigo;
-                    stdDocumento_InsertaDocWebSipt.inttupcodigo = ptuProcedimientostupa.inttupcodigo;
-                    stdDocumento_InsertaDocWebSipt.intprocodigo = ptuProcedimientostupa.intprocodigo;
+                    stdDocumento_InsertaDocWebSipt.vchoficodigo = ptuProcedimientostupa.vchoficodigo;//0572
+                    stdDocumento_InsertaDocWebSipt.inttupcodigo = ptuProcedimientostupa.inttupcodigo;//3
+                    stdDocumento_InsertaDocWebSipt.intprocodigo = ptuProcedimientostupa.intprocodigo;//223
                     //stdDocumento_InsertaDocWebSipt.intasucodigo = ptuSolicitudDTO
                     //stdDocumento_InsertaDocWebSipt.vchdocasunto = ptuSolicitudDTO
                     stdDocumento_InsertaDocWebSipt.intdocfolio = 1;
-                    stdDocumento_InsertaDocWebSipt.intprecodigo = ptuSolLicencia.intcodigopredio;
+                    stdDocumento_InsertaDocWebSipt.intprecodigo = ptuSolLicencia.intcodigopredio;//12488001
                     stdDocumento_InsertaDocWebSipt.vchdocobservacion = "";
-                    stdDocumento_InsertaDocWebSipt.intrecnumber = Convert.ToInt32(ptuSolicitud.vchnumordenatencion);
-                    stdDocumento_InsertaDocWebSipt.vchaudequipocreacion = pPtuSolLicencia.vchaudequipo;
-                    stdDocumento_InsertaDocWebSipt.pvchuniorgremcodigo = ptuProcedimientostupa.vchoficodigo;
-                    stdDocumento_InsertaDocWebSipt.pvchuniorgreccodigo = ptuProcedimientostupa.vchoficodigo;
+                    stdDocumento_InsertaDocWebSipt.intrecnumber = 0; // Aun no tiene numero de Orden de Atencion para Pagar //Convert.ToInt32(ptuSolicitud.vchnumordenatencion);
+                    stdDocumento_InsertaDocWebSipt.vchaudequipocreacion = pPtuSolLicencia.vchaudequipo;//null
+                    stdDocumento_InsertaDocWebSipt.pvchuniorgremcodigo = ptuProcedimientostupa.vchoficodigo;//0572
+                    stdDocumento_InsertaDocWebSipt.pvchuniorgreccodigo = ptuProcedimientostupa.vchoficodigo;//0572
 
                     stdDocumento_InsertaResultado = stdDocumento_dao.Insertar(stdDocumento_InsertaDocWebSipt);
                     dbconex.RegistrarTransaccion();

@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                     
-                    <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD" OnRowDataBound="gvSolicitud_RowDataBound" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging">
+                    <asp:GridView runat="server" ID="gvSolicitud" class="table" PageSize="5" AutoGenerateColumns="False" AllowPaging="true" DataKeyNames="INTCODSOLICITUD" Width="100%" OnPageIndexChanging="gvSolicitud_PageIndexChanging" OnRowDataBound="gvSolicitud_RowDataBound">
                     <HeaderStyle CssClass="" />
                         <Columns>
                             <asp:BoundField DataField="INTCODSOLICITUD" HeaderText="Id"></asp:BoundField>
@@ -62,24 +62,15 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
 
-
-                            <asp:TemplateField HeaderText="Analista">
-                                <ItemTemplate>
-                                    <asp:DropDownList ID="ddlAnalista" class="select2 form-control custom-select" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAnalista_SelectedIndexChanged">
-                                    </asp:DropDownList>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                            <asp:BoundField DataField="DECAREAOCUPAR" HeaderText="Area Ocupar"></asp:BoundField>
+                            <asp:BoundField DataField="VCHNOMBREANALISTA" HeaderText="Analista"></asp:BoundField>
+                           
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Label ID="lblCodSolicitud" runat="server" Text='<%# Eval("INTCODSOLICITUD") %>' Visible="false" />
                                     <i class="bi bi-info-circle" onclick="javascript:expandcollapse('div<%# Eval("INTCODSOLICITUD") %>', 'one');"></i>
                                 </ItemTemplate>
                             </asp:TemplateField>
-<%--                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <i class="bi bi-info-square"></i>
-                                </ItemTemplate>
-                            </asp:TemplateField>--%>
 
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -100,6 +91,8 @@
                                     </tr>
                                 </ItemTemplate>
                             </asp:TemplateField>
+
+                            
                         </Columns>
                             <EmptyDataTemplate>
                                 <div align="center">No hay registros para mostrar.</div>

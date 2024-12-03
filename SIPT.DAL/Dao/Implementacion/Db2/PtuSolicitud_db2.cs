@@ -233,10 +233,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
         {
             oPtuSolicitudList = new List<PtuSolicitud>();
 
-            DB2Parameter[] arrParam = new DB2Parameter[2];
+            DB2Parameter[] arrParam = new DB2Parameter[1];
 
-            arrParam[1] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
-            arrParam[1].Value = intusuanalista;
+            arrParam[0] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
+            arrParam[0].Value = intusuanalista;
 
             return DB2Comando.Listar<PtuSolicitud_PorAnalistaPorSolicitante>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLICITUD_LISTAR_PENDIENTES", this.logMensajes, arrParam);            
         }
@@ -244,10 +244,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
         public override List<PtuSolicitud_PorAnalistaPorSolicitante> ListarCalificar(PtuSolicitud pPtuSolicitud, int? intusuanalista)
         {            
-            DB2Parameter[] arrParam = new DB2Parameter[2];
+            DB2Parameter[] arrParam = new DB2Parameter[1];
 
-            arrParam[1] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
-            arrParam[1].Value = intusuanalista;
+            arrParam[0] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
+            arrParam[0].Value = intusuanalista;
                         
             return DB2Comando.Listar<PtuSolicitud_PorAnalistaPorSolicitante>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLICITUD_LISTAR_CALIFICA", this.logMensajes, arrParam);
         }
@@ -256,10 +256,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
         {
             oPtuSolicitudList = new List<PtuSolicitud>();
 
-            DB2Parameter[] arrParam = new DB2Parameter[2];
+            DB2Parameter[] arrParam = new DB2Parameter[1];
 
-            arrParam[1] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
-            arrParam[1].Value = intusuanalista;
+            arrParam[0] = new DB2Parameter("@INTUSUANALISTA", DB2Type.Integer);
+            arrParam[0].Value = intusuanalista;
 
             return DB2Comando.Listar<PtuSolicitud_PorAnalistaPorSolicitante>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLICITUD_LISTAR_ACREDITAR", this.logMensajes, arrParam);           
         }

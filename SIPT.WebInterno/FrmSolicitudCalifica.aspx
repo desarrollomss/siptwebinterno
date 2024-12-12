@@ -174,7 +174,7 @@
                         </div>
                                                 
                         <div class="col-md-2">
-                            <label for="txtAreaEst" class="form-label-sm">Area Estructuracion</label>
+                            <label for="txtAreaEst" class="form-label-sm">Area de tratamiento normativo</label>
                             <asp:TextBox ID="txtAreaEst" Text="" runat="server" class="form-control"></asp:TextBox>
                         </div>
 

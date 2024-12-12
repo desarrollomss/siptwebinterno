@@ -73,6 +73,7 @@ namespace SIPT.BL.DTO.DTO
         public string vchtipoempresa { get; set; }
         public string vchubicacionpredio { get; set; }
         public string vchzonificacion { get; set; }
+        public string vchestructuracion { get; set; }
         public string vchestsolrequerimientos { get; set; }
 
         public virtual List<PtuUsoDTO> PtuUsosDTO { get; set; }

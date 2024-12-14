@@ -45,16 +45,30 @@
                         <span>Filtros de Búsqueda</span>
                     </div>
                     <div class="card-body">
-                                
+                        
                         <div class="row">                                                    
 
-                            <div class="col-md-3">
-                                <label for="ddlEstructura" class="form-label-sm">Estructura</label><br />
-                                <asp:DropDownList ID="ddlEstructura" runat="server" CssClass="select2 form-control custom-select" Width="95%"></asp:DropDownList>
+                            <div class="col-md-3">                                
+                                <asp:TextBox ID="txtDireccion" Text="" runat="server" class="form-control" placeholder="Predio / dirección"></asp:TextBox>                                
+                            </div>                            
+
+                            <div class="col-md-9"><asp:Button ID="btnBusDireccion" runat="server" Text=">" CssClass="btn btn-dark btn-rounded" OnClick="btnBusDireccion_Click"/>
+                                <asp:DropDownList ID="ddlDireccion" runat="server" CssClass="select2 form-control custom-select" Width="90%"></asp:DropDownList>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">                                                    
+
+                            <div class="col-md-4">
+                                <label for="ddlEstructura" class="form-label-sm">Area tratamiento normativo</label><br />
+                                <asp:DropDownList ID="ddlEstructura" runat="server" CssClass="select2 form-control custom-select" Width="75%" OnSelectedIndexChanged="ddlEstructura_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                                <asp:Literal ID="litClaves" runat="server"></asp:Literal>         
                             </div>
                             
                             <div class="col-md-1">
-                                <label for="txtCodUso" class="form-label-sm">Codigo</label><br />
+                                <label for="txtCodUso" class="form-label-sm">Cod.Uso</label><br />
                                 <asp:TextBox ID="txtCodUso" Text="" runat="server" class="form-control"></asp:TextBox>
                             </div>
 
@@ -64,16 +78,14 @@
                             </div>
 
                             <div class="col-md-1"><span>&nbsp;</span></div>
-                            <div class="col-md-1">
-                                <span>&nbsp;</span><br />
+                            
+                            <div class="col-md-1"><br />
                                 <asp:Button ID="btnLimpiar" runat="server" Text=" Limpiar " CssClass="btn btn-dark btn-rounded"/>
                             </div>
 
-                            <div class="col-md-1">
-                                <span>&nbsp;</span><br />
+                            <div class="col-md-1"><br />
                                 <asp:Button ID="btnBuscar" runat="server" Text=" Buscar " CssClass="btn btn-info btn-rounded" OnClick="btnBuscar_Click"/>
                             </div>
-                            <div class="col-md-3"><span>&nbsp;</span></div>
 
                         </div>
                                                     

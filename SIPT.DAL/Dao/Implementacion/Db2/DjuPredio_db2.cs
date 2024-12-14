@@ -35,5 +35,18 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
 
             return DB2Comando.Obtener<DjuPredio>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.DJUPREDIO_LISTARKEY", this.logMensajes, arrParam);
         }
+
+        public override List<PtuUbicaciones> ListarPorFiltro(PtuUbicaciones pPtuUbicaciones, Int32 esNumero)
+        {
+            DB2Parameter[] arrParam = new DB2Parameter[2];
+
+            arrParam[0] = new DB2Parameter("@VCHUBIPRE", DB2Type.VarChar);
+            arrParam[0].Value = pPtuUbicaciones.vchubipre;
+            arrParam[1] = new DB2Parameter("@SMLESNUMERO", DB2Type.SmallInt);
+            arrParam[1].Value = esNumero;
+
+            return DB2Comando.Listar<PtuUbicaciones>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.DJUPREDIO_LISTARPORFILTRO", this.logMensajes, arrParam);
+        }
+
     }
 }

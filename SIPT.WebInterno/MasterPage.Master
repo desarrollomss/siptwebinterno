@@ -22,6 +22,7 @@
     <link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">    
 
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/pages/stylish-tooltip.css" rel="stylesheet">
     <link href="css/colors/default-dark.css" id="theme" rel="stylesheet">
     <link href="assets/css/gridview.css" rel="stylesheet" />
     <style>

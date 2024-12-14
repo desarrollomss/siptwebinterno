@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SIPT.BL.Models.Entity
 {
@@ -9,5 +10,7 @@ namespace SIPT.BL.Models.Entity
     {
         public int? intprecodigo { get; set; }
         public string vchubipre { get; set; }
+
+        public Int16? smllicencia { get; set; }
     }
 }

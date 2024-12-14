@@ -72,13 +72,13 @@
     <Compile Include="Entity\PtuSolreqgrupo.cs" />
     <Compile Include="Entity\PtuSolrequerimiento.cs" />
     <Compile Include="Entity\PtuTabla.cs" />
+    <Compile Include="Entity\PtuUbicaciones.cs" />
     <Compile Include="Entity\SicOpcion.cs" />
     <Compile Include="Entity\SicUsuario.cs" />
     <Compile Include="Entity\ConAdministrado.cs" />
     <Compile Include="Entity\ConContacto.cs" />
     <Compile Include="Entity\DjuPredio.cs" />
     <Compile Include="Entity\PtuCertificado.cs" />
-    <Compile Include="Entity\PtuConsultas.cs" />
     <Compile Include="Entity\PtuIndicadores.cs" />
     <Compile Include="Entity\PtuLicencia.cs" />
     <Compile Include="Entity\PtuSolCertificado.cs" />

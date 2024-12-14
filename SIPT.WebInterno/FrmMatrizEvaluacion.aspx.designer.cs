@@ -33,6 +33,33 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.View View1;
 
         /// <summary>
+        /// txtDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+
+        /// <summary>
+        /// btnBusDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBusDireccion;
+
+        /// <summary>
+        /// ddlDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDireccion;
+
+        /// <summary>
         /// ddlEstructura control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,15 @@ namespace SIPT.WebInterno
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstructura;
+
+        /// <summary>
+        /// litClaves control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litClaves;
 
         /// <summary>
         /// txtCodUso control.

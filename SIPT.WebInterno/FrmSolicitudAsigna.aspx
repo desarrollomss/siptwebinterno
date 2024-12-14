@@ -24,12 +24,12 @@
     
     <div class="row page-titles w-100">
         <div class="col-md-5 align-self-center" style="padding-left:40px">
-            <h3 class="text-themecolor">Asignar de solicitudes</h3>
+            <h3 class="text-themecolor">Solicitudes Asignadas</h3>
         </div>
         <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Licencias</a></li>
-                <li class="breadcrumb-item active">Asignar Solicitud a Analista</li>
+                <li class="breadcrumb-item active">Solicitudes Asignadas</li>
             </ol>
         </div>
     </div>
@@ -37,7 +37,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="card-header">
-                        <span>Lista de Solicitudes a acreditar</span>
+                        <span>Lista de solicitudes en proceso</span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

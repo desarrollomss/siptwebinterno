@@ -10,5 +10,8 @@ namespace SIPT.DAL.Dao.Base
     public abstract class DjuPredio_dao
     {
         public abstract DjuPredio ListarPorId(int? intprecodigo);
+        
+        public abstract List<PtuUbicaciones> ListarPorFiltro(PtuUbicaciones pPtuUbicaciones, Int32 esNumero);
+
     }
 }

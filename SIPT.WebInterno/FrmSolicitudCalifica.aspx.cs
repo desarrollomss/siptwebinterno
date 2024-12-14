@@ -307,6 +307,7 @@ namespace SIPT.WebInterno
             txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
             txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
             txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
+            txtAreaEst.Text = oPtuSolicitudDTO.vchestructuracion;
             txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
 
             txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;

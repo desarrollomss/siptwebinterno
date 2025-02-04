@@ -297,6 +297,23 @@ namespace SIPT.WebInterno
 
             DropDownList ddlInspectores = (DropDownList)gwrow.FindControl("ddlInspectores");
             Label lblCodSolicitud = (Label)gwrow.FindControl("lblCodSolicitud");
+            GridView gv = (GridView)gwrow.FindControl("gvInspectores");
+
+            if (ddlInspectores.SelectedValue.Equals("0"))
+            {
+                return;
+            }
+
+            foreach (GridViewRow fila in gv.Rows)
+            {
+                //Si el dato esta en un control, en este caso un Label
+                
+                if (fila.Cells[0].Text.Equals(ddlInspectores.SelectedValue))
+                {
+                    return;
+                }
+            }
+
 
             logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try

@@ -144,17 +144,14 @@
 
                             <asp:TemplateField>
                                 <ItemTemplate>
-
-
                                     <asp:Label ID="lblCodSolicitud" runat="server" Text='<%# Eval("INTCODSOLICITUD") %>' Visible="false" />
-
-
                                     <asp:GridView runat="server" ID="gvInspectores" class="table table-bordered table-condensed table-responsive table-hover" PageSize="5" AutoGenerateColumns="false" ShowHeader="false" Width="100%">
                                         <Columns>
                                             <asp:BoundField DataField="INTUSUINSPECTOR" HeaderText=""></asp:BoundField>
                                             <asp:BoundField DataField="VCHNOMBREINSPECTOR" HeaderText=""></asp:BoundField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
+                                                    <asp:Label ID="lblUsuInspector" runat="server" Text='<%# Eval("INTUSUINSPECTOR") %>' Visible="false" />
                                                     <asp:Label ID="lblCodSolicitudInspector" runat="server" Text='<%# Eval("INTCODSOLICITUDINSPECTOR") %>' Visible="false" />
                                                     <asp:Button ID="btnQuitarInsp" runat="server" Text=" Quitar " CssClass="btn btn-success" OnClick="btnQuitarInsp_Click" />
                                                 </ItemTemplate>

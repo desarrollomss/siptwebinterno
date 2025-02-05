@@ -5,6 +5,8 @@ using SIPT.BL.Models.Entity;
 using SIPT.BL.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace SIPT.WebInterno
 {
@@ -50,7 +52,7 @@ namespace SIPT.WebInterno
                     response.MensajeSwal(ClientScript);
                 }
             }
-            string clave = litClaves.Text;
+            string clave = ltlClave.Text;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -118,32 +120,18 @@ namespace SIPT.WebInterno
         protected void ddlEstructura_SelectedIndexChanged(object sender, EventArgs e)
         {
             string codEstructura = ddlEstructura.SelectedValue;
-            string tooltip = "";
-            if(tooltip == "")
-            {
-                //tooltip = "<a class=\"mytooltip\" href=\"javascript: void(0)\">(?)<span class=\"tooltip-content5\" ><span class=\"tooltip-text3\" ><span class=\"tooltip-inner2\">";
-                //tooltip = tooltip + "<ul>";
-                //tooltip = tooltip + "<li>X - Ubicación Conforme.</li>";
-                //tooltip = tooltip + "<li>O - Frente a Vias Expesas, Arterias, Colectoras o Avenidas.</li>";
-                //tooltip = tooltip + "<li>H - Actividad a desarrollarse a nivel artesanal y con un máximo de 3 personas ocupadas.</li>";
-                //tooltip = tooltip + "<li>R - Actividades restringidas sólo para oficinas comerciales y adminstrativas, no se permiten la venta ni almacenamiento de mercaderías.</li>";
-                //tooltip = tooltip + "<li>- Actividades que requieren de estudio específico para definir su localización.</li>";
-                //tooltip = tooltip + "</ul>";
-                //tooltip  = tooltip +"</span></span></span></a>";
+            StringBuilder oContenido = new StringBuilder("");
 
-                tooltip = tooltip + "<button type=\"button\" data-bs-html=\"true\" class=\"btn btn-secondary\" data-container=\"body\" title=\"Claves\" data-toggle=\"popover\" data-placement=\"bottom\" data-content=\"";                
-                tooltip = tooltip + "X - Ubicación Conforme.<br />";
-                tooltip = tooltip + "O - Frente a Vias Expesas, Arterias, Colectoras o Avenidas.";
-                tooltip = tooltip + "H - Actividad a desarrollarse a nivel artesanal y con un máximo de 3 personas ocupadas.";
-                tooltip = tooltip + "R - Actividades restringidas sólo para oficinas comerciales y adminstrativas, no se permiten la venta ni almacenamiento de mercaderías.";
-                tooltip = tooltip + "- Actividades que requieren de estudio específico para definir su localización.";
-                tooltip = tooltip + "\">";
-                tooltip = tooltip + "?";
-                tooltip = tooltip + "</button>";
-
-                //tooltip = "<span>HOLA</span>";
-            }
-            litClaves.Text = tooltip;
+                oContenido.AppendLine("");
+                oContenido.AppendLine("X - Ubicación Conforme.<br />");
+                oContenido.AppendLine("O - Frente a Vias Expesas, Arterias, Colectoras o Avenidas.");
+                oContenido.AppendLine("H - Actividad a desarrollarse a nivel artesanal y con un máximo de 3 personas ocupadas.");
+                oContenido.AppendLine("R - Actividades restringidas sólo para oficinas comerciales y adminstrativas, no se permiten la venta ni almacenamiento de mercaderías.");
+                oContenido.AppendLine("- Actividades que requieren de estudio específico para definir su localización.");
+                oContenido.AppendLine("\">");
+                oContenido.AppendLine("?");
+                oContenido.AppendLine("</button>");
+            txtClaves.Text = oContenido.ToString();
         }
     }
 }

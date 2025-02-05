@@ -304,16 +304,27 @@ namespace SIPT.WebInterno
             txtNumSolicitud.Text = oPtuSolicitudDTO.chranio + " " + oPtuSolicitudDTO.vchnumero;
             txtAdministrado.Text = oPtuSolicitudDTO.vchadmcompleto;
             txtAreaOcupa.Text = oPtuSolicitudDTO.decareaocupar.ToString();
+            txtCodPredio.Text = oPtuSolicitudDTO.intcodigopredio.ToString();
             txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
             txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
             txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
             txtAreaEst.Text = oPtuSolicitudDTO.vchestructuracion;
             txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
 
+
             txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
             {
-                fscAnalista.Checked = true;
+                fscAnalista.Checked = false; //oPtuSolLicencia.smlresultado = 23
+                lblForAnalista.InnerText = "No Procede";
+                if (oPtuSolicitudDTO.smlresultado == 22)
+                {
+                    fscAnalista.Checked = true;
+                    lblForAnalista.InnerText = "Procede";
+                }
+                        
+                        
+
             }           
 
             gvUsos.DataSource = oPtuUsoDTOList;
@@ -335,7 +346,7 @@ namespace SIPT.WebInterno
             int lintcodigoprocedimiento = 0;
             if (ltxtUsuarioRol.ToUpper().Equals("ANALISTA SIPT"))
             {
-                //if (fscAnalista.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
+                if (fscAnalista.Checked) oPtuSolLicencia.smlresultado = 22; else oPtuSolLicencia.smlresultado = 23;
             }
 
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
@@ -344,7 +355,7 @@ namespace SIPT.WebInterno
             }
 
             PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-            oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
+                oPtuSolLicencia_bo.Calificar(oPtuSolLicencia, lintcodigoprocedimiento, ltxtUsuarioRol.ToUpper());
 
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))
             {
@@ -436,7 +447,7 @@ namespace SIPT.WebInterno
             oContenido.Append("</table>");
 
             EnviarCorreo(oPara, oAsunto, oContenido.ToString());
-
+                            
         }
 
         #endregion

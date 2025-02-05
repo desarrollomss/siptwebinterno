@@ -145,7 +145,11 @@
                             <label for="txtAreaOcupa" class="form-label-sm">Area</label>
                             <asp:TextBox ID="txtAreaOcupa" Text="" runat="server" class="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-1">
+                            <label for="txtCodPredio" class="form-label-sm">Cod.Predio</label>
+                            <asp:TextBox ID="txtCodPredio" Text="" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-md-6">
                             <label for="txtDireccion" class="form-label-sm">Direccion</label>
                             <asp:TextBox ID="txtDireccion" Text="" runat="server" class="form-control"></asp:TextBox>
                         </div>

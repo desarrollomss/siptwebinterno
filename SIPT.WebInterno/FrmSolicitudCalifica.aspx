@@ -149,9 +149,16 @@
                             <label for="txtCodPredio" class="form-label-sm">Cod.Predio</label>
                             <asp:TextBox ID="txtCodPredio" Text="" runat="server" class="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <label for="txtDireccion" class="form-label-sm">Direccion</label>
                             <asp:TextBox ID="txtDireccion" Text="" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-md-1">
+                            <label for="txtPtaCalle" class="form-label-sm">Pta.Calle</label>
+                            <asp:TextBox ID="txtPtaCalle" Text="" runat="server" class="form-control"></asp:TextBox>
+                            <div id="divPuertaCalle" runat="server">
+                                <i class="fa fa-check"></i>  
+                            </div>
                         </div>
 
 

@@ -311,6 +311,16 @@ namespace SIPT.WebInterno
             txtAreaEst.Text = oPtuSolicitudDTO.vchestructuracion;
             txtEmail.Text = oPtuSolicitudDTO.vchemailsol;
 
+            if (oPtuSolicitudDTO.smlpuertaacalle == 0 )
+            {
+                divPuertaCalle.Visible = false;
+                txtPtaCalle.Text = "No";
+            }
+            else 
+            {
+                divPuertaCalle.Visible = true;
+                txtPtaCalle.Text = "Si";
+            }
 
             txtObservacion.Text = oPtuSolicitudDTO.vchobservacion;
             if (ltxtUsuarioRol.ToUpper().Equals("COORDINADOR SIPT"))

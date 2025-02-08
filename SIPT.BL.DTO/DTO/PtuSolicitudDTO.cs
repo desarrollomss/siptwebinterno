@@ -75,7 +75,7 @@ namespace SIPT.BL.DTO.DTO
         public string vchzonificacion { get; set; }
         public string vchestructuracion { get; set; }
         public string vchestsolrequerimientos { get; set; }
-
+        public Int16? smlpuertaacalle { get; set; }
         public virtual List<PtuUsoDTO> PtuUsosDTO { get; set; }
     }
 }

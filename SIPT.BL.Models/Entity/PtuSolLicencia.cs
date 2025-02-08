@@ -37,11 +37,13 @@ namespace SIPT.BL.Models.Entity
 		public Int16? smlestsollicencia { get; set; }
 		public Int16? smlresultado { get; set; }
 		public Int16? smlestlicencia { get; set; }
+		public Int16? smlpuertaacalle { get; set; }
 		public string vchaudusucreacion { get; set; }
 		public DateTime? tmsaudfeccreacion { get; set; }
 		public string vchaudusumodif { get; set; }
 		public DateTime? tmsaudfecmodif { get; set; }
 		public string vchaudequipo { get; set; }
 		public string vchaudprograma { get; set; }
+
 	}
 }

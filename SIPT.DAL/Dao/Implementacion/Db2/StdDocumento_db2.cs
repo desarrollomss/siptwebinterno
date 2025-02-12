@@ -58,7 +58,7 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[14] = new DB2Parameter("@PVCHUNIORGRECCODIGO", DB2Type.VarChar);
             arrParam[14].Value = stdDocumento_InsertaDocWebSipt.pvchuniorgreccodigo;
 
-            return DB2Comando.Listar<StdDocumento_InsertaResultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SATT.SISDOC_INSERTA_DOCWEBSIPT", this.logMensajes, arrParam);
+            return DB2Comando.Listar<StdDocumento_InsertaResultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.SISDOC_INSERTA_DOCWEBSIPT", this.logMensajes, arrParam);
                 
         }
 

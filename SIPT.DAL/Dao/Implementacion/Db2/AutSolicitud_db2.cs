@@ -48,7 +48,7 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[9] = new DB2Parameter("P_VCHAUDPROGRAMA", DB2Type.VarChar);
             arrParam[9].Value = autSolicitud_Inserta.p_vchaudprograma;
 
-            return DB2Comando.Listar<AutSolicitud_Resultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "DBSAC.AUTSOLICITUD_CABECERA_INSERTAR", this.logMensajes, arrParam);            
+            return DB2Comando.Listar<AutSolicitud_Resultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.AUTSOLICITUD_CABECERA_INSERTAR", this.logMensajes, arrParam);            
         }
 
     }

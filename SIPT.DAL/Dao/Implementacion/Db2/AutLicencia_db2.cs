@@ -36,7 +36,7 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[3] = new DB2Parameter("P_VCHAUDUSUCREACION", DB2Type.VarChar);
             arrParam[3].Value = autLiciencia_Inserta.p_vchaudusucreacion;
 
-            return DB2Comando.Listar<AutLicencia_Resultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "DBSAC.AUTLICENCIA_CABECERA_INSERTAR", this.logMensajes, arrParam);            
+            return DB2Comando.Listar<AutLicencia_Resultado>((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.AUTLICENCIA_CABECERA_INSERTAR", this.logMensajes, arrParam);            
         }
     }
 }

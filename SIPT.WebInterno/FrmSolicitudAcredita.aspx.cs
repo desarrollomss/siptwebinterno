@@ -33,6 +33,11 @@ namespace SIPT.WebInterno
 
         PtuSolicitud oPtuSolicitud;
 
+        private PtuTabla oPtuTabla;
+        private List<PtuTabla> oPtuTablaList = new List<PtuTabla>();
+        private PtuTabla_bo oPtuTabla_bo;
+
+
         #region eventos
 
         protected void Page_Load(object sender, EventArgs e)
@@ -221,11 +226,12 @@ namespace SIPT.WebInterno
             int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
             Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
             int lintCodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
+            Int16 lintCondicionSolic = Convert.ToInt16(ddlSolCondicion.SelectedValue);
 
             logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, lintCodProcedimiento, oPtuSolrequerimientoList);
+                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, lintCodProcedimiento, lintCondicionSolic, oPtuSolrequerimientoList);
                 Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Acreditación");
                 response.MensajeSwal(ClientScript);
             }
@@ -367,6 +373,20 @@ namespace SIPT.WebInterno
             ddlProcedimiento.DataBind();
             ddlProcedimiento.Items.Insert(0, new ListItem("(Ninguno)", "0"));
 
+            oPtuTabla = new PtuTabla();
+            oPtuTabla_bo = new PtuTabla_bo(ref logMensajes);
+
+            // CONDICION DE SOLICITUD
+            oPtuTabla.vchtabla = "PTUSOLICITUD";
+            oPtuTabla.vchcampo = "SMLCONDICIONSOLICITUD";
+            oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
+
+            ddlSolCondicion.DataSource = oPtuTablaList;
+            ddlSolCondicion.DataTextField = "VCHDESCRIPCION";
+            ddlSolCondicion.DataValueField = "SMLCODTABLA";
+            ddlSolCondicion.DataBind();
+            ddlSolCondicion.Items.Insert(0, new ListItem("(Ninguno)", "0"));
+
             PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
             oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
             oPtuUsoDTOList = oPtuSolicitudDTO.PtuUsosDTO;
@@ -382,7 +402,7 @@ namespace SIPT.WebInterno
             txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
             txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
             ddlProcedimiento.SelectedValue = oPtuSolicitudDTO.intcodigoprocedimiento.ToString();
-
+            ddlSolCondicion.SelectedValue = oPtuSolicitudDTO.smlcondicionsolicitud.ToString();
             pbd_CargarGrillaPlantillas();
 
             return oPtuUsoDTOList;
@@ -428,7 +448,7 @@ namespace SIPT.WebInterno
             
         }
 
-        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia, int pintcodprocedimiento, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
+        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia, int pintcodprocedimiento, int pintCondicionSolic, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
         {
             oPtuSolrequerimiento = new PtuSolrequerimiento();
             oPtuSolrequerimientoList = new List<PtuSolrequerimiento>();
@@ -438,6 +458,8 @@ namespace SIPT.WebInterno
             oPtuSolLicencia.intcodsolicitud = pintcodsolicitud;
             oPtuSolLicencia.smlestsollicencia = pintEstSolLicencia;
             
+
+
             for (int i = 0; i < rptResult.Items.Count; i++)
             {
                 TextBox lblObserva = (TextBox)rptResult.Items[i].FindControl("txtObserva");
@@ -476,7 +498,7 @@ namespace SIPT.WebInterno
             // Empieza a grabar
 
             PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-            oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, pintcodprocedimiento, oPtuSolrequerimientoList);
+            oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, pintcodprocedimiento, pintCondicionSolic, oPtuSolrequerimientoList);
 
         }
 

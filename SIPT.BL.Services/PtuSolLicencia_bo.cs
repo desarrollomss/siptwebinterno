@@ -303,7 +303,7 @@ namespace SIPT.BL.Services
         }
 
 
-        public void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodprocedimiento, List<PtuSolrequerimiento> pPtuSolrequerimientoList)
+        public void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodprocedimiento, int psmlcondicionsolicitud, List<PtuSolrequerimiento> pPtuSolrequerimientoList)
         {
             dbconex = new Db();
 
@@ -313,7 +313,7 @@ namespace SIPT.BL.Services
                 oPtuSolLicencia_dao = ObjectFactory.Instanciar<PtuSolLicencia_dao>(new PtuSolLicencia(), this.logMensajes, dbconex);
                 oPtuSolrequerimiento_dao = ObjectFactory.Instanciar<PtuSolrequerimiento_dao>(new PtuSolrequerimiento(), this.logMensajes, dbconex);
 
-                oPtuSolLicencia_dao.Acreditar(pPtuSolLicencia, pintcodprocedimiento);
+                oPtuSolLicencia_dao.Acreditar(pPtuSolLicencia, pintcodprocedimiento, psmlcondicionsolicitud);
 
                 foreach (PtuSolrequerimiento oPtuSolrequerimiento in pPtuSolrequerimientoList)
                 {

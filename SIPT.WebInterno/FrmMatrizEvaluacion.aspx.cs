@@ -131,7 +131,8 @@ namespace SIPT.WebInterno
                 oContenido.AppendLine("\">");
                 oContenido.AppendLine("?");
                 oContenido.AppendLine("</button>");
-            txtClaves.Text = oContenido.ToString();
+
+            litClaves.Text = oContenido.ToString();
         }
     }
 }

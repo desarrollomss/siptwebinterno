@@ -15,7 +15,7 @@ namespace SIPT.WebInterno
     {
 
         /// <summary>
-        /// MultiView1 control.
+        /// Control MultiView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -132,6 +132,15 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.DropDownList ddlProcedimiento;
 
         /// <summary>
+        /// Control ddlSolCondicion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSolCondicion;
+
+        /// <summary>
         /// Control rptResult.
         /// </summary>
         /// <remarks>
@@ -150,11 +159,11 @@ namespace SIPT.WebInterno
         protected global::System.Web.UI.WebControls.LinkButton btnRegresar;
 
         /// <summary>
-        /// btnConfirmar control.
+        /// Control btnConfirmar.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmar;
 

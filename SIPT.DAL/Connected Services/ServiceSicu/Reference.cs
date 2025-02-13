@@ -8,622 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-
 namespace SIPT.DAL.ServiceSicu {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", ConfigurationName="ServiceSicu.GandalfsoftSecurityService")]
     public interface GandalfsoftSecurityService {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.logoutResponse1 logout(SIPT.DAL.ServiceSicu.logoutRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> logoutAsync(SIPT.DAL.ServiceSicu.logoutRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.loginResponse1 login(SIPT.DAL.ServiceSicu.loginRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> loginAsync(SIPT.DAL.ServiceSicu.loginRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRequest" +
-            "", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRespons" +
-            "e")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.loginTestResponse1 loginTest(SIPT.DAL.ServiceSicu.loginTestRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRequest" +
-            "", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRespons" +
-            "e")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> loginTestAsync(SIPT.DAL.ServiceSicu.loginTestRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 realizarCambioDeClave(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> realizarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveAppRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveAppResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 realizarCambioDeClaveApp(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveAppRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
-            "ClaveAppResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> realizarCambioDeClaveAppAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
-            "eClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
-            "eClaveResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 solicitarCambioDeClave(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
-            "eClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
-            "eClaveResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> solicitarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
-            "quest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
-            "sponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.validarControlResponse1 validarControl(SIPT.DAL.ServiceSicu.validarControlRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
-            "quest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> validarControlAsync(SIPT.DAL.ServiceSicu.validarControlRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
-            "equest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 obtenerIdOpcion(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
-            "equest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
-            "esponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> obtenerIdOpcionAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
-            "Request", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
-            "Response")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 obtenercontroles(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
-            "Request", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
-            "Response")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> obtenercontrolesAsync(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasReque" +
-            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.listarAreasResponse listarAreas(SIPT.DAL.ServiceSicu.listarAreasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasReque" +
-            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> listarAreasAsync(SIPT.DAL.ServiceSicu.listarAreasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaReque" +
-            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.usuariobajaResponse1 usuariobaja(SIPT.DAL.ServiceSicu.usuariobajaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaReque" +
-            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> usuariobajaAsync(SIPT.DAL.ServiceSicu.usuariobajaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
-            "adRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
-            "adResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.registraractividadResponse1 registraractividad(SIPT.DAL.ServiceSicu.registraractividadRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
-            "adRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
-            "adResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> registraractividadAsync(SIPT.DAL.ServiceSicu.registraractividadRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
-            "sonRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
-            "sonResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 obtenerIdOpcionJson(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
-            "sonRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
-            "sonResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> obtenerIdOpcionJsonAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
-            "esoRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
-            "esoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 actualizarfecacceso(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
-            "esoRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
-            "esoResponse")]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> actualizarfecaccesoAsync(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/buscarCorreosUsu" +
@@ -633,9 +23,9 @@ namespace SIPT.DAL.ServiceSicu {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
@@ -677,9 +67,9 @@ namespace SIPT.DAL.ServiceSicu {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
@@ -721,9 +111,9 @@ namespace SIPT.DAL.ServiceSicu {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
@@ -756,85 +146,1144 @@ namespace SIPT.DAL.ServiceSicu {
             "sRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerDatosArea" +
             "sResponse")]
         System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerDatosAreasResponse> obtenerDatosAreasAsync(SIPT.DAL.ServiceSicu.obtenerDatosAreasRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
+            "sonRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
+            "sonResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 obtenerIdOpcionJson(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
+            "sonRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionJ" +
+            "sonResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> obtenerIdOpcionJsonAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
+            "adRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
+            "adResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.registraractividadResponse1 registraractividad(SIPT.DAL.ServiceSicu.registraractividadRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
+            "adRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/registraractivid" +
+            "adResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> registraractividadAsync(SIPT.DAL.ServiceSicu.registraractividadRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
+            "esoRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
+            "esoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 actualizarfecacceso(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
+            "esoRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/actualizarfecacc" +
+            "esoResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> actualizarfecaccesoAsync(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.logoutResponse1 logout(SIPT.DAL.ServiceSicu.logoutRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/logoutResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> logoutAsync(SIPT.DAL.ServiceSicu.logoutRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.loginResponse1 login(SIPT.DAL.ServiceSicu.loginRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> loginAsync(SIPT.DAL.ServiceSicu.loginRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveAppRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveAppResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 realizarCambioDeClaveApp(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveAppRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveAppResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> realizarCambioDeClaveAppAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 realizarCambioDeClave(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/realizarCambioDe" +
+            "ClaveResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> realizarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
+            "eClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
+            "eClaveResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 solicitarCambioDeClave(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
+            "eClaveRequest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/solicitarCambioD" +
+            "eClaveResponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> solicitarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRequest" +
+            "", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRespons" +
+            "e")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.loginTestResponse1 loginTest(SIPT.DAL.ServiceSicu.loginTestRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRequest" +
+            "", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/loginTestRespons" +
+            "e")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> loginTestAsync(SIPT.DAL.ServiceSicu.loginTestRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaReque" +
+            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.usuariobajaResponse1 usuariobaja(SIPT.DAL.ServiceSicu.usuariobajaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaReque" +
+            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/usuariobajaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> usuariobajaAsync(SIPT.DAL.ServiceSicu.usuariobajaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasReque" +
+            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.listarAreasResponse listarAreas(SIPT.DAL.ServiceSicu.listarAreasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasReque" +
+            "st", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/listarAreasRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> listarAreasAsync(SIPT.DAL.ServiceSicu.listarAreasRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
+            "quest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
+            "sponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.validarControlResponse1 validarControl(SIPT.DAL.ServiceSicu.validarControlRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
+            "quest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/validarControlRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> validarControlAsync(SIPT.DAL.ServiceSicu.validarControlRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
+            "Request", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 obtenercontroles(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
+            "Request", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenercontroles" +
+            "Response")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> obtenercontrolesAsync(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
+            "equest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerDatosAreas))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobajaResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(usuariobaja))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveAppResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(realizarCambioDeClaveApp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTestResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginTest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(listarUsuariosPorAplicacion))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontrolesResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenercontroles))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logoutResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(logout))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJsonResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(obtenerIdOpcionJson))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(solicitarCambioDeClave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecaccesoResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(actualizarfecacceso))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(loginResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(login))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControlResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(validarControl))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(buscarCorreosUsuarios))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividadResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(registraractividad))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(sysTabla))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 obtenerIdOpcion(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
+            "equest", ReplyAction="http://ws.security.gandalfsoft.com.pe/GandalfsoftSecurityService/obtenerIdOpcionR" +
+            "esponse")]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> obtenerIdOpcionAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request);
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(securityOption))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(securityUser))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class securityResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class securityUser : securityResponse {
         
-        private System.DateTime datAuxDatoDateField;
+        private int areaField;
         
-        private bool datAuxDatoDateFieldSpecified;
+        private bool areaFieldSpecified;
         
-        private string vchAuxDatoStringField;
+        private int intaplcodigoField;
         
-        private string vchmensajeField;
+        private bool intaplcodigoFieldSpecified;
         
-        private string vchstatusField;
+        private securityOption[] listaSecurityOptionField;
+        
+        private string[] listaUltimosAccesosValidosField;
+        
+        private string[] listaUltimosIntentosFallidosField;
+        
+        private securityUserEntry[] masDatosUserField;
+        
+        private string nombreAreaField;
+        
+        private string usucodigoField;
+        
+        private string usuestadoField;
+        
+        private string vchcorreousuarioField;
+        
+        private string vchsessionidField;
+        
+        private string vchusuloginField;
+        
+        private string vchusunombreField;
+        
+        private string vchusurolField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public System.DateTime datAuxDatoDate {
+        public int area {
             get {
-                return this.datAuxDatoDateField;
+                return this.areaField;
             }
             set {
-                this.datAuxDatoDateField = value;
-                this.RaisePropertyChanged("datAuxDatoDate");
+                this.areaField = value;
+                this.RaisePropertyChanged("area");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool datAuxDatoDateSpecified {
+        public bool areaSpecified {
             get {
-                return this.datAuxDatoDateFieldSpecified;
+                return this.areaFieldSpecified;
             }
             set {
-                this.datAuxDatoDateFieldSpecified = value;
-                this.RaisePropertyChanged("datAuxDatoDateSpecified");
+                this.areaFieldSpecified = value;
+                this.RaisePropertyChanged("areaSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string vchAuxDatoString {
+        public int intaplcodigo {
             get {
-                return this.vchAuxDatoStringField;
+                return this.intaplcodigoField;
             }
             set {
-                this.vchAuxDatoStringField = value;
-                this.RaisePropertyChanged("vchAuxDatoString");
+                this.intaplcodigoField = value;
+                this.RaisePropertyChanged("intaplcodigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intaplcodigoSpecified {
+            get {
+                return this.intaplcodigoFieldSpecified;
+            }
+            set {
+                this.intaplcodigoFieldSpecified = value;
+                this.RaisePropertyChanged("intaplcodigoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaSecurityOption", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public securityOption[] listaSecurityOption {
+            get {
+                return this.listaSecurityOptionField;
+            }
+            set {
+                this.listaSecurityOptionField = value;
+                this.RaisePropertyChanged("listaSecurityOption");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaUltimosAccesosValidos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public string[] listaUltimosAccesosValidos {
+            get {
+                return this.listaUltimosAccesosValidosField;
+            }
+            set {
+                this.listaUltimosAccesosValidosField = value;
+                this.RaisePropertyChanged("listaUltimosAccesosValidos");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaUltimosIntentosFallidos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
+        public string[] listaUltimosIntentosFallidos {
+            get {
+                return this.listaUltimosIntentosFallidosField;
+            }
+            set {
+                this.listaUltimosIntentosFallidosField = value;
+                this.RaisePropertyChanged("listaUltimosIntentosFallidos");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("entry", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public securityUserEntry[] masDatosUser {
+            get {
+                return this.masDatosUserField;
+            }
+            set {
+                this.masDatosUserField = value;
+                this.RaisePropertyChanged("masDatosUser");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string nombreArea {
+            get {
+                return this.nombreAreaField;
+            }
+            set {
+                this.nombreAreaField = value;
+                this.RaisePropertyChanged("nombreArea");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string usucodigo {
+            get {
+                return this.usucodigoField;
+            }
+            set {
+                this.usucodigoField = value;
+                this.RaisePropertyChanged("usucodigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string usuestado {
+            get {
+                return this.usuestadoField;
+            }
+            set {
+                this.usuestadoField = value;
+                this.RaisePropertyChanged("usuestado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string vchcorreousuario {
+            get {
+                return this.vchcorreousuarioField;
+            }
+            set {
+                this.vchcorreousuarioField = value;
+                this.RaisePropertyChanged("vchcorreousuario");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string vchsessionid {
+            get {
+                return this.vchsessionidField;
+            }
+            set {
+                this.vchsessionidField = value;
+                this.RaisePropertyChanged("vchsessionid");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string vchusulogin {
+            get {
+                return this.vchusuloginField;
+            }
+            set {
+                this.vchusuloginField = value;
+                this.RaisePropertyChanged("vchusulogin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string vchusunombre {
+            get {
+                return this.vchusunombreField;
+            }
+            set {
+                this.vchusunombreField = value;
+                this.RaisePropertyChanged("vchusunombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        public string vchusurol {
+            get {
+                return this.vchusurolField;
+            }
+            set {
+                this.vchusurolField = value;
+                this.RaisePropertyChanged("vchusurol");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
+    public partial class securityOption : securityResponse {
+        
+        private int intopccodigoField;
+        
+        private bool intopccodigoFieldSpecified;
+        
+        private int intopccodigopadreField;
+        
+        private bool intopccodigopadreFieldSpecified;
+        
+        private int intopcnivelField;
+        
+        private bool intopcnivelFieldSpecified;
+        
+        private int intopcordenField;
+        
+        private bool intopcordenFieldSpecified;
+        
+        private securityControl[] listaSecurityControlField;
+        
+        private string vchopcaccionField;
+        
+        private string vchopcdescripField;
+        
+        private string vchopcnombreField;
+        
+        private string vchopctipoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int intopccodigo {
+            get {
+                return this.intopccodigoField;
+            }
+            set {
+                this.intopccodigoField = value;
+                this.RaisePropertyChanged("intopccodigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intopccodigoSpecified {
+            get {
+                return this.intopccodigoFieldSpecified;
+            }
+            set {
+                this.intopccodigoFieldSpecified = value;
+                this.RaisePropertyChanged("intopccodigoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int intopccodigopadre {
+            get {
+                return this.intopccodigopadreField;
+            }
+            set {
+                this.intopccodigopadreField = value;
+                this.RaisePropertyChanged("intopccodigopadre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intopccodigopadreSpecified {
+            get {
+                return this.intopccodigopadreFieldSpecified;
+            }
+            set {
+                this.intopccodigopadreFieldSpecified = value;
+                this.RaisePropertyChanged("intopccodigopadreSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string vchmensaje {
+        public int intopcnivel {
             get {
-                return this.vchmensajeField;
+                return this.intopcnivelField;
             }
             set {
-                this.vchmensajeField = value;
-                this.RaisePropertyChanged("vchmensaje");
+                this.intopcnivelField = value;
+                this.RaisePropertyChanged("intopcnivel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intopcnivelSpecified {
+            get {
+                return this.intopcnivelFieldSpecified;
+            }
+            set {
+                this.intopcnivelFieldSpecified = value;
+                this.RaisePropertyChanged("intopcnivelSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string vchstatus {
+        public int intopcorden {
             get {
-                return this.vchstatusField;
+                return this.intopcordenField;
             }
             set {
-                this.vchstatusField = value;
-                this.RaisePropertyChanged("vchstatus");
+                this.intopcordenField = value;
+                this.RaisePropertyChanged("intopcorden");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intopcordenSpecified {
+            get {
+                return this.intopcordenFieldSpecified;
+            }
+            set {
+                this.intopcordenFieldSpecified = value;
+                this.RaisePropertyChanged("intopcordenSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaSecurityControl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
+        public securityControl[] listaSecurityControl {
+            get {
+                return this.listaSecurityControlField;
+            }
+            set {
+                this.listaSecurityControlField = value;
+                this.RaisePropertyChanged("listaSecurityControl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string vchopcaccion {
+            get {
+                return this.vchopcaccionField;
+            }
+            set {
+                this.vchopcaccionField = value;
+                this.RaisePropertyChanged("vchopcaccion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string vchopcdescrip {
+            get {
+                return this.vchopcdescripField;
+            }
+            set {
+                this.vchopcdescripField = value;
+                this.RaisePropertyChanged("vchopcdescrip");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string vchopcnombre {
+            get {
+                return this.vchopcnombreField;
+            }
+            set {
+                this.vchopcnombreField = value;
+                this.RaisePropertyChanged("vchopcnombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string vchopctipo {
+            get {
+                return this.vchopctipoField;
+            }
+            set {
+                this.vchopctipoField = value;
+                this.RaisePropertyChanged("vchopctipo");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
+    public partial class securityControl : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int intconcodigoField;
+        
+        private bool intconcodigoFieldSpecified;
+        
+        private int intopccodigoField;
+        
+        private bool intopccodigoFieldSpecified;
+        
+        private string vchcondescripcionField;
+        
+        private string vchconnombreField;
+        
+        private string vchcontipoDescripField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int intconcodigo {
+            get {
+                return this.intconcodigoField;
+            }
+            set {
+                this.intconcodigoField = value;
+                this.RaisePropertyChanged("intconcodigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intconcodigoSpecified {
+            get {
+                return this.intconcodigoFieldSpecified;
+            }
+            set {
+                this.intconcodigoFieldSpecified = value;
+                this.RaisePropertyChanged("intconcodigoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int intopccodigo {
+            get {
+                return this.intopccodigoField;
+            }
+            set {
+                this.intopccodigoField = value;
+                this.RaisePropertyChanged("intopccodigo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool intopccodigoSpecified {
+            get {
+                return this.intopccodigoFieldSpecified;
+            }
+            set {
+                this.intopccodigoFieldSpecified = value;
+                this.RaisePropertyChanged("intopccodigoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string vchcondescripcion {
+            get {
+                return this.vchcondescripcionField;
+            }
+            set {
+                this.vchcondescripcionField = value;
+                this.RaisePropertyChanged("vchcondescripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string vchconnombre {
+            get {
+                return this.vchconnombreField;
+            }
+            set {
+                this.vchconnombreField = value;
+                this.RaisePropertyChanged("vchconnombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string vchcontipoDescrip {
+            get {
+                return this.vchcontipoDescripField;
+            }
+            set {
+                this.vchcontipoDescripField = value;
+                this.RaisePropertyChanged("vchcontipoDescrip");
             }
         }
         
@@ -964,19 +1413,19 @@ namespace SIPT.DAL.ServiceSicu {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class obtenerDatosAreas : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class realizarCambioDeClaveResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string intorgcodigoField;
+        private securityResponse returnField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string intorgcodigo {
+        public securityResponse @return {
             get {
-                return this.intorgcodigoField;
+                return this.returnField;
             }
             set {
-                this.intorgcodigoField = value;
-                this.RaisePropertyChanged("intorgcodigo");
+                this.returnField = value;
+                this.RaisePropertyChanged("return");
             }
         }
         
@@ -991,24 +1440,82 @@ namespace SIPT.DAL.ServiceSicu {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(securityOption))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(securityUser))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class realizarCambioDeClaveResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class securityResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private securityResponse returnField;
+        private System.DateTime datAuxDatoDateField;
+        
+        private bool datAuxDatoDateFieldSpecified;
+        
+        private string vchAuxDatoStringField;
+        
+        private string vchmensajeField;
+        
+        private string vchstatusField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public securityResponse @return {
+        public System.DateTime datAuxDatoDate {
             get {
-                return this.returnField;
+                return this.datAuxDatoDateField;
             }
             set {
-                this.returnField = value;
-                this.RaisePropertyChanged("return");
+                this.datAuxDatoDateField = value;
+                this.RaisePropertyChanged("datAuxDatoDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool datAuxDatoDateSpecified {
+            get {
+                return this.datAuxDatoDateFieldSpecified;
+            }
+            set {
+                this.datAuxDatoDateFieldSpecified = value;
+                this.RaisePropertyChanged("datAuxDatoDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string vchAuxDatoString {
+            get {
+                return this.vchAuxDatoStringField;
+            }
+            set {
+                this.vchAuxDatoStringField = value;
+                this.RaisePropertyChanged("vchAuxDatoString");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string vchmensaje {
+            get {
+                return this.vchmensajeField;
+            }
+            set {
+                this.vchmensajeField = value;
+                this.RaisePropertyChanged("vchmensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string vchstatus {
+            get {
+                return this.vchstatusField;
+            }
+            set {
+                this.vchstatusField = value;
+                this.RaisePropertyChanged("vchstatus");
             }
         }
         
@@ -1083,6 +1590,38 @@ namespace SIPT.DAL.ServiceSicu {
             set {
                 this.ipuserField = value;
                 this.RaisePropertyChanged("ipuser");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
+    public partial class obtenerDatosAreas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string intorgcodigoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string intorgcodigo {
+            get {
+                return this.intorgcodigoField;
+            }
+            set {
+                this.intorgcodigoField = value;
+                this.RaisePropertyChanged("intorgcodigo");
             }
         }
         
@@ -1470,313 +2009,6 @@ namespace SIPT.DAL.ServiceSicu {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class securityOption : securityResponse {
-        
-        private int intopccodigoField;
-        
-        private bool intopccodigoFieldSpecified;
-        
-        private int intopccodigopadreField;
-        
-        private bool intopccodigopadreFieldSpecified;
-        
-        private int intopcnivelField;
-        
-        private bool intopcnivelFieldSpecified;
-        
-        private int intopcordenField;
-        
-        private bool intopcordenFieldSpecified;
-        
-        private securityControl[] listaSecurityControlField;
-        
-        private string vchopcaccionField;
-        
-        private string vchopcdescripField;
-        
-        private string vchopcnombreField;
-        
-        private string vchopctipoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int intopccodigo {
-            get {
-                return this.intopccodigoField;
-            }
-            set {
-                this.intopccodigoField = value;
-                this.RaisePropertyChanged("intopccodigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intopccodigoSpecified {
-            get {
-                return this.intopccodigoFieldSpecified;
-            }
-            set {
-                this.intopccodigoFieldSpecified = value;
-                this.RaisePropertyChanged("intopccodigoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int intopccodigopadre {
-            get {
-                return this.intopccodigopadreField;
-            }
-            set {
-                this.intopccodigopadreField = value;
-                this.RaisePropertyChanged("intopccodigopadre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intopccodigopadreSpecified {
-            get {
-                return this.intopccodigopadreFieldSpecified;
-            }
-            set {
-                this.intopccodigopadreFieldSpecified = value;
-                this.RaisePropertyChanged("intopccodigopadreSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int intopcnivel {
-            get {
-                return this.intopcnivelField;
-            }
-            set {
-                this.intopcnivelField = value;
-                this.RaisePropertyChanged("intopcnivel");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intopcnivelSpecified {
-            get {
-                return this.intopcnivelFieldSpecified;
-            }
-            set {
-                this.intopcnivelFieldSpecified = value;
-                this.RaisePropertyChanged("intopcnivelSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int intopcorden {
-            get {
-                return this.intopcordenField;
-            }
-            set {
-                this.intopcordenField = value;
-                this.RaisePropertyChanged("intopcorden");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intopcordenSpecified {
-            get {
-                return this.intopcordenFieldSpecified;
-            }
-            set {
-                this.intopcordenFieldSpecified = value;
-                this.RaisePropertyChanged("intopcordenSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaSecurityControl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
-        public securityControl[] listaSecurityControl {
-            get {
-                return this.listaSecurityControlField;
-            }
-            set {
-                this.listaSecurityControlField = value;
-                this.RaisePropertyChanged("listaSecurityControl");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string vchopcaccion {
-            get {
-                return this.vchopcaccionField;
-            }
-            set {
-                this.vchopcaccionField = value;
-                this.RaisePropertyChanged("vchopcaccion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public string vchopcdescrip {
-            get {
-                return this.vchopcdescripField;
-            }
-            set {
-                this.vchopcdescripField = value;
-                this.RaisePropertyChanged("vchopcdescrip");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string vchopcnombre {
-            get {
-                return this.vchopcnombreField;
-            }
-            set {
-                this.vchopcnombreField = value;
-                this.RaisePropertyChanged("vchopcnombre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public string vchopctipo {
-            get {
-                return this.vchopctipoField;
-            }
-            set {
-                this.vchopctipoField = value;
-                this.RaisePropertyChanged("vchopctipo");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class securityControl : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int intconcodigoField;
-        
-        private bool intconcodigoFieldSpecified;
-        
-        private int intopccodigoField;
-        
-        private bool intopccodigoFieldSpecified;
-        
-        private string vchcondescripcionField;
-        
-        private string vchconnombreField;
-        
-        private string vchcontipoDescripField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int intconcodigo {
-            get {
-                return this.intconcodigoField;
-            }
-            set {
-                this.intconcodigoField = value;
-                this.RaisePropertyChanged("intconcodigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intconcodigoSpecified {
-            get {
-                return this.intconcodigoFieldSpecified;
-            }
-            set {
-                this.intconcodigoFieldSpecified = value;
-                this.RaisePropertyChanged("intconcodigoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int intopccodigo {
-            get {
-                return this.intopccodigoField;
-            }
-            set {
-                this.intopccodigoField = value;
-                this.RaisePropertyChanged("intopccodigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intopccodigoSpecified {
-            get {
-                return this.intopccodigoFieldSpecified;
-            }
-            set {
-                this.intopccodigoFieldSpecified = value;
-                this.RaisePropertyChanged("intopccodigoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string vchcondescripcion {
-            get {
-                return this.vchcondescripcionField;
-            }
-            set {
-                this.vchcondescripcionField = value;
-                this.RaisePropertyChanged("vchcondescripcion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string vchconnombre {
-            get {
-                return this.vchconnombreField;
-            }
-            set {
-                this.vchconnombreField = value;
-                this.RaisePropertyChanged("vchconnombre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string vchcontipoDescrip {
-            get {
-                return this.vchcontipoDescripField;
-            }
-            set {
-                this.vchcontipoDescripField = value;
-                this.RaisePropertyChanged("vchcontipoDescrip");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
     public partial class obtenercontroles : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string sessionidField;
@@ -2106,286 +2338,6 @@ namespace SIPT.DAL.ServiceSicu {
             set {
                 this.returnField = value;
                 this.RaisePropertyChanged("return");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class securityUser : securityResponse {
-        
-        private int areaField;
-        
-        private bool areaFieldSpecified;
-        
-        private int intaplcodigoField;
-        
-        private bool intaplcodigoFieldSpecified;
-        
-        private securityOption[] listaSecurityOptionField;
-        
-        private string[] listaUltimosAccesosValidosField;
-        
-        private string[] listaUltimosIntentosFallidosField;
-        
-        private securityUserEntry[] masDatosUserField;
-        
-        private string nombreAreaField;
-        
-        private string usucodigoField;
-        
-        private string usuestadoField;
-        
-        private string vchcorreousuarioField;
-        
-        private string vchsessionidField;
-        
-        private string vchusuloginField;
-        
-        private string vchusunombreField;
-        
-        private string vchusurolField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int area {
-            get {
-                return this.areaField;
-            }
-            set {
-                this.areaField = value;
-                this.RaisePropertyChanged("area");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool areaSpecified {
-            get {
-                return this.areaFieldSpecified;
-            }
-            set {
-                this.areaFieldSpecified = value;
-                this.RaisePropertyChanged("areaSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int intaplcodigo {
-            get {
-                return this.intaplcodigoField;
-            }
-            set {
-                this.intaplcodigoField = value;
-                this.RaisePropertyChanged("intaplcodigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool intaplcodigoSpecified {
-            get {
-                return this.intaplcodigoFieldSpecified;
-            }
-            set {
-                this.intaplcodigoFieldSpecified = value;
-                this.RaisePropertyChanged("intaplcodigoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaSecurityOption", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public securityOption[] listaSecurityOption {
-            get {
-                return this.listaSecurityOptionField;
-            }
-            set {
-                this.listaSecurityOptionField = value;
-                this.RaisePropertyChanged("listaSecurityOption");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaUltimosAccesosValidos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public string[] listaUltimosAccesosValidos {
-            get {
-                return this.listaUltimosAccesosValidosField;
-            }
-            set {
-                this.listaUltimosAccesosValidosField = value;
-                this.RaisePropertyChanged("listaUltimosAccesosValidos");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaUltimosIntentosFallidos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
-        public string[] listaUltimosIntentosFallidos {
-            get {
-                return this.listaUltimosIntentosFallidosField;
-            }
-            set {
-                this.listaUltimosIntentosFallidosField = value;
-                this.RaisePropertyChanged("listaUltimosIntentosFallidos");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("entry", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
-        public securityUserEntry[] masDatosUser {
-            get {
-                return this.masDatosUserField;
-            }
-            set {
-                this.masDatosUserField = value;
-                this.RaisePropertyChanged("masDatosUser");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public string nombreArea {
-            get {
-                return this.nombreAreaField;
-            }
-            set {
-                this.nombreAreaField = value;
-                this.RaisePropertyChanged("nombreArea");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string usucodigo {
-            get {
-                return this.usucodigoField;
-            }
-            set {
-                this.usucodigoField = value;
-                this.RaisePropertyChanged("usucodigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public string usuestado {
-            get {
-                return this.usuestadoField;
-            }
-            set {
-                this.usuestadoField = value;
-                this.RaisePropertyChanged("usuestado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public string vchcorreousuario {
-            get {
-                return this.vchcorreousuarioField;
-            }
-            set {
-                this.vchcorreousuarioField = value;
-                this.RaisePropertyChanged("vchcorreousuario");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string vchsessionid {
-            get {
-                return this.vchsessionidField;
-            }
-            set {
-                this.vchsessionidField = value;
-                this.RaisePropertyChanged("vchsessionid");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public string vchusulogin {
-            get {
-                return this.vchusuloginField;
-            }
-            set {
-                this.vchusuloginField = value;
-                this.RaisePropertyChanged("vchusulogin");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public string vchusunombre {
-            get {
-                return this.vchusunombreField;
-            }
-            set {
-                this.vchusunombreField = value;
-                this.RaisePropertyChanged("vchusunombre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
-        public string vchusurol {
-            get {
-                return this.vchusurolField;
-            }
-            set {
-                this.vchusurolField = value;
-                this.RaisePropertyChanged("vchusurol");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://ws.security.gandalfsoft.com.pe/")]
-    public partial class securityUserEntry : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string keyField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("key");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("value");
             }
         }
         
@@ -4002,629 +3954,49 @@ namespace SIPT.DAL.ServiceSicu {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="logout", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class logoutRequest {
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://ws.security.gandalfsoft.com.pe/")]
+    public partial class securityUserEntry : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
+        private string keyField;
         
-        public logoutRequest() {
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("key");
+            }
         }
         
-        public logoutRequest(string sessionid) {
-            this.sessionid = sessionid;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="logoutResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class logoutResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public logoutResponse1() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("value");
+            }
         }
         
-        public logoutResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="login", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class loginRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string clave;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sistema;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ipuser;
-        
-        public loginRequest() {
-        }
-        
-        public loginRequest(string usuario, string clave, string sistema, string ipuser) {
-            this.usuario = usuario;
-            this.clave = clave;
-            this.sistema = sistema;
-            this.ipuser = ipuser;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="loginResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class loginResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityUser @return;
-        
-        public loginResponse1() {
-        }
-        
-        public loginResponse1(SIPT.DAL.ServiceSicu.securityUser @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="loginTest", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class loginTestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string clave;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sistema;
-        
-        public loginTestRequest() {
-        }
-        
-        public loginTestRequest(string usuario, string clave, string sistema) {
-            this.usuario = usuario;
-            this.clave = clave;
-            this.sistema = sistema;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="loginTestResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class loginTestResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string @return;
-        
-        public loginTestResponse1() {
-        }
-        
-        public loginTestResponse1(string @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClave", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class realizarCambioDeClaveRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string codigocambio;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nuevaclave;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ipuser;
-        
-        public realizarCambioDeClaveRequest() {
-        }
-        
-        public realizarCambioDeClaveRequest(string usuario, string codigocambio, string nuevaclave, string ipuser) {
-            this.usuario = usuario;
-            this.codigocambio = codigocambio;
-            this.nuevaclave = nuevaclave;
-            this.ipuser = ipuser;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class realizarCambioDeClaveResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public realizarCambioDeClaveResponse1() {
-        }
-        
-        public realizarCambioDeClaveResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveApp", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class realizarCambioDeClaveAppRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string claveanterior;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nuevaclave;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string ipuser;
-        
-        public realizarCambioDeClaveAppRequest() {
-        }
-        
-        public realizarCambioDeClaveAppRequest(string usuario, string claveanterior, string nuevaclave, string ipuser) {
-            this.usuario = usuario;
-            this.claveanterior = claveanterior;
-            this.nuevaclave = nuevaclave;
-            this.ipuser = ipuser;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveAppResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class realizarCambioDeClaveAppResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public realizarCambioDeClaveAppResponse1() {
-        }
-        
-        public realizarCambioDeClaveAppResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCambioDeClave", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class solicitarCambioDeClaveRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        public solicitarCambioDeClaveRequest() {
-        }
-        
-        public solicitarCambioDeClaveRequest(string usuario) {
-            this.usuario = usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCambioDeClaveResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class solicitarCambioDeClaveResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public solicitarCambioDeClaveResponse1() {
-        }
-        
-        public solicitarCambioDeClaveResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarControl", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class validarControlRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string opcion;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string control;
-        
-        public validarControlRequest() {
-        }
-        
-        public validarControlRequest(string sessionid, string opcion, string control) {
-            this.sessionid = sessionid;
-            this.opcion = opcion;
-            this.control = control;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="validarControlResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class validarControlResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public validarControlResponse1() {
-        }
-        
-        public validarControlResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcion", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenerIdOpcionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string idOpcionText;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sistema;
-        
-        public obtenerIdOpcionRequest() {
-        }
-        
-        public obtenerIdOpcionRequest(string idOpcionText, string sistema) {
-            this.idOpcionText = idOpcionText;
-            this.sistema = sistema;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenerIdOpcionResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public obtenerIdOpcionResponse1() {
-        }
-        
-        public obtenerIdOpcionResponse1(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenercontroles", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenercontrolesRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string opcion;
-        
-        public obtenercontrolesRequest() {
-        }
-        
-        public obtenercontrolesRequest(string sessionid, string opcion) {
-            this.sessionid = sessionid;
-            this.opcion = opcion;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenercontrolesResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenercontrolesResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityOption @return;
-        
-        public obtenercontrolesResponse1() {
-        }
-        
-        public obtenercontrolesResponse1(SIPT.DAL.ServiceSicu.securityOption @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreas", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class listarAreasRequest {
-        
-        public listarAreasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreasResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class listarAreasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.scuorganigrama[] @return;
-        
-        public listarAreasResponse() {
-        }
-        
-        public listarAreasResponse(SIPT.DAL.ServiceSicu.scuorganigrama[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="usuariobaja", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class usuariobajaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuariobaja;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string docbajatipo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string docbajanumero;
-        
-        public usuariobajaRequest() {
-        }
-        
-        public usuariobajaRequest(string sessionid, string usuariobaja, string docbajatipo, string docbajanumero) {
-            this.sessionid = sessionid;
-            this.usuariobaja = usuariobaja;
-            this.docbajatipo = docbajatipo;
-            this.docbajanumero = docbajanumero;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="usuariobajaResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class usuariobajaResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public usuariobajaResponse1() {
-        }
-        
-        public usuariobajaResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="registraractividad", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class registraractividadRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string opcion;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string control;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string result;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string param;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=5)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string tipoexcepion;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string message;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string stacktrace;
-        
-        public registraractividadRequest() {
-        }
-        
-        public registraractividadRequest(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
-            this.sessionid = sessionid;
-            this.opcion = opcion;
-            this.control = control;
-            this.result = result;
-            this.param = param;
-            this.tipoexcepion = tipoexcepion;
-            this.message = message;
-            this.stacktrace = stacktrace;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="registraractividadResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class registraractividadResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public registraractividadResponse1() {
-        }
-        
-        public registraractividadResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionJson", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenerIdOpcionJsonRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string idOpcionText;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sistema;
-        
-        public obtenerIdOpcionJsonRequest() {
-        }
-        
-        public obtenerIdOpcionJsonRequest(string idOpcionText, string sistema) {
-            this.idOpcionText = idOpcionText;
-            this.sistema = sistema;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionJsonResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class obtenerIdOpcionJsonResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityOption @return;
-        
-        public obtenerIdOpcionJsonResponse1() {
-        }
-        
-        public obtenerIdOpcionJsonResponse1(SIPT.DAL.ServiceSicu.securityOption @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarfecacceso", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class actualizarfecaccesoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string sessionid;
-        
-        public actualizarfecaccesoRequest() {
-        }
-        
-        public actualizarfecaccesoRequest(string sessionid) {
-            this.sessionid = sessionid;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarfecaccesoResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
-    public partial class actualizarfecaccesoResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SIPT.DAL.ServiceSicu.securityResponse @return;
-        
-        public actualizarfecaccesoResponse1() {
-        }
-        
-        public actualizarfecaccesoResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
-            this.@return = @return;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
     }
     
@@ -4736,6 +4108,632 @@ namespace SIPT.DAL.ServiceSicu {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionJson", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenerIdOpcionJsonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string idOpcionText;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sistema;
+        
+        public obtenerIdOpcionJsonRequest() {
+        }
+        
+        public obtenerIdOpcionJsonRequest(string idOpcionText, string sistema) {
+            this.idOpcionText = idOpcionText;
+            this.sistema = sistema;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionJsonResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenerIdOpcionJsonResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityOption @return;
+        
+        public obtenerIdOpcionJsonResponse1() {
+        }
+        
+        public obtenerIdOpcionJsonResponse1(SIPT.DAL.ServiceSicu.securityOption @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="registraractividad", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class registraractividadRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string opcion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string control;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string result;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string param;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string tipoexcepion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string message;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string stacktrace;
+        
+        public registraractividadRequest() {
+        }
+        
+        public registraractividadRequest(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
+            this.sessionid = sessionid;
+            this.opcion = opcion;
+            this.control = control;
+            this.result = result;
+            this.param = param;
+            this.tipoexcepion = tipoexcepion;
+            this.message = message;
+            this.stacktrace = stacktrace;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="registraractividadResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class registraractividadResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public registraractividadResponse1() {
+        }
+        
+        public registraractividadResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarfecacceso", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class actualizarfecaccesoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        public actualizarfecaccesoRequest() {
+        }
+        
+        public actualizarfecaccesoRequest(string sessionid) {
+            this.sessionid = sessionid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarfecaccesoResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class actualizarfecaccesoResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public actualizarfecaccesoResponse1() {
+        }
+        
+        public actualizarfecaccesoResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="logout", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class logoutRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        public logoutRequest() {
+        }
+        
+        public logoutRequest(string sessionid) {
+            this.sessionid = sessionid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="logoutResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class logoutResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public logoutResponse1() {
+        }
+        
+        public logoutResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="login", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class loginRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string clave;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sistema;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ipuser;
+        
+        public loginRequest() {
+        }
+        
+        public loginRequest(string usuario, string clave, string sistema, string ipuser) {
+            this.usuario = usuario;
+            this.clave = clave;
+            this.sistema = sistema;
+            this.ipuser = ipuser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="loginResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class loginResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityUser @return;
+        
+        public loginResponse1() {
+        }
+        
+        public loginResponse1(SIPT.DAL.ServiceSicu.securityUser @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveApp", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class realizarCambioDeClaveAppRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string claveanterior;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nuevaclave;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ipuser;
+        
+        public realizarCambioDeClaveAppRequest() {
+        }
+        
+        public realizarCambioDeClaveAppRequest(string usuario, string claveanterior, string nuevaclave, string ipuser) {
+            this.usuario = usuario;
+            this.claveanterior = claveanterior;
+            this.nuevaclave = nuevaclave;
+            this.ipuser = ipuser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveAppResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class realizarCambioDeClaveAppResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public realizarCambioDeClaveAppResponse1() {
+        }
+        
+        public realizarCambioDeClaveAppResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClave", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class realizarCambioDeClaveRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string codigocambio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nuevaclave;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string ipuser;
+        
+        public realizarCambioDeClaveRequest() {
+        }
+        
+        public realizarCambioDeClaveRequest(string usuario, string codigocambio, string nuevaclave, string ipuser) {
+            this.usuario = usuario;
+            this.codigocambio = codigocambio;
+            this.nuevaclave = nuevaclave;
+            this.ipuser = ipuser;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="realizarCambioDeClaveResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class realizarCambioDeClaveResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public realizarCambioDeClaveResponse1() {
+        }
+        
+        public realizarCambioDeClaveResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCambioDeClave", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class solicitarCambioDeClaveRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        public solicitarCambioDeClaveRequest() {
+        }
+        
+        public solicitarCambioDeClaveRequest(string usuario) {
+            this.usuario = usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="solicitarCambioDeClaveResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class solicitarCambioDeClaveResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public solicitarCambioDeClaveResponse1() {
+        }
+        
+        public solicitarCambioDeClaveResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="loginTest", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class loginTestRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string clave;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sistema;
+        
+        public loginTestRequest() {
+        }
+        
+        public loginTestRequest(string usuario, string clave, string sistema) {
+            this.usuario = usuario;
+            this.clave = clave;
+            this.sistema = sistema;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="loginTestResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class loginTestResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string @return;
+        
+        public loginTestResponse1() {
+        }
+        
+        public loginTestResponse1(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="usuariobaja", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class usuariobajaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuariobaja;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string docbajatipo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string docbajanumero;
+        
+        public usuariobajaRequest() {
+        }
+        
+        public usuariobajaRequest(string sessionid, string usuariobaja, string docbajatipo, string docbajanumero) {
+            this.sessionid = sessionid;
+            this.usuariobaja = usuariobaja;
+            this.docbajatipo = docbajatipo;
+            this.docbajanumero = docbajanumero;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="usuariobajaResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class usuariobajaResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public usuariobajaResponse1() {
+        }
+        
+        public usuariobajaResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreas", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class listarAreasRequest {
+        
+        public listarAreasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreasResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class listarAreasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.scuorganigrama[] @return;
+        
+        public listarAreasResponse() {
+        }
+        
+        public listarAreasResponse(SIPT.DAL.ServiceSicu.scuorganigrama[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarControl", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class validarControlRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string opcion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string control;
+        
+        public validarControlRequest() {
+        }
+        
+        public validarControlRequest(string sessionid, string opcion, string control) {
+            this.sessionid = sessionid;
+            this.opcion = opcion;
+            this.control = control;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="validarControlResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class validarControlResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityResponse @return;
+        
+        public validarControlResponse1() {
+        }
+        
+        public validarControlResponse1(SIPT.DAL.ServiceSicu.securityResponse @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenercontroles", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenercontrolesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sessionid;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string opcion;
+        
+        public obtenercontrolesRequest() {
+        }
+        
+        public obtenercontrolesRequest(string sessionid, string opcion) {
+            this.sessionid = sessionid;
+            this.opcion = opcion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenercontrolesResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenercontrolesResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SIPT.DAL.ServiceSicu.securityOption @return;
+        
+        public obtenercontrolesResponse1() {
+        }
+        
+        public obtenercontrolesResponse1(SIPT.DAL.ServiceSicu.securityOption @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcion", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenerIdOpcionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string idOpcionText;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sistema;
+        
+        public obtenerIdOpcionRequest() {
+        }
+        
+        public obtenerIdOpcionRequest(string idOpcionText, string sistema) {
+            this.idOpcionText = idOpcionText;
+            this.sistema = sistema;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="obtenerIdOpcionResponse", WrapperNamespace="http://ws.security.gandalfsoft.com.pe/", IsWrapped=true)]
+    public partial class obtenerIdOpcionResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.security.gandalfsoft.com.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public obtenerIdOpcionResponse1() {
+        }
+        
+        public obtenerIdOpcionResponse1(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GandalfsoftSecurityServiceChannel : SIPT.DAL.ServiceSicu.GandalfsoftSecurityService, System.ServiceModel.IClientChannel {
     }
@@ -4761,378 +4759,6 @@ namespace SIPT.DAL.ServiceSicu {
         
         public GandalfsoftSecurityServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.logoutResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.logout(SIPT.DAL.ServiceSicu.logoutRequest request) {
-            return base.Channel.logout(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse logout(string sessionid) {
-            SIPT.DAL.ServiceSicu.logoutRequest inValue = new SIPT.DAL.ServiceSicu.logoutRequest();
-            inValue.sessionid = sessionid;
-            SIPT.DAL.ServiceSicu.logoutResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).logout(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.logoutAsync(SIPT.DAL.ServiceSicu.logoutRequest request) {
-            return base.Channel.logoutAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> logoutAsync(string sessionid) {
-            SIPT.DAL.ServiceSicu.logoutRequest inValue = new SIPT.DAL.ServiceSicu.logoutRequest();
-            inValue.sessionid = sessionid;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).logoutAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.loginResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.login(SIPT.DAL.ServiceSicu.loginRequest request) {
-            return base.Channel.login(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityUser login(string usuario, string clave, string sistema, string ipuser) {
-            SIPT.DAL.ServiceSicu.loginRequest inValue = new SIPT.DAL.ServiceSicu.loginRequest();
-            inValue.usuario = usuario;
-            inValue.clave = clave;
-            inValue.sistema = sistema;
-            inValue.ipuser = ipuser;
-            SIPT.DAL.ServiceSicu.loginResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).login(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginAsync(SIPT.DAL.ServiceSicu.loginRequest request) {
-            return base.Channel.loginAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> loginAsync(string usuario, string clave, string sistema, string ipuser) {
-            SIPT.DAL.ServiceSicu.loginRequest inValue = new SIPT.DAL.ServiceSicu.loginRequest();
-            inValue.usuario = usuario;
-            inValue.clave = clave;
-            inValue.sistema = sistema;
-            inValue.ipuser = ipuser;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.loginTestResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginTest(SIPT.DAL.ServiceSicu.loginTestRequest request) {
-            return base.Channel.loginTest(request);
-        }
-        
-        public string loginTest(string usuario, string clave, string sistema) {
-            SIPT.DAL.ServiceSicu.loginTestRequest inValue = new SIPT.DAL.ServiceSicu.loginTestRequest();
-            inValue.usuario = usuario;
-            inValue.clave = clave;
-            inValue.sistema = sistema;
-            SIPT.DAL.ServiceSicu.loginTestResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginTest(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginTestAsync(SIPT.DAL.ServiceSicu.loginTestRequest request) {
-            return base.Channel.loginTestAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> loginTestAsync(string usuario, string clave, string sistema) {
-            SIPT.DAL.ServiceSicu.loginTestRequest inValue = new SIPT.DAL.ServiceSicu.loginTestRequest();
-            inValue.usuario = usuario;
-            inValue.clave = clave;
-            inValue.sistema = sistema;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginTestAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClave(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request) {
-            return base.Channel.realizarCambioDeClave(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse realizarCambioDeClave(string usuario, string codigocambio, string nuevaclave, string ipuser) {
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest();
-            inValue.usuario = usuario;
-            inValue.codigocambio = codigocambio;
-            inValue.nuevaclave = nuevaclave;
-            inValue.ipuser = ipuser;
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClave(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request) {
-            return base.Channel.realizarCambioDeClaveAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> realizarCambioDeClaveAsync(string usuario, string codigocambio, string nuevaclave, string ipuser) {
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest();
-            inValue.usuario = usuario;
-            inValue.codigocambio = codigocambio;
-            inValue.nuevaclave = nuevaclave;
-            inValue.ipuser = ipuser;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveApp(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request) {
-            return base.Channel.realizarCambioDeClaveApp(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse realizarCambioDeClaveApp(string usuario, string claveanterior, string nuevaclave, string ipuser) {
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest();
-            inValue.usuario = usuario;
-            inValue.claveanterior = claveanterior;
-            inValue.nuevaclave = nuevaclave;
-            inValue.ipuser = ipuser;
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveApp(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveAppAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request) {
-            return base.Channel.realizarCambioDeClaveAppAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> realizarCambioDeClaveAppAsync(string usuario, string claveanterior, string nuevaclave, string ipuser) {
-            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest();
-            inValue.usuario = usuario;
-            inValue.claveanterior = claveanterior;
-            inValue.nuevaclave = nuevaclave;
-            inValue.ipuser = ipuser;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveAppAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.solicitarCambioDeClave(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request) {
-            return base.Channel.solicitarCambioDeClave(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse solicitarCambioDeClave(string usuario) {
-            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest();
-            inValue.usuario = usuario;
-            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).solicitarCambioDeClave(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.solicitarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request) {
-            return base.Channel.solicitarCambioDeClaveAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> solicitarCambioDeClaveAsync(string usuario) {
-            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest();
-            inValue.usuario = usuario;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).solicitarCambioDeClaveAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.validarControlResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.validarControl(SIPT.DAL.ServiceSicu.validarControlRequest request) {
-            return base.Channel.validarControl(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse validarControl(string sessionid, string opcion, string control) {
-            SIPT.DAL.ServiceSicu.validarControlRequest inValue = new SIPT.DAL.ServiceSicu.validarControlRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            inValue.control = control;
-            SIPT.DAL.ServiceSicu.validarControlResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).validarControl(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.validarControlAsync(SIPT.DAL.ServiceSicu.validarControlRequest request) {
-            return base.Channel.validarControlAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> validarControlAsync(string sessionid, string opcion, string control) {
-            SIPT.DAL.ServiceSicu.validarControlRequest inValue = new SIPT.DAL.ServiceSicu.validarControlRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            inValue.control = control;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).validarControlAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcion(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request) {
-            return base.Channel.obtenerIdOpcion(request);
-        }
-        
-        public int obtenerIdOpcion(string idOpcionText, string sistema) {
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest();
-            inValue.idOpcionText = idOpcionText;
-            inValue.sistema = sistema;
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcion(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request) {
-            return base.Channel.obtenerIdOpcionAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> obtenerIdOpcionAsync(string idOpcionText, string sistema) {
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest();
-            inValue.idOpcionText = idOpcionText;
-            inValue.sistema = sistema;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenercontroles(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request) {
-            return base.Channel.obtenercontroles(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityOption obtenercontroles(string sessionid, string opcion) {
-            SIPT.DAL.ServiceSicu.obtenercontrolesRequest inValue = new SIPT.DAL.ServiceSicu.obtenercontrolesRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenercontroles(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenercontrolesAsync(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request) {
-            return base.Channel.obtenercontrolesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> obtenercontrolesAsync(string sessionid, string opcion) {
-            SIPT.DAL.ServiceSicu.obtenercontrolesRequest inValue = new SIPT.DAL.ServiceSicu.obtenercontrolesRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenercontrolesAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.listarAreasResponse SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.listarAreas(SIPT.DAL.ServiceSicu.listarAreasRequest request) {
-            return base.Channel.listarAreas(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.scuorganigrama[] listarAreas() {
-            SIPT.DAL.ServiceSicu.listarAreasRequest inValue = new SIPT.DAL.ServiceSicu.listarAreasRequest();
-            SIPT.DAL.ServiceSicu.listarAreasResponse retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).listarAreas(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.listarAreasAsync(SIPT.DAL.ServiceSicu.listarAreasRequest request) {
-            return base.Channel.listarAreasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> listarAreasAsync() {
-            SIPT.DAL.ServiceSicu.listarAreasRequest inValue = new SIPT.DAL.ServiceSicu.listarAreasRequest();
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).listarAreasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.usuariobajaResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.usuariobaja(SIPT.DAL.ServiceSicu.usuariobajaRequest request) {
-            return base.Channel.usuariobaja(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse usuariobaja(string sessionid, string usuariobaja1, string docbajatipo, string docbajanumero) {
-            SIPT.DAL.ServiceSicu.usuariobajaRequest inValue = new SIPT.DAL.ServiceSicu.usuariobajaRequest();
-            inValue.sessionid = sessionid;
-            inValue.usuariobaja = usuariobaja1;
-            inValue.docbajatipo = docbajatipo;
-            inValue.docbajanumero = docbajanumero;
-            SIPT.DAL.ServiceSicu.usuariobajaResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).usuariobaja(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.usuariobajaAsync(SIPT.DAL.ServiceSicu.usuariobajaRequest request) {
-            return base.Channel.usuariobajaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> usuariobajaAsync(string sessionid, string usuariobaja, string docbajatipo, string docbajanumero) {
-            SIPT.DAL.ServiceSicu.usuariobajaRequest inValue = new SIPT.DAL.ServiceSicu.usuariobajaRequest();
-            inValue.sessionid = sessionid;
-            inValue.usuariobaja = usuariobaja;
-            inValue.docbajatipo = docbajatipo;
-            inValue.docbajanumero = docbajanumero;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).usuariobajaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.registraractividadResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.registraractividad(SIPT.DAL.ServiceSicu.registraractividadRequest request) {
-            return base.Channel.registraractividad(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse registraractividad(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
-            SIPT.DAL.ServiceSicu.registraractividadRequest inValue = new SIPT.DAL.ServiceSicu.registraractividadRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            inValue.control = control;
-            inValue.result = result;
-            inValue.param = param;
-            inValue.tipoexcepion = tipoexcepion;
-            inValue.message = message;
-            inValue.stacktrace = stacktrace;
-            SIPT.DAL.ServiceSicu.registraractividadResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).registraractividad(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.registraractividadAsync(SIPT.DAL.ServiceSicu.registraractividadRequest request) {
-            return base.Channel.registraractividadAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> registraractividadAsync(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
-            SIPT.DAL.ServiceSicu.registraractividadRequest inValue = new SIPT.DAL.ServiceSicu.registraractividadRequest();
-            inValue.sessionid = sessionid;
-            inValue.opcion = opcion;
-            inValue.control = control;
-            inValue.result = result;
-            inValue.param = param;
-            inValue.tipoexcepion = tipoexcepion;
-            inValue.message = message;
-            inValue.stacktrace = stacktrace;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).registraractividadAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionJson(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request) {
-            return base.Channel.obtenerIdOpcionJson(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityOption obtenerIdOpcionJson(string idOpcionText, string sistema) {
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest();
-            inValue.idOpcionText = idOpcionText;
-            inValue.sistema = sistema;
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionJson(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionJsonAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request) {
-            return base.Channel.obtenerIdOpcionJsonAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> obtenerIdOpcionJsonAsync(string idOpcionText, string sistema) {
-            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest();
-            inValue.idOpcionText = idOpcionText;
-            inValue.sistema = sistema;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionJsonAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.actualizarfecacceso(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request) {
-            return base.Channel.actualizarfecacceso(request);
-        }
-        
-        public SIPT.DAL.ServiceSicu.securityResponse actualizarfecacceso(string sessionid) {
-            SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest inValue = new SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest();
-            inValue.sessionid = sessionid;
-            SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).actualizarfecacceso(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.actualizarfecaccesoAsync(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request) {
-            return base.Channel.actualizarfecaccesoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> actualizarfecaccesoAsync(string sessionid) {
-            SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest inValue = new SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest();
-            inValue.sessionid = sessionid;
-            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).actualizarfecaccesoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5203,10 +4829,377 @@ namespace SIPT.DAL.ServiceSicu {
             inValue.intorgcodigo = intorgcodigo;
             return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerDatosAreasAsync(inValue);
         }
-
-        internal listarUsuariosPorAplicacion listarUsuariosPorAplicacion(bool v)
-        {
-            throw new NotImplementedException();
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionJson(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request) {
+            return base.Channel.obtenerIdOpcionJson(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityOption obtenerIdOpcionJson(string idOpcionText, string sistema) {
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest();
+            inValue.idOpcionText = idOpcionText;
+            inValue.sistema = sistema;
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionJson(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionJsonAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest request) {
+            return base.Channel.obtenerIdOpcionJsonAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonResponse1> obtenerIdOpcionJsonAsync(string idOpcionText, string sistema) {
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionJsonRequest();
+            inValue.idOpcionText = idOpcionText;
+            inValue.sistema = sistema;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionJsonAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.registraractividadResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.registraractividad(SIPT.DAL.ServiceSicu.registraractividadRequest request) {
+            return base.Channel.registraractividad(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse registraractividad(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
+            SIPT.DAL.ServiceSicu.registraractividadRequest inValue = new SIPT.DAL.ServiceSicu.registraractividadRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            inValue.control = control;
+            inValue.result = result;
+            inValue.param = param;
+            inValue.tipoexcepion = tipoexcepion;
+            inValue.message = message;
+            inValue.stacktrace = stacktrace;
+            SIPT.DAL.ServiceSicu.registraractividadResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).registraractividad(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.registraractividadAsync(SIPT.DAL.ServiceSicu.registraractividadRequest request) {
+            return base.Channel.registraractividadAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.registraractividadResponse1> registraractividadAsync(string sessionid, string opcion, string control, string result, string param, string tipoexcepion, string message, string stacktrace) {
+            SIPT.DAL.ServiceSicu.registraractividadRequest inValue = new SIPT.DAL.ServiceSicu.registraractividadRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            inValue.control = control;
+            inValue.result = result;
+            inValue.param = param;
+            inValue.tipoexcepion = tipoexcepion;
+            inValue.message = message;
+            inValue.stacktrace = stacktrace;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).registraractividadAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.actualizarfecacceso(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request) {
+            return base.Channel.actualizarfecacceso(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse actualizarfecacceso(string sessionid) {
+            SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest inValue = new SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest();
+            inValue.sessionid = sessionid;
+            SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).actualizarfecacceso(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.actualizarfecaccesoAsync(SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest request) {
+            return base.Channel.actualizarfecaccesoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.actualizarfecaccesoResponse1> actualizarfecaccesoAsync(string sessionid) {
+            SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest inValue = new SIPT.DAL.ServiceSicu.actualizarfecaccesoRequest();
+            inValue.sessionid = sessionid;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).actualizarfecaccesoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.logoutResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.logout(SIPT.DAL.ServiceSicu.logoutRequest request) {
+            return base.Channel.logout(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse logout(string sessionid) {
+            SIPT.DAL.ServiceSicu.logoutRequest inValue = new SIPT.DAL.ServiceSicu.logoutRequest();
+            inValue.sessionid = sessionid;
+            SIPT.DAL.ServiceSicu.logoutResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).logout(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.logoutAsync(SIPT.DAL.ServiceSicu.logoutRequest request) {
+            return base.Channel.logoutAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.logoutResponse1> logoutAsync(string sessionid) {
+            SIPT.DAL.ServiceSicu.logoutRequest inValue = new SIPT.DAL.ServiceSicu.logoutRequest();
+            inValue.sessionid = sessionid;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).logoutAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.loginResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.login(SIPT.DAL.ServiceSicu.loginRequest request) {
+            return base.Channel.login(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityUser login(string usuario, string clave, string sistema, string ipuser) {
+            SIPT.DAL.ServiceSicu.loginRequest inValue = new SIPT.DAL.ServiceSicu.loginRequest();
+            inValue.usuario = usuario;
+            inValue.clave = clave;
+            inValue.sistema = sistema;
+            inValue.ipuser = ipuser;
+            SIPT.DAL.ServiceSicu.loginResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).login(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginAsync(SIPT.DAL.ServiceSicu.loginRequest request) {
+            return base.Channel.loginAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginResponse1> loginAsync(string usuario, string clave, string sistema, string ipuser) {
+            SIPT.DAL.ServiceSicu.loginRequest inValue = new SIPT.DAL.ServiceSicu.loginRequest();
+            inValue.usuario = usuario;
+            inValue.clave = clave;
+            inValue.sistema = sistema;
+            inValue.ipuser = ipuser;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveApp(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request) {
+            return base.Channel.realizarCambioDeClaveApp(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse realizarCambioDeClaveApp(string usuario, string claveanterior, string nuevaclave, string ipuser) {
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest();
+            inValue.usuario = usuario;
+            inValue.claveanterior = claveanterior;
+            inValue.nuevaclave = nuevaclave;
+            inValue.ipuser = ipuser;
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveApp(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveAppAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest request) {
+            return base.Channel.realizarCambioDeClaveAppAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppResponse1> realizarCambioDeClaveAppAsync(string usuario, string claveanterior, string nuevaclave, string ipuser) {
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveAppRequest();
+            inValue.usuario = usuario;
+            inValue.claveanterior = claveanterior;
+            inValue.nuevaclave = nuevaclave;
+            inValue.ipuser = ipuser;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveAppAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClave(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request) {
+            return base.Channel.realizarCambioDeClave(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse realizarCambioDeClave(string usuario, string codigocambio, string nuevaclave, string ipuser) {
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest();
+            inValue.usuario = usuario;
+            inValue.codigocambio = codigocambio;
+            inValue.nuevaclave = nuevaclave;
+            inValue.ipuser = ipuser;
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClave(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.realizarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest request) {
+            return base.Channel.realizarCambioDeClaveAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.realizarCambioDeClaveResponse1> realizarCambioDeClaveAsync(string usuario, string codigocambio, string nuevaclave, string ipuser) {
+            SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.realizarCambioDeClaveRequest();
+            inValue.usuario = usuario;
+            inValue.codigocambio = codigocambio;
+            inValue.nuevaclave = nuevaclave;
+            inValue.ipuser = ipuser;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).realizarCambioDeClaveAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.solicitarCambioDeClave(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request) {
+            return base.Channel.solicitarCambioDeClave(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse solicitarCambioDeClave(string usuario) {
+            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest();
+            inValue.usuario = usuario;
+            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).solicitarCambioDeClave(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.solicitarCambioDeClaveAsync(SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest request) {
+            return base.Channel.solicitarCambioDeClaveAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.solicitarCambioDeClaveResponse1> solicitarCambioDeClaveAsync(string usuario) {
+            SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest inValue = new SIPT.DAL.ServiceSicu.solicitarCambioDeClaveRequest();
+            inValue.usuario = usuario;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).solicitarCambioDeClaveAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.loginTestResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginTest(SIPT.DAL.ServiceSicu.loginTestRequest request) {
+            return base.Channel.loginTest(request);
+        }
+        
+        public string loginTest(string usuario, string clave, string sistema) {
+            SIPT.DAL.ServiceSicu.loginTestRequest inValue = new SIPT.DAL.ServiceSicu.loginTestRequest();
+            inValue.usuario = usuario;
+            inValue.clave = clave;
+            inValue.sistema = sistema;
+            SIPT.DAL.ServiceSicu.loginTestResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginTest(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.loginTestAsync(SIPT.DAL.ServiceSicu.loginTestRequest request) {
+            return base.Channel.loginTestAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.loginTestResponse1> loginTestAsync(string usuario, string clave, string sistema) {
+            SIPT.DAL.ServiceSicu.loginTestRequest inValue = new SIPT.DAL.ServiceSicu.loginTestRequest();
+            inValue.usuario = usuario;
+            inValue.clave = clave;
+            inValue.sistema = sistema;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).loginTestAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.usuariobajaResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.usuariobaja(SIPT.DAL.ServiceSicu.usuariobajaRequest request) {
+            return base.Channel.usuariobaja(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse usuariobaja(string sessionid, string usuariobaja1, string docbajatipo, string docbajanumero) {
+            SIPT.DAL.ServiceSicu.usuariobajaRequest inValue = new SIPT.DAL.ServiceSicu.usuariobajaRequest();
+            inValue.sessionid = sessionid;
+            inValue.usuariobaja = usuariobaja1;
+            inValue.docbajatipo = docbajatipo;
+            inValue.docbajanumero = docbajanumero;
+            SIPT.DAL.ServiceSicu.usuariobajaResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).usuariobaja(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.usuariobajaAsync(SIPT.DAL.ServiceSicu.usuariobajaRequest request) {
+            return base.Channel.usuariobajaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.usuariobajaResponse1> usuariobajaAsync(string sessionid, string usuariobaja, string docbajatipo, string docbajanumero) {
+            SIPT.DAL.ServiceSicu.usuariobajaRequest inValue = new SIPT.DAL.ServiceSicu.usuariobajaRequest();
+            inValue.sessionid = sessionid;
+            inValue.usuariobaja = usuariobaja;
+            inValue.docbajatipo = docbajatipo;
+            inValue.docbajanumero = docbajanumero;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).usuariobajaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.listarAreasResponse SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.listarAreas(SIPT.DAL.ServiceSicu.listarAreasRequest request) {
+            return base.Channel.listarAreas(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.scuorganigrama[] listarAreas() {
+            SIPT.DAL.ServiceSicu.listarAreasRequest inValue = new SIPT.DAL.ServiceSicu.listarAreasRequest();
+            SIPT.DAL.ServiceSicu.listarAreasResponse retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).listarAreas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.listarAreasAsync(SIPT.DAL.ServiceSicu.listarAreasRequest request) {
+            return base.Channel.listarAreasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.listarAreasResponse> listarAreasAsync() {
+            SIPT.DAL.ServiceSicu.listarAreasRequest inValue = new SIPT.DAL.ServiceSicu.listarAreasRequest();
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).listarAreasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.validarControlResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.validarControl(SIPT.DAL.ServiceSicu.validarControlRequest request) {
+            return base.Channel.validarControl(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityResponse validarControl(string sessionid, string opcion, string control) {
+            SIPT.DAL.ServiceSicu.validarControlRequest inValue = new SIPT.DAL.ServiceSicu.validarControlRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            inValue.control = control;
+            SIPT.DAL.ServiceSicu.validarControlResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).validarControl(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.validarControlAsync(SIPT.DAL.ServiceSicu.validarControlRequest request) {
+            return base.Channel.validarControlAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.validarControlResponse1> validarControlAsync(string sessionid, string opcion, string control) {
+            SIPT.DAL.ServiceSicu.validarControlRequest inValue = new SIPT.DAL.ServiceSicu.validarControlRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            inValue.control = control;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).validarControlAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenercontroles(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request) {
+            return base.Channel.obtenercontroles(request);
+        }
+        
+        public SIPT.DAL.ServiceSicu.securityOption obtenercontroles(string sessionid, string opcion) {
+            SIPT.DAL.ServiceSicu.obtenercontrolesRequest inValue = new SIPT.DAL.ServiceSicu.obtenercontrolesRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            SIPT.DAL.ServiceSicu.obtenercontrolesResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenercontroles(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenercontrolesAsync(SIPT.DAL.ServiceSicu.obtenercontrolesRequest request) {
+            return base.Channel.obtenercontrolesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenercontrolesResponse1> obtenercontrolesAsync(string sessionid, string opcion) {
+            SIPT.DAL.ServiceSicu.obtenercontrolesRequest inValue = new SIPT.DAL.ServiceSicu.obtenercontrolesRequest();
+            inValue.sessionid = sessionid;
+            inValue.opcion = opcion;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenercontrolesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcion(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request) {
+            return base.Channel.obtenerIdOpcion(request);
+        }
+        
+        public int obtenerIdOpcion(string idOpcionText, string sistema) {
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest();
+            inValue.idOpcionText = idOpcionText;
+            inValue.sistema = sistema;
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1 retVal = ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcion(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> SIPT.DAL.ServiceSicu.GandalfsoftSecurityService.obtenerIdOpcionAsync(SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest request) {
+            return base.Channel.obtenerIdOpcionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SIPT.DAL.ServiceSicu.obtenerIdOpcionResponse1> obtenerIdOpcionAsync(string idOpcionText, string sistema) {
+            SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest inValue = new SIPT.DAL.ServiceSicu.obtenerIdOpcionRequest();
+            inValue.idOpcionText = idOpcionText;
+            inValue.sistema = sistema;
+            return ((SIPT.DAL.ServiceSicu.GandalfsoftSecurityService)(this)).obtenerIdOpcionAsync(inValue);
         }
     }
 }

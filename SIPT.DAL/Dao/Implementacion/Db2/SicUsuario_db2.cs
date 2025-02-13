@@ -84,12 +84,21 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
                 sicUsuario.vchusuariologin = dato.vchusulogin;
                 sicUsuario.vchusuarionombres = dato.vchusunombre;
                 sicUsuario.vchusuariorol = dato.vchusurol;
-            //dato.area
-            //dato.usuestado
-                if (sicUsuario.vchusuariorol.ToUpper().Equals(usuariorol.ToUpper()))    oSicUsuarioList.Add(sicUsuario);
-
+                sicUsuario.vchestado = dato.usuestado;
+                //dato.area
+                //dato.usuestado
+                // verifica si usuario esta activo
+                if (sicUsuario.vchestado.Equals("1"))
+                { 
+                    // solo si el rol es el mismo
+                    if (sicUsuario.vchusuariorol.Equals(usuariorol))
+                    { 
+                        oSicUsuarioList.Add(sicUsuario);
+                    }
+                }
             }
-  
+
+            
             return oSicUsuarioList;
         }
     }

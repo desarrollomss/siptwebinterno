@@ -18,6 +18,7 @@ namespace SIPT.BL.Models.Entity
         public int? intaplicacioncodigo { get; set; }
         public string vchaplicacionsigla { get; set; }
         public string vchsessionid { get; set; }
+        public string vchestado { get; set; }
 
         public List<SicOpcion> sicOpciones { get; set; }
 

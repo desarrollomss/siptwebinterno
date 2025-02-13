@@ -255,19 +255,6 @@
       <xs:element minOccurs="0" name="return" type="tns:securityResponse" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="realizarCambioDeClave">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="usuario" type="xs:string" />
-      <xs:element minOccurs="0" name="codigocambio" type="xs:string" />
-      <xs:element minOccurs="0" name="nuevaclave" type="xs:string" />
-      <xs:element minOccurs="0" name="ipuser" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="realizarCambioDeClaveResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:securityResponse" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="obtenerDatosAreas">
     <xs:sequence>
       <xs:element minOccurs="0" name="intorgcodigo" type="xs:string" />
@@ -375,6 +362,19 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="realizarCambioDeClave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="codigocambio" type="xs:string" />
+      <xs:element minOccurs="0" name="nuevaclave" type="xs:string" />
+      <xs:element minOccurs="0" name="ipuser" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="realizarCambioDeClaveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:securityResponse" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="obtenerIdOpcion">
     <xs:sequence>

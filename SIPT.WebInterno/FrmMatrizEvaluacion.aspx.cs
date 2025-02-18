@@ -44,6 +44,8 @@ namespace SIPT.WebInterno
 
                     MultiView1.ActiveViewIndex = 0;
 
+                    pbd_CargarMatriz(1, 0);
+
                     APPL.FrondEnd.Response.Ok(logMensajes);
                 }
                 catch (Exception ex)
@@ -52,7 +54,7 @@ namespace SIPT.WebInterno
                     response.MensajeSwal(ClientScript);
                 }
             }
-            string clave = ltlClave.Text;
+                        
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -120,19 +122,43 @@ namespace SIPT.WebInterno
         protected void ddlEstructura_SelectedIndexChanged(object sender, EventArgs e)
         {
             string codEstructura = ddlEstructura.SelectedValue;
-            StringBuilder oContenido = new StringBuilder("");
+            int lintcodEstructura = Convert.ToInt32(codEstructura);
 
-                oContenido.AppendLine("");
-                oContenido.AppendLine("X - Ubicación Conforme.<br />");
-                oContenido.AppendLine("O - Frente a Vias Expesas, Arterias, Colectoras o Avenidas.");
-                oContenido.AppendLine("H - Actividad a desarrollarse a nivel artesanal y con un máximo de 3 personas ocupadas.");
-                oContenido.AppendLine("R - Actividades restringidas sólo para oficinas comerciales y adminstrativas, no se permiten la venta ni almacenamiento de mercaderías.");
-                oContenido.AppendLine("- Actividades que requieren de estudio específico para definir su localización.");
-                oContenido.AppendLine("\">");
-                oContenido.AppendLine("?");
-                oContenido.AppendLine("</button>");
+            pbd_CargarMatriz(lintcodEstructura, 0);
+
+
+        }
+
+
+        private void pbd_CargarMatriz(int pCodEstruturacion, int pCodMatrizClave)
+        {
+
+            logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            PtuEstructuracionclave_bo oPtuEstructuracionclave_bo = new PtuEstructuracionclave_bo(ref logMensajes);
+
+            List<PtuEstructuracionclaveDTO> oPtuEstructuracionclaveDTOList = oPtuEstructuracionclave_bo.ListarKeys(pCodMatrizClave, pCodEstruturacion);
+
+            StringBuilder oContenido = new StringBuilder("");
+            oContenido.AppendLine("");
+
+            foreach (PtuEstructuracionclaveDTO oPtuEstructuracionclaveDTO in oPtuEstructuracionclaveDTOList)
+            {
+                oContenido.AppendLine("<p>");
+                oContenido.AppendLine(oPtuEstructuracionclaveDTO.vchabrevestructuracionclave);
+                oContenido.AppendLine("   ");
+                oContenido.AppendLine(oPtuEstructuracionclaveDTO.vchdescestructuracionclave);
+                oContenido.AppendLine("</p>");
+
+
+            }
+            oContenido.AppendLine("");
 
             litClaves.Text = oContenido.ToString();
+
+
         }
+
+
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO\PtuCertificadoDTO.cs" />
     <Compile Include="DTO\PtuDiligenciaDTO.cs" />
+    <Compile Include="DTO\PtuEstructuracionclaveDTO.cs" />
     <Compile Include="DTO\PtuEstructuracionDTO.cs" />
     <Compile Include="DTO\PtuLicenciaDTO.cs" />
     <Compile Include="DTO\PtuModeloDTO.cs" />

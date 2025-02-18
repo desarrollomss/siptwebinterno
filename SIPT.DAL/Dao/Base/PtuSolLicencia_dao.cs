@@ -21,6 +21,6 @@ namespace SIPT.DAL.Dao.Base
 
         public abstract void ProcesarPlantillas(PtuSolLicencia pPtuSolLicencia);
         
-        public abstract void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento, int psmlcondicionsolicitud);
+        public abstract void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento);
     }
 }

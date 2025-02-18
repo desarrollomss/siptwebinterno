@@ -138,8 +138,6 @@
                             <div class="row">
                                 <div class="col-md-10"><label for="ddlProcedimiento" class="form-label-sm">Procedimientos TUPA</label></div>
                                 <div class="col-md-2">
-                                    <label for="ddlSolCondicion" class="form-label-sm">Condición de Solicitud</label>
-                                    
                                 </div>
                             </div>
                                     
@@ -148,7 +146,6 @@
                                     <asp:DropDownList ID="ddlProcedimiento" runat="server" class="select2 form-control custom-select"></asp:DropDownList>
                                 </div>
                                 <div class="col-md-2">
-                                    <asp:DropDownList ID="ddlSolCondicion" runat="server" class="select2 form-control custom-select"></asp:DropDownList>
                                 </div>
                             </div>                                       
                                         

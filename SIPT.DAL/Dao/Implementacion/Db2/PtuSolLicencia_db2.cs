@@ -271,9 +271,9 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLREQUERIMIENTO_GENERARDATA", this.logMensajes, arrParam);
         }
 
-        public override void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento, int psmlcondicionsolicitud)
+        public override void Acreditar(PtuSolLicencia pPtuSolLicencia, int pintcodigoprocedimiento)
         {
-            DB2Parameter[] arrParam = new DB2Parameter[6];
+            DB2Parameter[] arrParam = new DB2Parameter[5];
             
             arrParam[0] = new DB2Parameter("@INTCODSOLICITUD", DB2Type.Integer);
             arrParam[0].Value = pPtuSolLicencia.intcodsolicitud;
@@ -282,13 +282,10 @@ namespace SIPT.DAL.Dao.Implementacion.Db2
             arrParam[2] = new DB2Parameter("@INTCODIGOPROCEDIMIENTO", DB2Type.Integer);
             arrParam[2].Value = pintcodigoprocedimiento;
 
-            arrParam[3] = new DB2Parameter("@SMLCONDICIONSOLICITUD", DB2Type.Integer);
-            arrParam[3].Value = psmlcondicionsolicitud;
-
-            arrParam[4] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
-            arrParam[4].Value = this.logMensajes.Usuario;
-            arrParam[5] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
-            arrParam[5].Value = DateTime.Now;
+            arrParam[3] = new DB2Parameter("@VCHAUDUSUMODIF", DB2Type.VarChar);
+            arrParam[3].Value = this.logMensajes.Usuario;
+            arrParam[4] = new DB2Parameter("@TMSAUDFECMODIF", DB2Type.Timestamp);
+            arrParam[4].Value = DateTime.Now;
 
             DB2Comando.Ejecutar((DB2Transaction)this.dbconex.Transaccion(), CommandType.StoredProcedure, "SIPT.PTUSOLLICENCIA_ACREDITAR2", this.logMensajes, arrParam);
         }

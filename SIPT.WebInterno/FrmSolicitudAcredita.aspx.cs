@@ -226,12 +226,12 @@ namespace SIPT.WebInterno
             int lintCodSolicitud = Convert.ToInt32(hdfCodSolicitud.Value);
             Int16 lintEstSolLicencia = Convert.ToInt16(hdfSolLicEstado.Value);
             int lintCodProcedimiento = Convert.ToInt32(ddlProcedimiento.SelectedValue);
-            Int16 lintCondicionSolic = Convert.ToInt16(ddlSolCondicion.SelectedValue);
+            //Int16 lintCondicionSolic = Convert.ToInt16(ddlSolCondicion.SelectedValue);
 
             logMensajes = new LogMensajes(request, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, lintCodProcedimiento, lintCondicionSolic, oPtuSolrequerimientoList);
+                pbd_GuardarAcreditacion(lintCodSolicitud, lintEstSolLicencia, lintCodProcedimiento,  oPtuSolrequerimientoList);
                 Response response = APPL.FrondEnd.Response.OkGuardar(logMensajes, "la Acreditación");
                 response.MensajeSwal(ClientScript);
             }
@@ -381,11 +381,11 @@ namespace SIPT.WebInterno
             oPtuTabla.vchcampo = "SMLCONDICIONSOLICITUD";
             oPtuTablaList = oPtuTabla_bo.ListarGrupo(oPtuTabla);
 
-            ddlSolCondicion.DataSource = oPtuTablaList;
-            ddlSolCondicion.DataTextField = "VCHDESCRIPCION";
-            ddlSolCondicion.DataValueField = "SMLCODTABLA";
-            ddlSolCondicion.DataBind();
-            ddlSolCondicion.Items.Insert(0, new ListItem("(Ninguno)", "0"));
+//            ddlSolCondicion.DataSource = oPtuTablaList;
+//            ddlSolCondicion.DataTextField = "VCHDESCRIPCION";
+//            ddlSolCondicion.DataValueField = "SMLCODTABLA";
+//            ddlSolCondicion.DataBind();
+//            ddlSolCondicion.Items.Insert(0, new ListItem("(Ninguno)", "0"));
 
             PtuSolicitud_bo oPtuSolicitud_bo = new PtuSolicitud_bo(ref logMensajes);
             oPtuSolicitudDTO = oPtuSolicitud_bo.ListarPorId(pintcodsolicitud);
@@ -402,7 +402,7 @@ namespace SIPT.WebInterno
             txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
             txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
             ddlProcedimiento.SelectedValue = oPtuSolicitudDTO.intcodigoprocedimiento.ToString();
-            ddlSolCondicion.SelectedValue = oPtuSolicitudDTO.smlcondicionsolicitud.ToString();
+//            ddlSolCondicion.SelectedValue = oPtuSolicitudDTO.smlcondicionsolicitud.ToString();
             pbd_CargarGrillaPlantillas();
 
             return oPtuUsoDTOList;
@@ -448,7 +448,7 @@ namespace SIPT.WebInterno
             
         }
 
-        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia, int pintcodprocedimiento, int pintCondicionSolic, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
+        private void pbd_GuardarAcreditacion(int? pintcodsolicitud, Int16? pintEstSolLicencia, int pintcodprocedimiento, List<PtuSolrequerimiento> oPtuSolrequerimientoList)
         {
             oPtuSolrequerimiento = new PtuSolrequerimiento();
             oPtuSolrequerimientoList = new List<PtuSolrequerimiento>();
@@ -498,7 +498,7 @@ namespace SIPT.WebInterno
             // Empieza a grabar
 
             PtuSolLicencia_bo oPtuSolLicencia_bo = new PtuSolLicencia_bo(ref logMensajes);
-            oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, pintcodprocedimiento, pintCondicionSolic, oPtuSolrequerimientoList);
+            oPtuSolLicencia_bo.Acreditar(oPtuSolLicencia, pintcodprocedimiento, oPtuSolrequerimientoList);
 
         }
 

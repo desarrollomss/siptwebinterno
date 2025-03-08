@@ -164,7 +164,7 @@ namespace SIPT.APPL.FrondEnd
         public void ConfirmacionSwal(System.Web.UI.ClientScriptManager clientScript, TipoConfirmacion tipoConfirmacion, string entidad, string nombreBoton)
         {
             string texto = "Esta seguro de" + (tipoConfirmacion == TipoConfirmacion.GUARDAR ? " Guardar " : " Borrar ") + entidad + " !";
-            string script = "window.onload = function() { swal({"+
+            string script = "window.onload = function() { swal({" +
                     "title: 'Esta seguro ?',"+
                     "text: '" + texto + "'," +
                     "type: 'warning'," +
@@ -179,6 +179,23 @@ namespace SIPT.APPL.FrondEnd
             clientScript.RegisterStartupScript(this.GetType(), "swal", script, true);
         }
 
+        public void ConfirmacionSwalProcedimiento(System.Web.UI.ClientScriptManager clientScript, TipoConfirmacion tipoConfirmacion, string entidad, string nombreBoton)
+        {
+            string texto = "Esta seguro de" + (tipoConfirmacion == TipoConfirmacion.GUARDAR ? " Guardar " : " Borrar ") + entidad + " !";
+            string script = "window.onload = function() { if(validarSelect()){ swal({" +
+                    "title: 'Esta seguro ?'," +
+                    "text: '" + texto + "'," +
+                    "type: 'warning'," +
+                    "showCancelButton: true," +
+                    "confirmButtonColor: '#" + (tipoConfirmacion == TipoConfirmacion.GUARDAR ? "63DD85" : "DD6B55") + "'," +
+                    "confirmButtonText: 'Si, " + (tipoConfirmacion == TipoConfirmacion.GUARDAR ? "Guardar" : "Borrar") + " !'," +
+                    "closeOnConfirm: false" +
+                "}, function()" +
+                "{ document.getElementById('ContentPlaceHolder1_" + nombreBoton + "').click(); }" +
+                //"swal('borrado!', 'Your imaginary file has been deleted.', 'success');"+
+                "); } };";
+            clientScript.RegisterStartupScript(this.GetType(), "swal", script, true);
+        }
     }
 
     public enum CodigoResultado

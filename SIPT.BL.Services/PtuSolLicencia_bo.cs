@@ -191,7 +191,7 @@ namespace SIPT.BL.Services
             if (usuarioRol.Equals("COORDINADOR SIPT"))
             {
                 /********* Registro de Expediente en SISDOC *****************/
-                dbconex = new Db();
+                /*dbconex = new Db();
                 try
                 {
                     dbconex.IniciarTransaccion();
@@ -220,10 +220,10 @@ namespace SIPT.BL.Services
                 finally
                 {
                     dbconex.CerrarConexion();
-                }
+                }*/
 
                 /********* Registro de Solicitud en DBSAC *****************/
-                dbconex = new Db();
+                /*dbconex = new Db();
                 try
                 {
                     dbconex.IniciarTransaccion();
@@ -248,11 +248,11 @@ namespace SIPT.BL.Services
                 finally
                 {
                     dbconex.CerrarConexion();
-                }
+                }*/
 
 
 
-                dbconex = new Db();
+                /*dbconex = new Db();
                 try
                 {
                     dbconex.IniciarTransaccion();
@@ -279,7 +279,7 @@ namespace SIPT.BL.Services
                 finally
                 {
                     dbconex.CerrarConexion();
-                }
+                }*/
             }
 
         }

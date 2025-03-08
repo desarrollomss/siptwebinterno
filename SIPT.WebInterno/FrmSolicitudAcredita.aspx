@@ -19,7 +19,16 @@
                 div.style.display = "none";
             }
         }*/
-
+        function validarSelect() {
+            const select = document.getElementById("ContentPlaceHolder1_ddlProcedimiento");
+            
+            if (select.value === "0") {
+                alert('Seleccione un Procedimiento.')
+                return false;
+            } else {
+                return true;
+            }
+        }
     </script>
 
     <div class="row page-titles w-100">
@@ -110,7 +119,7 @@
                                     <asp:TextBox ID="txtAdministrado" Text="" runat="server" class="form-control"></asp:TextBox>
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="txtCondicion" class="form-label-sm">Condicion</label>
+                                    <label for="txtCondicion" class="form-label-sm">Condición</label>
                                     <asp:TextBox ID="txtCondicion" Text="" runat="server" class="form-control"></asp:TextBox>
                                 </div>                            
                             </div>
@@ -125,12 +134,12 @@
                                     <asp:TextBox ID="txtDireccion" Text="" runat="server" class="form-control"></asp:TextBox>
                                 </div>
                                 <div class="col-md-2">
-                                    <label for="txtAreaEst" class="form-label-sm">Area Estructuracion</label>
+                                    <label for="txtAreaEst" class="form-label-sm">Area Tratamiento Normativo</label>
                                     <asp:TextBox ID="txtAreaEst" Text="" runat="server" class="form-control"></asp:TextBox>
                                 </div>
 
                                 <div class="col-md-2">
-                                    <label for="txtZonifica" class="form-label-sm">Zonificacion</label>
+                                    <label for="txtZonifica" class="form-label-sm">Zonificación</label>
                                     <asp:TextBox ID="txtZonifica" Text="" runat="server" class="form-control"></asp:TextBox>
                                 </div>
                             </div>

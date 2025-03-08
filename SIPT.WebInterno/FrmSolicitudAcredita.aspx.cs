@@ -218,7 +218,7 @@ namespace SIPT.WebInterno
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            new Response().ConfirmacionSwal(ClientScript, TipoConfirmacion.GUARDAR, "la Acreditación", "btnGuardar");
+            new Response().ConfirmacionSwalProcedimiento(ClientScript, TipoConfirmacion.GUARDAR, "la Acreditación", "btnGuardar");
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -401,6 +401,7 @@ namespace SIPT.WebInterno
             txtDireccion.Text = oPtuSolicitudDTO.vchubicacionpredio;
             txtCondicion.Text = oPtuSolicitudDTO.vchcondicionsolicitante;
             txtZonifica.Text = oPtuSolicitudDTO.vchzonificacion;
+            txtAreaEst.Text = oPtuSolicitudDTO.vchestructuracion;
             ddlProcedimiento.SelectedValue = oPtuSolicitudDTO.intcodigoprocedimiento.ToString();
 //            ddlSolCondicion.SelectedValue = oPtuSolicitudDTO.smlcondicionsolicitud.ToString();
             pbd_CargarGrillaPlantillas();
